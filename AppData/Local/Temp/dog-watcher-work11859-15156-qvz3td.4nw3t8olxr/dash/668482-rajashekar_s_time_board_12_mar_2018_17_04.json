@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by raj.meka@thomsonreuters.com",
+    "title": "Rajashekar's TimeBoard 12 Mar 2018 17:04",
+    "created": "2018-03-12T22:04:42.972588+00:00",
+    "id": 668482,
+    "created_by": {
+      "disabled": false,
+      "handle": "raj.meka@thomsonreuters.com",
+      "name": "Rajashekar Meka",
+      "is_admin": false,
+      "role": "Devops Automation Engineer",
+      "access_role": "st",
+      "verified": true,
+      "email": "Raj.Meka@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/45a8fa12a9c7a82b67e01c0f1a5e3cf2?s=48&d=retro"
+    },
+    "modified": "2018-03-12T22:04:42.972605+00:00"
+  },
+  "url": "/dash/668482/rajashekars-timeboard-12-mar-2018-1704",
+  "resource": "/api/v1/dash/668482"
+}

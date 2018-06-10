@@ -1,0 +1,48 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "style": {
+            "fillMax": null,
+            "palette": "green_to_orange",
+            "fillMin": null,
+            "paletteFlip": false
+          },
+          "group": null,
+          "notes": null,
+          "noMetricHosts": true,
+          "viz": "hostmap",
+          "scope": null,
+          "requests": [
+            {
+              "q": "avg:system.load.1{*} by {host}",
+              "type": "fill"
+            }
+          ],
+          "noGroupHosts": true
+        },
+        "title": "Avg of system.load.1 over * by host"
+      }
+    ],
+    "description": "created by mark.krueger@thomsonreuters.com",
+    "title": "Common Ent",
+    "created": "2018-01-09T16:39:19.796708+00:00",
+    "id": 450668,
+    "created_by": {
+      "disabled": false,
+      "handle": "mark.krueger@thomsonreuters.com",
+      "name": null,
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "mark.krueger@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/a95575618339d4b4a85674df68a3f24b?s=48&d=retro"
+    },
+    "modified": "2018-01-09T16:40:18.976839+00:00"
+  },
+  "url": "/dash/450668/common-ent",
+  "resource": "/api/v1/dash/450668"
+}

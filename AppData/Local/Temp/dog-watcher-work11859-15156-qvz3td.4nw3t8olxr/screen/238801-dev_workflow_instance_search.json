@@ -1,0 +1,211 @@
+{
+  "board_title": "dev.workflow-instance search",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2017-11-02T16:01:00.157610+00:00",
+  "original_title": "dev.workflow-instance search",
+  "modified": "2017-11-13T21:10:21.024588+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "tim.doke@thomsonreuters.com",
+    "name": "Timothy Doke",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "tim.doke@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/65f21ebc4612517efc037215a28bb426?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 238801,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Basic search average",
+      "height": 13,
+      "tile_def": {
+        "viz": "heatmap",
+        "requests": [
+          {
+            "q": "avg:dev.workflow_instanceservice.POST.api.v1.workflows.BasicSearch.avg{*}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true,
+        "yaxis": {
+          "includeZero": false,
+          "scale": "log"
+        }
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 6,
+      "x": 7,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true
+    },
+    {
+      "board_id": 238801,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "basic search",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:dev.workflow_instanceservice.POST.api.v1.workflows.BasicSearch.avg{*}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 19,
+      "x": 64,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true
+    },
+    {
+      "board_id": 238801,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Basic search median",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:dev.workflow_instanceservice.POST.api.v1.workflows.BasicSearch.median{*}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true,
+        "yaxis": {
+          "includeZero": false,
+          "scale": "log"
+        }
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 26,
+      "x": 7,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true
+    },
+    {
+      "board_id": 238801,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:ngwf.dev.workflow_productservice.api.features.v1.user_hits{*}.as_count() * 60",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 35,
+      "x": 65,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true
+    },
+    {
+      "board_id": 238801,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:dev.workflow_instanceservice.POST.api.v1.workflows.CreateInstances.avg{*}",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 45,
+      "x": 13,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 238801,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:ngwf.dev.workflow_instanceservice.api.status.v1.statuscheck_hits{*} * 60",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 1,
+      "x": 63,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    }
+  ],
+  "disableCog": false,
+  "id": 238801,
+  "title_edited": false,
+  "isShared": false
+}

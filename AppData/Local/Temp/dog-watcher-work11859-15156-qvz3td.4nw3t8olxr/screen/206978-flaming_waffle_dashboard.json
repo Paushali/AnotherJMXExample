@@ -1,0 +1,133 @@
+{
+  "board_title": "Flaming Waffle Dashboard",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2017-07-27T20:14:00.073503+00:00",
+  "original_title": "Flaming Waffle Dashboard",
+  "modified": "2017-07-27T20:43:08.384539+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "sean.fields@thomsonreuters.com",
+    "name": "Sean Fields",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "sean.fields@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/f62aeb5e4105f713451add4e62dfe525?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 206978,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 41,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.mem.nonpaged{flaming-waffle}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "avg:system.mem.used{flaming-waffle}",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "avg:system.mem.usable{flaming-waffle}",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "avg:system.mem.slab{flaming-waffle}",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "avg:system.mem.total{flaming-waffle}",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "avg:system.mem.committed{flaming-waffle}",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "avg:system.mem.paged{flaming-waffle}",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "avg:system.mem.free{flaming-waffle}",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 108,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 0,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 206978,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 34,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.cpu.user{flaming-waffle}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "avg:system.cpu.system{flaming-waffle}",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "avg:system.cpu.idle{flaming-waffle}",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 108,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 45,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    }
+  ],
+  "disableCog": false,
+  "id": 206978,
+  "title_edited": false,
+  "isShared": false
+}

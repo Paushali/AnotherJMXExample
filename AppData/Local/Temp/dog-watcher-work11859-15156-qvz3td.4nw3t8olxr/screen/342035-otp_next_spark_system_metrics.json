@@ -1,0 +1,18 @@
+{
+  "read_only": false,
+  "board_title": "OTP-NEXT-Spark-System-Metrics",
+  "created": "2018-05-18T11:08:47.175707+00:00",
+  "modified": "2018-05-18T11:08:47.175717+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "volodymyr.antonichuk@thomsonreuters.com",
+    "name": "Volodymyr Antonichuk",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "volodymyr.antonichuk@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/159fe34512335c4d4154517a391915c1?s=48&d=retro"
+  },
+  "id": 342035
+}

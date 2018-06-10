@@ -1,0 +1,18 @@
+{
+  "read_only": false,
+  "board_title": "Nelson's ScreenBoard 9 Mar 2018 15:44",
+  "created": "2018-03-09T18:44:11.217910+00:00",
+  "modified": "2018-03-09T18:44:11.217917+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "nelson.cartaxo@thomsonreuters.com",
+    "name": "Nelson Cartaxo",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "nelson.cartaxo@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/a2d875b52ce26803e5fe7ced65f2f1a7?s=48&d=retro"
+  },
+  "id": 300900
+}
