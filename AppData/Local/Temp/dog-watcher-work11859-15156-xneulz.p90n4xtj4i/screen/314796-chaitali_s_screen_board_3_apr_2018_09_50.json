@@ -1,0 +1,73 @@
+{
+  "board_title": "Chaitali's ScreenBoard 3 Apr 2018 09:50",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-04-03T14:50:24.672951+00:00",
+  "original_title": "",
+  "modified": "2018-04-03T14:52:15.682345+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "chaitali.agrawal@thomsonreuters.com",
+    "name": "Chaitali Agrawal",
+    "is_admin": true,
+    "role": null,
+    "access_role": "adm",
+    "verified": true,
+    "email": "chaitali.agrawal@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/109b0621779856fa6be67ee4cc747e84?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 314796,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.host_ok{tr:osr:environment:qa}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:aws.ec2.host_ok{tr:osr:environment:prod}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 14,
+      "x": 11,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 314796,
+  "title_edited": false,
+  "isShared": false
+}

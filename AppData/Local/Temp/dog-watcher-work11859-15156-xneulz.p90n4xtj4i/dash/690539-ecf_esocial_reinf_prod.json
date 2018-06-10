@@ -1,0 +1,207 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:jdbc.idle.connection{app:mastersaf,env:prod,host:c046uwjosbrwp}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of jdbc.idle.connection over app:mastersaf,env:prod,host:c046uwjosbrwp"
+      },
+      {
+        "definition": {
+          "viz": "query_value",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:jdbc.idle.connection{app:mastersaf,env:prod,host:c625qmvosbrwp}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of jdbc.idle.connection over app:mastersaf,env:prod,host:c625qmvosbrwp"
+      },
+      {
+        "definition": {
+          "style": {
+            "fillMax": null,
+            "palette": "green_to_orange",
+            "fillMin": null,
+            "paletteFlip": false
+          },
+          "group": null,
+          "notes": null,
+          "noMetricHosts": true,
+          "viz": "hostmap",
+          "scope": [
+            "app:mastersaf",
+            "env:prod"
+          ],
+          "requests": [
+            {
+              "q": "avg:system.load.1{app:mastersaf,env:prod} by {host}",
+              "type": "fill"
+            }
+          ],
+          "noGroupHosts": true
+        },
+        "title": "Avg of system.load.1 over app:mastersaf,env:prod by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jdbc.active.connection{app:mastersaf,env:prod,host:c046uwjosbrwp}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Active DB Connections - Tomcat Portal WBS"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{app:mastersaf,env:prod,service:ecf/esocial/reinf,host:c625qmvosbrwp}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Tomcat Portal WBS  - c625qmvosbrwp- Used Memory"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(avg:system.load.1{app:mastersaf,env:prod} by {host}, 10, 'mean', 'desc')",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg System Load"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{app:mastersaf,env:prod,host:c046uwjosbrwp,service:ecf/esocial/reinf}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Tomcat Portal WBS  - c046uwjosbrwp- Used Memory"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:jdbc.active.connection{app:mastersaf,env:prod,host:c625qmvosbrwp}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Active DB Connections - Tomcat Portal WBS"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(avg:datadog.agent.running{app:mastersaf,env:prod} by {host}, 10, 'mean', 'desc')",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Datadog Agent Running"
+      }
+    ],
+    "description": "created by claudio.bento@thomsonreuters.com",
+    "title": "ECF_ESOCIAL_REINF_PROD",
+    "created": "2018-03-16T18:35:26.568303+00:00",
+    "id": 690539,
+    "created_by": {
+      "disabled": false,
+      "handle": "claudio.bento@thomsonreuters.com",
+      "name": "Claudio Bento",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "claudio.bento@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/cb6e1575122ceb2b6abb733a0a85ed74?s=48&d=retro"
+    },
+    "modified": "2018-03-16T18:51:51.806550+00:00"
+  },
+  "url": "/dash/690539/ecfesocialreinfprod",
+  "resource": "/api/v1/dash/690539"
+}

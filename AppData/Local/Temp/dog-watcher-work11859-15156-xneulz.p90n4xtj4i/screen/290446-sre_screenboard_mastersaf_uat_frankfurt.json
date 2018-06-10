@@ -1,0 +1,1831 @@
+{
+  "board_title": "SRE Screenboard Mastersaf UAT Frankfurt",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-02-20T21:59:15.348242+00:00",
+  "original_title": "SRE Screenboard Mastersaf UAT Frankfurt",
+  "modified": "2018-03-13T19:12:36.295986+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "name:platform-dev-haproxy-service",
+      "prefix": null,
+      "name": "reverseproxy-ec2"
+    },
+    {
+      "default": "name:platform-dev-haproxy-alb",
+      "prefix": null,
+      "name": "alb-internet_facing"
+    },
+    {
+      "default": "name:platform-dev-haproxy-nlb",
+      "prefix": null,
+      "name": "nlb"
+    },
+    {
+      "default": "name:platform-dev",
+      "prefix": null,
+      "name": "ALB-Internal"
+    },
+    {
+      "default": "*",
+      "prefix": "account_id",
+      "name": "AWS_ac_id"
+    },
+    {
+      "default": "*",
+      "prefix": "awsregion",
+      "name": "region"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "karthikeyan.rajamani@thomsonreuters.com",
+    "name": "Karthikeyan Rajamani",
+    "is_admin": true,
+    "role": null,
+    "access_role": "adm",
+    "verified": true,
+    "email": "Karthikeyan.Rajamani@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/bae48acc0cdb1247103062bff0a91bca?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Traffic(ms)",
+      "height": 12,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:haproxy.frontend.requests.rate{$reverseproxy-ec2} by {host}, 50, 'mean', 'desc')",
+            "style": {
+              "palette": "cool"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 60,
+      "x": 10,
+      "legend_size": "2",
+      "type": "toplist",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/haproxy.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 15,
+      "width": 10,
+      "y": 74,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Latency",
+      "height": 12,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:haproxy.backend.response.time{$reverseproxy-ec2} by {host}, 50, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": 1000,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_green",
+                "value": 1000,
+                "comparator": "<"
+              }
+            ]
+          }
+        ]
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 60,
+      "x": 62,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Errors(5xx)",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:haproxy.backend.response.5xx{$reverseproxy-ec2} by {host}, 10, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": 3,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_green",
+                "value": 3,
+                "comparator": "<="
+              }
+            ]
+          }
+        ]
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 74,
+      "x": 63,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/amazon_ec2.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 14,
+      "width": 11,
+      "y": 43,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:aws.ec2.cpuutilization{$reverseproxy-ec2} by {host}, 50, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 43,
+      "x": 11,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "HAProxy-Latency",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:haproxy.backend.response.time{$reverseproxy-ec2} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "thin",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 60,
+      "x": 90,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "HAProxy Traffic",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:haproxy.frontend.requests.rate{$reverseproxy-ec2} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 24,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 60,
+      "x": 38,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/haproxy.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 15,
+      "width": 10,
+      "y": 59,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "HAProxy Errors(5xx)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:haproxy.backend.response.5xx{$reverseproxy-ec2}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 24,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 74,
+      "x": 91,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:haproxy.backend.response.time{$reverseproxy-ec2} by {service}, 10, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 74,
+      "x": 10,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "top(avg:haproxy.backend.response.time{$reverseproxy-ec2} by {service}, 10, 'mean', 'desc')",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 74,
+      "x": 38,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/ALB.JPG",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 11,
+      "width": 11,
+      "y": 3,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Healthy)-ALBHosts",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.healthy_host_count{$alb-internet_facing}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "1",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_red",
+                "value": "0",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 43,
+      "x": 62,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/NLB1.JPG",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "width": 11,
+      "y": 29,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Healthy)NLB Hosts",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.networkelb.healthy_host_count{$nlb}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "1",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "10",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": "<="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 29,
+      "x": 11,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Latency)aws.applicationelb.target_response_time.p95",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.target_response_time.p95{$alb-internet_facing}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "2"
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 9,
+      "x": 27,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Unhealthy)-ALBHosts",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.un_healthy_host_count{$alb-internet_facing}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_red",
+                "value": "1",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": "<="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 50,
+      "x": 62,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Traffic)aws.applicationelb.request_count",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.request_count{$alb-internet_facing,$AWS_ac_id}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_red",
+                "value": "1000",
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 3,
+      "x": 27,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Traffic)aws.applicationelb.target_response_time.p95",
+      "height": 10,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.request_count{$alb-internet_facing}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 3,
+      "x": 41,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Latency)aws.applicationelb.target_response_time.p95",
+      "height": 10,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.target_response_time.p95{$alb-internet_facing}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 3,
+      "x": 57,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Unhealthy)NLB Hosts",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.networkelb.un_healthy_host_count{$nlb}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": "<="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 36,
+      "x": 11,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(5xx Errors)aws.applicationelb.httpcode_target_5xx",
+      "height": 10,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.httpcode_elb_5xx{$alb-internet_facing}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 3,
+      "x": 89,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(4xx)aws.applicationelb.httpcode_elb_4xx",
+      "height": 10,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.httpcode_elb_4xx{$alb-internet_facing}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 3,
+      "x": 73,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(TCP Conn)aws.networkelb.active_flow_count",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.networkelb.active_flow_count{$nlb}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 29,
+      "x": 27,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 11,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.networkelb.active_flow_count{$nlb}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 18,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 29,
+      "x": 41,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Traffic)aws.ec2.network_in",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_in{$reverseproxy-ec2}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": "<="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "10",
+                "comparator": ">="
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "custom_unit": null
+      },
+      "width": 22,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 43,
+      "x": 39,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 6,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.cpu.user{$reverseproxy-ec2}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 22,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 50,
+      "x": 39,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "color": "#774aa4",
+      "text": "Mastersaf-Frankfurt UAT",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 17,
+      "y": -1,
+      "x": 41,
+      "font_size": "16",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/ALB-internal.jpg",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 11,
+      "y": 16,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Healthy)-Int ALBHosts",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.healthy_host_count{$ALB-Internal}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "1",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_red",
+                "value": "0",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 16,
+      "x": 11,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Latency)Int-aws.applicationelb.target_response_time.p95",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.target_response_time.p95{$ALB-Internal}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "2"
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 22,
+      "x": 27,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(unhealthy)Int ALB Hosts-Avg_aws.applicationelb.un_healthy_host_count",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.un_healthy_host_count{$ALB-Internal}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_red",
+                "value": "",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 22,
+      "x": 11,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Traffic)Int-aws.applicationelb.request_count",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.request_count{$ALB-Internal}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_red",
+                "value": "1000",
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 16,
+      "x": 27,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Traffic)Int-aws.applicationelb.request_count",
+      "height": 10,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.request_count{$ALB-Internal}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 16,
+      "x": 41,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Latency)Int-aws.applicationelb.target_response_time.p95",
+      "height": 10,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.target_response_time.p95{$ALB-Internal}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 16,
+      "x": 57,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(5xx Errors)aws.applicationelb.httpcode_target_5xx",
+      "height": 11,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.httpcode_elb_5xx{$alb-internet_facing}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 29,
+      "x": 75,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(4xx)aws.applicationelb.httpcode_elb_4xx",
+      "height": 11,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.httpcode_elb_4xx{$alb-internet_facing}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 29,
+      "x": 59,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/amazon_rds.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 12,
+      "y": 90,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/SNS.JPG",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 10,
+      "y": 90,
+      "x": 46,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/amazon_sqs.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 12,
+      "y": 90,
+      "x": 67,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/NA.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 10,
+      "y": 90,
+      "x": 13,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/NA.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 10,
+      "y": 90,
+      "x": 56,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/NA.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 10,
+      "y": 90,
+      "x": 79,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/amazon_elasticache.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 11,
+      "y": 90,
+      "x": 24,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/NA.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 10,
+      "y": 90,
+      "x": 35,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Healthy)NLB Hosts",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.networkelb.healthy_host_count{$nlb}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "1",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "10",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": "<="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 43,
+      "x": 78,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Unhealthy)NLB Hosts",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.networkelb.un_healthy_host_count{$nlb}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": "<="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 50,
+      "x": 79,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Healthy)-ALBHosts",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.healthy_host_count{$alb-internet_facing,$AWS_ac_id}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "1",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_red",
+                "value": "0",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 3,
+      "x": 11,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Unhealthy)-ALBHosts",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.un_healthy_host_count{$alb-internet_facing}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_red",
+                "value": "1",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": "<="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 9,
+      "x": 11,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Mastersaf+Architecture.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 22,
+      "width": 27,
+      "y": 16,
+      "x": 91,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "color": "#774aa4",
+      "text": "Architecture",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 10,
+      "y": 18,
+      "x": 102,
+      "font_size": "16",
+      "type": "free_text",
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 290446,
+  "title_edited": false,
+  "isShared": false
+}

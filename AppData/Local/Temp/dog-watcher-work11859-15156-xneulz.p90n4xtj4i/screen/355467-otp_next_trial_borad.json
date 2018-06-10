@@ -1,0 +1,66 @@
+{
+  "board_title": "OTP-NEXT-TRIAL-BORAD",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-06-08T19:56:26.897488+00:00",
+  "original_title": "Sagar's Screenboard 8 Jun 2018 15:56",
+  "modified": "2018-06-08T20:00:07.070790+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "sagar.patel@thomsonreuters.com",
+    "name": "Sagar Patel",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "sagar.patel@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/65971e8149ce4da506dadd28908889ba?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": false,
+  "widgets": [
+    {
+      "board_id": 355467,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:spark.driver.app_metrics.cdc_record_computation_time.count{$Environment,environment:dev} by {instance,app_name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 0,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 355467,
+  "title_edited": true,
+  "isShared": false
+}

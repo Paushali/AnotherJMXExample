@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by vamsykrishna.nallani@thomsonreuters.com",
+    "title": "LS2 UAT",
+    "created": "2018-02-28T21:52:14.633666+00:00",
+    "id": 602182,
+    "created_by": {
+      "disabled": false,
+      "handle": "vamsykrishna.nallani@thomsonreuters.com",
+      "name": "Vamsy Krishna Nallani",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "VamsyKrishna.Nallani@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/dded27584d2da2d4b5308aaf3f02f016?s=48&d=retro"
+    },
+    "modified": "2018-02-28T21:52:51.414642+00:00"
+  },
+  "url": "/dash/602182/ls2-uat",
+  "resource": "/api/v1/dash/602182"
+}

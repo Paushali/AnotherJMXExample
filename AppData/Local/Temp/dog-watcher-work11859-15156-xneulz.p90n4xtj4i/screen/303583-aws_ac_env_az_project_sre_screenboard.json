@@ -1,0 +1,1786 @@
+{
+  "board_title": "aws ac|Env|AZ|Project-SRE Screenboard",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-03-14T17:54:03.912667+00:00",
+  "original_title": "aws ac|Env|AZ|Project-SRE Screenboard",
+  "modified": "2018-03-19T18:12:57.806698+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "aws_account",
+      "id": "269537d3-28ae-4f3a-bf53-c52a36266de4",
+      "name": "aws_account"
+    },
+    {
+      "default": "*",
+      "prefix": "techopsenvironment",
+      "id": "1318be30-7963-4073-befc-15bc93cb8778",
+      "name": "Environment"
+    },
+    {
+      "default": "*",
+      "prefix": "techopsproject",
+      "id": "2d7cb5fb-6eb1-4f4e-bdcf-adf5daa40223",
+      "name": "Project"
+    },
+    {
+      "default": "*",
+      "prefix": "availability-zone",
+      "id": "06a059b9-f89b-425f-99b2-53deca4c778f",
+      "name": "Region"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "karthikeyan.rajamani@thomsonreuters.com",
+    "name": "Karthikeyan Rajamani",
+    "is_admin": true,
+    "role": null,
+    "access_role": "adm",
+    "verified": true,
+    "email": "Karthikeyan.Rajamani@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/bae48acc0cdb1247103062bff0a91bca?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Traffic(ms)",
+      "height": 12,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:haproxy.frontend.requests.rate{$Environment,$Availabilty_zone,$Project} by {host}, 50, 'mean', 'desc')",
+            "style": {
+              "palette": "cool"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 60,
+      "x": 10,
+      "legend_size": "2",
+      "type": "toplist",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/haproxy.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 15,
+      "width": 10,
+      "y": 74,
+      "x": 0,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Latency",
+      "height": 12,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:haproxy.backend.response.time{$Environment,$Availabilty_zone,$Project} by {host}, 50, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": 1000
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": 1000
+              }
+            ]
+          }
+        ]
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 60,
+      "x": 62,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Errors(5xx)",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:haproxy.backend.response.5xx{$Environment,$Availabilty_zone,$Project} by {host}, 10, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": 3
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<=",
+                "value": 3
+              }
+            ]
+          }
+        ]
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 74,
+      "x": 63,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/amazon_ec2.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 14,
+      "width": 11,
+      "y": 43,
+      "x": 0,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:aws.ec2.cpuutilization{$aws_account,$Environment,$Project,$Region} by {host}, 50, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 43,
+      "x": 11,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "HAProxy-Latency",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:haproxy.backend.response.time{$Environment,$Availabilty_zone,$Project} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "thin",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 60,
+      "x": 90,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "HAProxy Traffic",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:haproxy.frontend.requests.rate{$Environment,$Availabilty_zone,$Project} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 24,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 60,
+      "x": 38,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/haproxy.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 15,
+      "width": 10,
+      "y": 59,
+      "x": 0,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "HAProxy Errors(5xx)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:haproxy.backend.response.5xx{$Environment,$Availabilty_zone,$Project}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 24,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 74,
+      "x": 91,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:haproxy.backend.response.time{$Environment,$Availabilty_zone,$Project} by {service}, 10, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 74,
+      "x": 10,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "top(avg:haproxy.backend.response.time{$Environment,$Availabilty_zone,$Project} by {service}, 10, 'mean', 'desc')",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 74,
+      "x": 38,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/ALB.JPG",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 11,
+      "width": 11,
+      "y": 3,
+      "x": 0,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Healthy)-ALBHosts",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.healthy_host_count{$aws_account,$Environment,$Project,$Region}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "1",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_red",
+                "value": "0",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 43,
+      "x": 62,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/NLB1.JPG",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "width": 11,
+      "y": 29,
+      "x": 0,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Healthy)NLB Hosts",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.networkelb.healthy_host_count{$aws_account,$Environment,$Project,$Region}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "1",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "10",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": "<="
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 29,
+      "x": 11,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Latency)aws.applicationelb.target_response_time.p95",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.target_response_time.p95{$aws_account,$Environment,$Project,$Region}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "2"
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 9,
+      "x": 27,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Unhealthy)-ALBHosts",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.un_healthy_host_count{$aws_account,$Environment,$Project,$Region}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_red",
+                "value": "1",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": "<="
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 50,
+      "x": 62,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Traffic)aws.applicationelb.request_count",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.request_count{$aws_account,$Environment,$Project,$Region}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_red",
+                "value": "1000",
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 3,
+      "x": 27,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Traffic)aws.applicationelb.target_response_time.p95",
+      "height": 10,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.request_count{$aws_account,$Environment,$Project,$Region}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 3,
+      "x": 41,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Latency)aws.applicationelb.target_response_time.p95",
+      "height": 10,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.target_response_time.p95{$aws_account,$Environment,$Project,$Region}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 3,
+      "x": 57,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Unhealthy)NLB Hosts",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.networkelb.un_healthy_host_count{$aws_account,$Environment,$Project,$Region}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": "<="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 36,
+      "x": 11,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(5xx Errors)aws.applicationelb.httpcode_target_5xx",
+      "height": 10,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.httpcode_elb_5xx{$aws_account,$Environment,$Project,$Region}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 3,
+      "x": 89,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(4xx)aws.applicationelb.httpcode_elb_4xx",
+      "height": 10,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.httpcode_elb_4xx{$aws_account,$Environment,$Project,$Region}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 3,
+      "x": 73,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(TCP Conn)aws.networkelb.active_flow_count",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.networkelb.active_flow_count{$aws_account,$Environment,$Project,$Region}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 29,
+      "x": 27,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 11,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.networkelb.active_flow_count{$aws_account,$Environment,$Availabilty_zone,$Project}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 18,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 29,
+      "x": 41,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Traffic)aws.ec2.network_in",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_in{$aws_account,$Environment,$Project,$Region}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": "<="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "10",
+                "comparator": ">="
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "custom_unit": null
+      },
+      "width": 22,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 43,
+      "x": 39,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 6,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.cpu.user{$aws_account,$Environment,$Project,$Region}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 22,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 50,
+      "x": 39,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/ALB-internal.jpg",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 11,
+      "y": 16,
+      "x": 0,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Healthy)-Int ALBHosts",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.healthy_host_count{$aws_account,$Environment,$Project,$Region}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "1",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_red",
+                "value": "0",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 16,
+      "x": 11,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Latency)Int-aws.applicationelb.target_response_time.p95",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.target_response_time.p95{$aws_account,$Environment,$Project,$Region}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "2"
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 22,
+      "x": 27,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(unhealthy)Int ALB Hosts-Avg_aws.applicationelb.un_healthy_host_count",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.un_healthy_host_count{$aws_account,$Environment,$Project,$Region}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_red",
+                "value": "",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">="
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 22,
+      "x": 11,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Traffic)Int-aws.applicationelb.request_count",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.request_count{$aws_account,$Environment,$Project,$Region}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_red",
+                "value": "1000",
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 16,
+      "x": 27,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Traffic)Int-aws.applicationelb.request_count",
+      "height": 10,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.request_count{$aws_account,$Environment,$Project,$Region}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 16,
+      "x": 41,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Latency)Int-aws.applicationelb.target_response_time.p95",
+      "height": 10,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.target_response_time.p95{$aws_account,$Environment,$Project,$Region}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 16,
+      "x": 57,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(5xx Errors)aws.applicationelb.httpcode_target_5xx",
+      "height": 11,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.httpcode_elb_5xx{$aws_account,$Environment,$Availabilty_zone,$Project}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 29,
+      "x": 75,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(4xx)aws.applicationelb.httpcode_elb_4xx",
+      "height": 11,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.httpcode_elb_4xx{$aws_account,$Environment,$Availabilty_zone,$Project}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 29,
+      "x": 59,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/amazon_rds.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 12,
+      "y": 90,
+      "x": 0,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/SNS.JPG",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 10,
+      "y": 90,
+      "x": 46,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/amazon_sqs.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 12,
+      "y": 90,
+      "x": 67,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/NA.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 10,
+      "y": 90,
+      "x": 13,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/NA.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 10,
+      "y": 90,
+      "x": 56,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/NA.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 10,
+      "y": 90,
+      "x": 79,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/amazon_elasticache.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 11,
+      "y": 90,
+      "x": 24,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 290446,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/NA.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 10,
+      "y": 90,
+      "x": 35,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Healthy)NLB Hosts",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.networkelb.healthy_host_count{$aws_account,$Environment,$Project,$Region}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "1",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "10",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": "<="
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 43,
+      "x": 79,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Unhealthy)NLB Hosts",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.networkelb.un_healthy_host_count{$aws_account,$Environment,$Project,$Region}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": "<="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 50,
+      "x": 79,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Healthy)-ALBHosts",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.healthy_host_count{$aws_account,$Environment,$Project,$Region}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "1",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_red",
+                "value": "0",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 3,
+      "x": 11,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 290446,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "(Unhealthy)-ALBHosts",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.un_healthy_host_count{$aws_account,$Environment,$Project,$Region}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_red",
+                "value": "1",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": "<="
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 9,
+      "x": 11,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 303583,
+  "title_edited": false,
+  "isShared": false
+}
