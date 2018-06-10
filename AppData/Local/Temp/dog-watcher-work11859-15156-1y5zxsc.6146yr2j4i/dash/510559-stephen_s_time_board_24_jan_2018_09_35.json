@@ -1,0 +1,113 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:tr.osr.buildtimes{host:trta.osr.dashboardbox} by {tr.osr.build}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": [
+                {
+                  "palette": "white_on_green",
+                  "comparator": ">",
+                  "value": null
+                }
+              ]
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OSR Build Times (minutes)"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(avg:tr.osr.buildtimes{host:trta.osr.dashboardbox,buildstatus:success} by {tr.osr.build}, 50, 'mean', 'desc')",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Avg of tr.osr.buildtimes over host:trta.osr.dashboardbox,buildstatus:success ..."
+      },
+      {
+        "definition": {
+          "viz": "heatmap",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:tr.osr.buildtimes{host:trta.osr.dashboardbox}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of tr.osr.buildtimes over host:trta.osr.dashboardbox"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:tr.osr.buildtimes{host:trta.osr.dashboardbox}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "events": [
+            {
+              "q": "Build poll times ",
+              "tags_execution": "and"
+            }
+          ]
+        },
+        "title": "Avg of tr.osr.buildtimes over host:trta.osr.dashboardbox"
+      }
+    ],
+    "description": "created by stephen.fletcher@thomsonreuters.com",
+    "title": "Stephen's TimeBoard 24 Jan 2018 09:35",
+    "created": "2018-01-24T09:35:34.828699+00:00",
+    "id": 510559,
+    "created_by": {
+      "disabled": false,
+      "handle": "stephen.fletcher@thomsonreuters.com",
+      "name": "Stephen Fletcher",
+      "is_admin": false,
+      "role": "Manager",
+      "access_role": "st",
+      "verified": true,
+      "email": "stephen.fletcher@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/67de4efa01fd807a6459f68caee2d089?s=48&d=retro"
+    },
+    "modified": "2018-01-30T16:07:57.838331+00:00"
+  },
+  "url": "/dash/510559/stephens-timeboard-24-jan-2018-0935",
+  "resource": "/api/v1/dash/510559"
+}

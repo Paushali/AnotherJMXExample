@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by paushali.kundu@thomsonreuters.com",
+    "title": "Paushali's TimeBoard 14 Mar 2018 13:10",
+    "created": "2018-03-14T18:10:03.230462+00:00",
+    "id": 670801,
+    "created_by": {
+      "disabled": false,
+      "handle": "paushali.kundu@thomsonreuters.com",
+      "name": "Paushali Kundu",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "Paushali.Kundu@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/08691de537af484cb2d08ab926875ca3?s=48&d=retro"
+    },
+    "modified": "2018-03-14T18:10:03.230485+00:00"
+  },
+  "url": "/dash/670801/paushalis-timeboard-14-mar-2018-1310",
+  "resource": "/api/v1/dash/670801"
+}

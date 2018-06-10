@@ -1,0 +1,63 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ngwf.dev.workflow_instanceservice.api.v1.workflows.BasicSearch.avg{dev}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of ngwf.dev.workflow_instanceservice.api.v1.workflows.BasicSearch.avg ove..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:ngwf.dev.workflow_instanceservice.api.v1.workflows.BasicSearch_hits{dev} by {host}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Sum of ngwf.dev.workflow_instanceservice.api.v1.workflows.BasicSearch_hits ov..."
+      }
+    ],
+    "description": "created by siddhi.bhakta@thomsonreuters.com",
+    "title": "siddhi.bhakta's TimeBoard 8 Jan 2018 14:13",
+    "created": "2018-01-08T20:13:28.565408+00:00",
+    "id": 449903,
+    "created_by": {
+      "disabled": false,
+      "handle": "siddhi.bhakta@thomsonreuters.com",
+      "name": "Siddhi Bhakta",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Siddhi.Bhakta@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/2cf5f40a0664aac7626ab0e1e8fb962d?s=48&d=retro"
+    },
+    "modified": "2018-01-08T20:17:48.149119+00:00"
+  },
+  "url": "/dash/449903/siddhibhaktas-timeboard-8-jan-2018-1413",
+  "resource": "/api/v1/dash/449903"
+}

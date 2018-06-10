@@ -1,0 +1,96 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "system.proc.queue_length{host:C219HQNCWTCWA}"
+            }
+          ]
+        },
+        "title": "Process Queue Length"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "system.io.avg_q_sz{host:C219HQNCWTCWA}"
+            }
+          ]
+        },
+        "title": "Disk Queue Length"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "system.cpu.idle{host:C219HQNCWTCWA}, system.cpu.system{host:C219HQNCWTCWA}, system.cpu.iowait{host:C219HQNCWTCWA}, system.cpu.user{host:C219HQNCWTCWA}, system.cpu.stolen{host:C219HQNCWTCWA}, system.cpu.guest{host:C219HQNCWTCWA}"
+            }
+          ]
+        },
+        "title": "CPU usage (%)"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "sum:system.mem.usable{host:C219HQNCWTCWA}, sum:system.mem.total{host:C219HQNCWTCWA} - sum:system.mem.usable{host:C219HQNCWTCWA}"
+            }
+          ]
+        },
+        "title": "Memory breakdown"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "sum:system.net.bytes_rcvd{host:C219HQNCWTCWA}"
+            },
+            {
+              "q": "0 - sum:system.net.bytes_sent{host:C219HQNCWTCWA}"
+            }
+          ]
+        },
+        "title": "Network traffic (bytes per sec)"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "sum:system.disk.used{host:C219HQNCWTCWA}by{device}"
+            }
+          ]
+        },
+        "title": "Disk used (by device)"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "*",
+        "prefix": null,
+        "name": "var"
+      }
+    ],
+    "description": "",
+    "title": "Concert QA",
+    "created": "2017-08-24T11:48:08.026764+00:00",
+    "id": 347080,
+    "created_by": {
+      "disabled": true,
+      "handle": "shashank.polasavenkata@thomsonreuters.com",
+      "name": null,
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "shashank.polasavenkata@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/e2ae941627b3221bea027af688051139?s=48&d=retro"
+    },
+    "modified": "2017-09-07T10:45:05.913481+00:00"
+  },
+  "url": "/dash/347080/concert-qa",
+  "resource": "/api/v1/dash/347080"
+}

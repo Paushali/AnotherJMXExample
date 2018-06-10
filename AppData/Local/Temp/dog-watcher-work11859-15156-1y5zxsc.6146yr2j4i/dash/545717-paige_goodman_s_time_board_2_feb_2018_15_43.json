@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by paige.goodman@thomsonreuters.com",
+    "title": "paige.goodman's TimeBoard 2 Feb 2018 15:43",
+    "created": "2018-02-02T21:43:12.489974+00:00",
+    "id": 545717,
+    "created_by": {
+      "disabled": false,
+      "handle": "paige.goodman@thomsonreuters.com",
+      "name": null,
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "paige.goodman@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/4671314f6562a17aea1b9b84d8d34157?s=48&d=retro"
+    },
+    "modified": "2018-02-02T21:43:12.490004+00:00"
+  },
+  "url": "/dash/545717/paigegoodmans-timeboard-2-feb-2018-1543",
+  "resource": "/api/v1/dash/545717"
+}

@@ -1,0 +1,61 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "query_value",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:haproxy.backend.uptime{*}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:haproxy.backend.session.rate{*}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true,
+          "events": [
+            {
+              "q": "haproxy ",
+              "tags_execution": "and"
+            }
+          ]
+        },
+        "title": "haproxy.backend.uptime, haproxy.backend.session.rate"
+      }
+    ],
+    "description": "created by karthikeyan.rajamani@thomsonreuters.com",
+    "title": "karthikeyan.rajamani's TimeBoard 24 Jan 2018 07:55",
+    "created": "2018-01-24T13:55:00.913857+00:00",
+    "id": 510805,
+    "created_by": {
+      "disabled": false,
+      "handle": "karthikeyan.rajamani@thomsonreuters.com",
+      "name": "Karthikeyan Rajamani",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "Karthikeyan.Rajamani@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/bae48acc0cdb1247103062bff0a91bca?s=48&d=retro"
+    },
+    "modified": "2018-01-24T13:58:39.407843+00:00"
+  },
+  "url": "/dash/510805/karthikeyanrajamanis-timeboard-24-jan-2018-0755",
+  "resource": "/api/v1/dash/510805"
+}

@@ -1,0 +1,411 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "q": "avg:system.cpu.user{host:c944eqtngwfwb}, avg:system.cpu.system{host:c944eqtngwfwb}+avg:system.cpu.iowait{host:c944eqtngwfwb}+avg:system.cpu.user{host:c944eqtngwfwb}+avg:system.cpu.stolen{host:c944eqtngwfwb}+avg:system.cpu.guest{host:c944eqtngwfwb}",
+              "type": "line",
+              "metadata": {
+                "avg:system.cpu.system{host:c944eqtngwfwb}+avg:system.cpu.iowait{host:c944eqtngwfwb}+avg:system.cpu.user{host:c944eqtngwfwb}+avg:system.cpu.stolen{host:c944eqtngwfwb}+avg:system.cpu.guest{host:c944eqtngwfwb}": {
+                  "alias": "Total CPU Usage"
+                }
+              }
+            },
+            {
+              "q": "avg:system.cpu.idle{host:c944eqtngwfwb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CPU usage (%) - host:c944eqtngwfwb"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "q": "sum:system.mem.usable{host:c944eqtngwfwb}, sum:system.mem.used{host:c944eqtngwfwb}",
+              "type": "line",
+              "metadata": {
+                "sum:system.mem.used{host:c944eqtngwfwb}": {
+                  "alias": "Used Memory"
+                },
+                "sum:system.mem.usable{host:c944eqtngwfwb}": {
+                  "alias": "Usable Memory"
+                }
+              }
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory breakdown - host:c944eqtngwfwb"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.cpu.user{host:c854fajngwfwb}, avg:system.cpu.system{host:c854fajngwfwb}+avg:system.cpu.iowait{host:c854fajngwfwb}+avg:system.cpu.user{host:c854fajngwfwb}+avg:system.cpu.stolen{host:c854fajngwfwb}+avg:system.cpu.guest{host:c854fajngwfwb}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:system.cpu.idle{host:c854fajngwfwb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CPU usage (%) - host:c854fajngwfwb"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "q": "sum:system.mem.usable{host:c854fajngwfwb}, sum:system.mem.used{host:c854fajngwfwb}",
+              "type": "line",
+              "metadata": {
+                "sum:system.mem.usable{host:c854fajngwfwb}": {
+                  "alias": "Usable Memory"
+                },
+                "sum:system.mem.used{host:c854fajngwfwb}": {
+                  "alias": "Used Memory"
+                }
+              }
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory breakdown - host:c854fajngwfwb"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "q": "avg:system.cpu.user{host:c957hbfngwfwb}, avg:system.cpu.system{host:c957hbfngwfwb}+avg:system.cpu.iowait{host:c957hbfngwfwb}+avg:system.cpu.user{host:c957hbfngwfwb}+avg:system.cpu.stolen{host:c957hbfngwfwb}+avg:system.cpu.guest{host:c957hbfngwfwb}",
+              "type": "line",
+              "metadata": {
+                "avg:system.cpu.system{host:c957hbfngwfwb}+avg:system.cpu.iowait{host:c957hbfngwfwb}+avg:system.cpu.user{host:c957hbfngwfwb}+avg:system.cpu.stolen{host:c957hbfngwfwb}+avg:system.cpu.guest{host:c957hbfngwfwb}": {
+                  "alias": "Total CPU Usage"
+                }
+              }
+            },
+            {
+              "q": "avg:system.cpu.idle{host:c957hbfngwfwb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CPU usage (%) - host:c957hbfngwfwb"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "q": "sum:system.mem.usable{host:c957hbfngwfwb}, sum:system.mem.used{host:c957hbfngwfwb}",
+              "type": "line",
+              "metadata": {
+                "sum:system.mem.used{host:c957hbfngwfwb}": {
+                  "alias": "Used Memory"
+                },
+                "sum:system.mem.usable{host:c957hbfngwfwb}": {
+                  "alias": "Usable Memory"
+                }
+              }
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory breakdown - host:c957hbfngwfwb"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "q": "avg:system.cpu.user{host:c988sfengwfwb}, avg:system.cpu.system{host:c988sfengwfwb}+avg:system.cpu.iowait{host:c988sfengwfwb}+avg:system.cpu.user{host:c988sfengwfwb}+avg:system.cpu.stolen{host:c988sfengwfwb}+avg:system.cpu.guest{host:c988sfengwfwb}",
+              "type": "line",
+              "metadata": {
+                "avg:system.cpu.system{host:c988sfengwfwb}+avg:system.cpu.iowait{host:c988sfengwfwb}+avg:system.cpu.user{host:c988sfengwfwb}+avg:system.cpu.stolen{host:c988sfengwfwb}+avg:system.cpu.guest{host:c988sfengwfwb}": {
+                  "alias": "Total CPU Usage"
+                }
+              }
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CPU usage (%) - host:c988sfengwfwb"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "q": "sum:system.mem.usable{host:c988sfengwfwb}, sum:system.mem.used{host:c988sfengwfwb}",
+              "type": "line",
+              "metadata": {
+                "sum:system.mem.used{host:c988sfengwfwb}": {
+                  "alias": "Used Memory"
+                },
+                "sum:system.mem.usable{host:c988sfengwfwb}": {
+                  "alias": "Usable Memory"
+                }
+              }
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory breakdown - host:c988sfengwfwb"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.proc.queue_length{host:c854fajngwfwb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:system.proc.queue_length{host:c944eqtngwfwb}",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "avg:system.proc.queue_length{host:c957hbfngwfwb}",
+              "style": {
+                "width": "normal",
+                "palette": "orange",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "avg:system.proc.queue_length{host:c988sfengwfwb}",
+              "style": {
+                "width": "normal",
+                "palette": "grey",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Process Queue Length"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.io.avg_q_sz{host:c944eqtngwfwb}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:system.io.avg_q_sz{host:c944eqtngwfwb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:system.io.avg_q_sz{host:c957hbfngwfwb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:system.io.avg_q_sz{host:c988sfengwfwb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Disk Queue Length - host:c944eqtngwfwb"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.net.bytes_rcvd{host:c944eqtngwfwb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "0-sum:system.net.bytes_sent{host:c944eqtngwfwb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Network traffic (bytes per sec) - host:c944eqtngwfwb"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.disk.used{host:c944eqtngwfwb} by {device}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Disk used (by device) - host:c944eqtngwfwb"
+      }
+    ],
+    "description": "Top host-level metrics for EMEA DCIS Servers. ",
+    "title": "NGWF EMEA Host Level Metrics",
+    "created": "2018-03-12T05:01:50.328219+00:00",
+    "id": 667364,
+    "created_by": {
+      "disabled": false,
+      "handle": "siddhi.bhakta@thomsonreuters.com",
+      "name": "Siddhi Bhakta",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Siddhi.Bhakta@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/2cf5f40a0664aac7626ab0e1e8fb962d?s=48&d=retro"
+    },
+    "modified": "2018-03-12T18:24:51.692673+00:00"
+  },
+  "url": "/dash/667364/ngwf-emea-host-level-metrics",
+  "resource": "/api/v1/dash/667364"
+}

@@ -1,0 +1,448 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.IsUserHasActiveLicense.Post.avg{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Is user has active licence_ Average Responese time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.IsUserHasActiveLicense.Post.avg{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Is user has active licence_ Average Responese time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.IsUserHasActiveLicense.Post.95percentile{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Is user has active licence_ 95 Percentile Response time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.TRTA.Concert.Domain.RepositoryInterfaces.IProductRepositoryUserHasActiveLicenseByProductId.95percentile{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "IS User has Active Licence_ 95th Percentile Response time (DB)"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.GetAppPermissionForUserAllClientsByPermissionIdentifiers.Post.avg{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GAPUserByAllClientsPID_ Average Response time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.GetAppPermissionForUserAllClientsByPermissionIdentifiers.Post.95percentile{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GAPUserByAllClientsPID_  95 Percentile Response time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.GetContainerIdsByDateRangeForUser.Post.avg{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetContainerIdsByDateRangeForUser-Average Response time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.GetContainerIdsByDateRangeForUser.Post.95percentile{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetContainerIdsByDateRangeForUser-95th Perrcentile Response time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.GetProductResource.Post.avg{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetProductResource-Average Response time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.GetProductResource.Post.95percentile{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetProductResource-95 percentile Response time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.GetAppPermissionForUserByContainers.Post.avg{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Get AppPermissions for UBC_ Average Responese time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.GetAppPermissionForUserByContainers.Post.95percentile{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetApp Permissions for UBC_95 Percentile Response time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.TRTA.Concert.Repository.Repositories.ISearchUserPermissionSdkRepositorySearchContainers.95percentile{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetAppPermissionForUBC_95 Percentile Response time (DB)"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.GetAppPermissionForUserAll.Post.avg{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetAppPermissionForUserAll_ Average Response time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.GetAppPermissionForUserAll.Post.95percentile{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetAppPermissionForUserAll_ 95th Percentile Response time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.GetAppPermissionForUserByPermissionIdentifiers.Post.95percentile{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetAppPermissionForUBPIdentifier_ 95Percentile Response time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.GetAppPermissionForUserByPermissionIdentifiers.Post.avg{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetAppPermissionForUBPIdentifier_ Average response time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.GetAppPermissionForUserByContainers.Post.count{host:C688EKGCWTWEB}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GET APP Permissions for User By Containers_ Request Count"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.IsUserHasActiveLicense.Post.count{host:C688EKGCWTWEB}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Is User has active Licence_ Request Count"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.GetAppPermissionForUserByPermissionIdentifiers.Post.count{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetAppPermissionForUserByPermissionIdentifiers_ Request Count"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.GetProductResource.Post.count{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetProductResource_Request Count"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:user_admin_service.SAT.POST.api.sdk.GetAppPermissionForUsersAll.v1.GetAppPermissionForUsersAll.95percentile{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetAppPermissionForUsersAll _V1- Request count"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.GetContainerIdsByDateRangeForUser.Post.count{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetContainerIdsByDateRangeForUser_ Request Count"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.GetAppPermissionForUserAllClientsByPermissionIdentifiers.Post.count{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetAppPermissionForUserAllClientsByPermissionIdentifiers_ Request Count"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.IsUserHasActiveLicense.Post.count{host:C688EKGCWTWEB}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Is User has active Licence_ Request Count"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:user_admin_service.SAT.TRTA.Concert.Repository.Repositories.ISearchUserPermissionSdkRepositorySearchContainers_error{host:C688EKGCWTWEB}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Get App permission for UBC - Errors"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "*",
+        "prefix": null,
+        "name": "var"
+      }
+    ],
+    "description": "For Captruing the details on the concert SAT Server ",
+    "title": "Concert SAT_SDK_P2_Services",
+    "created": "2017-10-16T10:45:47.655856+00:00",
+    "id": 379894,
+    "created_by": {
+      "disabled": false,
+      "handle": "atul.srivastava@thomsonreuters.com",
+      "name": "Atul",
+      "is_admin": false,
+      "role": "Assistant manager",
+      "access_role": "st",
+      "verified": true,
+      "email": "atul.srivastava@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/4aae1085f041f16a93849d8d6dc4d3df?s=48&d=retro"
+    },
+    "modified": "2017-10-16T11:03:59.316366+00:00"
+  },
+  "url": "/dash/379894/concert-satsdkp2services",
+  "resource": "/api/v1/dash/379894"
+}

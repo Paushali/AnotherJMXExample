@@ -1,0 +1,53 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ngwf.qa.workflow_definitionservice.api.v1.definition.GetDefinitionsBySsoProductId.ssoProductId.avg{qa}",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of ngwf.qa.workflow_definitionservice.api.v1.definition.GetDefinitionsByS..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:ngwf.qa.workflow_definitionservice.api.status.v1.statuscheck_httpStatus_OK{qa}.as_count()",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Sum of ngwf.qa.workflow_definitionservice.api.status.v1.statuscheck_httpStatu..."
+      }
+    ],
+    "description": "created by siddhi.bhakta@thomsonreuters.com",
+    "title": "siddhi.bhakta's TimeBoard 13 Nov 2017 16:33",
+    "created": "2017-11-13T22:33:41.134595+00:00",
+    "id": 398860,
+    "created_by": {
+      "disabled": false,
+      "handle": "siddhi.bhakta@thomsonreuters.com",
+      "name": "Siddhi Bhakta",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Siddhi.Bhakta@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/2cf5f40a0664aac7626ab0e1e8fb962d?s=48&d=retro"
+    },
+    "modified": "2017-11-13T23:15:41.507272+00:00"
+  },
+  "url": "/dash/398860/siddhibhaktas-timeboard-13-nov-2017-1633",
+  "resource": "/api/v1/dash/398860"
+}

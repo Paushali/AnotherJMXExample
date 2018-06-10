@@ -1,0 +1,44 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "forecast(avg:system.load.1{*}, 'linear', 3)",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Test Forecast DD-Support"
+      }
+    ],
+    "description": "created by richard.lafaver@tr.com",
+    "title": "OTP Forecasts",
+    "created": "2018-02-09T16:37:21.647615+00:00",
+    "id": 564600,
+    "created_by": {
+      "disabled": false,
+      "handle": "richard.lafaver@tr.com",
+      "name": null,
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "richard.lafaver@tr.com",
+      "icon": "https://secure.gravatar.com/avatar/e0316e313187d5932efb447d3c08173d?s=48&d=retro"
+    },
+    "modified": "2018-02-09T16:45:08.133895+00:00"
+  },
+  "url": "/dash/564600/otp-forecasts",
+  "resource": "/api/v1/dash/564600"
+}
