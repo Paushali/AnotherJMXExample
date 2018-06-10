@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by rajesh.cheedalla@thomsonreuters.com",
+    "title": "Rajesh's TimeBoard 9 Mar 2018 10:58",
+    "created": "2018-03-09T16:58:46.298271+00:00",
+    "id": 641039,
+    "created_by": {
+      "disabled": false,
+      "handle": "rajesh.cheedalla@thomsonreuters.com",
+      "name": "Rajesh Cheedalla",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "rajesh.cheedalla@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/965b738d5c4d76a0ab0af3f6c198244a?s=48&d=retro"
+    },
+    "modified": "2018-03-09T16:58:46.298285+00:00"
+  },
+  "url": "/dash/641039/rajeshs-timeboard-9-mar-2018-1058",
+  "resource": "/api/v1/dash/641039"
+}

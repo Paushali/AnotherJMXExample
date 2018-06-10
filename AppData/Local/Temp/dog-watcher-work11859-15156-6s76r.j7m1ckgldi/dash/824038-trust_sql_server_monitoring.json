@@ -1,0 +1,98 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:sqlserver.buffer.cache_hit_ratio{$product,$environment} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of sqlserver.buffer.cache_hit_ratio over $product,$environment by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:sqlserver.stats.lock_waits{$environment,$product}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of sqlserver.stats.lock_waits over $environment,$product"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:sqlserver.stats.procs_blocked{$environment,$product} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of sqlserver.stats.procs_blocked"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "*",
+        "prefix": "tr_environment-type",
+        "name": "environment"
+      },
+      {
+        "default": "*",
+        "prefix": "tr_product",
+        "name": "product"
+      }
+    ],
+    "description": "created by ravi.kunapareddy@thomsonreuters.com",
+    "title": "Trust SQL Server Monitoring",
+    "created": "2018-05-30T20:53:05.998907+00:00",
+    "id": 824038,
+    "created_by": {
+      "disabled": false,
+      "handle": "ravi.kunapareddy@thomsonreuters.com",
+      "name": "Sita Venkata Ravi Kunapareddy",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "ravi.kunapareddy@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/2d9b8d5b1e6fc747b0d703f21ccdcd85?s=48&d=retro"
+    },
+    "modified": "2018-05-31T15:29:50.389761+00:00"
+  },
+  "url": "/dash/824038/trust-sql-server-monitoring",
+  "resource": "/api/v1/dash/824038"
+}

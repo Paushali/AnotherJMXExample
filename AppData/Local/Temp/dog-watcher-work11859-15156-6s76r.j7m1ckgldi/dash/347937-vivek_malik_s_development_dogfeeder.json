@@ -1,0 +1,161 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.http_requestsdev{statuscode:all,service:www.onesourcetax.com,window:1m}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.http_requestsdev{service:www.onesourcetax.com,window:1m,statuscode:2xx}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:f5.http_requestsdev{service:www.onesourcetax.com,window:1m,statuscode:4xx}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "www.onesourcetax.com HTTP Requests"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.response_times{service:www.onesourcetax.com} by {window}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "area"
+            },
+            {
+              "q": "avg:f5.response_times{service:www.onesourcetax.com} by {percentile}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "www.onesourcetax.com Responsetime"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.unique_sessions{service:www.onesourcetax.com,window:1m}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false
+          }
+        },
+        "title": "www.onesourcetax.com Unique Sessions (1m)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.unique_sessionsdev{service:www.onesourcetax.com,window:1m}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of f5.response_timesdev over percentile:90"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.response_timesdev{service:oit.otw,percentile:90,window:1m}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.response_timestest{service:oit.otw,window:1m,percentile:90}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "f5.response_timesdev, f5.response_timestest"
+      }
+    ],
+    "description": "created by vivek.malik@thomsonreuters.com",
+    "title": "vivek malik's development Dogfeeder",
+    "created": "2017-08-25T18:03:14.372450+00:00",
+    "id": 347937,
+    "created_by": {
+      "disabled": true,
+      "handle": "vivek.malik@thomsonreuters.com",
+      "name": null,
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "vivek.malik@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/2b813d6635a072bfe09dcf3f3433a191?s=48&d=retro"
+    },
+    "modified": "2018-01-24T09:14:43.928578+00:00"
+  },
+  "url": "/dash/347937/vivek-maliks-development-dogfeeder",
+  "resource": "/api/v1/dash/347937"
+}

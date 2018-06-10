@@ -1,0 +1,118 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:haproxy.frontend.session.rate{host:i-051d3d25cb552e9ae}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "haproxy.frontend.session.rate"
+      },
+      {
+        "definition": {
+          "viz": "query_value",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:haproxy.frontend.session.rate{host:i-051d3d25cb552e9ae}",
+              "aggregator": "last",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of haproxy.frontend.session.rate over host:i-051d3d25cb552e9ae"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:haproxy.frontend.response.2xx{host:i-051d3d25cb552e9ae}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:haproxy.frontend.response.4xx{host:i-051d3d25cb552e9ae}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:haproxy.backend.response.5xx{host:i-051d3d25cb552e9ae}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "haproxy.frontend.response.2xx, haproxy.frontend.response.4xx, haproxy.backend..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:haproxy.backend.bytes.out_rate{host:i-051d3d25cb552e9ae,backend:backend}"
+            }
+          ],
+          "events": []
+        },
+        "title": "haproxy.backend.bytes.out_rate with backend:backend"
+      }
+    ],
+    "description": "created by paushali.kundu@thomsonreuters.com",
+    "title": "VictorOps-Haproxy Dev Dashboard",
+    "created": "2018-01-23T21:39:52.082122+00:00",
+    "id": 510056,
+    "created_by": {
+      "disabled": false,
+      "handle": "paushali.kundu@thomsonreuters.com",
+      "name": "Paushali Kundu",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "Paushali.Kundu@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/08691de537af484cb2d08ab926875ca3?s=48&d=retro"
+    },
+    "modified": "2018-01-29T16:09:15.797650+00:00"
+  },
+  "url": "/dash/510056/victorops-haproxy-dev-dashboard",
+  "resource": "/api/v1/dash/510056"
+}

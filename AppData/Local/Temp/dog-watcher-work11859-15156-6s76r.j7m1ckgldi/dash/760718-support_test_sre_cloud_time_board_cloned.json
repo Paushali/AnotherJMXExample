@@ -1,0 +1,841 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.elb.latency{$AWS_Account,$Region,$Enviroment,$Application}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:aws.elb.latency.p95{$AWS_Account,$Region,$Enviroment,$Application}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Latency - ELB"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "autoscale": true,
+          "custom_unit": "days",
+          "precision": "0",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.ec2.instance_age{$AWS_Account,$Region,$Enviroment,$Application} by {name}/86400",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": [
+                {
+                  "palette": "red_on_white",
+                  "comparator": ">",
+                  "value": 31
+                }
+              ]
+            }
+          ]
+        },
+        "title": "instance age timeseries test"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.elb.request_count{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ELB Traffic -RequestCount"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_target_5xx{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:aws.elb.httpcode_backend_4xx{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Errors -ELB HTTP 4XX-5XX"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.elb.httpcode_elb_5xx{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:aws.elb.httpcode_elb_4xx{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Error-ELB 4XX 5XX"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(avg:aws.elb.un_healthy_host_count{$AWS_Account,$Region,$Enviroment,$Application} by {name}, 10, 'mean', 'desc')",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Healthy host count"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(avg:aws.elb.healthy_host_count{$AWS_Account,$Region,$Enviroment,$Application} by {name}, 10, 'mean', 'desc')",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Unhealthy host count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.applicationelb.target_response_time.p95{$AWS_Account,$Region,$Enviroment,$Application}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Average Latency-ALB"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:aws.applicationelb.request_count{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ALB Traffic-RequestCount"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.applicationelb.httpcode_target_4xx{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:aws.applicationelb.httpcode_target_5xx{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Errors ALB 4XX/5XX"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.applicationelb.httpcode_elb_5xx{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:aws.applicationelb.httpcode_elb_4xx{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Errors -HTTP 4XX/5XX"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.applicationelb.healthy_host_count{$AWS_Account,$Region,$Enviroment,$Application}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ALB healthy host count"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(avg:aws.applicationelb.un_healthy_host_count{$AWS_Account,$Region,$Enviroment,$Application} by {name}, 10, 'mean', 'desc')",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ALB Unhealthy host count"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "autoscale": true,
+          "custom_unit": "days",
+          "precision": "0",
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(avg:aws.ec2.instance_age{$AWS_Account,$Region,$Enviroment,$Application} by {name}, 10, 'mean', 'desc')",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "conditional_formats": [
+                {
+                  "palette": "red_on_white",
+                  "value": 31,
+                  "comparator": ">"
+                }
+              ]
+            }
+          ]
+        },
+        "title": "AWS Instance age"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.ec2.disk_read_ops{$AWS_Account,$Region,$Enviroment,$Application}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:aws.ec2.disk_write_ops{$AWS_Account,$Region,$Enviroment,$Application}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "EC2 Read-Write Ops"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.ec2.network_out{$AWS_Account,$Region,$Enviroment,$Application}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:aws.ec2.network_in{$AWS_Account,$Region,$Enviroment,$Application}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Traffic-EC2 Network In/Out"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(avg:aws.ec2.status_check_failed_instance{$AWS_Account,$Region,$Enviroment,$Application} by {name}, 10, 'mean', 'desc')",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Errors- Health check Failed"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.ec2.status_check_failed_system{$AWS_Account,$Region,$Enviroment,$Application}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Errors- EC2 System Failed"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(avg:aws.ec2.cpuutilization{$AWS_Account,$Region,$Enviroment,$Application} by {name}, 10, 'mean', 'desc')",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Saturation-EC2 CPU utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.read_latency{$AWS_Account,$Region,$Enviroment,$Application}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:aws.rds.write_latency{$AWS_Account,$Region,$Enviroment,$Application}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:aws.rds.update_latency{$AWS_Account,$Region,$Enviroment,$Application}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:aws.rds.insert_latency{$AWS_Account,$Region,$Enviroment,$Application}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:aws.rds.commit_latency{$Enviroment,$Application}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Latency- RDS"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.read_iops{$Enviroment,$Application}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:aws.rds.write_iops{$Enviroment,$Application}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "RDS-IOPS Read/Write"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.login_failures{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Errors- RDS login Failures"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.database_connections{$AWS_Account,$Region,$Enviroment,$Application}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "saturation-RDS connections"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.free_storage_space{$AWS_Account,$Region,$Enviroment,$Application}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:aws.rds.total_storage_space{$AWS_Account,$Region,$Enviroment,$Application}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Saturation- RDS Free Storage Space/Total Space"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.freeable_memory{$AWS_Account,$Region,$Enviroment,$Application}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Saturation- RDS Free Memory/Total Space"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.elasticache.network_bytes_out{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:aws.elasticache.network_bytes_in{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Elastic Cache Network Bytes In/Out"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.elasticache.cpuutilization{$AWS_Account,$Region,$Enviroment,$Application}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Elastic Cache CPU Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.elasticache.node_count{$AWS_Account,$Region,$Enviroment,$Application}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:aws.elasticache.cluster_count{$AWS_Account,$Region,$Enviroment,$Application}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Elastic Cache Node/Cluster Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.elasticache.freeable_memory{$AWS_Account,$Region,$Enviroment,$Application}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Elastic Cache Freeable memory"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.elasticache.cache_hits{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:aws.elasticache.cache_misses{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Elastic Cache Hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.elasticache.new_connections{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:aws.elasticache.curr_connections{$AWS_Account,$Region,$Enviroment,$Application}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Elastic Cache connections"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "*",
+        "prefix": "account",
+        "name": "AWS_Account"
+      },
+      {
+        "default": "*",
+        "prefix": "region",
+        "name": "Region"
+      },
+      {
+        "default": "*",
+        "prefix": "techopsenvironment",
+        "name": "Enviroment"
+      },
+      {
+        "default": "*",
+        "prefix": "techopsproject",
+        "name": "Application"
+      }
+    ],
+    "description": "",
+    "title": "SUPPORT TEST SRE Cloud TimeBoard (cloned)",
+    "created": "2018-04-04T21:25:03.000123+00:00",
+    "id": 760718,
+    "created_by": {
+      "disabled": false,
+      "handle": "support-trtaonesourcepr",
+      "name": "Datadog Support",
+      "is_admin": true,
+      "role": "Help is on the way",
+      "access_role": "adm",
+      "verified": true,
+      "email": "support-user-prod@datadoghq.com",
+      "icon": "https://secure.gravatar.com/avatar/e6952b5f29fe2d996cf4e63f40db9e71?s=48&d=retro"
+    },
+    "modified": "2018-04-04T21:40:58.697822+00:00"
+  },
+  "url": "/dash/760718/support-test-sre-cloud-timeboard-cloned",
+  "resource": "/api/v1/dash/760718"
+}

@@ -1,0 +1,253 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{app:mastersaf,env:homolog,host:c092cpposbrwd,service:ecf/esocial/reinf}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Tomcat Portal WBS 2 - c092cpposbrwd - Used Memory"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{app:mastersaf,host:c133ypmosbrwd}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Tomcat Portal WBS 1 - c133ypmosbrwd - Used Memory"
+      },
+      {
+        "definition": {
+          "style": {
+            "fillMax": null,
+            "palette": "hostmap_blues",
+            "fillMin": null,
+            "paletteFlip": false
+          },
+          "group": [],
+          "notes": null,
+          "noMetricHosts": true,
+          "viz": "hostmap",
+          "scope": [
+            "app:mastersaf",
+            "env:homolog"
+          ],
+          "requests": [
+            {
+              "q": "avg:system.load.1{app:mastersaf,env:homolog} by {host}",
+              "type": "fill"
+            }
+          ],
+          "noGroupHosts": true
+        },
+        "title": "Avg of system.load.1 over app:mastersaf,env:homolog by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{app:mastersaf,env:homolog,host:c095ypmosbrmd}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ActiveMQ MSG 1 - c095ypmosbrmd - Used Memory"
+      },
+      {
+        "definition": {
+          "viz": "heatmap",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{app:mastersaf,env:homolog,host:c633gbmosbrmd}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Active MQ MSG 2 - c633gbmosbrmd - Used Memory"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(avg:system.load.1{app:mastersaf,env:homolog} by {host}, 10, 'mean', 'desc')",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Avg System Load"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:tomcat.threads.count{app:mastersaf,env:homolog,host:c092cpposbrwd}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:tomcat.threads.busy{app:mastersaf,env:homolog,host:c092cpposbrwd}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true,
+          "markers": [
+            {
+              "dim": "y",
+              "type": "warning dashed",
+              "val": 400,
+              "value": "y = 400",
+              "label": "Max Threads = 400"
+            }
+          ]
+        },
+        "title": "tomcat.threads.count, tomcat.threads.busy"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "autoscale": true,
+          "text_align": "center",
+          "custom_unit": "",
+          "precision": "0",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:jdbc.active.connection{app:mastersaf,env:homolog,host:c133ypmosbrwd}",
+              "aggregator": "last",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Active DB Connections - Tomcat Portal WBS 1"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:jdbc.active.connection{app:mastersaf,host:c092cpposbrwd}",
+              "aggregator": "last",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "precision": "0"
+        },
+        "title": "Active DB Connections - Tomcat Portal WBS 2"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(avg:datadog.agent.running{app:mastersaf,env:homolog} by {host}, 10, 'mean', 'desc')",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Datadog Agent Running"
+      }
+    ],
+    "description": "created by claudio.bento@thomsonreuters.com",
+    "title": "ECF_ESOCIAL_REINF_HOMOLOG",
+    "created": "2018-03-15T15:51:32.915750+00:00",
+    "id": 679737,
+    "created_by": {
+      "disabled": false,
+      "handle": "claudio.bento@thomsonreuters.com",
+      "name": "Claudio Bento",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "claudio.bento@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/cb6e1575122ceb2b6abb733a0a85ed74?s=48&d=retro"
+    },
+    "modified": "2018-03-20T19:35:09.791626+00:00"
+  },
+  "url": "/dash/679737/ecfesocialreinfhomolog",
+  "resource": "/api/v1/dash/679737"
+}

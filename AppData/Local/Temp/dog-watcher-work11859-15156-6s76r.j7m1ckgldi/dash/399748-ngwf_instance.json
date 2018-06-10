@@ -1,0 +1,719 @@
+{
+  "dash": {
+    "read_only": true,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.api.status.v1.statuscheck_hits{qa} by {host}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.api.status.v1.resourcecheck_hits{qa} by {host}.as_count()",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "StatusCheck/ResourceCheck hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.api.status.v1.statuscheck_httpStatus_OK{qa}",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.api.status.v1.resourcecheck_httpStatus_OK{qa}",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "StatusCheck/ResourceCheck httpSTatus ok"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.api.status.v1.statuscheck.avg{qa}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.api.status.v1.resourcecheck.avg{qa}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.api.status.v1.DatabaseCheck.avg{qa}",
+              "style": {
+                "width": "normal",
+                "palette": "purple",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "StatusCheck/ResourceCheck/DatabaseCheck avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.api.v1.workflows.Create_hits{qa}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Create hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.api.v1.workflows.Create_httpStatus_OK{qa} by {host}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.api.v1.workflows.Create_httpStatus_BadRequest{qa} by {host}.as_count()",
+              "style": {
+                "palette": "purple"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CreateInstance httpStatus OK/bad"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.api.v1.workflows.Create.avg{qa}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.pg.Create.avg{qa}",
+              "style": {
+                "width": "normal",
+                "palette": "purple",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Create avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.api.v1.workflows.Update_hits{qa} by {host}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Update_hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.api.v1.workflows.Update_httpStatus_OK{qa} by {host}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.api.v1.workflows.Update_httpStatus_BadRequest{qa} by {host}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Update_httpStatusOk/bad"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.api.v1.workflows.Update.avg{qa}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.pg.Update.avg{qa}",
+              "style": {
+                "width": "normal",
+                "palette": "purple",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Update avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.api.v1.workflows.SearchCount_hits{qa} by {host}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "SearchCount - hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.api.v1.workflows.SearchCount_httpStatus_OK{qa} by {host}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "SearchCount - httpStatus ok"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.api.v1.workflows.SearchCount.avg{qa}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "SearchCount - avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.api.v1.workflows.BasicSearch_hits{qa} by {host}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "BasicSearch - hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.api.v1.workflows.BasicSearch_httpStatus_OK{qa} by {host}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.api.v1.workflows.BasicSearch_httpStatus_BadRequest{qa} by {host}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "BasicSearch - httpstatus ok"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.api.v1.workflows.BasicSearch.avg{qa}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.pg.Search.avg{qa}",
+              "style": {
+                "width": "normal",
+                "palette": "purple",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "BasicSearch - avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.api.v1.workflows.Delete_hits{qa} by {host}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Delete - hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.api.v1.workflows.Delete_httpStatus_OK{qa} by {host}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Delete - http status OK"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.api.v1.workflows.Delete.avg{qa}",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.pg.Delete.avg{qa}",
+              "style": {
+                "palette": "purple"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Delete - avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.ConcertService.DoesUserHaveAdminAccess.avg{qa}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Concert - doesUserHaveAdminAccess - avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.WorkflowService.PerformCommonStuffAndGetConcertData.avg{qa}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "PerformCommonStuffAndGetConcertPermission"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.pg.KeepAlive.count{qa}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "keepAlive"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.pg.Delete.count{*}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.pg.Update.count{*}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.pg.Create.count{*}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.pg.KeepAlive.count{qa}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "purple",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.pg.GetMetaData.count{*}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.pg.Search.count{*}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "orange",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "sum:ngwf.qa.workflow_instanceservice.pg.GetWorkflowInstance.count{*}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "PGs"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.ExecuteRuleEngine.ExecuteRuleEngineForCreateInstance.avg{qa}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ExecuteRuleEngineForCreateInstance"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.ExecuteRuleEngine.ExecuteRuleEngineForUpdateInstance.avg{qa}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ExecuteRuleEngineForUpdateInstance"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.RepositoryMultiplexer.GetWorkflowInstance.avg{qa}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "repositoryMultiplex-getWFinstnace"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.pg.GetMetaData.avg{qa}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "getmetadata-avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.qa.workflow_instanceservice.RepositoryMultiplexer.Update.avg{qa}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "repositoryMultiplexer update - avg"
+      }
+    ],
+    "description": "created by tuyen.luan@thomsonreuters.com",
+    "title": "ngwf_instance",
+    "created": "2017-11-14T19:43:22.105091+00:00",
+    "id": 399748,
+    "created_by": {
+      "disabled": false,
+      "handle": "tuyen.luan@thomsonreuters.com",
+      "name": "Tuyen Luan",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "tuyen.luan@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/f259523d4eab1e8e7d97ccd45a25906b?s=48&d=retro"
+    },
+    "modified": "2017-12-22T18:05:07.208954+00:00"
+  },
+  "url": "/dash/399748/ngwfinstance",
+  "resource": "/api/v1/dash/399748"
+}

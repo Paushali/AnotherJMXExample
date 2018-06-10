@@ -1,0 +1,304 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.workflow_definitionservice.api.v1.rules.GetRulesByDefinition.workflowDefinitionId_hits{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetRules - hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.workflow_definitionservice.api.v1.rules.GetRulesByDefinition.workflowDefinitionId_httpStatus_OK{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetRules - httpStatusok"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.emea1.workflow_definitionservice.api.v1.rules.GetRulesByDefinition.workflowDefinitionId.avg{emea1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetRules - avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.workflow_rulesservice.api.v1.workflowInstance.CreateInstance_hits{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "rules-CreateInstance - hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.workflow_rulesservice.api.v1.workflowInstance.CreateInstance_httpStatus_OK{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "rules-CreateInstance - httpStatusOk"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.emea1.workflow_rulesservice.api.v1.workflowInstance.CreateInstance.avg{emea1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "rules-CreateInstance - avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.workflow_rulesservice.api.status.v1.statuscheck_hits{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:ngwf.emea1.workflow_rulesservice.api.status.v1.resourcecheck_hits{emea1}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "statusCheck/resourceCheck hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.workflow_rulesservice.api.status.v1.resourcecheck_hits{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:ngwf.emea1.workflow_rulesservice.api.status.v1.statuscheck_httpStatus_OK{emea1}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "purple",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "statusCheck/resourceCheck httpStatusOK"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.emea1.workflow_rulesservice.api.status.v1.statuscheck.avg{emea1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:ngwf.emea1.workflow_rulesservice.api.status.v1.resourcecheck.avg{emea1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "statusCheck/ResourceCheck - avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.workflow_rulesservice.api.v1.workflowInstance.UpdateInstance_hits{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "rules-UpdateInstance- hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.workflow_rulesservice.api.v1.workflowInstance.UpdateInstance_httpStatus_OK{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "rules-UpdateInstance- httpstatusOK"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.emea1.workflow_rulesservice.api.v1.workflowInstance.UpdateInstance.avg{emea1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "rules-UpdateInstance- avg"
+      }
+    ],
+    "description": "created by tuyen.luan@thomsonreuters.com (cloned) (cloned)",
+    "title": "ngwf_rules_EMEA",
+    "created": "2017-12-08T22:47:41.547047+00:00",
+    "id": 417787,
+    "created_by": {
+      "disabled": false,
+      "handle": "tuyen.luan@thomsonreuters.com",
+      "name": "Tuyen Luan",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "tuyen.luan@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/f259523d4eab1e8e7d97ccd45a25906b?s=48&d=retro"
+    },
+    "modified": "2017-12-08T22:56:02.809558+00:00"
+  },
+  "url": "/dash/417787/ngwfrulesemea",
+  "resource": "/api/v1/dash/417787"
+}

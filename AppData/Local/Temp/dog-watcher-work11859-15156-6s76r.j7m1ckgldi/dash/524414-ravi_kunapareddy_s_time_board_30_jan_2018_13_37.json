@@ -1,0 +1,60 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "toplist",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(avg:RK_DogstatsdDemo.users.unique{*}, 10, 'mean', 'desc')",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Avg of RK_DogstatsdDemo.users.unique over *"
+      },
+      {
+        "definition": {
+          "viz": "heatmap",
+          "requests": [
+            {
+              "q": "avg:RK_DogstatsdDemo.user.loginexecution.time.max{*}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of RK_DogstatsdDemo.user.loginexecution.time.max over *"
+      }
+    ],
+    "description": "created by ravi.kunapareddy@thomsonreuters.com",
+    "title": "ravi.kunapareddy's TimeBoard 30 Jan 2018 13:37",
+    "created": "2018-01-30T19:37:46.652840+00:00",
+    "id": 524414,
+    "created_by": {
+      "disabled": false,
+      "handle": "ravi.kunapareddy@thomsonreuters.com",
+      "name": "Sita Venkata Ravi Kunapareddy",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "ravi.kunapareddy@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/2d9b8d5b1e6fc747b0d703f21ccdcd85?s=48&d=retro"
+    },
+    "modified": "2018-01-31T21:47:38.169030+00:00"
+  },
+  "url": "/dash/524414/ravikunapareddys-timeboard-30-jan-2018-1337",
+  "resource": "/api/v1/dash/524414"
+}

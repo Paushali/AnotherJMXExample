@@ -1,0 +1,69 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "style": {
+            "fillMax": null,
+            "palette": "green_to_orange",
+            "fillMin": null,
+            "paletteFlip": false
+          },
+          "group": null,
+          "notes": null,
+          "noMetricHosts": true,
+          "viz": "hostmap",
+          "scope": [
+            "tr:application-asset-insight-id:204591"
+          ],
+          "requests": [
+            {
+              "q": "avg:system.load.1{tr:application-asset-insight-id:204591} by {host}",
+              "type": "fill"
+            }
+          ],
+          "noGroupHosts": true
+        },
+        "title": "Avg of system.load.1 over tr:application-asset-insight-id:204591 by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.load.1{tr_application-asset-insight-id:204591}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of system.load.1 over tr_application-asset-insight-id:204591"
+      }
+    ],
+    "description": "created by ajay.aswathanarayana@thomsonreuters.com",
+    "title": "Ajay's Dashboard",
+    "created": "2018-03-19T15:25:15.433206+00:00",
+    "id": 699886,
+    "created_by": {
+      "disabled": false,
+      "handle": "ajay.aswathanarayana@thomsonreuters.com",
+      "name": "Ajay Aswathanarayana",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "ajay.aswathanarayana@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/8dd1d78f4dd8988bcca597f9a2c50543?s=48&d=retro"
+    },
+    "modified": "2018-03-19T15:40:15.595411+00:00"
+  },
+  "url": "/dash/699886/ajays-dashboard",
+  "resource": "/api/v1/dash/699886"
+}

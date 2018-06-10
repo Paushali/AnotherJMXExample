@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by kranthi.palem@thomsonreuters.com",
+    "title": "Kranthi's TimeBoard 20 Apr 2018 14:10",
+    "created": "2018-04-20T19:10:08.528576+00:00",
+    "id": 791628,
+    "created_by": {
+      "disabled": false,
+      "handle": "kranthi.palem@thomsonreuters.com",
+      "name": "Kranthi Palem",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "kranthi.palem@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/89325f114f8485a56e2fdf1e8b0e30c9?s=48&d=retro"
+    },
+    "modified": "2018-04-20T19:10:08.528613+00:00"
+  },
+  "url": "/dash/791628/kranthis-timeboard-20-apr-2018-1410",
+  "resource": "/api/v1/dash/791628"
+}

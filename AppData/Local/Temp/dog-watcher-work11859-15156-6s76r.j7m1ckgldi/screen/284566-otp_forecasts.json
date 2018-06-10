@@ -1,0 +1,18 @@
+{
+  "read_only": false,
+  "board_title": "OTP Forecasts",
+  "created": "2018-02-09T16:29:05.253863+00:00",
+  "modified": "2018-02-09T16:29:05.253870+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "richard.lafaver@tr.com",
+    "name": null,
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "richard.lafaver@tr.com",
+    "icon": "https://secure.gravatar.com/avatar/e0316e313187d5932efb447d3c08173d?s=48&d=retro"
+  },
+  "id": 284566
+}

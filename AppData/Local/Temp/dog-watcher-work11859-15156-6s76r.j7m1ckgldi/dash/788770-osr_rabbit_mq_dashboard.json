@@ -1,0 +1,338 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "style": {
+            "fillMax": null,
+            "palette": "green_to_orange",
+            "fillMin": null,
+            "paletteFlip": false
+          },
+          "group": [
+            "environment"
+          ],
+          "notes": null,
+          "noMetricHosts": true,
+          "viz": "hostmap",
+          "scope": [
+            "tr:application-asset-insight-id:202990",
+            "service:rabbitmq"
+          ],
+          "requests": [
+            {
+              "q": "avg:system.load.1{tr:application-asset-insight-id:202990,service:rabbitmq} by {host}",
+              "type": "fill"
+            }
+          ],
+          "noGroupHosts": true
+        },
+        "title": "EC2 instances"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:rabbitmq.queue.messages{$environment,$assetid} by {rabbitmq_queue}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Rabbit MQ Queued Messages summed by queue"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:rabbitmq.exchange.messages.publish_out.rate{$environment,$assetid}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Messages published out rate"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:rabbitmq.exchange.messages.publish_in.rate{$environment,$assetid}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Messages published in rate"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:rabbitmq.queue.messages_unacknowledged{$environment,$assetid} by {rabbitmq_queue}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Unacknowleged messages broken out by queue"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:rabbitmq.queue.messages_ready{$environment,$assetid} by {rabbitmq_queue}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "messages ready broken out by queue"
+      },
+      {
+        "definition": {
+          "viz": "query_value",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:rabbitmq.queue.consumers{$environment,$assetid}",
+              "aggregator": "last",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Number of Consumers (All Queues)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:rabbitmq.queue.consumer_utilisation{$environment,$assetid} by {rabbitmq_queue}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Consumer utilisation broken out by queue"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:rabbitmq.node.mem_used{$environment,$assetid} by {rabbitmq_node}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory use by node"
+      },
+      {
+        "definition": {
+          "viz": "query_value",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:rabbitmq.node.mem_alarm{*} by {rabbitmq_node}",
+              "aggregator": "max",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory alarms by node"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:rabbitmq.node.disk_free{$environment,$assetid} by {rabbitmq_node}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Disk free by node"
+      },
+      {
+        "definition": {
+          "viz": "query_value",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:rabbitmq.node.disk_alarm{$environment,$assetid} by {rabbitmq_node}",
+              "aggregator": "max",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Disk free alarms by node"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:rabbitmq.node.fd_used{$environment,$assetid} by {rabbitmq_node}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "File Descriptors used by node"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:rabbitmq.node.sockets_used{$environment,$assetid} by {rabbitmq_node}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Sockets used by node"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "sat",
+        "prefix": "env",
+        "name": "environment"
+      },
+      {
+        "default": "application-asset-insight-id:202990",
+        "prefix": "tr",
+        "name": "assetid"
+      }
+    ],
+    "description": "created by becky.mullens@tr.com",
+    "title": "OSR RabbitMQ Dashboard",
+    "created": "2018-04-18T09:50:48.082263+00:00",
+    "id": 788770,
+    "created_by": {
+      "disabled": true,
+      "handle": "becky.mullens@tr.com",
+      "name": null,
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "becky.mullens@tr.com",
+      "icon": "https://secure.gravatar.com/avatar/5c61621d5823b8c41f787c1c79b140f4?s=48&d=retro"
+    },
+    "modified": "2018-05-10T10:44:25.897369+00:00"
+  },
+  "url": "/dash/788770/osr-rabbitmq-dashboard",
+  "resource": "/api/v1/dash/788770"
+}

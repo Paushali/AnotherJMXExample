@@ -1,0 +1,217 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:product_service.All.Requests.count{env:sat} by {host}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Product Service Request Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:security_service.All.Requests.count{env:sat} by {host}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Security Service Request Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:rest_main_service.All.Requests.count{env:sat} by {host}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "LS2 Rest Service Request Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:product_service.All.Requests.rate.1m{sat} by {host}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Sum of product_service.All.Requests.rate.1m over sat by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:security_service.All.Requests.rate.1m{sat} by {host}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Sum of security_service.All.Requests.rate.1m over sat by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:user_service.All.Requests.count{env:sat} by {host}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "User Service Request Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:account_service.All.Requests.count{env:sat} by {host}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Account Service Request Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:user_service.All.Requests.rate.1m{sat} by {host}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of user_service.All.Requests.rate.1m over sat by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:image_service.All.Requests.count{env:sat} by {host}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Image Service Request Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:news_service.All.Requests.count{env:sat} by {host}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "News Service Request Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:client_manager_service.All.Requests.count{env:sat}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Client Manager Request Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:user_service.All.Requests.count{env:sat}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Sum of user_service.All.Requests.count over env:sat"
+      }
+    ],
+    "description": "created by brian.schuweiler@thomsonreuters.com",
+    "title": "Platform Service Request Counts - SAT",
+    "created": "2017-07-18T17:29:09.504560+00:00",
+    "id": 324010,
+    "created_by": {
+      "disabled": false,
+      "handle": "brian.schuweiler@thomsonreuters.com",
+      "name": "Brian Schuweiler",
+      "is_admin": false,
+      "role": "",
+      "access_role": "st",
+      "verified": true,
+      "email": "brian.schuweiler@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/38aff58139908698cb3c24ff3d3ab5fa?s=48&d=retro"
+    },
+    "modified": "2017-11-09T15:25:13.505197+00:00"
+  },
+  "url": "/dash/324010/platform-service-request-counts---sat",
+  "resource": "/api/v1/dash/324010"
+}
