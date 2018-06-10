@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by richard.breading@thomsonreuters.com",
+    "title": "richard.breading's TimeBoard 8 May 2018 12:19",
+    "created": "2018-05-08T11:19:00.172562+00:00",
+    "id": 805538,
+    "created_by": {
+      "disabled": false,
+      "handle": "richard.breading@thomsonreuters.com",
+      "name": null,
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "richard.breading@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/765d1db21f3c67d4626da2eac47c3a75?s=48&d=retro"
+    },
+    "modified": "2018-05-08T11:19:00.172577+00:00"
+  },
+  "url": "/dash/805538/richardbreadings-timeboard-8-may-2018-1219",
+  "resource": "/api/v1/dash/805538"
+}

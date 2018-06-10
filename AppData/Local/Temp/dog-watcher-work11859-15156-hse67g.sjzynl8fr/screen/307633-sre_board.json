@@ -1,0 +1,509 @@
+{
+  "board_title": "SRE Board",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-03-21T15:26:22.491714+00:00",
+  "original_title": "SRE",
+  "modified": "2018-03-27T05:04:30.963630+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "region",
+      "name": "Region"
+    },
+    {
+      "default": "*",
+      "prefix": "techopsenvironment",
+      "name": "Enviroment"
+    },
+    {
+      "default": "*",
+      "prefix": "techopsproject",
+      "name": "Application"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "chaitali.agrawal@thomsonreuters.com",
+    "name": "Chaitali Agrawal",
+    "is_admin": true,
+    "role": null,
+    "access_role": "adm",
+    "verified": true,
+    "email": "chaitali.agrawal@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/109b0621779856fa6be67ee4cc747e84?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "sizing": "zoom",
+      "board_id": 307633,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/Latency.JPG",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 12,
+      "y": 0,
+      "x": 10,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 307633,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/Traffic.JPG",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 12,
+      "y": 0,
+      "x": 34,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "board_id": 307633,
+      "title_size": 16,
+      "title": true,
+      "color": "#000",
+      "text": "EC2 Metrics",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 9,
+      "y": 0,
+      "x": 0,
+      "font_size": "16",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 307633,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/Errors.JPG",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 12,
+      "y": 0,
+      "x": 75,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 307633,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/Saturation.JPG",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 12,
+      "y": 0,
+      "x": 120,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "board_id": 307633,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Status Check Errors",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.status_check_failed{$Region,$Enviroment,$Application}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 5,
+      "x": 58,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 307633,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Disk Read-WriteOPS",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.disk_read_ops{$Region,$Enviroment,$Application}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:aws.ec2.disk_write_ops{$Region,$Enviroment,$Application}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 27,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 5,
+      "x": 2,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 307633,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "network In_out(Traffic)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_in{$Region,$Enviroment,$Application}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:aws.ec2.network_out{$Region,$Enviroment,$Application}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 29,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 5,
+      "x": 29,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 307633,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU Utilization",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.cpuutilization{$Region,$Enviroment,$Application}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 37,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 5,
+      "x": 105,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 307633,
+      "title_size": 16,
+      "title": true,
+      "color": "#000",
+      "text": "ELB Metrics",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 15,
+      "y": 20,
+      "x": 0,
+      "font_size": "16",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 307633,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ELB Latency",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.elb.latency{$Region,$Enviroment,$Application}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 23,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 307633,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ELB Errors 4XX-5XX",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.elb.httpcode_elb_4xx{$Region,$Enviroment,$Application}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:aws.elb.httpcode_elb_5xx{$Region,$Enviroment,$Application}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 24,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 23,
+      "x": 58,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 307633,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Request Count",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.elb.request_count{$Region,$Enviroment,$Application}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:aws.elb.request_count_per_target{$Region,$Enviroment,$Application}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 29,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 23,
+      "x": 29,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 307633,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "HTTP Error 4XX -5XX",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.elb.httpcode_target_5xx{$Region,$Enviroment,$Application}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:aws.elb.httpcode_target_4xx{$Region,$Enviroment,$Application}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 23,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 23,
+      "x": 82,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 307633,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Host Count",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.elb.healthy_host_count{$Region,$Enviroment}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "sum:aws.elb.un_healthy_host_count{$Region,$Enviroment}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 37,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 23,
+      "x": 105,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 307633,
+  "title_edited": false,
+  "isShared": false
+}

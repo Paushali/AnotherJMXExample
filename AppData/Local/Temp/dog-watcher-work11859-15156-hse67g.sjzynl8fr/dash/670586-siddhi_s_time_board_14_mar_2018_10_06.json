@@ -1,0 +1,128 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.dev.workflow_definitionservice.api.v1.definition.GetDefinitionsBySsoProductId.ssoProductId_httpStatus_OK{name:ngwf-dev-def-service} by {host}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "HTTPStatusOk"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.dev.workflow_definitionservice.api.status.v1.statuscheck_hits{name:ngwf-dev-def-service}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "statuscheck hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.dev.workflow_definitionservice.api.v1.definition.GetDefinitionsBySsoProductId.ssoProductId.avg{name:ngwf-dev-def-service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.dev.workflow_definitionservice.api.v1.definition.GetDefinitionsBySsoProductId.ssoProductId_hits{name:ngwf-dev-def-service}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:ngwf.dev.workflow_instanceservice.api.v1.Filters.RetrieveFilter_httpStatus_BadRequest{ngwf-dev}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Sum of ngwf.dev.workflow_instanceservice.api.v1.Filters.RetrieveFilter_httpSt..."
+      }
+    ],
+    "description": "created by siddhi.bhakta@thomsonreuters.com",
+    "title": "Siddhi's TimeBoard 14 Mar 2018 10:06",
+    "created": "2018-03-14T15:06:04.519448+00:00",
+    "id": 670586,
+    "created_by": {
+      "disabled": false,
+      "handle": "siddhi.bhakta@thomsonreuters.com",
+      "name": "Siddhi Bhakta",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Siddhi.Bhakta@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/2cf5f40a0664aac7626ab0e1e8fb962d?s=48&d=retro"
+    },
+    "modified": "2018-03-22T05:16:32.750280+00:00"
+  },
+  "url": "/dash/670586/siddhis-timeboard-14-mar-2018-1006",
+  "resource": "/api/v1/dash/670586"
+}

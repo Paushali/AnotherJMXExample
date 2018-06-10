@@ -1,0 +1,142 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:product_service.All.Requests.last{env:amer1}"
+            }
+          ],
+          "events": []
+        },
+        "title": "product_service.All.Requests.last"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:user_service.All.Requests.last{env:amer1}"
+            }
+          ],
+          "events": []
+        },
+        "title": "user_service.All.Requests.last"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:account_service.All.Requests.last{env:amer1}"
+            }
+          ],
+          "events": []
+        },
+        "title": "account_service.All.Requests.last"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:news_service.All.Requests.last{env:amer1}"
+            }
+          ],
+          "events": []
+        },
+        "title": "news_service.All.Requests.last"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:security_service.All.Requests.last{env:amer1}"
+            }
+          ],
+          "events": []
+        },
+        "title": "security_service.All.Requests.last"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:image_service.All.Requests.last{env:amer1}"
+            }
+          ],
+          "events": []
+        },
+        "title": "image_service.All.Requests.last"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:captcha_service.All.Requests.last{env:amer1}"
+            }
+          ],
+          "events": []
+        },
+        "title": "captcha_service.All.Requests.last"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:rest_main_service.All.Requests.last{env:amer1}"
+            }
+          ],
+          "events": []
+        },
+        "title": "rest_main_service.All.Requests.last"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:client_manager_service.All.Requests.last{env:amer1}"
+            }
+          ],
+          "events": []
+        },
+        "title": "client_manager_service.All.Requests.last"
+      }
+    ],
+    "description": "created by abhinav.mukesh@thomsonreuters.com",
+    "title": "Platform Services-All.Requests.Last-AMER1",
+    "created": "2017-08-01T23:08:20.142013+00:00",
+    "id": 333058,
+    "created_by": {
+      "disabled": false,
+      "handle": "abhinav.mukesh@thomsonreuters.com",
+      "name": null,
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "abhinav.mukesh@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/0ea4ce5bea4cab6ace9832d2657dad19?s=48&d=retro"
+    },
+    "modified": "2017-08-01T23:10:04.972080+00:00"
+  },
+  "url": "/dash/333058/platform-services-allrequestslast-amer1",
+  "resource": "/api/v1/dash/333058"
+}

@@ -1,0 +1,71 @@
+{
+  "board_title": "DEP-Dev-Common Entities-Infrastructure",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-03-03T23:07:21.438343+00:00",
+  "original_title": "",
+  "modified": "2018-03-03T23:10:30.812303+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "sathya.venuraju@thomsonreuters.com",
+    "name": "Sathyamurthy Venuraju",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "sathya.venuraju@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/971d5f8673f108bd4b7ba11c3ff960b6?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 296676,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 26,
+      "tile_def": {
+        "style": {
+          "fillMax": null,
+          "palette": "green_to_orange",
+          "fillMin": null,
+          "paletteFlip": false
+        },
+        "group": null,
+        "notes": null,
+        "noMetricHosts": true,
+        "viz": "hostmap",
+        "scope": [
+          "techopsproject:dep",
+          "techopsenvironment:dev"
+        ],
+        "requests": [
+          {
+            "q": "avg:system.cpu.user{techopsproject:dep,techopsenvironment:dev} by {host}",
+            "type": "fill"
+          }
+        ],
+        "groupby": null,
+        "noGroupHosts": true
+      },
+      "width": 62,
+      "x": 5,
+      "y": 3,
+      "query": "avg:system.load.1{*} by {host}",
+      "legend_size": null,
+      "isShared": false,
+      "type": "hostmap",
+      "legend": null,
+      "add_timeframe": false
+    }
+  ],
+  "disableCog": false,
+  "id": 296676,
+  "title_edited": false,
+  "isShared": false
+}
