@@ -1,0 +1,465 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:product_service.timer.response.GET.api.products.v1.menu.avg{env:amer1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:product_service.timer.response.GET.api.products.v1.header.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:product_service.timer.response.GET.api.products.v1.products.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:product_service.timer.response.GET.api.products.v1.myproducts.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "product_service.timer.avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:security_service.timer.response.GET.api.security.v1.sessions.avg{env:amer1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:security_service.timer.response.POST.api.security.v1.sessions.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:security_service.timer.response.GET.api.security.v1.redischeck.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:security_service.timer.response.GET.api.security.v1.admin.query.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:security_service.timer.response.GET.api.security.v1.sessions.id.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:security_service.timer.response.POST.api.security.v1.oauth2.token.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "security_service.timer.avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:account_service.timer.response.GET.api.account.v1.supportaccess.avg{env:amer1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:account_service.timer.response.POST.api.account.v1.supportaccess.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "account_service.timer.avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:captcha_service.timer.response.GET.api.captcha.v1.start.count.avg{env:amer1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "captcha_service.timer.avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:image_service.timer.response.POST.api.images.v1.query.avg{env:amer1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:image_service.timer.response.POST.api.images.v1.random.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "image_service.timer.avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:user_service.timer.response.GET.api.user.v1.userid.avg{env:amer1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:user_service.timer.response.POST.api.password.v1.save.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:user_service.timer.response.POST.api.password.v1.reset.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:user_service.timer.response.GET.api.user.v1.permissions.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:user_service.timer.response.GET.api.user.v1.userdetails.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:user_service.timer.response.GET.api.password.v1.details.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:user_service.timer.response.GET.api.password.v1.policies.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:user_service.timer.response.POST.api.user.v1.authenticate.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "user_service.timer.avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:news_service.timer.response.GET.api.news.v1.refresh.avg{env:amer1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:news_service.timer.response.GET.api.news.v1.story.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:news_service.timer.response.GET.api.news.v1.image.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:news_service.timer.response.GET.api.news.v1.trhighlights.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "news_service.timer.avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:rest_main_service.timer.response.GET.api.profile.v1.user.avg{env:amer1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:rest_main_service.timer.response.GET.api.accounts.v1.details.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:rest_main_service.timer.response.GET.api.common.v1.urlmappings.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:rest_main_service.timer.response.POST.api.activitycards.v2.card.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:rest_main_service.timer.response.POST.api.activitycards.v1.card.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:rest_main_service.timer.response.POST.api.profile.v1.preference.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "rest_main_service.timer.avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:client_manager_service.timer.response.GET.api.sample.v1.email.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:client_manager_service.timer.response.GET.api.sample.v1.session.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:client_manager_service.timer.response.GET.api.client.v1.clients.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:client_manager_service.timer.response.GET.api.sample.v1.sessionbindings.avg{env:amer1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "client_manager_service.timer.avg"
+      }
+    ],
+    "description": "created by abhinav.mukesh@thomsonreuters.com (cloned)",
+    "title": "Platform Services Response Times",
+    "created": "2018-03-13T16:28:09.652663+00:00",
+    "id": 669302,
+    "created_by": {
+      "disabled": false,
+      "handle": "shailendra.singh@thomsonreuters.com",
+      "name": "Shailendra Singh",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "shailendra.singh@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/ea099c25d0af9315df089394855ef240?s=48&d=retro"
+    },
+    "modified": "2018-03-13T23:04:58.620179+00:00"
+  },
+  "url": "/dash/669302/platform-services-response-times",
+  "resource": "/api/v1/dash/669302"
+}

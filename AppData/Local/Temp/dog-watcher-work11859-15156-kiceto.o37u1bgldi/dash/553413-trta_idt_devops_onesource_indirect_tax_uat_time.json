@@ -1,0 +1,649 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "ewma_5(per_second(sum:apache.response.code{u_platform:onesource,u_app:indirect,u_env:_uat} by {response_code}.as_count()))",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "sqrt"
+          }
+        },
+        "title": "COUNT - Apache - Response Codes Per Second"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "ewma_5(per_second(sum:apache.conns_total{u_platform:onesource,u_app:indirect,u_env:_uat} by {host}))",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "COUNT - Apache - Connections Per Second"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:apache.response.microseconds{u_app:indirect,u_platform:onesource,u_env:_uat}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:apache.response.microseconds{u_app:indirect,u_platform:onesource,u_env:_uat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "dashed"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "sqrt"
+          }
+        },
+        "title": "AVG/MAX - Apache - Response Time [microseconds]"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "ewma_5(per_second(sum:apache.response.useragent{u_app:indirect,u_platform:onesource,u_env:_uat} by {useragent}.as_count()))",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "sqrt"
+          }
+        },
+        "title": "COUNT - Apache - User Agent"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "ewma_3(per_second(sum:apache.response.endpoint{u_app:indirect,u_platform:onesource,u_env:_uat} by {endpoint}.as_count()))",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "sqrt"
+          }
+        },
+        "title": "COUNT - Apache - Endpoints"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:apache.performance.busy_workers{u_platform:onesource,u_app:indirect,u_env:_uat} by {u_service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "COUNT - Apache - Busy Workers"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:tomcat.servlet.request_count{u_platform:onesource,u_app:indirect,u_env:_uat} by {u_service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "COUNT - Tomcat Requests - By Service"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:system.mem.free{u_platform:onesource,u_app:indirect,u_env:_uat} by {u_node_number,u_service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "max": "5000000000",
+            "scale": "sqrt"
+          }
+        },
+        "title": "Memory Free - By Service - By Node"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:system.load.norm.1{u_platform:onesource,u_app:indirect,u_env:_uat} by {u_service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "sqrt"
+          }
+        },
+        "title": "MAX - CPU Load - Normalized by CPU count - By Application"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:system.io.util{u_platform:onesource,u_app:indirect,u_env:_uat} by {u_service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "MAX - CPU Utilization - By Service"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:network.http.response_time{u_platform:onesource,u_app:indirect,u_env:_uat} by {u_service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "sqrt"
+          }
+        },
+        "title": "MAX - Response Time [Latency] - By Service"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:tomcat.threads.busy{u_platform:onesource,u_app:indirect,u_env:_uat} by {u_service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "COUNT - Tomcat Busy Threads - By Service"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:tomcat.servlet.error_count{u_platform:onesource,u_app:indirect,u_env:_uat} by {u_service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "COUNT - Tomcat Errors - By Service"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:system.disk.free{u_platform:onesource,u_app:indirect,device:/dev/mapper/rootvg-rootlv,u_env:_uat} by {u_service,host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false,
+            "scale": "log"
+          }
+        },
+        "title": "MAX - Free Disk - /root"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:system.disk.free{u_platform:onesource,u_app:indirect,device:/dev/mapper/datavg-applv,u_env:_uat} by {u_service,host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false,
+            "scale": "log"
+          }
+        },
+        "title": "MAX - Free Disk - /app"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:system.disk.free{u_platform:onesource,u_app:indirect,device:/dev/mapper/rootvg-varlv,u_env:_uat} by {u_service,host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false,
+            "scale": "log"
+          }
+        },
+        "title": "MAX - Free Disk - /var"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:system.disk.free{u_platform:onesource,u_app:indirect,u_env:_uat,device:prod-ecom-e0338:/vol/trta_indirecttaxdataprod_snap/datafileintegrator}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false,
+            "scale": "log"
+          }
+        },
+        "title": "MAX - Free Disk - /datafileintegrator [FTP]"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:system.disk.free{u_platform:onesource,u_app:indirect,u_env:_uat,device:cpsprod-h0032:/cb0061_trta_indirecttaxlogging_prodh_snap/indirecttaxlogging}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "MAX - Free Disk - /logarchive"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:network.tcp.response_time{u_platform:onesource,u_app:indirect,u_env:_uat} by {u_service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "pow"
+          }
+        },
+        "title": "TCP - Service Port - Response Time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:cch.rdb.duration{u_app:indirect,u_platform:onesource,u_env:_uat} by {external_company_id}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false,
+            "scale": "log"
+          }
+        },
+        "title": "AVG - Calc Call History Time - By Company"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "ewma_5(avg:cch.rdb.duration{u_app:indirect,u_platform:onesource,u_env:_uat})",
+              "aggregator": "avg",
+              "style": {
+                "width": "thick",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "ewma_5(max:cch.rdb.duration{u_app:indirect,u_platform:onesource,u_env:_uat})",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "dotted"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "AVG/MAX - Calc Call History Time - All Calculations"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "ewma_5(avg:cch.rdb.duration{u_app:indirect,u_platform:onesource,external_company_id:idt-healthcheck:,u_env:_uat})",
+              "aggregator": "avg",
+              "style": {
+                "width": "thick",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "ewma_5(max:cch.rdb.duration{u_app:indirect,u_platform:onesource,external_company_id:idt-healthcheck:,u_env:_uat})",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "dotted"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "AVG/MAX - Calc Call History Time - Healthcheck"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:cch.rdb.transaction{u_idt_platform:cloud,u_app:indirect,u_env:_uat} by {external_company_id}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "sqrt"
+          }
+        },
+        "title": "COUNT - Calc Call History Transactions - By Company"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:cch.rdb.transaction{u_idt_platform:cloud,u_app:indirect,u_env:_uat}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "sqrt"
+          }
+        },
+        "title": "COUNT - Calc Call History Transactions - All"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:cch.rdb.lines{u_app:indirect,u_idt_platform:cloud,u_env:_uat} by {external_company_id}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "COUNT - Calc Call History Transaction Lines - By Company"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:cch.rdb.lines{u_app:indirect,u_idt_platform:cloud,u_env:_uat}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "COUNT - Calc Call History Transaction Lines - All"
+      }
+    ],
+    "description": "ONESOURCE Indirect Tax UAT Time",
+    "title": "trta-idt-devops ONESOURCE Indirect Tax UAT Time",
+    "created": "2018-02-05T18:38:30.559751+00:00",
+    "id": 553413,
+    "created_by": {
+      "disabled": false,
+      "handle": "tim.fagergren@thomsonreuters.com",
+      "name": "Timothy Fagergren",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Tim.Fagergren@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/ef0829926735010b693117978dad8574?s=48&d=retro"
+    },
+    "modified": "2018-02-20T21:35:33.580537+00:00"
+  },
+  "url": "/dash/553413/trta-idt-devops-onesource-indirect-tax-uat-time",
+  "resource": "/api/v1/dash/553413"
+}

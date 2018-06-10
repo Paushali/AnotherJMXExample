@@ -1,0 +1,394 @@
+{
+  "board_title": "Mastersaf DFe - PROD",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-06-07T20:36:22.936288+00:00",
+  "original_title": "Mastersaf DFe - PROD",
+  "modified": "2018-06-08T18:36:05.268587+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "marcos.gonzalez@thomsonreuters.com",
+    "name": "Marcos Gonzalez",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "marcos.gonzalez@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/f3897fc5ad257684d65b8cd144e7e741?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": false,
+  "widgets": [
+    {
+      "board_id": 354699,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Application Map",
+      "height": 16,
+      "tile_def": {
+        "style": {
+          "fillMax": null,
+          "palette": "green_to_orange",
+          "fillMin": null,
+          "paletteFlip": false
+        },
+        "group": [
+          "service"
+        ],
+        "notes": null,
+        "noMetricHosts": true,
+        "viz": "hostmap",
+        "scope": [
+          "app:mastersaf",
+          "service:dfe",
+          "env:prod"
+        ],
+        "requests": [
+          {
+            "q": "avg:system.load.1{app:mastersaf,service:dfe,env:prod} by {host}",
+            "type": "fill"
+          }
+        ],
+        "groupby": null,
+        "noGroupHosts": true
+      },
+      "width": 76,
+      "query": "avg:system.load.1{*} by {host}",
+      "y": 57,
+      "x": 0,
+      "legend_size": null,
+      "type": "hostmap",
+      "legend": null,
+      "isShared": false
+    },
+    {
+      "board_id": 354699,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Application Load 1min",
+      "height": 17,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.load.1{app:mastersaf,service:dfe,role:app}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 52,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 17,
+      "x": 24,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 354699,
+      "x": 8,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "App Load 1min",
+      "height": 17,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.load.1{app:mastersaf,service:dfe,role:app}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false
+      },
+      "width": 15,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 17,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 354699,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "PostgreSQL Load 1min",
+      "height": 17,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.load.1{app:mastersaf,service:dfe,env:prod,role:postgres}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 52,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 37,
+      "x": 24,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 354699,
+      "x": 8,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "PostgreSQL Load 1min",
+      "height": 7,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.load.1{app:mastersaf,env:prod,role:postgres}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "red_on_white",
+                "comparator": ">",
+                "value": "32"
+              },
+              {
+                "palette": "yellow_on_white",
+                "comparator": ">=",
+                "value": "20"
+              },
+              {
+                "palette": "green_on_white",
+                "comparator": "<",
+                "value": "8"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 15,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 37,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 354699,
+      "title_size": 16,
+      "title": true,
+      "color": "#39c",
+      "text": "Mastersaf DFe - PROD",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 39,
+      "y": 1,
+      "x": 0,
+      "font_size": "36",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 354699,
+      "title_size": 16,
+      "title": true,
+      "url": "https://ws.dfe.mastersaf.com.br/",
+      "title_align": "left",
+      "title_text": "",
+      "height": 11,
+      "width": 76,
+      "y": 5,
+      "x": 0,
+      "type": "iframe",
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 354699,
+      "title_size": 16,
+      "title": true,
+      "url": "https://i0.wp.com/www.myintervals.com/blog/wp-content/uploads/2011/12/postgresql-logo1.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 19,
+      "width": 7,
+      "y": 37,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 354699,
+      "x": 8,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Connections",
+      "height": 7,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:postgresql.connections{app:mastersaf,env:prod,role:postgres}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "red_on_white",
+                "comparator": ">",
+                "value": "1800"
+              },
+              {
+                "palette": "yellow_on_white",
+                "comparator": ">=",
+                "value": "1200"
+              },
+              {
+                "palette": "green_on_white",
+                "comparator": "<",
+                "value": "500"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 15,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 47,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 354699,
+      "title_size": 16,
+      "title": true,
+      "url": "http://blog.asmallorange.com/wp-content/uploads/linux-logo.jpeg",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 19,
+      "width": 7,
+      "y": 17,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 354699,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 49,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:system.load.1{app:mastersaf,env:prod,service:dfe} by {host}, 10, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 5,
+      "x": 77,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 354699,
+  "title_edited": false,
+  "isShared": false
+}

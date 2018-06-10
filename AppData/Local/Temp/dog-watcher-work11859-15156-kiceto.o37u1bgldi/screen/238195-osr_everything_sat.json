@@ -1,0 +1,221 @@
+{
+  "board_title": "OSR: Everything SAT",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2017-11-01T16:41:15.937529+00:00",
+  "original_title": "OSR: Everything SAT",
+  "modified": "2017-11-13T14:43:58.057080+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "stuart.smith@thomsonreuters.com",
+    "name": "Stuart Smith",
+    "is_admin": false,
+    "role": "",
+    "access_role": "st",
+    "verified": true,
+    "email": "stuart.smith@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/b3592e52ca41f60e2472d4905d280dc3?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 238195,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU Usage",
+      "height": 29,
+      "tile_def": {
+        "style": {
+          "fillMax": null,
+          "palette": "green_to_orange",
+          "fillMin": null,
+          "paletteFlip": false
+        },
+        "group": [
+          "tr:service-name"
+        ],
+        "notes": null,
+        "noMetricHosts": true,
+        "viz": "hostmap",
+        "scope": [
+          "tr:osr:environment:sat"
+        ],
+        "requests": [
+          {
+            "q": "avg:aws.ec2.cpuutilization{tr:osr:environment:sat} by {host}",
+            "type": "fill"
+          }
+        ],
+        "groupby": null,
+        "noGroupHosts": true
+      },
+      "width": 28,
+      "x": 108,
+      "y": 0,
+      "query": "avg:system.load.1{*} by {host}",
+      "legend_size": null,
+      "type": "hostmap",
+      "legend": null,
+      "add_timeframe": false
+    },
+    {
+      "board_id": 238195,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "RDS Free Space",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "min:aws.rds.free_storage_space{tr:osr:environment:sat} by {dbinstanceidentifier}",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 108,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 46,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 238195,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Top-Level ELB Requests",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.elb.request_count{tr:osr:environment:sat}.as_count()",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 108,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 0,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 238195,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Redis/Elasticache Evictions",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.elasticache.evictions{tr:osr:environment:sat}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "palette": "warm"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 108,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 31,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 238195,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Top-Level ELB Errors",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.elb.httpcode_backend_5xx{*}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "palette": "warm"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:aws.elb.httpcode_backend_4xx{*}.as_count()",
+            "style": {
+              "palette": "orange"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 108,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 14,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 238195,
+      "title_size": 16,
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "top",
+      "text_align": "left",
+      "title_text": "",
+      "height": 15,
+      "bgcolor": "yellow",
+      "html": "NOTE:\nCPU graph above:\nWe are missing many hosts\n- this is a known issue",
+      "y": 31,
+      "x": 108,
+      "font_size": "14",
+      "tick": true,
+      "tick_pos": "50%",
+      "width": 28,
+      "auto_refresh": false
+    }
+  ],
+  "disableCog": false,
+  "id": 238195,
+  "title_edited": false,
+  "isShared": false
+}

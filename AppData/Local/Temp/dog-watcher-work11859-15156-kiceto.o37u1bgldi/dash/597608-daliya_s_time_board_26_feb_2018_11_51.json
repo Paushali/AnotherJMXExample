@@ -1,0 +1,55 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.amer.testauto.login,result:success}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.amer.testauto.login,result:failure}",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Synthetic AMER Login Success vs Failure"
+      }
+    ],
+    "description": "created by daliya.asuma@thomsonreuters.com",
+    "title": "Daliya's TimeBoard 26 Feb 2018 11:51",
+    "created": "2018-02-26T17:51:28.999876+00:00",
+    "id": 597608,
+    "created_by": {
+      "disabled": false,
+      "handle": "daliya.asuma@thomsonreuters.com",
+      "name": "Daliya Asuma",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "daliya.asuma@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/1deb41a394d82830b37521b9836a13ad?s=48&d=retro"
+    },
+    "modified": "2018-02-26T18:30:50.247218+00:00"
+  },
+  "url": "/dash/597608/daliyas-timeboard-26-feb-2018-1151",
+  "resource": "/api/v1/dash/597608"
+}

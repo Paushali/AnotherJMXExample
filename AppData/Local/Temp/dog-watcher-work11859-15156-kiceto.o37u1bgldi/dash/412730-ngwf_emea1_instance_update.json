@@ -1,0 +1,170 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.emea1.workflow_instanceservice.RepositoryMultiplexer.GetWorkflowInstance.avg{emea1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "1 - RepositoryMultiPlexer GetInstance Avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.emea1.workflow_instanceservice.WorkflowService.PerformCommonStuffAndGetConcertData.avg{emea1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "2 - Performcommonstuffandconcert"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.emea1.workflow_instanceservice.ExecuteRuleEngine.ExecuteRuleEngineForUpdateInstance.avg{emea1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "3 - ExecuteRuleEngineForUpdateInstance"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ngwf.emea1.workflow_instanceservice.pg.GetMetaData.avg{emea1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "4 - Get Permission Metadata"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.emea1.workflow_instanceservice.RepositoryMultiplexer.Update.avg{emea1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "5 - RepositoryMultiplexer Update"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.emea1.workflow_instanceservice.api.v1.workflows.Update.avg{emea1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "EMEA1 Instance Update Average - Total time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.emea1.workflow_instanceservice.pg.Update.avg{emea1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "5.1 Postgres Update"
+      }
+    ],
+    "description": "created by siddhi.bhakta@thomsonreuters.com",
+    "title": "NGWF EMEA1 Instance Update",
+    "created": "2017-12-05T19:40:08.759974+00:00",
+    "id": 412730,
+    "created_by": {
+      "disabled": false,
+      "handle": "siddhi.bhakta@thomsonreuters.com",
+      "name": "Siddhi Bhakta",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Siddhi.Bhakta@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/2cf5f40a0664aac7626ab0e1e8fb962d?s=48&d=retro"
+    },
+    "modified": "2017-12-11T15:03:40.619994+00:00"
+  },
+  "url": "/dash/412730/ngwf-emea1-instance-update",
+  "resource": "/api/v1/dash/412730"
+}

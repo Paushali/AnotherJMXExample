@@ -1,0 +1,53 @@
+{
+  "board_title": "Bob's Test Screenboard",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2017-07-11T19:53:20.041888+00:00",
+  "original_title": "Bob's Test Dashboard",
+  "modified": "2017-07-11T20:00:41.272786+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "bob.sturm@thomsonreuters.com",
+    "name": "Robert Sturm",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "bob.sturm@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/23fd4fb29b568c1569c425532e7d2000?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 202364,
+      "group": null,
+      "title_size": 13,
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "Agent Up",
+      "height": 8,
+      "width": 15,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 1,
+      "x": 1,
+      "text_size": "auto",
+      "type": "check_status",
+      "check": "datadog.agent.up",
+      "tags": [
+        "guinness-dev-auditmanager-service"
+      ],
+      "grouping": "cluster"
+    }
+  ],
+  "disableCog": false,
+  "id": 202364,
+  "title_edited": true,
+  "isShared": false
+}

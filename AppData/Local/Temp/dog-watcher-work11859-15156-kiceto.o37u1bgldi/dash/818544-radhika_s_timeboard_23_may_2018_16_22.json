@@ -1,0 +1,44 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:athena.mem.avaialble{app:oitc,env:qa} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of athena.mem.avaialble over app:oitc,env:qa by host"
+      }
+    ],
+    "description": "created by radhika.kilaru@thomsonreuters.com",
+    "title": "Radhika's Timeboard 23 May 2018 16:22",
+    "created": "2018-05-23T10:52:46.894852+00:00",
+    "id": 818544,
+    "created_by": {
+      "disabled": false,
+      "handle": "radhika.kilaru@thomsonreuters.com",
+      "name": "Radhika Kilaru",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "radhika.kilaru@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/81a4611cde6d47cb841940eaa218c835?s=48&d=retro"
+    },
+    "modified": "2018-05-23T10:59:04.965575+00:00"
+  },
+  "url": "/dash/818544/radhikas-timeboard-23-may-2018-1622",
+  "resource": "/api/v1/dash/818544"
+}

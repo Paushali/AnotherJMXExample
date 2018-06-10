@@ -1,0 +1,55 @@
+{
+  "dash": {
+    "read_only": true,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.http_requests{statuscode:2xx,service:www.onesourcetax.com}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.http_requests{service:www.onesourcetax.com,statuscode:all}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "f5.http_requests, f5.http_requests"
+      }
+    ],
+    "description": "created by chaitali.agrawal@tr.com",
+    "title": "chaitali.agrawal's TimeBoard 19 Jan 2018 15:13",
+    "created": "2018-01-19T21:13:34.495776+00:00",
+    "id": 500986,
+    "created_by": {
+      "disabled": true,
+      "handle": "chaitali.agrawal@tr.com",
+      "name": null,
+      "is_admin": false,
+      "role": null,
+      "access_role": "ro",
+      "verified": true,
+      "email": "chaitali.agrawal@tr.com",
+      "icon": "https://secure.gravatar.com/avatar/cdd5e406e6081eac11197a3dbb956932?s=48&d=retro"
+    },
+    "modified": "2018-02-09T22:12:30.701764+00:00"
+  },
+  "url": "/dash/500986/chaitaliagrawals-timeboard-19-jan-2018-1513",
+  "resource": "/api/v1/dash/500986"
+}
