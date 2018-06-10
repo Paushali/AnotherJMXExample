@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by richard.lafaver@tr.com",
+    "title": "OTP Forecast",
+    "created": "2018-02-09T16:31:11.843969+00:00",
+    "id": 564595,
+    "created_by": {
+      "disabled": false,
+      "handle": "richard.lafaver@tr.com",
+      "name": null,
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "richard.lafaver@tr.com",
+      "icon": "https://secure.gravatar.com/avatar/e0316e313187d5932efb447d3c08173d?s=48&d=retro"
+    },
+    "modified": "2018-02-09T16:31:11.843989+00:00"
+  },
+  "url": "/dash/564595/otp-forecast",
+  "resource": "/api/v1/dash/564595"
+}

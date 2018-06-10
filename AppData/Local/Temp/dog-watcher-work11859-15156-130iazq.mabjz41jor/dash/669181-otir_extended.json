@@ -1,0 +1,531 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:otir.mem.avaialble{tr_product:otir,$environment} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:otir.mem.pages{tr_product:otir,$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory Performance"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:otir.errors.excepsthrownpersecond{tr_product:otir,$environment} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "NETFramework CLRExceptions"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:otir.latency.processqueue.length{$environment} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Win32_PerfFormattedData_PerfOS_System"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:otir.rate.requestpersecond{$environment} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:otir.errors.requestsnotfound{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:otir.errors.errorstotal{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:otir.errors.requesttimedout{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:otir.errors.requestsrejected{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Win32_PerfFormattedData_ASPNET_ASPNETApplications"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:otir.saturation.applicationrestart{$environment} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:otir.latency.requestqueued{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Win32_PerfFormattedData_ASPNET_ASPNET"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.proc.count{tr_product:otir,$environment} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:system.users.count{tr_product:otir,$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Win32_OperatingSystem"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:otir.rate.webservice.isapiextensionrequestspersecond{tr_environment-type:quality_assurance} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:otir.rate.webservice.totalmethodrequestspersecond{tr_environment-type:quality_assurance} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Win32_PerfFormattedData_W3SVC_WebService"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:otir.rate.getrequestspersecond{$environment} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:otir.rate.postrequestpersecond{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "avg:otir.rate.putrequestspersecond{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "avg:otir.saturation.webservice.currentconnections{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Win32_PerfFormattedData_W3SVC_WebService"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:otir.errors.excepsthrownpersecond{$environment} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Win32_PerfFormattedData_NETFramework_NETCLRExceptions"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:otir.system.network.bytes_rcvd{$environment} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:otir.system.network.bytes_sent{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:otir.system.network.bytes_total{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Win32_PerfFormattedData_Tcpip_NetworkInterface"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:otir.rate.webservice.activerequests{$environment} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:otir.rate.webservice.requestpersecond{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Win32_PerfFormattedData_W3SVCW3WPCounterProvider_W3SVCW3WP"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:otir.system.disk.free_mbytes{$environment} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:otir.system.disk.read_sec{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "avg:otir.system.disk.write_sec{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "avg:otir.system.disk.queue{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "purple",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Win32_PerfFormattedData_PerfDisk_LogicalDisk"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:otir.system.cpu.pct{$environment} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:otir.system.cpu.interrupt.pct{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "orange",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "avg:otir.system.cpu.user.pct{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "grey",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "avg:otir.system.cpu.idle.pct{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "avg:otir.system.cpu.dpc.pct{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "avg:otir.system.cpu.priv.pct{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "purple",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Win32_PerfFormattedData_PerfOS_Processor"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:otir.system.memory.total{$environment} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:otir.system.memory.avail{$environment} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Win32_ComputerSystem"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "*",
+        "prefix": "tr_environment-type",
+        "name": "environment"
+      }
+    ],
+    "description": "created by ravi.kunapareddy@thomsonreuters.com",
+    "title": "OTIR Extended",
+    "created": "2018-03-13T15:12:54.912687+00:00",
+    "id": 669181,
+    "created_by": {
+      "disabled": false,
+      "handle": "ravi.kunapareddy@thomsonreuters.com",
+      "name": "Sita Venkata Ravi Kunapareddy",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "ravi.kunapareddy@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/2d9b8d5b1e6fc747b0d703f21ccdcd85?s=48&d=retro"
+    },
+    "modified": "2018-04-11T14:01:26.040845+00:00"
+  },
+  "url": "/dash/669181/otir-extended",
+  "resource": "/api/v1/dash/669181"
+}

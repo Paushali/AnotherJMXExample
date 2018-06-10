@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by becky.mullens@tr.com",
+    "title": "APAC",
+    "created": "2017-09-18T10:31:03.763729+00:00",
+    "id": 359763,
+    "created_by": {
+      "disabled": true,
+      "handle": "becky.mullens@tr.com",
+      "name": null,
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "becky.mullens@tr.com",
+      "icon": "https://secure.gravatar.com/avatar/5c61621d5823b8c41f787c1c79b140f4?s=48&d=retro"
+    },
+    "modified": "2017-09-18T10:31:03.763745+00:00"
+  },
+  "url": "/dash/359763/apac",
+  "resource": "/api/v1/dash/359763"
+}
