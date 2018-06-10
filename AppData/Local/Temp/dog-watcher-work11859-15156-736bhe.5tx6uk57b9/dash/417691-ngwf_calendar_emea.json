@@ -1,0 +1,556 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.calendar_duedateservice.api.status.v1.statuscheck_hits{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:ngwf.emea1.calendar_duedateservice.api.status.v1.resourcecheck_hits{emea1}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "purple",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "StatusCheck/ResourceCheck hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.calendar_duedateservice.api.status.v1.resourcecheck_httpStatus_OK{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:ngwf.emea1.calendar_duedateservice.api.status.v1.statuscheck_httpStatus_OK{emea1}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "purple",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "StatusCheck/ResourceCheck httpStatus ok"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.emea1.calendar_duedateservice.api.status.v1.resourcecheck.avg{emea1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:ngwf.emea1.calendar_duedateservice.api.status.v1.statuscheck.avg{emea1}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "StatusCheck/ResourceCheck avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.calendar_duedateservice.api.v1.events.createevents_hits{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CreateEvents - hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.calendar_duedateservice.api.v1.events.createevents_httpStatus_OK{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CreateEvents - httpStatus ok"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.emea1.calendar_duedateservice.api.v1.events.createevents.avg{emea1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CreateEvents - avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.calendar_duedateservice.api.v1.events.createevents_hits{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CreateEvent - hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.calendar_duedateservice.api.v1.events.createevents_httpStatus_OK{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CreateEvent - httpStatus ok"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.emea1.calendar_duedateservice.api.v1.events.createevents.avg{emea1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CreateEvent - avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.calendar_duedateservice.api.v1.events.Get_hits{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Get events - hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.calendar_duedateservice.api.v1.events.Get_httpStatus_OK{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Get events - httpStatus ok"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.emea1.calendar_duedateservice.api.v1.events.Get.avg{emea1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Get events - avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.calendar_duedateservice.api.v1.eventlookup.Search_hits{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Eventlookup - hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.calendar_duedateservice.api.v1.eventlookup.Search_httpStatus_OK{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Eventlookup - httpStatus ok"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.emea1.calendar_duedateservice.api.v1.eventlookup.Search.avg{emea1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Eventlookup - avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.calendar_duedateservice.api.v1.duedates.Search_hits{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "dueDatesSearch - hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.calendar_duedateservice.api.v1.duedates.Search_httpStatus_OK{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "dueDatesSearch - httpStatus ok"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.emea1.calendar_duedateservice.api.v1.duedates.Search.avg{emea1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "dueDatesSearch - avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.calendar_duedateservice.api.v1.duedates.createlookup_hits{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "dueDatesCreatelookup - hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.calendar_duedateservice.api.v1.duedates.createnonlookup_httpStatus_OK{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "dueDatesCreatelookup - httpStatus ok"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.emea1.calendar_duedateservice.api.v1.duedates.createlookup.avg{emea1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "dueDatesCreatelookup - avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.calendar_duedateservice.api.v1.duedates.createnonlookup_hits{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "dueDatesCreatenonlookup - hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.emea1.calendar_duedateservice.api.v1.duedates.createnonlookup_httpStatus_OK{emea1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "dueDatesCreatenonlookup - httpStatus ok"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.emea1.calendar_duedateservice.api.v1.duedates.createnonlookup.avg{emea1}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "dueDatesCreatenonlookup - avg"
+      }
+    ],
+    "description": "created by tuyen.luan@thomsonreuters.com (cloned) (cloned)",
+    "title": "ngwf_calendar_EMEA",
+    "created": "2017-12-08T20:18:44.727893+00:00",
+    "id": 417691,
+    "created_by": {
+      "disabled": false,
+      "handle": "tuyen.luan@thomsonreuters.com",
+      "name": "Tuyen Luan",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "tuyen.luan@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/f259523d4eab1e8e7d97ccd45a25906b?s=48&d=retro"
+    },
+    "modified": "2017-12-08T22:46:26.227522+00:00"
+  },
+  "url": "/dash/417691/ngwfcalendaremea",
+  "resource": "/api/v1/dash/417691"
+}

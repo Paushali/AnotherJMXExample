@@ -1,0 +1,46 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:OTT_ClientWeb.page.load.time.bbv{tr_product:ott,tr_environment-type:_production} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Latency - Client Web Pages (By Host)"
+      }
+    ],
+    "description": "created by bao.vo@thomsonreuters.com",
+    "title": "OTT PROD",
+    "created": "2018-05-28T06:05:35.108178+00:00",
+    "id": 821556,
+    "created_by": {
+      "disabled": false,
+      "handle": "bao.vo@thomsonreuters.com",
+      "name": "Bao Vo",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "bao.vo@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/94adcbee095b8b4f06df2e70a79e22cf?s=48&d=retro"
+    },
+    "modified": "2018-05-29T00:17:28.315629+00:00"
+  },
+  "url": "/dash/821556/ott-prod",
+  "resource": "/api/v1/dash/821556"
+}

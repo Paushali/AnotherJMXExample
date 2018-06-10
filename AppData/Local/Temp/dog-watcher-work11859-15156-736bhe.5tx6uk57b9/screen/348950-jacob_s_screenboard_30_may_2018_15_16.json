@@ -1,0 +1,95 @@
+{
+  "board_title": "Jacob's Screenboard 30 May 2018 15:16",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-05-30T20:16:19.460123+00:00",
+  "original_title": "",
+  "modified": "2018-05-30T20:37:31.248159+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "jacob.john@thomsonreuters.com",
+    "name": "Jacob John Kadambanattu",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "jacob.john@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/3393b408a67b6584fd808153e1d75700?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 348950,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:OTIR_TaxAPI.LegacyService.FormList_hits{role:service_web} by {host}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "2d"
+      },
+      "y": 3,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 348950,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 21,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:OTIR_TaxAPI.LegacyService.request.timer.avg{role:service_web} by {path}, 10, 'mean', 'desc')",
+            "style": {
+              "palette": "cool"
+            },
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 3,
+      "x": 48,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 348950,
+  "title_edited": false,
+  "isShared": false
+}

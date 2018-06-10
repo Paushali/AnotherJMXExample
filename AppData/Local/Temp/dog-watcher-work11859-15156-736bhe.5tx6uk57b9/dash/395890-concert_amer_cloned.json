@@ -1,0 +1,615 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.AMER1.POST.api.sdk.IsUserHasActiveLicense.avg{*}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Is user has active licence_ Average Responese time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.EMEA1.POST.api.sdk.IsUserHasActiveLicense.avg{*}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Is user has active licence_ 95 Percentile Response time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.APAC1.POST.api.sdk.IsUserHasActiveLicense.max{*}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "IS User has Active Licence_ 95th Percentile Response time (DB)"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.AMER1.POST.api.sdk.GetAppPermissionForUserByContainers.avg{*}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Get AppPermissions for UBC_ Average Responese time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.EMEA1.POST.api.sdk.GetAppPermissionForUserByContainers.avg{*}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetApp Permissions for UGC_95 Percentile Response time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.APAC1.POST.api.sdk.GetAppPermissionForUserAll.Post.avg{*}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetAppPermissionForUBC_95 Percentile Response time (DB)"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.GetAppPermissionForUserByContainers.Post.count{host:C688EKGCWTWEB}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GET APP Permissions for User By Containers_ Request Count"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:user_admin_service.SAT.POST.api.sdk.IsUserHasActiveLicense.Post.count{host:C688EKGCWTWEB}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Is User has active Licence_ Request Count"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:user_admin_service.QA.TRTA.Concert.Domain.RepositoryInterfaces.IProductRepositoryUserHasActiveLicenseByProductId_error{host:C688EKGCWTWEB}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Is user has active Licence - Errors"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:user_admin_service.SAT.TRTA.Concert.Repository.Repositories.ISearchUserPermissionSdkRepositorySearchContainers_error{host:C688EKGCWTWEB}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Get App permission for UBC - Errors"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:client_manager_service.Application.w3wp_Threads{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "W3WP Threads"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.cpu.stolen{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CPU - Stolen"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.proc.queue_length{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Process Queue Length"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.mem.pct_usable{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory - RAM (Percent Usable)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.cpu.user{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CPU usage - User %"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:product_service.Application.Thread_Pool_Available_Threads{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Available Threads"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.cpu.iowait{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CPU -CPU IO  Wait"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.cpu.system{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CPU usage-System (%)"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:user_admin_service.QA.TRTA.Concert.Domain.RepositoryInterfaces.IProductRepositoryUserHasActiveLicenseByProductId_error{host:C688EKGCWTWEB}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Is User has active licence error"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.mem.usable{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory usable"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.io.util{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Disk - Disk wait time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.cpu.interrupt{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CPU  Interrupt"
+      },
+      {
+        "definition": {
+          "status": "error",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.mem.total{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory -Total"
+      },
+      {
+        "definition": {
+          "status": "error",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.mem.free{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory - Free"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.mem.committed{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory-Commited"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.mem.avail{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory - Available"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.cpu.idle{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CPU usage - Idle %"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.mem.page.faults{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory - Page Faults"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.mem.nonpaged{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory - nonpaged"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.net.bytes_rcvd{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            },
+            {
+              "q": "0 - sum:system.net.bytes_sent{host:C688EKGCWTWEB}",
+              "type": "line"
+            },
+            {
+              "q": "0 - sum:system.net.tcp.retrans_segs{host:C688EKGCWTWEB}",
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Network traffic (bytes per sec)"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.swap.free{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory - Swap free(%)"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.net.udp.snd_buf_errors{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Network- UDP buffer errors"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.swap.used{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory - Swap utilization(%)"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.io.avg_q_sz{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Disk Queue Length"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.disk.used{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Disk - Disk utilization"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "*",
+        "prefix": null,
+        "name": "var"
+      }
+    ],
+    "description": "For Captruing the details on the concert SAT Server (cloned)",
+    "title": "Concert AMER (cloned)",
+    "created": "2017-11-09T11:04:34.554887+00:00",
+    "id": 395890,
+    "created_by": {
+      "disabled": false,
+      "handle": "ahsan.mohammed@thomsonreuters.com",
+      "name": null,
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "ahsan.mohammed@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/77517191f1225b38ce721893b56c75fc?s=48&d=retro"
+    },
+    "modified": "2017-11-15T07:55:52.660844+00:00"
+  },
+  "url": "/dash/395890/concert-amer-cloned",
+  "resource": "/api/v1/dash/395890"
+}

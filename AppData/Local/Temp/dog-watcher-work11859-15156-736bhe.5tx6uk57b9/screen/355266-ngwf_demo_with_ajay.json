@@ -1,0 +1,66 @@
+{
+  "board_title": "ngwf_demoWithAjay",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-06-08T14:55:27.643661+00:00",
+  "original_title": "ngwf_demoWithAjay",
+  "modified": "2018-06-08T15:00:19.867586+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "tuyen.luan@thomsonreuters.com",
+    "name": "Tuyen Luan",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "tuyen.luan@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/f259523d4eab1e8e7d97ccd45a25906b?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": false,
+  "widgets": [
+    {
+      "board_id": 355266,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "tile of graph",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:ngwf.qa.workflow_instanceservice.api.v1.workflows.Update_hits{*} by {host}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 7,
+      "x": 6,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 355266,
+  "title_edited": false,
+  "isShared": false
+}

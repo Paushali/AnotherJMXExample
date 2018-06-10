@@ -1,0 +1,59 @@
+{
+  "board_title": "siddhi.bhakta's ScreenBoard 2 Nov 2017 11:33",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2017-11-02T16:33:30.136309+00:00",
+  "original_title": "",
+  "modified": "2017-11-02T16:38:44.661144+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "siddhi.bhakta@thomsonreuters.com",
+    "name": "Siddhi Bhakta",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "Siddhi.Bhakta@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/2cf5f40a0664aac7626ab0e1e8fb962d?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 238821,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:dev.workflow_instanceservice.POST.api.v1.workflows.BasicSearch.95percentile{dev}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 2,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true
+    }
+  ],
+  "disableCog": false,
+  "id": 238821,
+  "title_edited": false,
+  "isShared": false
+}

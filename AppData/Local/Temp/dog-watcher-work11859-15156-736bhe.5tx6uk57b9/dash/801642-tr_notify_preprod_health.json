@@ -1,0 +1,211 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:aws.apigateway.4xxerror{$apiname}.as_count(), sum:aws.apigateway.5xxerror{$apiname}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "orange",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "API 4xx or 5xx Errors"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.apigateway.latency{apiname:notifications_api-tr-notify-beta2,$apiname} by {method}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:aws.apigateway.latency.maximum{apiname:notifications_api-tr-notify-beta2,$apiname} by {method}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "aws.apigateway.latency, aws.apigateway.latency.maximum"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.dynamodb.consumed_read_capacity_units{$stack} by {tablename}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:aws.dynamodb.provisioned_read_capacity_units{$stack} by {tablename}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "aws.dynamodb.consumed_read_capacity_units, aws.dynamodb.provisioned_read_capa..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.dynamodb.consumed_write_capacity_units{$stack} by {tablename}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:aws.dynamodb.provisioned_write_capacity_units{$stack} by {tablename}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "aws.dynamodb.consumed_write_capacity_units, aws.dynamodb.provisioned_write_ca..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:aws.lambda.duration.maximum{$stack}, avg:aws.lambda.duration{$stack}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "lambda durations: avg,max"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:aws.lambda.invocations{$stack} by {name}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "aws.lambda.invocations"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.dynamodb.successful_request_latency{$stack}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of aws.dynamodb.successful_request_latency over stack_name:tr-notify-beta2"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "tr-notify-beta2",
+        "prefix": "stack_name",
+        "name": "stack"
+      },
+      {
+        "default": "notifications_api-tr-notify-beta2",
+        "prefix": "apiname",
+        "name": "apiname"
+      }
+    ],
+    "description": "created by rick.moudy@thomsonreuters.com",
+    "title": "tr.notify.preprod-health",
+    "created": "2018-05-02T20:12:49.923750+00:00",
+    "id": 801642,
+    "created_by": {
+      "disabled": false,
+      "handle": "rick.moudy@thomsonreuters.com",
+      "name": "Rick Moudy",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Rick.Moudy@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/89a247734d5e7bcd43c6a00b8f2ef5ab?s=48&d=retro"
+    },
+    "modified": "2018-05-08T22:21:14.105087+00:00"
+  },
+  "url": "/dash/801642/trnotifypreprod-health",
+  "resource": "/api/v1/dash/801642"
+}

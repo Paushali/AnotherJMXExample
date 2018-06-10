@@ -1,0 +1,259 @@
+{
+  "dash": {
+    "read_only": true,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.http_requests_emea{service:oct.all,statuscode:all,window:1m}, avg:f5.http_requests_emea{service:oct.all,statuscode:2xx,window:1m}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OCT (ATHENA) ALL Requests"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.unique_sessions_emea{service:oct.all,window:1m}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OCT ALL  Sessions"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.response_times_emea{percentile:90,window:1m,service:oct.all}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.response_times_emea{window:1m,service:oct.all,percentile:95}",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OCT P90"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.http_requests_emea{statuscode:2xx,window:1m,service:oct.core}, avg:f5.http_requests_emea{window:1m,statuscode:all,service:oct.core}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OCT Core (ATHENA) ALL Requests"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.unique_sessions_emea{window:1m,service:oct.core}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OCT CORE (ATHENA) Sessions Requests"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.response_times_emea{service:oct.core,percentile:95,window:1m}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.response_times_emea{service:oct.core,window:1m,percentile:90}",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OCT core Response Time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.http_requests_emea{service:oct.workbook,statuscode:2xx}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.http_requests_emea{service:oct.workbook,statuscode:all}",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "area"
+            },
+            {
+              "q": "avg:f5.http_requests_emea{service:oct.workbook,statuscode:5xx}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OCT (ATHENA) Workbook Requests"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.unique_sessions_emea{service:oct.workbook,window:1m}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OCT Workbook Session"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.response_times_emea{service:oct.workbook,percentile:90,window:1m}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.response_times_emea{service:oct.workbook,window:1m,percentile:95}",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OCT Workbook Response Time"
+      }
+    ],
+    "description": "created by chaitali.agrawal@tr.com",
+    "title": "Athena OCT DashBoard",
+    "created": "2018-05-18T21:08:34.223620+00:00",
+    "id": 815633,
+    "created_by": {
+      "disabled": false,
+      "handle": "chaitali.agrawal@thomsonreuters.com",
+      "name": "Chaitali Agrawal",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "chaitali.agrawal@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/109b0621779856fa6be67ee4cc747e84?s=48&d=retro"
+    },
+    "modified": "2018-05-22T20:19:03.190893+00:00"
+  },
+  "url": "/dash/815633/athena-oct-dashboard",
+  "resource": "/api/v1/dash/815633"
+}

@@ -1,0 +1,58 @@
+{
+  "board_title": "Athena Events \\ScreenBoard",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2017-09-09T04:41:38.651439+00:00",
+  "original_title": "mahesh.sikakolli's ScreenBoard 9 Sep 2017 10:11",
+  "modified": "2018-03-19T06:27:59.115338+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": null,
+      "name": "var"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "mahesh.sikakolli@thomsonreuters.com",
+    "name": "Mahesh Sikakolli",
+    "is_admin": false,
+    "role": "",
+    "access_role": "st",
+    "verified": true,
+    "email": "mahesh.sikakolli@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/2f5722100bec9be333c6e3c3d46fb3e0?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 219102,
+      "title_size": 20,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Events That Match Athena*",
+      "height": 36,
+      "overrideGlobalTime": true,
+      "width": 47,
+      "global_timeframe_controls": false,
+      "query": "Athena* ",
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 0,
+      "x": 0,
+      "type": "event_stream",
+      "event_size": "s",
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 219102,
+  "title_edited": false,
+  "isShared": false
+}

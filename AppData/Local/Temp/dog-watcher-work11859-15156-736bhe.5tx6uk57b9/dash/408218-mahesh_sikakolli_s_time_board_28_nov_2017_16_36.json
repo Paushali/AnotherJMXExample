@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by mahesh.sikakolli@thomsonreuters.com",
+    "title": "mahesh.sikakolli's TimeBoard 28 Nov 2017 16:36",
+    "created": "2017-11-28T11:06:24.550638+00:00",
+    "id": 408218,
+    "created_by": {
+      "disabled": false,
+      "handle": "mahesh.sikakolli@thomsonreuters.com",
+      "name": "Mahesh Sikakolli",
+      "is_admin": false,
+      "role": "",
+      "access_role": "st",
+      "verified": true,
+      "email": "mahesh.sikakolli@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/2f5722100bec9be333c6e3c3d46fb3e0?s=48&d=retro"
+    },
+    "modified": "2017-11-28T11:06:24.550655+00:00"
+  },
+  "url": "/dash/408218/maheshsikakollis-timeboard-28-nov-2017-1636",
+  "resource": "/api/v1/dash/408218"
+}
