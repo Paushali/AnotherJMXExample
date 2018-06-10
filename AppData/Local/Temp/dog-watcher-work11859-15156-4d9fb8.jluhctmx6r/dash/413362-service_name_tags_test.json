@@ -1,0 +1,52 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "style": {
+            "fillMax": null,
+            "palette": "green_to_orange",
+            "fillMin": null,
+            "paletteFlip": false
+          },
+          "group": [
+            "tr_service-name"
+          ],
+          "notes": null,
+          "noMetricHosts": true,
+          "viz": "hostmap",
+          "scope": [
+            "tr:osr:environment:sat"
+          ],
+          "requests": [
+            {
+              "q": "avg:aws.ec2.cpuutilization{tr:osr:environment:sat} by {host}",
+              "type": "fill"
+            }
+          ],
+          "noGroupHosts": true
+        },
+        "title": "Avg of aws.ec2.cpuutilization over tr:osr:environment:sat by host"
+      }
+    ],
+    "description": "created by manishkumar.choudhary@thomsonreuters.com",
+    "title": "Service name tags test",
+    "created": "2017-12-06T15:10:21.770265+00:00",
+    "id": 413362,
+    "created_by": {
+      "disabled": false,
+      "handle": "manishkumar.choudhary@thomsonreuters.com",
+      "name": "Manish Kumar Choudhary",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "manishkumar.choudhary@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/f7e2d0605d3bee9c19df0bbebcd94328?s=48&d=retro"
+    },
+    "modified": "2017-12-06T15:13:55.619217+00:00"
+  },
+  "url": "/dash/413362/service-name-tags-test",
+  "resource": "/api/v1/dash/413362"
+}

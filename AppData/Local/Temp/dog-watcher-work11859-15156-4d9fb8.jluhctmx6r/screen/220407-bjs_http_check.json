@@ -1,0 +1,84 @@
+{
+  "board_title": "bjs HTTP Check",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2017-09-13T20:51:15.232904+00:00",
+  "original_title": "bjs HTTP Check",
+  "modified": "2017-09-13T20:57:28.766756+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "brian.schuweiler@thomsonreuters.com",
+    "name": "Brian Schuweiler",
+    "is_admin": false,
+    "role": "",
+    "access_role": "st",
+    "verified": true,
+    "email": "brian.schuweiler@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/38aff58139908698cb3c24ff3d3ab5fa?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 220407,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 21,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:network.http.response_time{host:ShoeBookProWork.local}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 79,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 20,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 220407,
+      "group": "instance:value_service,url:http://localhost:8080/health,host:ShoeBookProWork.local",
+      "title_size": 13,
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "HTTP Check",
+      "height": 17,
+      "width": 48,
+      "group_by": [],
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 1,
+      "x": 1,
+      "text_size": "auto",
+      "type": "check_status",
+      "check": "http.can_connect",
+      "tags": [
+        "host:ShoeBookProWork.local"
+      ],
+      "grouping": "check"
+    }
+  ],
+  "disableCog": false,
+  "id": 220407,
+  "title_edited": false,
+  "isShared": false
+}

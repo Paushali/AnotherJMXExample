@@ -1,0 +1,87 @@
+{
+  "board_title": "BJS LS2 Synthetic AMER (cloned)",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2017-09-11T18:28:38.688011+00:00",
+  "original_title": "BJS LS2 Synthetic AMER (cloned)",
+  "modified": "2017-09-13T15:23:57.137768+00:00",
+  "disableEditing": false,
+  "height": 64,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "brian.schuweiler@thomsonreuters.com",
+    "name": "Brian Schuweiler",
+    "is_admin": false,
+    "role": "",
+    "access_role": "st",
+    "verified": true,
+    "email": "brian.schuweiler@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/38aff58139908698cb3c24ff3d3ab5fa?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 207653,
+      "group": "completed:jenkins.job.completed,duration:jenkins.job.duration,env:amer1,events:jenkins.events,job:trta.ls2.synthetic.ui.amer.testauto.login,module:lonestar2,satus:jenkins.job.status,host:w7-x64-ie10-002",
+      "tags": [
+        "*"
+      ],
+      "title": false,
+      "text_align": "center",
+      "height": 14,
+      "width": 18,
+      "group_by": [],
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 0,
+      "x": 0,
+      "text_size": "auto",
+      "type": "check_status",
+      "check": "jenkins.job.status",
+      "grouping": "check"
+    },
+    {
+      "board_id": 207653,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Failures in Last Month",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "count_nonzero(sum:jenkins.job.duration{job:trta.ls2.synthetic.ui.amer.testauto.login,result:failure} by {completed})",
+            "aggregator": "avg",
+            "style": {
+              "palette": "warm"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "yaxis": {
+          "includeZero": false,
+          "min": "1"
+        }
+      },
+      "width": 71,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 0,
+      "x": 18,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    }
+  ],
+  "disableCog": false,
+  "id": 219537,
+  "title_edited": false,
+  "isShared": false
+}

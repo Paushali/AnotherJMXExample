@@ -1,0 +1,51 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.load.1{host:i-045a9ccb8c8b18a4f}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            },
+            {
+              "q": "avg:system.load.1{host:i-05281974bef1be63f}",
+              "conditional_formats": [],
+              "type": "line"
+            },
+            {
+              "q": "avg:system.load.1{host:i-0cf1334a17757b27b}",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "WAF-NGINX"
+      }
+    ],
+    "description": "created by karthikeyan.rajamani@thomsonreuters.com",
+    "title": "WAF-SRE-POC",
+    "created": "2017-10-05T16:28:12.538838+00:00",
+    "id": 374597,
+    "created_by": {
+      "disabled": false,
+      "handle": "karthikeyan.rajamani@thomsonreuters.com",
+      "name": "Karthikeyan Rajamani",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "Karthikeyan.Rajamani@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/bae48acc0cdb1247103062bff0a91bca?s=48&d=retro"
+    },
+    "modified": "2017-10-09T14:39:26.739706+00:00"
+  },
+  "url": "/dash/374597/waf-sre-poc",
+  "resource": "/api/v1/dash/374597"
+}

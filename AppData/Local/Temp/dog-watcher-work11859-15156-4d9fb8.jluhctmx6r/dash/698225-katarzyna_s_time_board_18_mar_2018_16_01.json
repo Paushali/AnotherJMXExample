@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by kasia.jonca@thomsonreuters.com",
+    "title": "Katarzyna's TimeBoard 18 Mar 2018 16:01",
+    "created": "2018-03-18T23:01:57.855882+00:00",
+    "id": 698225,
+    "created_by": {
+      "disabled": false,
+      "handle": "kasia.jonca@thomsonreuters.com",
+      "name": "Katarzyna Jonca",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Kasia.Jonca@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/bafed9ce60d9d4b600f7ea181976077c?s=48&d=retro"
+    },
+    "modified": "2018-03-18T23:01:57.855899+00:00"
+  },
+  "url": "/dash/698225/katarzynas-timeboard-18-mar-2018-1601",
+  "resource": "/api/v1/dash/698225"
+}

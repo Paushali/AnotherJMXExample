@@ -1,0 +1,692 @@
+{
+  "board_title": "CM Portal Dashboard",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-03-23T16:10:31.936004+00:00",
+  "original_title": "CM Portal Dashboard",
+  "modified": "2018-05-24T16:33:48.660553+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "host:internal-idt-dev-852232759.us-east-1.elb.amazonaws.com",
+      "prefix": "host",
+      "name": "elb"
+    },
+    {
+      "default": "queuename:204591-idt-dev-cmportal-use1-certificatequeue",
+      "prefix": "queuename",
+      "name": "cert_queue"
+    },
+    {
+      "default": "queuename:204591-idt-dev-cmportal-use1-deadletterqueue",
+      "prefix": "queuename",
+      "name": "dead_letter_queue"
+    },
+    {
+      "default": "distributionid:e2ygh7ck13qyoa",
+      "prefix": "distributionid",
+      "name": "cloudfront_distid"
+    },
+    {
+      "default": "bucketname:204591-idt-dev-cmportal-use1-certificateimagebucket",
+      "prefix": "bucketname",
+      "name": "s3_bucket"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "kasia.jonca@thomsonreuters.com",
+    "name": "Katarzyna Jonca",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "Kasia.Jonca@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/bafed9ce60d9d4b600f7ea181976077c?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "metric": "aws.elb.request_count",
+      "custom_unit": null,
+      "query": "sum:aws.elb.request_count{$scope}.as_rate()",
+      "text_size": "auto",
+      "autoscale": true,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "left",
+      "text_align": "center",
+      "width": 28,
+      "legend_size": "0",
+      "type": "query_value",
+      "isShared": false,
+      "tags": [
+        "$scope"
+      ],
+      "time": {
+        "live_span": "1d"
+      },
+      "precision": 1,
+      "title_text": "CM Portal REST services requests per second",
+      "calc_func": "as_rate",
+      "metric_type": "count",
+      "title_size": 13,
+      "height": 10,
+      "legend": false,
+      "conditional_formats": [],
+      "is_valid_query": true,
+      "tile_def": {
+        "text_align": "left",
+        "autoscale": true,
+        "custom_unit": null,
+        "precision": 1,
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.request_count{$elb}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "res_calc_func": "as_rate",
+      "aggr": "sum",
+      "y": 1,
+      "x": 92
+    },
+    {
+      "metric": "",
+      "custom_unit": "ms",
+      "query": "avg:aws.elb.latency{$scope} * 1000",
+      "text_size": "auto",
+      "autoscale": false,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "left",
+      "text_align": "center",
+      "width": 27,
+      "legend_size": "0",
+      "type": "query_value",
+      "isShared": false,
+      "tags": [],
+      "time": {
+        "live_span": "1d"
+      },
+      "precision": 0,
+      "title_text": "CM Portal REST services response time",
+      "calc_func": "raw",
+      "metric_type": "standard",
+      "title_size": 13,
+      "height": 10,
+      "legend": false,
+      "conditional_formats": [
+        {
+          "palette": "white_on_red",
+          "comparator": ">",
+          "custom_bg_color": null,
+          "value": 500,
+          "invert": false,
+          "custom_fg_color": null
+        },
+        {
+          "palette": "white_on_yellow",
+          "comparator": ">",
+          "custom_bg_color": null,
+          "value": 400,
+          "invert": false,
+          "custom_fg_color": null
+        },
+        {
+          "palette": "white_on_green",
+          "comparator": "<=",
+          "custom_bg_color": null,
+          "value": 400,
+          "invert": false,
+          "custom_fg_color": null
+        }
+      ],
+      "is_valid_query": false,
+      "tile_def": {
+        "text_align": "left",
+        "autoscale": false,
+        "custom_unit": "ms",
+        "precision": "0",
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.target_response_time.average{$elb}*1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "custom_bg_color": null,
+                "value": 500,
+                "invert": false,
+                "custom_fg_color": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">",
+                "custom_bg_color": null,
+                "value": 400,
+                "invert": false,
+                "custom_fg_color": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<=",
+                "custom_bg_color": null,
+                "value": 400,
+                "invert": false,
+                "custom_fg_color": null
+              }
+            ]
+          }
+        ]
+      },
+      "res_calc_func": "raw",
+      "aggr": "avg",
+      "y": 1,
+      "x": 64
+    },
+    {
+      "metric": "aws.elb.un_healthy_host_count",
+      "custom_unit": null,
+      "query": "sum:aws.elb.un_healthy_host_count{$scope}",
+      "text_size": "auto",
+      "autoscale": true,
+      "title": true,
+      "aggregator": "max",
+      "title_align": "left",
+      "text_align": "center",
+      "width": 26,
+      "legend_size": "0",
+      "type": "query_value",
+      "isShared": false,
+      "tags": [
+        "$scope"
+      ],
+      "time": {
+        "live_span": "30m"
+      },
+      "precision": 0,
+      "title_text": "Unhealthy CM Portal REST services",
+      "calc_func": "raw",
+      "metric_type": "standard",
+      "title_size": 13,
+      "height": 10,
+      "legend": false,
+      "conditional_formats": [
+        {
+          "palette": "white_on_red",
+          "comparator": ">",
+          "custom_bg_color": null,
+          "value": 0,
+          "invert": false,
+          "custom_fg_color": null
+        },
+        {
+          "palette": "white_on_green",
+          "comparator": "<=",
+          "custom_bg_color": null,
+          "value": 0,
+          "invert": false,
+          "custom_fg_color": null
+        }
+      ],
+      "is_valid_query": true,
+      "tile_def": {
+        "text_align": "left",
+        "autoscale": true,
+        "custom_unit": null,
+        "precision": 0,
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.un_healthy_host_count{$elb}",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "custom_fg_color": null,
+                "custom_bg_color": null,
+                "palette": "red_on_white",
+                "value": "0",
+                "comparator": ">"
+              },
+              {
+                "custom_fg_color": null,
+                "custom_bg_color": null,
+                "palette": "green_on_white",
+                "value": "0",
+                "comparator": "<="
+              }
+            ]
+          }
+        ]
+      },
+      "res_calc_func": "raw",
+      "aggr": "sum",
+      "y": 1,
+      "x": 34
+    },
+    {
+      "metric": "aws.elb.healthy_host_count",
+      "custom_unit": null,
+      "query": "sum:aws.elb.healthy_host_count{$scope}",
+      "text_size": "auto",
+      "autoscale": true,
+      "title": true,
+      "aggregator": "min",
+      "title_align": "left",
+      "text_align": "center",
+      "width": 28,
+      "legend_size": "0",
+      "type": "query_value",
+      "isShared": false,
+      "tags": [
+        "$scope"
+      ],
+      "time": {
+        "live_span": "30m"
+      },
+      "precision": 0,
+      "title_text": "Healthy CM Portal REST services hosts count",
+      "calc_func": "raw",
+      "metric_type": "standard",
+      "title_size": 13,
+      "height": 10,
+      "legend": false,
+      "conditional_formats": [
+        {
+          "palette": "green_on_white",
+          "comparator": ">",
+          "custom_bg_color": null,
+          "value": 0,
+          "invert": false,
+          "custom_fg_color": null
+        },
+        {
+          "palette": "red_on_white",
+          "comparator": "<=",
+          "custom_bg_color": null,
+          "value": 0,
+          "invert": false,
+          "custom_fg_color": null
+        }
+      ],
+      "is_valid_query": true,
+      "tile_def": {
+        "text_align": "left",
+        "autoscale": true,
+        "custom_unit": null,
+        "precision": 0,
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.healthy_host_count{$elb}",
+            "aggregator": "min",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "custom_fg_color": null,
+                "custom_bg_color": null,
+                "palette": "green_on_white",
+                "value": "2",
+                "comparator": ">="
+              },
+              {
+                "custom_fg_color": null,
+                "custom_bg_color": null,
+                "palette": "red_on_white",
+                "value": "2",
+                "comparator": "<"
+              }
+            ]
+          }
+        ]
+      },
+      "res_calc_func": "raw",
+      "aggr": "sum",
+      "y": 1,
+      "x": 5
+    },
+    {
+      "board_id": 33142,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "5xx responses from CM Portal REST services",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.httpcode_target_5xx{$elb} by {host}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 56,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 15,
+      "x": 64,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306386,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Certificate Queue Data",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.sqs.number_of_messages_received{$cert_queue}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "sum:aws.sqs.approximate_number_of_messages_visible{$cert_queue}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          },
+          {
+            "q": "sum:aws.sqs.approximate_number_of_messages_not_visible{$cert_queue}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 38,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 47,
+      "x": 46,
+      "legend_size": "4",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306386,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Number of certificates in S3 bucket",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.s3.number_of_objects{$s3_bucket}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 62,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 63,
+      "x": 34,
+      "legend_size": "2",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306386,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Approximate age (sec) of oldest message in certificate queue",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.sqs.approximate_age_of_oldest_message{$cert_queue}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 40,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 47,
+      "x": 5,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306386,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Number of certificates in deadletter queue",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.sqs.approximate_number_of_messages_visible{$dead_letter_queue}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 34,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 47,
+      "x": 86,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306386,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Number of CM Portal UI requests",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.cloudfront.requests{$cloudfront_distid}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 55,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 31,
+      "x": 5,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306386,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Rate of 4xx and 5xx errors for CM Portal UI",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.cloudfront.5xx_error_rate{$cloudfront_distid}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:aws.cloudfront.4xx_error_rate{$cloudfront_distid}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 56,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 31,
+      "x": 64,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306386,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "4xx responses from CM Portal REST services",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.httpcode_target_4xx{$elb}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 55,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 15,
+      "x": 5,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 309179,
+  "title_edited": false,
+  "isShared": false
+}

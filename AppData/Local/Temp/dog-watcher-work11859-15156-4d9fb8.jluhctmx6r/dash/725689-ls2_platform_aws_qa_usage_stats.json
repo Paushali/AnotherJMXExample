@@ -1,0 +1,46 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.ec2.cpuutilization{host:i-07ae6639691bda7c6}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of aws.ec2.cpuutilization over host:i-07ae6639691bda7c6"
+      }
+    ],
+    "description": "created by chakradhar.tallapaneni@thomsonreuters.com",
+    "title": "LS2 Platform AWS QA Usage Stats",
+    "created": "2018-03-23T16:23:29.131651+00:00",
+    "id": 725689,
+    "created_by": {
+      "disabled": false,
+      "handle": "chakradhar.tallapaneni@thomsonreuters.com",
+      "name": "Chakradhar Tallapaneni",
+      "is_admin": false,
+      "role": "",
+      "access_role": "st",
+      "verified": true,
+      "email": "Chakradhar.Tallapaneni@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/920255493dd61c3df5bd4ac66f269be5?s=48&d=retro"
+    },
+    "modified": "2018-03-23T18:40:41.504483+00:00"
+  },
+  "url": "/dash/725689/ls2-platform-aws-qa-usage-stats",
+  "resource": "/api/v1/dash/725689"
+}

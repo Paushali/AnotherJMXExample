@@ -1,0 +1,797 @@
+{
+  "board_title": "OTP-NEXT-KAFKA-DEV",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-05-22T08:24:02.986779+00:00",
+  "original_title": "OTP-NEXT-KAFKA-DEV",
+  "modified": "2018-06-08T13:30:45.942932+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": null,
+      "name": "Environment"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "volodymyr.antonichuk@thomsonreuters.com",
+    "name": "Volodymyr Antonichuk",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "volodymyr.antonichuk@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/159fe34512335c4d4154517a391915c1?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": false,
+  "widgets": [
+    {
+      "board_id": 343083,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Free memory on brokers",
+      "height": 21,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.mem.free{host:kafka-1}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:system.mem.free{host:dev-kafka-1}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          },
+          {
+            "q": "avg:system.mem.free{host:dev-kafka-2}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          },
+          {
+            "q": "avg:system.mem.free{host:dev-kafka-3}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 82,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 27,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 343083,
+      "title_size": 16,
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "dev-kafka-1",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 6,
+      "width": 13,
+      "y": 1,
+      "x": 1,
+      "font_size": "auto",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 343083,
+      "title_size": 16,
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "dev-kafka-2",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 6,
+      "width": 13,
+      "y": 10,
+      "x": 1,
+      "font_size": "auto",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 343083,
+      "title_size": 16,
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "dev-kafka-3",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 6,
+      "width": 13,
+      "y": 19,
+      "x": 1,
+      "font_size": "auto",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 343083,
+      "x": 16,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System Load",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.load.1{host:dev-kafka-1}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 15,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 1,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 343083,
+      "x": 16,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System Load",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.load.1{host:dev-kafka-2}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 15,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 10,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 343083,
+      "x": 16,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System Load",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.load.1{host:dev-kafka-3}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 15,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 19,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 343083,
+      "x": 33,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Memory used",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.mem.used{host:dev-kafka-1}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 15,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 1,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 343083,
+      "x": 33,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Memory used",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.mem.used{host:dev-kafka-2}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 15,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 10,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 343083,
+      "x": 33,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Memory used",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.mem.used{host:dev-kafka-3}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 15,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 19,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 343083,
+      "x": 50,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Memory free",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.mem.free{host:dev-kafka-1}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": "<=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 1,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 343083,
+      "x": 50,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Memory free",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.mem.free{host:dev-kafka-2}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": "<=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 10,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 343083,
+      "x": 50,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Memory free",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.mem.free{host:dev-kafka-3}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": "<=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 19,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 343083,
+      "title_size": 13,
+      "tags": [
+        "*"
+      ],
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "Agent Up",
+      "height": 6,
+      "width": 15,
+      "group_by": [],
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 1,
+      "x": 68,
+      "text_size": "auto",
+      "grouping": "check",
+      "type": "check_status",
+      "check": "datadog.agent.up",
+      "group": "host:dev-kafka-1",
+      "isShared": false
+    },
+    {
+      "board_id": 343083,
+      "title_size": 13,
+      "tags": [
+        "*"
+      ],
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "Agent Up",
+      "height": 6,
+      "width": 15,
+      "group_by": [],
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 10,
+      "x": 68,
+      "text_size": "auto",
+      "grouping": "check",
+      "type": "check_status",
+      "check": "datadog.agent.up",
+      "group": "host:dev-kafka-2",
+      "isShared": false
+    },
+    {
+      "board_id": 343083,
+      "title_size": 13,
+      "tags": [
+        "*"
+      ],
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "Agent Up",
+      "height": 6,
+      "width": 15,
+      "group_by": [],
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 19,
+      "x": 68,
+      "text_size": "auto",
+      "grouping": "check",
+      "type": "check_status",
+      "check": "datadog.agent.up",
+      "group": "host:dev-kafka-3",
+      "isShared": false
+    },
+    {
+      "board_id": 343777,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 17,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.cpu.user{host:dev-kafka-1}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:system.cpu.user{host:dev-kafka-2}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          },
+          {
+            "q": "avg:system.cpu.user{host:dev-kafka-3}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 82,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 51,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 343777,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 22,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.disk.free{host:dev-kafka-1}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:system.disk.free{host:dev-kafka-2}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          },
+          {
+            "q": "avg:system.disk.free{host:dev-kafka-3}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 58,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 1,
+      "x": 85,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 343777,
+  "title_edited": false,
+  "isShared": false
+}
