@@ -1,0 +1,115 @@
+{
+  "board_title": "DTXP-AE-GRS",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2017-11-13T18:14:43.933263+00:00",
+  "original_title": "DTXP-AE-GRS990_16",
+  "modified": "2017-12-06T22:43:12.798907+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "siarhei.nikalaichyk@thomsonreuters.com",
+    "name": "Siarhei Nikalaichyk",
+    "is_admin": false,
+    "role": "DevOps Engineer",
+    "access_role": "st",
+    "verified": true,
+    "email": "Siarhei.Nikalaichyk@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/380c6563097fe00d8c220c14eaf63796?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 243580,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 20,
+      "tile_def": {
+        "style": {
+          "fillMax": null,
+          "palette": "green_to_orange",
+          "fillMin": null,
+          "paletteFlip": false
+        },
+        "group": [
+          "dtxp:env-basename"
+        ],
+        "notes": null,
+        "noMetricHosts": true,
+        "viz": "hostmap",
+        "scope": null,
+        "requests": [
+          {
+            "q": "avg:system.cpu.system{*} by {host}",
+            "type": "fill"
+          }
+        ],
+        "groupby": null,
+        "noGroupHosts": false
+      },
+      "width": 47,
+      "x": 27,
+      "y": 9,
+      "query": "avg:system.load.1{*} by {host}",
+      "legend_size": null,
+      "type": "hostmap",
+      "legend": null,
+      "add_timeframe": false
+    },
+    {
+      "board_id": 243580,
+      "x": 27,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 7,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.cpucredit_usage{dtxp:lifecycle-status:succeeded}",
+            "aggregator": "avg",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 21,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 32,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    }
+  ],
+  "disableCog": false,
+  "id": 243580,
+  "title_edited": true,
+  "isShared": false
+}

@@ -1,0 +1,65 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "query_value",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:spark.driver.active_tasks{otp_next_infra,environment:dev} by {cluster_name}",
+              "aggregator": "last",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of spark.driver.active_tasks over otp_next_infra,environment:dev by clust..."
+      },
+      {
+        "definition": {
+          "viz": "distribution",
+          "requests": [
+            {
+              "q": "avg:spark.job.num_active_tasks{otp_next_infra,environment:dev} by {cluster_name}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of spark.job.num_active_tasks over otp_next_infra,environment:dev by clus..."
+      }
+    ],
+    "description": "created by nazar.halokha@thomsonreuters.com",
+    "title": "nazar.halokha's TimeBoard 26 Jan 2018 11:44",
+    "created": "2018-01-26T09:44:48.712945+00:00",
+    "id": 512755,
+    "created_by": {
+      "disabled": false,
+      "handle": "nazar.halokha@thomsonreuters.com",
+      "name": "Nazar Halokha",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Nazar.Halokha@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/eca21fd6332dfa0e1b22143b68f7c3fc?s=48&d=retro"
+    },
+    "modified": "2018-01-26T11:43:01.255466+00:00"
+  },
+  "url": "/dash/512755/nazarhalokhas-timeboard-26-jan-2018-1144",
+  "resource": "/api/v1/dash/512755"
+}
