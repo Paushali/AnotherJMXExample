@@ -1,0 +1,46 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.uptime{servertype:oracle} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of system.uptime over servertype:oracle by host"
+      }
+    ],
+    "description": "created by raj.meka@thomsonreuters.com",
+    "title": "Rajashekar's TimeBoard 24 Apr 2018 16:17",
+    "created": "2018-04-24T21:17:15.577511+00:00",
+    "id": 794643,
+    "created_by": {
+      "disabled": false,
+      "handle": "raj.meka@thomsonreuters.com",
+      "name": "Rajashekar Meka",
+      "is_admin": false,
+      "role": "Devops Automation Engineer",
+      "access_role": "st",
+      "verified": true,
+      "email": "Raj.Meka@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/45a8fa12a9c7a82b67e01c0f1a5e3cf2?s=48&d=retro"
+    },
+    "modified": "2018-04-24T21:32:23.227583+00:00"
+  },
+  "url": "/dash/794643/rajashekars-timeboard-24-apr-2018-1617",
+  "resource": "/api/v1/dash/794643"
+}

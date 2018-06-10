@@ -1,0 +1,150 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "(max:athena.system.memory.available{app:oitc,env:qa} by {host,service,node_number}/max:athena.system.memory.total{app:oitc,env:qa} by {host,service,node_number})*100",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory Available in MBytes"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:athena.system.memory.available.pct{app:oitc,env:qa} by {host,service,node_number}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "events": []
+        },
+        "title": "Committed Memory Used in Percentage"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:athena.system.memory.pages{app:oitc,env:qa} by {host,service,node_number}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "events": []
+        },
+        "title": "Number of pages read from or written to the disk to resolve hard page faults"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:athena.system.memory.cache{app:oitc,env:qa} by {host,service,node_number}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "events": []
+        },
+        "title": "Number of bytes currently being used by the file system cache"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:athena.system.memory.total{app:oitc,env:qa,$HostName} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Physical Memory Size in Total"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:athena.system.uptime{app:oitc,env:qa} by {host,service,node_number}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "events": []
+        },
+        "title": "SystemUpTime(Difference between the start time and the current time)"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "oitc",
+        "prefix": "app",
+        "name": "Application"
+      },
+      {
+        "default": "*",
+        "prefix": "dnsname",
+        "name": "HostName"
+      }
+    ],
+    "description": "An Informative Dashboard about OITC Application in QA Environment.",
+    "title": "Athena_OnPrem_QA_OITC_DashBoard",
+    "created": "2018-06-08T08:10:05.378547+00:00",
+    "id": 830659,
+    "created_by": {
+      "disabled": false,
+      "handle": "rajesh.pallapothu@thomsonreuters.com",
+      "name": "Rajesh Pallapothu",
+      "is_admin": false,
+      "role": "",
+      "access_role": "st",
+      "verified": true,
+      "email": "Rajesh.pallapothu@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/7d823f2b88ee86a28f03a554c4cadb59?s=48&d=retro"
+    },
+    "modified": "2018-06-08T10:04:01.391230+00:00"
+  },
+  "url": "/dash/830659/athenaonpremqaoitcdashboard",
+  "resource": "/api/v1/dash/830659"
+}

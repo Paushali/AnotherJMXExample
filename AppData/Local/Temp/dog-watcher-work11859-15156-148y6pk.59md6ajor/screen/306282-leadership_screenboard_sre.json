@@ -1,0 +1,808 @@
+{
+  "board_title": "Leadership Screenboard-SRE",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-03-19T18:22:16.846203+00:00",
+  "original_title": "Leadership Screenboard-SRE",
+  "modified": "2018-03-21T19:43:49.845511+00:00",
+  "disableEditing": false,
+  "height": 66,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "karthikeyan.rajamani@thomsonreuters.com",
+    "name": "Karthikeyan Rajamani",
+    "is_admin": true,
+    "role": null,
+    "access_role": "adm",
+    "verified": true,
+    "email": "Karthikeyan.Rajamani@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/bae48acc0cdb1247103062bff0a91bca?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 306282,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Errors(4xx+5xx)",
+      "height": 15,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:f5.http_requests{service:www.onesourcetax.com,statuscode:5xx,window:1m}+sum:f5.http_requests{service:www.onesourcetax.com,window:1m,statuscode:4xx}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "5",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "1",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 23,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 18,
+      "x": 62,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Errors(4xx+5xx)",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:f5.http_requests{service:www.onesourcetax.com,statuscode:5xx,window:1m}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "sum:f5.http_requests{service:www.onesourcetax.com,window:1m,statuscode:4xx}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "value": "y = 10",
+            "val": 10,
+            "label": "10 errors"
+          }
+        ]
+      },
+      "width": 23,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 35,
+      "x": 62,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/Errors.JPG",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 17,
+      "width": 23,
+      "y": 1,
+      "x": 63,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/Latency.JPG",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 17,
+      "width": 18,
+      "y": -3,
+      "x": -40,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/Traffic.JPG",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 17,
+      "width": 33,
+      "y": 1,
+      "x": 28,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Traffic",
+      "height": 15,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:iis.httpd_request_method.get{host:C708PAQCWTWEB}*60",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "3000",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "custom_unit": "rq/m",
+        "precision": "0"
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 18,
+      "x": 28,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Traffic",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:iis.httpd_request_method.get{host:C708PAQCWTWEB}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "value": "y = 35",
+            "val": 35,
+            "label": true
+          }
+        ]
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 35,
+      "x": 28,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/Saturation.JPG",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 17,
+      "width": 28,
+      "y": 1,
+      "x": 86,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Saturation(How full)",
+      "height": 15,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "100-avg:system.cpu.idle{host:C708PAQCWTWEB}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "value": "40",
+                "comparator": "<"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "40",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_red",
+                "value": "70",
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "custom_unit": "%",
+        "precision": "1"
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 18,
+      "x": 86,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Saturation(How full)",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "100-avg:system.cpu.idle{host:C708PAQCWTWEB}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "type": "error dashed",
+            "value": "y = 40",
+            "val": "40",
+            "label": "40% cpu utilization"
+          }
+        ]
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 35,
+      "x": 86,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/Latency.JPG",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 17,
+      "width": 23,
+      "y": 1,
+      "x": 5,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Latency",
+      "height": 15,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:f5.response_times{service:www.onesourcetax.com,percentile:95,window:1m}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "250",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": "ms",
+        "precision": "0"
+      },
+      "width": 22,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 18,
+      "x": 5,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Latency",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:f5.response_times{service:www.onesourcetax.com,percentile:90,window:1m}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "type": "error dashed",
+            "value": "y = 200",
+            "val": "200",
+            "label": true
+          }
+        ]
+      },
+      "width": 22,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 35,
+      "x": 5,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Latency",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:f5.response_times{service:www.onesourcetax.com,percentile:90,window:1m}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "value": "y = 200",
+            "val": 200,
+            "label": true
+          }
+        ]
+      },
+      "width": 22,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 51,
+      "x": 5,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Traffic",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:iis.httpd_request_method.get{host:C708PAQCWTWEB}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "value": "y = 35",
+            "val": 35,
+            "label": true
+          }
+        ]
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 51,
+      "x": 28,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Errors(4xx+5xx)",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:f5.http_requests{service:www.onesourcetax.com,statuscode:5xx,window:1m}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "sum:f5.http_requests{service:www.onesourcetax.com,window:1m,statuscode:4xx}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "value": "y = 10",
+            "val": 10,
+            "label": "10 errors"
+          }
+        ]
+      },
+      "width": 23,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 51,
+      "x": 62,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Saturation(How full)",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "100-avg:system.cpu.idle{host:C708PAQCWTWEB}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "value": "y = 40",
+            "val": 40,
+            "label": "40% cpu utilization"
+          }
+        ]
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 51,
+      "x": 86,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Error % of all requests",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "(avg:f5.http_requests{service:www.onesourcetax.com,statuscode:4xx,window:1m}+avg:f5.http_requests{service:www.onesourcetax.com,statuscode:5xx,window:1m})/avg:f5.http_requests{service:www.onesourcetax.com,statuscode:all,window:1m}*100",
+            "type": "line",
+            "metadata": {
+              "(avg:f5.http_requests{service:www.onesourcetax.com,statuscode:4xx,window:1m}+avg:f5.http_requests{service:www.onesourcetax.com,statuscode:5xx,window:1m})/avg:f5.http_requests{service:www.onesourcetax.com,statuscode:all,window:1m}*100": {
+                "alias": "% of errors"
+              }
+            }
+          },
+          {
+            "q": "avg:f5.http_requests{service:www.onesourcetax.com,statuscode:5xx,window:1m}/avg:f5.http_requests{service:www.onesourcetax.com,statuscode:all,window:1m}*100",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "metadata": {
+              "avg:f5.http_requests{service:www.onesourcetax.com,statuscode:5xx,window:1m}/avg:f5.http_requests{service:www.onesourcetax.com,statuscode:all,window:1m}*100": {
+                "alias": "% 5xx of all traffic"
+              }
+            }
+          }
+        ],
+        "autoscale": true,
+        "yaxis": {
+          "includeZero": false,
+          "scale": "log"
+        }
+      },
+      "width": 27,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 35,
+      "x": 115,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Error % of all requests",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "(avg:f5.http_requests{service:www.onesourcetax.com,statuscode:4xx,window:1m}+avg:f5.http_requests{service:www.onesourcetax.com,statuscode:5xx,window:1m})/avg:f5.http_requests{service:www.onesourcetax.com,statuscode:all,window:1m}*100",
+            "type": "line",
+            "metadata": {
+              "(avg:f5.http_requests{service:www.onesourcetax.com,statuscode:4xx,window:1m}+avg:f5.http_requests{service:www.onesourcetax.com,statuscode:5xx,window:1m})/avg:f5.http_requests{service:www.onesourcetax.com,statuscode:all,window:1m}*100": {
+                "alias": "% of errors"
+              }
+            }
+          },
+          {
+            "q": "avg:f5.http_requests{service:www.onesourcetax.com,statuscode:5xx,window:1m}/avg:f5.http_requests{service:www.onesourcetax.com,statuscode:all,window:1m}*100",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "metadata": {
+              "avg:f5.http_requests{service:www.onesourcetax.com,statuscode:5xx,window:1m}/avg:f5.http_requests{service:www.onesourcetax.com,statuscode:all,window:1m}*100": {
+                "alias": "% 5xx of all traffic"
+              }
+            }
+          }
+        ],
+        "autoscale": true,
+        "yaxis": {
+          "includeZero": false,
+          "scale": "log"
+        }
+      },
+      "width": 27,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 51,
+      "x": 115,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 306282,
+  "title_edited": false,
+  "isShared": false
+}

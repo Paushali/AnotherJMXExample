@@ -1,0 +1,47 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "query_value",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.cpu.system{name:platform-dev-haproxy-service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "precision": "*"
+        },
+        "title": "Avg of system.cpu.system over name:platform-dev-haproxy-service"
+      }
+    ],
+    "description": "created by karthikeyan.rajamani@thomsonreuters.com",
+    "title": "Karthikeyan's TimeBoard 20 Feb 2018 15:33",
+    "created": "2018-02-20T21:33:13.535743+00:00",
+    "id": 588567,
+    "created_by": {
+      "disabled": false,
+      "handle": "karthikeyan.rajamani@thomsonreuters.com",
+      "name": "Karthikeyan Rajamani",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "Karthikeyan.Rajamani@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/bae48acc0cdb1247103062bff0a91bca?s=48&d=retro"
+    },
+    "modified": "2018-02-20T21:41:35.750843+00:00"
+  },
+  "url": "/dash/588567/karthikeyans-timeboard-20-feb-2018-1533",
+  "resource": "/api/v1/dash/588567"
+}

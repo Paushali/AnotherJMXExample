@@ -1,0 +1,83 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "(100-sum:system.cpu.idle{host:i-0fa3abf74059c7ac3})",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:aws.ec2.cpuutilization{host:i-0fa3abf74059c7ac3}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "system.cpu.idle, aws.ec2.cpuutilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "(100-sum:system.cpu.idle{host:i-0fa3abf74059c7ac3})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:aws.ec2.cpuutilization{host:i-0fa3abf74059c7ac3}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "system.cpu.idle, aws.ec2.cpuutilization"
+      }
+    ],
+    "description": "created by chakradhar.tallapaneni@thomsonreuters.com",
+    "title": "Onesource Calendar SAT",
+    "created": "2018-05-14T16:44:48.128695+00:00",
+    "id": 810567,
+    "created_by": {
+      "disabled": false,
+      "handle": "chakradhar.tallapaneni@thomsonreuters.com",
+      "name": "Chakradhar Tallapaneni",
+      "is_admin": false,
+      "role": "",
+      "access_role": "st",
+      "verified": true,
+      "email": "Chakradhar.Tallapaneni@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/920255493dd61c3df5bd4ac66f269be5?s=48&d=retro"
+    },
+    "modified": "2018-05-14T16:50:36.047900+00:00"
+  },
+  "url": "/dash/810567/onesource-calendar-sat",
+  "resource": "/api/v1/dash/810567"
+}
