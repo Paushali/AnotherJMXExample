@@ -1,0 +1,313 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.free_storage_space{tr:osr:environment:ci-fullstack,dbinstanceidentifier:shared-ci-fullstack-master}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "free space for CI fullstack shared DB"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.free_storage_space{tr:osr:environment:ci-fullstack,dbinstanceidentifier:data-capture-ci-fullstack-master}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Free space CI fullstack data capture DB"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.free_storage_space{tr:osr:environment:demo,dbinstanceidentifier:shared-demo-master}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Demo: Free Space in shared database"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.free_storage_space{tr:osr:environment:demo,dbinstanceidentifier:data-capture-demo-master}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Demo: Free space in Data Capture Database"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.free_storage_space{tr:osr:environment:intprod,dbinstanceidentifier:shared-intprod-master}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Int Prod: Free space in shared database"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.free_storage_space{tr:osr:environment:intprod,dbinstanceidentifier:data-capture-intprod-master}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Int Prod: Free space in data capture database"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.free_storage_space{tr:osr:environment:qa,dbinstanceidentifier:accounts-categories-qa-master}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "QA: Free Space in Accounts and Categories Database"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.free_storage_space{tr:osr:environment:qa,dbinstanceidentifier:barossa-data-qa-master}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "QA: Free Space in Barossa Data Database"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.free_storage_space{tr:osr:environment:qa,dbinstanceidentifier:data-capture-qa-master}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "QA: Free Space in Data Capture Database"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.free_storage_space{tr:osr:environment:qa,dbinstanceidentifier:linked-data-qa-master}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "QA: Free Space in Linked Data Database"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.free_storage_space{tr:osr:environment:qa,dbinstanceidentifier:report-storage-qa-master}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "QA: Free Space in Report Storage Database"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.free_storage_space{tr:osr:environment:qa,dbinstanceidentifier:templating-qa-master}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "QA: Free Space in Templating Database"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.free_storage_space{tr:osr:environment:sat,dbinstanceidentifier:accounts-categories-sat-master}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "SAT: Free Space in Accounts and Categories Database"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.free_storage_space{tr:osr:environment:sat,dbinstanceidentifier:data-capture-sat-master}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "SAT: Free Space in Barossa Data Database"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.free_storage_space{tr:osr:environment:sat,dbinstanceidentifier:data-capture-sat-master}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "SAT: Free Space in Data Capture Database"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.free_storage_space{tr:osr:environment:sat,dbinstanceidentifier:linked-data-sat-master}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "SAT: Free Space in Linked Data Database"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.free_storage_space{tr:osr:environment:sat,dbinstanceidentifier:report-storage-sat-master}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "SAT: Free Space in Reports Storage Database"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.rds.free_storage_space{tr:osr:environment:sat,dbinstanceidentifier:templating-sat-master}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "SAT: Free Space in Templating Database"
+      }
+    ],
+    "description": "created by becky.mullens@tr.com",
+    "title": "Barossa Databases",
+    "created": "2017-10-25T08:40:45.683054+00:00",
+    "id": 385830,
+    "created_by": {
+      "disabled": true,
+      "handle": "becky.mullens@tr.com",
+      "name": null,
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "becky.mullens@tr.com",
+      "icon": "https://secure.gravatar.com/avatar/5c61621d5823b8c41f787c1c79b140f4?s=48&d=retro"
+    },
+    "modified": "2017-10-25T13:29:35.504794+00:00"
+  },
+  "url": "/dash/385830/barossa-databases",
+  "resource": "/api/v1/dash/385830"
+}

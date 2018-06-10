@@ -1,0 +1,36 @@
+{
+  "board_title": "Chaitali's ScreenBoard 30 Apr 2018 12:15",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-04-30T17:15:33.827026+00:00",
+  "original_title": "Chaitali's ScreenBoard 30 Apr 2018 12:15",
+  "modified": "2018-04-30T17:15:56.170119+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "account",
+      "name": "AWS account"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "chaitali.agrawal@thomsonreuters.com",
+    "name": "Chaitali Agrawal",
+    "is_admin": true,
+    "role": null,
+    "access_role": "adm",
+    "verified": true,
+    "email": "chaitali.agrawal@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/109b0621779856fa6be67ee4cc747e84?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [],
+  "disableCog": false,
+  "id": 330452,
+  "title_edited": false,
+  "isShared": false
+}

@@ -1,0 +1,270 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:http.server.requests.95percentile{env:dev,service:identifiergraph,!uri:/health,!uri:/healthsimple}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of http.server.requests.95percentile over env:dev,service:identifiergraph..."
+      },
+      {
+        "definition": {
+          "status": "done",
+          "autoscale": true,
+          "custom_unit": "hrs",
+          "precision": "2",
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "avg:process.uptime{env:dev,service:identifiergraph}/3600000",
+              "aggregator": "last",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ]
+        },
+        "title": "Avg of process.uptime over env:dev,service:identifiergraph"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:http.server.requests.count{env:dev,service:identifiergraph,!uri:/health,!uri:/healthsimple}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of http.server.requests.count over env:dev,service:identifiergraph,!uri:/..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:jvm.threads.live{env:dev,service:identifiergraph}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of jvm.threads.live over env:dev,service:identifiergraph"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:jvm.memory.used{env:dev,service:identifiergraph}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of jvm.memory.used over env:dev,service:identifiergraph"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:jvm.gc.pause.avg{env:dev,service:identifiergraph}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:jvm.gc.pause.count{env:dev,service:identifiergraph}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            },
+            {
+              "q": "avg:jvm.gc.pause.max{env:dev,service:identifiergraph}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "jvm.gc.pause.avg, jvm.gc.pause.count, jvm.gc.pause.max"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.load.1{name:dep-dev-graph-service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:system.load.5{name:dep-dev-graph-service}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:system.load.15{name:dep-dev-graph-service}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "system.load.1, system.load.5, system.load.15"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{name:dep-dev-graph-service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:system.mem.total{name:dep-dev-graph-service}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "system.mem.used, system.mem.total"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.cpu.user{name:dep-dev-graph-service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:system.cpu.system{name:dep-dev-graph-service}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "system.cpu.user, system.cpu.system"
+      }
+    ],
+    "description": "created by rajesh.nakkana@thomsonreuters.com",
+    "title": "DEP-Dev-Common Entities-Identifier Graph Dashboard",
+    "created": "2018-01-12T20:58:59.657320+00:00",
+    "id": 467333,
+    "created_by": {
+      "disabled": false,
+      "handle": "rajesh.nakkana@thomsonreuters.com",
+      "name": "Rajesh Nakkana",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Rajesh.Nakkana@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/c1ca8c655af67757a5cc75f678072b69?s=48&d=retro"
+    },
+    "modified": "2018-03-12T07:01:34.763168+00:00"
+  },
+  "url": "/dash/467333/dep-dev-common-entities-identifier-graph-dashboard",
+  "resource": "/api/v1/dash/467333"
+}

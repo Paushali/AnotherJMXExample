@@ -1,0 +1,722 @@
+{
+  "board_title": "grs1120_16 WinDash",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2017-11-14T22:12:48.081433+00:00",
+  "original_title": "grs1120_16 WinDash",
+  "modified": "2017-11-17T22:24:06.905809+00:00",
+  "disableEditing": false,
+  "height": 118,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "host",
+      "name": "host"
+    },
+    {
+      "default": "*",
+      "prefix": null,
+      "name": "scope"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "b.matthew.ragan@thomsonreuters.com",
+    "name": "Boonchai Ragan",
+    "is_admin": false,
+    "role": "DevOps",
+    "access_role": "st",
+    "verified": true,
+    "email": "b.matthew.ragan@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/e2c25795b41f1ce4da8341fd48a3656e?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 110844,
+      "title_size": 16,
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "height": 5,
+      "bgcolor": "gray",
+      "html": "CPU",
+      "y": 14,
+      "x": 0,
+      "font_size": "18",
+      "tick": true,
+      "tick_pos": "50%",
+      "width": 47,
+      "auto_refresh": false
+    },
+    {
+      "board_id": 110844,
+      "title_size": 16,
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "height": 5,
+      "bgcolor": "gray",
+      "html": "Memory",
+      "y": 28,
+      "x": 48,
+      "font_size": "18",
+      "tick": true,
+      "tick_pos": "50%",
+      "width": 52,
+      "auto_refresh": false
+    },
+    {
+      "board_id": 110844,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "system.cpu.pct",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "avg:system.cpu.pct{tr:service-name:grs1120_16,dtxp:lifecycle-status:succeeded} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 20,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 110844,
+      "x": 147,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Event Log",
+      "height": 26,
+      "width": 47,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "2d"
+      },
+      "y": 70,
+      "query": "windows event",
+      "type": "event_stream",
+      "event_size": "s"
+    },
+    {
+      "board_id": 110844,
+      "x": 147,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Security failures",
+      "height": 9,
+      "width": 47,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 58,
+      "query": "windows audit",
+      "type": "event_timeline"
+    },
+    {
+      "board_id": 110844,
+      "title_size": 16,
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "height": 5,
+      "bgcolor": "gray",
+      "html": "Events and services",
+      "y": 52,
+      "x": 147,
+      "font_size": "18",
+      "tick": true,
+      "tick_pos": "50%",
+      "width": 47,
+      "auto_refresh": false
+    },
+    {
+      "board_id": 110844,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Disksec/read",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:system.disk.read_sec{$host}",
+            "aggregator": "avg",
+            "conditional_formats": [
+              {
+                "palette": "red_on_white",
+                "comparator": ">",
+                "value": "30"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "29"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "29"
+              }
+            ]
+          }
+        ],
+        "precision": "0"
+      },
+      "width": 13,
+      "time": {
+        "live_span": "5m"
+      },
+      "y": 2,
+      "x": 132,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 110844,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Network throughput",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.net.bytes_sent{$host}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line",
+            "style": {
+              "palette": "purple"
+            }
+          },
+          {
+            "q": "- avg:system.net.bytes_rcvd{$host}",
+            "style": {
+              "palette": "green"
+            },
+            "type": "line"
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 19,
+      "x": 147,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 110844,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "TCP segments retransmitted",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:system.net.tcp.retrans_seg{$host}",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 35,
+      "x": 147,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 110844,
+      "title_size": 16,
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "height": 5,
+      "bgcolor": "gray",
+      "html": "Network",
+      "y": 13,
+      "x": 147,
+      "font_size": "18",
+      "tick": true,
+      "tick_pos": "50%",
+      "width": 47,
+      "auto_refresh": false
+    },
+    {
+      "board_id": 207000,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "system.mem.avail",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "avg:system.mem.avail{tr:service-name:grs1120_16,dtxp:lifecycle-status:succeeded} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 52,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 34,
+      "x": 48,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 207000,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "system.cpu.priv.pct",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "avg:system.cpu.priv.pct{tr:service-name:grs1120_16} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 36,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 207000,
+      "x": 0,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "# Processes",
+      "height": 10,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.proc.count{tr:service-name:grs1120_16,dtxp:lifecycle-status:succeeded}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "400"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "200"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "100"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 14,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 1,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207000,
+      "x": 15,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "# Users",
+      "height": 10,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.users.count{tr:service-name:grs1120_16,dtxp:lifecycle-status:succeeded}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "40"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "20"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "10"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 15,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 1,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207000,
+      "x": 31,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "% Drive Free",
+      "height": 10,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.disk.free.pct{tr:service-name:grs1120_16,dtxp:lifecycle-status:succeeded}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "90"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "75"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "75"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 16,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 1,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207000,
+      "x": 48,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "TCP Packets Retransmitted",
+      "height": 10,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.net.tcp.retrans_seg{tr:service-name:grs1120_16,dtxp:lifecycle-status:succeeded}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "50"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 23,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 1,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207000,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "grs1120_16",
+      "height": 24,
+      "tile_def": {
+        "style": {
+          "fillMax": null,
+          "palette": "green_to_orange",
+          "fillMin": null,
+          "paletteFlip": false
+        },
+        "group": null,
+        "notes": null,
+        "noMetricHosts": true,
+        "viz": "hostmap",
+        "scope": [
+          "tr:service-name:grs1120_16",
+          "dtxp:lifecycle-status:succeeded"
+        ],
+        "requests": [
+          {
+            "q": "avg:system.cpu.pct{tr:service-name:grs1120_16,dtxp:lifecycle-status:succeeded} by {host}",
+            "type": "fill"
+          }
+        ],
+        "groupby": null,
+        "noGroupHosts": true
+      },
+      "width": 28,
+      "x": 72,
+      "y": 1,
+      "query": "avg:system.load.1{*} by {host}",
+      "legend_size": null,
+      "type": "hostmap",
+      "legend": null,
+      "add_timeframe": false
+    },
+    {
+      "board_id": 244464,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "avg:system.mem.used{tr:service-name:grs1120_16,dtxp:lifecycle-status:succeeded} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 52,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 50,
+      "x": 48,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 244464,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "avg:system.net.bytes_rcvd{tr:service-name:grs1120_16} by {host}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "area"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 52,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 244464,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.cpucredit_usage{*}",
+            "aggregator": "avg",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 23,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 14,
+      "x": 48,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    }
+  ],
+  "disableCog": false,
+  "id": 244464,
+  "title_edited": false,
+  "isShared": false
+}
