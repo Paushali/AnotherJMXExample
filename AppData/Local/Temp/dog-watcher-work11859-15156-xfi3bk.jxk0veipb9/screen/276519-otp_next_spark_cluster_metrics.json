@@ -1,0 +1,1053 @@
+{
+  "board_title": "OTP-NEXT-Spark-cluster-metrics",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-01-26T09:44:19.224593+00:00",
+  "original_title": "OTP-NEXT-Spark-cluster-metrics",
+  "modified": "2018-05-21T11:41:36.226438+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": null,
+      "name": "Environment"
+    },
+    {
+      "default": "*",
+      "prefix": null,
+      "name": "CLuster"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "nazar.halokha@thomsonreuters.com",
+    "name": "Nazar Halokha",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "Nazar.Halokha@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/eca21fd6332dfa0e1b22143b68f7c3fc?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 276519,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:spark.job.count{app_name:persistencejob,$Environment} by {cluster_name}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "1",
+                "comparator": "<"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "10",
+                "comparator": "<"
+              },
+              {
+                "palette": "white_on_green",
+                "value": "20",
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "text_align": "center"
+      },
+      "width": 18,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 16,
+      "x": 20,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:spark.executor.count{$Environment} by {host}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "1",
+                "comparator": "<"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "1",
+                "comparator": "<="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "1",
+                "comparator": ">="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 18,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 1,
+      "x": 1,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:spark.stage.count{app_name:persistencejob,$Environment,$CLuster,otp_next_infra} by {app_name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 16,
+      "x": 39,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "title_size": 16,
+      "title": true,
+      "color": "#000",
+      "text": "Persistence  Job",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 7,
+      "width": 18,
+      "y": 17,
+      "x": 1,
+      "font_size": "auto",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:spark.driver.rdd_blocks{app_name:persistencejob,$Environment,$CLuster,otp_next_infra} by {host}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 16,
+      "x": 59,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:spark.job.count{app_name:flowthrough,$Environment} by {host}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "1",
+                "comparator": "<"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "10",
+                "comparator": "<"
+              },
+              {
+                "palette": "white_on_green",
+                "value": "20",
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "text_align": "center"
+      },
+      "width": 18,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 31,
+      "x": 20,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:spark.stage.count{app_name:flowthrough,$Environment} by {host}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 31,
+      "x": 39,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "title_size": 16,
+      "title": true,
+      "color": "#000",
+      "text": "Computation Job",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 7,
+      "width": 18,
+      "y": 46,
+      "x": 1,
+      "font_size": "auto",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:spark.driver.rdd_blocks{app_name:flowthrough,$Environment,$CLuster,otp_next_infra} by {host}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 31,
+      "x": 59,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:spark.job.count{app_name:computationjob,$Environment,$CLuster,otp_next_infra} by {host}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "1",
+                "comparator": "<"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "10",
+                "comparator": "<"
+              },
+              {
+                "palette": "white_on_green",
+                "value": "20",
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "text_align": "center"
+      },
+      "width": 18,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 46,
+      "x": 20,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:spark.stage.count{app_name:computationjob,$Environment,$CLuster,otp_next_infra} by {app_name,host}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 46,
+      "x": 39,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "title_size": 16,
+      "title": true,
+      "color": "#000",
+      "text": "Flow Through Job",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 7,
+      "width": 18,
+      "y": 31,
+      "x": 1,
+      "font_size": "auto",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:spark.driver.rdd_blocks{app_name:computationjob,$Environment,$CLuster,otp_next_infra} by {host}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 46,
+      "x": 59,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Jobs Count Total",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:spark.job.count{otp_next_infra,$Environment,$CLuster} by {cluster_name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "1",
+                "comparator": "<"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "10",
+                "comparator": "<"
+              },
+              {
+                "palette": "white_on_green",
+                "value": "20",
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "text_align": "center"
+      },
+      "width": 18,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 1,
+      "x": 20,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Stages Total",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:spark.stage.count{$Environment,$CLuster} by {environment}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 1,
+      "x": 39,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "RDD Total",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:spark.driver.rdd_blocks{$Environment,$CLuster,otp_next_infra} by {environment}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 1,
+      "x": 59,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Driver Disk/Mem Usage",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:spark.driver.memory_used{$Environment,$CLuster,otp_next_infra} by {app_name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "max:spark.driver.disk_used{$Environment,$CLuster,otp_next_infra} by {app_name}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 37,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 61,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Stage Inpute/Output Bytes",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:spark.stage.input_bytes{$Environment,$CLuster,otp_next_infra} by {app_name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:spark.stage.output_bytes{$Environment,$CLuster,otp_next_infra} by {app_name}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 63,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 16,
+      "x": 79,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Stage Inpute/Output Records",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:spark.stage.input_records{$Environment,$CLuster,otp_next_infra} by {app_name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:spark.stage.output_records{$Environment,$CLuster,otp_next_infra} by {app_name}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 63,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 31,
+      "x": 79,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Stage Inpute/Output Bytes",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:spark.stage.input_bytes{$Environment,$CLuster,otp_next_infra} by {app_name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:spark.stage.output_bytes{$Environment,$CLuster,otp_next_infra} by {app_name}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 63,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 46,
+      "x": 79,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Shuffle Read/Write Bytes",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:spark.stage.shuffle_read_bytes{$Environment} by {app_name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:spark.stage.shuffle_write_bytes{$Environment} by {app_name}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 63,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 61,
+      "x": 79,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Driver Tasks Total/Active",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:spark.driver.total_tasks{$Environment} by {app_name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "max:spark.driver.active_tasks{$Environment} by {app_name}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 39,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 61,
+      "x": 39,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 276519,
+      "title_size": 16,
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "OTP-Next Spark Stats",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 6,
+      "width": 61,
+      "y": 4,
+      "x": 80,
+      "font_size": "auto",
+      "type": "free_text",
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 276519,
+  "title_edited": false,
+  "isShared": false
+}

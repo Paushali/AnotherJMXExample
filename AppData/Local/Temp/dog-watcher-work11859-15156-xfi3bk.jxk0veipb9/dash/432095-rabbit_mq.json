@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by sushantkumar1@thomsonreuters.com",
+    "title": "RabbitMQ",
+    "created": "2017-12-28T06:51:09.726669+00:00",
+    "id": 432095,
+    "created_by": {
+      "disabled": false,
+      "handle": "sushantkumar1@thomsonreuters.com",
+      "name": "Sushant Kumar",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "sushantkumar1@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/25b1d7a5a9c4beff9da1a691cebafc90?s=48&d=retro"
+    },
+    "modified": "2017-12-28T06:51:09.726685+00:00"
+  },
+  "url": "/dash/432095/rabbitmq",
+  "resource": "/api/v1/dash/432095"
+}

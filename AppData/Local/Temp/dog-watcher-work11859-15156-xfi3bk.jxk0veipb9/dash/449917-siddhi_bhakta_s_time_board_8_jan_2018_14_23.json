@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by siddhi.bhakta@thomsonreuters.com",
+    "title": "siddhi.bhakta's TimeBoard 8 Jan 2018 14:23",
+    "created": "2018-01-08T20:23:35.349169+00:00",
+    "id": 449917,
+    "created_by": {
+      "disabled": false,
+      "handle": "siddhi.bhakta@thomsonreuters.com",
+      "name": "Siddhi Bhakta",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Siddhi.Bhakta@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/2cf5f40a0664aac7626ab0e1e8fb962d?s=48&d=retro"
+    },
+    "modified": "2018-01-08T20:23:35.349208+00:00"
+  },
+  "url": "/dash/449917/siddhibhaktas-timeboard-8-jan-2018-1423",
+  "resource": "/api/v1/dash/449917"
+}

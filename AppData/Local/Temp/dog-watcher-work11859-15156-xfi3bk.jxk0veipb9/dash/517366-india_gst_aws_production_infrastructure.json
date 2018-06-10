@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by mustaq.shaik@thomsonreuters.com",
+    "title": "India GST-AWS Production Infrastructure",
+    "created": "2018-01-29T10:50:15.078054+00:00",
+    "id": 517366,
+    "created_by": {
+      "disabled": false,
+      "handle": "mustaq.shaik@thomsonreuters.com",
+      "name": "Mustaq Moinuddin Ali Shaik",
+      "is_admin": true,
+      "role": "Lead - Site Reliability Engineer",
+      "access_role": "adm",
+      "verified": true,
+      "email": "mustaq.shaik@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/b3b573958a4fdc9c9541ebf3c51aac48?s=48&d=retro"
+    },
+    "modified": "2018-01-29T10:50:15.078088+00:00"
+  },
+  "url": "/dash/517366/india-gst-aws-production-infrastructure",
+  "resource": "/api/v1/dash/517366"
+}

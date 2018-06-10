@@ -1,0 +1,247 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "query_value",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.load.1{$Environment,$var}",
+              "aggregator": "last",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of system.load.1 over $Environment"
+      },
+      {
+        "definition": {
+          "viz": "query_value",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.load.1{$Environment,$var} by {environment}",
+              "aggregator": "last",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of system.load.1 over $Environment by environment"
+      },
+      {
+        "definition": {
+          "viz": "query_value",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.load.1{host:broker2.aws,$var}",
+              "aggregator": "last",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of system.load.1 over host:broker2.aws"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.mem.free{host:broker1.aws,$var} by {environment}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:system.mem.free{host:broker2.aws,$var} by {environment}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:system.mem.free{host:broker3.aws,$var} by {environment}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory free per broker"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.io.w_s{otp_next_infra,$Environment,$var} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:system.io.r_s{otp_next_infra,$Environment,$var} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "I/O"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.disk.free{host:broker1.aws,device:/dev/xvda1,environment:alfa,$var}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:system.disk.free{host:broker2.aws,device:/dev/xvda1,environment:alfa,$var}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:system.disk.free{host:broker3.aws,device:/dev/xvda1,environment:alfa,$var}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Disk space free on brokers"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.load.1{host:broker1.aws,$var}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:system.load.1{host:broker2.aws,$var}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:system.load.1{host:broker3.aws,$var}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "System loads Broker1, Broker2, Broker3"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "alfa",
+        "prefix": "environment",
+        "name": "Environment"
+      },
+      {
+        "default": "*",
+        "prefix": null,
+        "name": "var"
+      }
+    ],
+    "description": "created by nazar.halokha@thomsonreuters.com",
+    "title": "OTP-NEXT-Host-metrics",
+    "created": "2018-01-25T15:36:44.001717+00:00",
+    "id": 511992,
+    "created_by": {
+      "disabled": false,
+      "handle": "nazar.halokha@thomsonreuters.com",
+      "name": "Nazar Halokha",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Nazar.Halokha@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/eca21fd6332dfa0e1b22143b68f7c3fc?s=48&d=retro"
+    },
+    "modified": "2018-05-31T10:55:45.643345+00:00"
+  },
+  "url": "/dash/511992/otp-next-host-metrics",
+  "resource": "/api/v1/dash/511992"
+}

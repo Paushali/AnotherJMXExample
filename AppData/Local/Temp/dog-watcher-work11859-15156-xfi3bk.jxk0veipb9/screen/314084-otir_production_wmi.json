@@ -1,0 +1,378 @@
+{
+  "board_title": "OTIR Production (WMI)",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-04-02T14:16:51.558874+00:00",
+  "original_title": "OTIR Production (WMI)",
+  "modified": "2018-04-02T14:38:34.331062+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "jacob.john@thomsonreuters.com",
+    "name": "Jacob John Kadambanattu",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "jacob.john@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/3393b408a67b6584fd808153e1d75700?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 314084,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Win32_PerfFormattedData_PerfOS_Memory",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:otir.mem.avaialble{tr_environment-type:production,tr_product:otir} by {host}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:otir.mem.pages{tr_environment-type:production,tr_product:otir} by {host}",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 4,
+      "x": 4,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 314084,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Win32_PerfFormattedData_PerfOS_System",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:otir.latency.processqueue.length{tr_environment-type:production,tr_product:otir} by {host}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 4,
+      "x": 54,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 314084,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Win32_PerfFormattedData_ASPNET_ASPNETApplications",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:otir.rate.requestpersecond{tr_environment-type:production,tr_product:otir} by {host}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:otir.errors.errorstotal{tr_environment-type:production,tr_product:otir} by {host}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area"
+          },
+          {
+            "q": "avg:otir.errors.requestsnotfound{tr_environment-type:production,tr_product:otir} by {host}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area"
+          },
+          {
+            "q": "avg:otir.errors.requestsrejected{tr_environment-type:production,tr_product:otir} by {host}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area"
+          },
+          {
+            "q": "avg:otir.errors.requesttimedout{tr_environment-type:production,tr_product:otir} by {host}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 22,
+      "x": 4,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 314084,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Win32_PerfFormattedData_W3SVC_WebService",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:otir.rate.getrequestspersecond{tr_environment-type:production,tr_product:otir} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:otir.rate.putrequestspersecond{tr_environment-type:production,tr_product:otir} by {host}",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "line"
+          },
+          {
+            "q": "avg:otir.rate.postrequestpersecond{tr_environment-type:production,tr_product:otir} by {host}",
+            "style": {
+              "width": "normal",
+              "palette": "purple",
+              "type": "solid"
+            },
+            "type": "line"
+          },
+          {
+            "q": "avg:otir.saturation.webservice.currentconnections{tr_environment-type:production,tr_product:otir} by {host}",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 22,
+      "x": 54,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 314084,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Win32_PerfFormattedData_NETFramework_NETCLRExceptions",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:otir.errors.excepsthrownpersecond{tr_environment-type:production,tr_product:otir} by {host}",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 40,
+      "x": 4,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 314084,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Win32_PerfFormattedData_W3SVCW3WPCounterProvider_W3SVCW3WP",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:otir.rate.webservice.activerequests{tr_environment-type:production,tr_product:otir} by {host}",
+            "style": {
+              "width": "normal",
+              "palette": "purple",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:otir.rate.webservice.requestpersecond{tr_environment-type:production,tr_product:otir} by {host}",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 41,
+      "x": 54,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 314084,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Win32_PerfFormattedData_PerfDisk_LogicalDisk",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:otir.system.disk.free_mbytes{tr_environment-type:production,tr_product:otir} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:otir.system.disk.read_sec{tr_environment-type:production,tr_product:otir} by {host}",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line"
+          },
+          {
+            "q": "avg:otir.system.disk.write_sec{tr_environment-type:production,tr_product:otir} by {host}",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "solid"
+            },
+            "type": "line"
+          },
+          {
+            "q": "avg:otir.system.disk.queue{tr_environment-type:production,tr_product:otir} by {host}",
+            "style": {
+              "width": "normal",
+              "palette": "grey",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 56,
+      "x": 3,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 314084,
+  "title_edited": false,
+  "isShared": false
+}
