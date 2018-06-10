@@ -1,0 +1,218 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:OTIR_ClientWeb.page.load.time{tr_environment-type:quality_assurance,tr_product:otir}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Latency - Client Web Pages"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:OTIR_ClientWeb.page.worker.load.time{tr_environment-type:quality_assurance,tr_product:otir}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Latency - Client Web Worker Pages"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:Local_OTIR_ClientWeb.otir.cw.exception{error:500,tr_product:otir} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Errors - 5xx"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(avg:OTIR_ClientWeb.page.load.time.avg{tr_product:otir,tr_environment-type:quality_assurance} by {page}, 50, 'mean', 'desc')",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "conditional_formats": [
+                {
+                  "palette": "white_on_yellow",
+                  "comparator": ">",
+                  "value": 1000
+                }
+              ]
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Latency - Client Web Pages (by Page)"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(avg:OTIR_ClientWeb.page.worker.load.time.avg{tr_product:otir,tr_environment-type:quality_assurance} by {page}, 50, 'mean', 'desc')",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "conditional_formats": [
+                {
+                  "palette": "white_on_yellow",
+                  "comparator": ">",
+                  "value": 1000
+                }
+              ]
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Latency - Client Web Worker Pages (By Page)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:OTIR_ClientWeb.otir.cw.exception{error:404,tr_product:otir} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Errors - 4xx"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:otir.rate.webservice.requestpersecond{tr_environment-type:quality_assurance,tr_product:otir} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Traffic"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:otir.errors.excepsthrownpersecond{tr_environment-type:quality_assurance,tr_product:otir} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Exceptions (.net CLR) - By Host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:OTIR_ClientWeb.users.unique{tr_environment-type:quality_assurance,tr_product:otir} by {host}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Users by Host"
+      }
+    ],
+    "description": "created by jacob.john@thomsonreuters.com",
+    "title": "OTIR Demo - QA",
+    "created": "2018-03-13T19:09:20.106044+00:00",
+    "id": 669570,
+    "created_by": {
+      "disabled": false,
+      "handle": "jacob.john@thomsonreuters.com",
+      "name": "Jacob John Kadambanattu",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "jacob.john@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/3393b408a67b6584fd808153e1d75700?s=48&d=retro"
+    },
+    "modified": "2018-04-02T15:42:27.202672+00:00"
+  },
+  "url": "/dash/669570/otir-demo---qa",
+  "resource": "/api/v1/dash/669570"
+}

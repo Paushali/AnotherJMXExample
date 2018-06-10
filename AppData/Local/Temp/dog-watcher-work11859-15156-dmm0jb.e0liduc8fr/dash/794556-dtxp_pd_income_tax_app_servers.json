@@ -1,0 +1,346 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:system.mem.used{env:pd,servertype:app,platform:onesource,region:amer,service:oit} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "MEMORY used - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:dtxp.mem.pages{env:pd,servertype:app,platform:onesource,region:amer,service:oit} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "MEMORY faults in file system cache - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:dtxp.mem.avaialble{env:pd,servertype:app,platform:onesource,region:amer,service:oit} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "MEMORY available - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:dtxp.system.uptime{env:pd,servertype:app,platform:onesource,region:amer,service:oit} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "SYSTEM uptime - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:dtxp.system.cpu.user.pct{env:pd,app:directtax,servertype:app,service:oit} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "SYSTEM cpu percentage - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:dtxp.system.proc.context_switches{app:directtax,env:pd,servertype:app,service:oit} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:dtxp.system.cpu.interrupt.pct{app:directtax,env:pd,service:oit,servertype:app} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CPU context switch and Interrupt - Latency"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:dtxp.system.disk.avgsecperread{env:pd,app:directtax,servertype:app,service:oit} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:dtxp.system.disk.avgsecperwrite{env:pd,app:directtax,servertype:app,service:oit,platform:onesource} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "DISK avg seconds per read/write - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:dtxp.system.disk.queue{app:directtax,env:dc,servertype:app,service:oit} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "DISK - Latency"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:dtxp.system.network.bytes_rcvd{env:pd,app:directtax,service:oit,servertype:app} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:dtxp.system.network.bytes_sent{env:pd,app:directtax,platform:onesource,service:oit,servertype:app} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "orange",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "NETWORK - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:dtxp.latency.processqueue.length{env:pd,app:directtax,service:oit,servertype:app} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "PROCESS queue length - Latency"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:dtxp.process.handles.count{env:pd,app:directtax,servertype:app,service:oit} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ROLE Handles Count - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:dtxp.process.threads.count{env:pd,app:directtax,servertype:app,service:oit} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ROLE Thread Count - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:dtxp.process.mem.privatebytes{env:pd,app:directtax,service:oit,servertype:app} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ROLE private bytes allocated - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:dtxp.process.mem.virtualbytes{env:pd,servertype:app,service:oit,app:directtax} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ROLE virtual bytes allocated - Utilization"
+      }
+    ],
+    "description": "created by raj.meka@thomsonreuters.com",
+    "title": "DTXP PD - Income Tax, App Servers",
+    "created": "2018-04-24T19:41:13.115599+00:00",
+    "id": 794556,
+    "created_by": {
+      "disabled": false,
+      "handle": "raj.meka@thomsonreuters.com",
+      "name": "Rajashekar Meka",
+      "is_admin": false,
+      "role": "Devops Automation Engineer",
+      "access_role": "st",
+      "verified": true,
+      "email": "Raj.Meka@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/45a8fa12a9c7a82b67e01c0f1a5e3cf2?s=48&d=retro"
+    },
+    "modified": "2018-04-24T20:16:27.962743+00:00"
+  },
+  "url": "/dash/794556/dtxp-pd---income-tax-app-servers",
+  "resource": "/api/v1/dash/794556"
+}

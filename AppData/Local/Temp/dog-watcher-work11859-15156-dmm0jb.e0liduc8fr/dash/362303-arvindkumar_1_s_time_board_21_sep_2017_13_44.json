@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by arvindkumar1@thomsonreuters.com",
+    "title": "arvindkumar1's TimeBoard 21 Sep 2017 13:44",
+    "created": "2017-09-21T12:44:32.057387+00:00",
+    "id": 362303,
+    "created_by": {
+      "disabled": true,
+      "handle": "arvindkumar1@thomsonreuters.com",
+      "name": null,
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "ArvindKumar1@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/6e52c7ea865b234e5a874d7ca9441265?s=48&d=retro"
+    },
+    "modified": "2017-09-21T12:44:32.057407+00:00"
+  },
+  "url": "/dash/362303/arvindkumar1s-timeboard-21-sep-2017-1344",
+  "resource": "/api/v1/dash/362303"
+}
