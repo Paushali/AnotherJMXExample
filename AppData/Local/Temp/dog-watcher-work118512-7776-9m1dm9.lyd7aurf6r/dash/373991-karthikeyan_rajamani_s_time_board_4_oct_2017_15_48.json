@@ -1,0 +1,39 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.load.1{*}",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of system.load.1 over *"
+      }
+    ],
+    "description": "created by karthikeyan.rajamani@thomsonreuters.com",
+    "title": "karthikeyan.rajamani's TimeBoard 4 Oct 2017 15:48",
+    "created": "2017-10-04T20:48:33.177077+00:00",
+    "id": 373991,
+    "created_by": {
+      "disabled": false,
+      "handle": "karthikeyan.rajamani@thomsonreuters.com",
+      "name": "Karthikeyan Rajamani",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "Karthikeyan.Rajamani@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/bae48acc0cdb1247103062bff0a91bca?s=48&d=retro"
+    },
+    "modified": "2017-10-04T20:48:49.710377+00:00"
+  },
+  "url": "/dash/373991/karthikeyanrajamanis-timeboard-4-oct-2017-1548",
+  "resource": "/api/v1/dash/373991"
+}

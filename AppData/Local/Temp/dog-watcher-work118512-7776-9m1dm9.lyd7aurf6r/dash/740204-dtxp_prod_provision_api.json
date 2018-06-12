@@ -1,0 +1,373 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:dtxp.rate.webservice.requestpersecond{app:directtax,env:dc,servertype:api,service:otp} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:dtxp.rate.webservice.totalmethodrequestspersecond{app:directtax,env:dc,servertype:api,service:otp} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "max:dtxp.rate.webservice.isapiextensionrequestspersecond{app:directtax,env:dc,servertype:api,service:otp} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "RATE - Request/Sec"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:dtxp.rate.getrequestspersecond{app:directtax,env:dc,servertype:api,service:otp} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:dtxp.rate.webservice.totalmethodrequestspersecond{app:directtax,env:dc,servertype:api,service:otp} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "RATE - Get Request/Sec"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(max:dtxp.rate.postrequestpersecond{app:directtax,env:dc,servertype:api,service:otp} by {host}, 10, 'mean', 'desc')",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "orange",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "RATE - Post Request/Sec"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:dtxp.rate.putrequestspersecond{app:directtax,env:dc,servertype:api,service:otp} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "orange",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "RATE - Put Request/Sec"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:dtxp.errors.requesttimedout{app:directtax,env:dc,servertype:api,service:otp} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ERROR - Request Timeout"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:dtxp.errors.errorstotal{app:directtax,env:dc,servertype:api,service:otp} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ERROR - Totals"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:dtxp.errors.requestsnotfound{app:directtax,env:dc,servertype:api,service:otp} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "purple",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:dtxp.error.notfounderrorspersecond{app:directtax,env:dc,servertype:api,service:otp} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "purple",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ERROR - RequestNotFound"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:dtxp.errors.requestsrejected{app:directtax,env:dc,servertype:api,service:otp} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "orange",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:dtxp.error.totalrejectedasynciorequests{app:directtax,env:dc,service:otw,servertype:api} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "orange",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ERROR - Request Rejected & Bandwidth Throttling"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(max:dtxp.errors.excepsthrownpersecond{app:directtax,env:dc,servertype:api,service:otp} by {host}, 10, 'mean', 'desc')",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ERROR - Exception Thrown"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:dtxp.latency.requestqueued{app:directtax,env:dc,servertype:api,service:otp} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:dtxp.system.cpu.dpcqueuedpersecond{app:directtax,env:dc,servertype:api,service:otp} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "LATENCY- Request Queued & DPC queued/sec [device drivers]"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:dtxp.latency.requestwaittime{app:directtax,env:dc,servertype:api,service:otp} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "purple",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "SATURATION - RequestWaitTime"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:dtxp.latency.processqueue.length{app:directtax,env:dc,servertype:api,service:otp} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "SATURATION - Process Queue Length"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:dtxp.saturation.applicationrestart{app:directtax,env:dc,servertype:api,service:otp} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "SATURATION - Application Restart"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:dtxp.saturation.webservice.currentconnections{app:directtax,env:dc,servertype:api,service:otp} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "UTILIZATION - Current Connections"
+      }
+    ],
+    "description": "created by maunang.mehta@thomsonreuters.com (cloned) (cloned)",
+    "title": "DTXP PROD - Provision, API",
+    "created": "2018-03-28T16:53:20.436145+00:00",
+    "id": 740204,
+    "created_by": {
+      "disabled": false,
+      "handle": "maunang.mehta@thomsonreuters.com",
+      "name": "Maunang Mehta",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "maunang.mehta@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/e603f37ebdb7578f7f79348d69492153?s=48&d=retro"
+    },
+    "modified": "2018-03-28T17:03:02.535043+00:00"
+  },
+  "url": "/dash/740204/dtxp-prod---provision-api",
+  "resource": "/api/v1/dash/740204"
+}

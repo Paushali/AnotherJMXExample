@@ -1,0 +1,74 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.s3.bucket_size_bytes{$aws_account} by {bucketname,aws_account}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "aws.s3.bucket_size_bytes"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.s3.number_of_objects{$aws_account} by {bucketname,aws_account}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "aws.s3.number_of_objects"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "*",
+        "prefix": "aws_account",
+        "name": "aws_account"
+      }
+    ],
+    "description": "created by support-trtaonesourcepr",
+    "title": "Support Example",
+    "created": "2018-06-06T15:21:21.299725+00:00",
+    "id": 828922,
+    "created_by": {
+      "disabled": false,
+      "handle": "support-trtaonesourcepr",
+      "name": "Datadog Support",
+      "is_admin": true,
+      "role": "Help is on the way",
+      "access_role": "adm",
+      "verified": true,
+      "email": "support-user-prod@datadoghq.com",
+      "icon": "https://secure.gravatar.com/avatar/e6952b5f29fe2d996cf4e63f40db9e71?s=48&d=retro"
+    },
+    "modified": "2018-06-11T14:08:35.846961+00:00"
+  },
+  "url": "/dash/828922/support-example",
+  "resource": "/api/v1/dash/828922"
+}

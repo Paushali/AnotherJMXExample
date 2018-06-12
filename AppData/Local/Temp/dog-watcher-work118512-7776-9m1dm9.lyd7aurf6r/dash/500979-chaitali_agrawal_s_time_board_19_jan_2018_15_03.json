@@ -1,0 +1,44 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:f5.http_requests{service:oit.legacy,window:1m,env:prod}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of f5.http_requests over service:oit.legacy,window:1m,env:prod"
+      }
+    ],
+    "description": "created by chaitali.agrawal@tr.com",
+    "title": "chaitali.agrawal's TimeBoard 19 Jan 2018 15:03",
+    "created": "2018-01-19T21:03:18.088211+00:00",
+    "id": 500979,
+    "created_by": {
+      "disabled": true,
+      "handle": "chaitali.agrawal@tr.com",
+      "name": null,
+      "is_admin": false,
+      "role": null,
+      "access_role": "ro",
+      "verified": true,
+      "email": "chaitali.agrawal@tr.com",
+      "icon": "https://secure.gravatar.com/avatar/cdd5e406e6081eac11197a3dbb956932?s=48&d=retro"
+    },
+    "modified": "2018-01-19T21:03:54.940558+00:00"
+  },
+  "url": "/dash/500979/chaitaliagrawals-timeboard-19-jan-2018-1503",
+  "resource": "/api/v1/dash/500979"
+}

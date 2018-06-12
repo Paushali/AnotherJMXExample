@@ -1,0 +1,145 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:trta.Requests_tesat{window:1m,statuscode:2xx,service:www.onesourcetax.com}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:trta.Requests_tesat{window:1m,statuscode:all,service:www.onesourcetax.com}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "trta"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.response_times_test{percentile:90,service:www.onesourcetax.com,window:1m}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.response_times_test{service:www.onesourcetax.com,window:1m,percentile:95}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "f5.response_times_test, f5.response_times_test"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:trta.responsetime_test{window:1m,percentile:95,service:www.onesourcetax.com}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:trta.responsetime_test{window:1m,percentile:90,service:www.onesourcetax.com}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "trta.responsetime_test, trta.responsetime_test"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.http_requests_test{service:www.onesourcetax.com,statuscode:2xx,window:1m}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.http_requests_test{service:www.onesourcetax.com,statuscode:all,window:1m}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "f5.http_requests_test, f5.http_requests_test"
+      }
+    ],
+    "description": "created by chaitali.agrawal@tr.com",
+    "title": "Chaitali's Dogfeeder",
+    "created": "2017-12-05T17:06:17.559375+00:00",
+    "id": 412617,
+    "created_by": {
+      "disabled": true,
+      "handle": "chaitali.agrawal@tr.com",
+      "name": null,
+      "is_admin": false,
+      "role": null,
+      "access_role": "ro",
+      "verified": true,
+      "email": "chaitali.agrawal@tr.com",
+      "icon": "https://secure.gravatar.com/avatar/cdd5e406e6081eac11197a3dbb956932?s=48&d=retro"
+    },
+    "modified": "2018-02-26T22:22:06.457538+00:00"
+  },
+  "url": "/dash/412617/chaitalis-dogfeeder",
+  "resource": "/api/v1/dash/412617"
+}

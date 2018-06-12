@@ -1,0 +1,352 @@
+{
+  "board_title": "DTXP-PD-Dashboard",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-01-08T03:24:13.254366+00:00",
+  "original_title": "DTXP-PD-Dashboard",
+  "modified": "2018-01-08T03:26:48.759950+00:00",
+  "disableEditing": false,
+  "height": 71,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "raj.meka@thomsonreuters.com",
+    "name": "Rajashekar Meka",
+    "is_admin": false,
+    "role": "Devops Automation Engineer",
+    "access_role": "st",
+    "verified": true,
+    "email": "Raj.Meka@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/45a8fa12a9c7a82b67e01c0f1a5e3cf2?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 264298,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "FREE-Memory Available-PD",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "min:system.mem.free{*} by {host}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "1",
+                "comparator": "<="
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "2",
+                "comparator": "<="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "2",
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "2"
+      },
+      "width": 25,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 0,
+      "x": 40,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true
+    },
+    {
+      "board_id": 264298,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System CPU Usage by Top List - PD",
+      "height": 8,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:system.cpu.pct{*} by {host}, 10, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 46,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 10,
+      "x": 65,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true
+    },
+    {
+      "board_id": 264298,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System CPU - PD",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.cpu.pct{dtxp:env-basename:satrs} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 108,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 39,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true
+    },
+    {
+      "board_id": 264298,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System Memory Used - PD",
+      "height": 17,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.mem.used{*} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 108,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 20,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true
+    },
+    {
+      "board_id": 264298,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Disk Space - PD",
+      "height": 8,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(min:system.disk.free{*} by {host}, 50, 'min', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": 10,
+                "comparator": "<="
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": 20,
+                "comparator": "<="
+              },
+              {
+                "palette": "white_on_green",
+                "value": 20,
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 46,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 0,
+      "x": 65,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 264298,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "HOST LIST - PD",
+      "height": 18,
+      "tile_def": {
+        "style": {
+          "fillMax": null,
+          "palette": "green_to_orange",
+          "fillMin": null,
+          "paletteFlip": false
+        },
+        "group": [
+          "region",
+          "name"
+        ],
+        "notes": null,
+        "noMetricHosts": true,
+        "viz": "hostmap",
+        "scope": null,
+        "requests": [
+          {
+            "q": "avg:system.uptime{*} by {host}",
+            "type": "fill"
+          }
+        ],
+        "groupby": null,
+        "noGroupHosts": true
+      },
+      "width": 40,
+      "x": 0,
+      "y": 0,
+      "query": "avg:system.load.1{*} by {host}",
+      "legend_size": null,
+      "type": "hostmap",
+      "legend": null,
+      "add_timeframe": false
+    },
+    {
+      "board_id": 264298,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Process Count - PD",
+      "height": 10,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(min:system.proc.count{*} by {host}, 10, 'min', 'asc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": [
+              {
+                "palette": "white_on_yellow",
+                "value": 100,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_red",
+                "value": 200,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_red",
+                "value": 1,
+                "comparator": "<"
+              },
+              {
+                "palette": "white_on_green",
+                "value": 10,
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 8,
+      "x": 40,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 264298,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Process Queue Length - PD",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "min:system.proc.queue_length{*} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 108,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 56,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    }
+  ],
+  "disableCog": false,
+  "id": 267380,
+  "title_edited": false,
+  "isShared": false
+}

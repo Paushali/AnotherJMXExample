@@ -1,0 +1,119 @@
+{
+  "board_title": "trta-idt-devops UAT Screenboard",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2017-11-29T23:59:06.348331+00:00",
+  "original_title": "trta-idt-devops UAT Screenboard",
+  "modified": "2017-12-14T19:52:35.027629+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "tim.fagergren@thomsonreuters.com",
+    "name": "Timothy Fagergren",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "Tim.Fagergren@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/ef0829926735010b693117978dad8574?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 251888,
+      "title_size": 13,
+      "tags": [
+        "host:i-0f03d8e84334ab28e"
+      ],
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "FQDN Up",
+      "height": 24,
+      "width": 48,
+      "group_by": [],
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 0,
+      "x": 80,
+      "text_size": "auto",
+      "type": "check_status",
+      "check": "http.can_connect",
+      "group": null,
+      "grouping": "cluster"
+    },
+    {
+      "board_id": 251888,
+      "x": 0,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Error Events",
+      "height": 9,
+      "width": 80,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 0,
+      "query": "hosts:i-0f03d8e84334ab28e status:error ",
+      "type": "event_timeline"
+    },
+    {
+      "board_id": 251888,
+      "x": 0,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Events from DataDog FQDN Host",
+      "height": 55,
+      "width": 80,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 11,
+      "query": "hosts:i-0f03d8e84334ab28e ",
+      "type": "event_stream",
+      "event_size": "l"
+    },
+    {
+      "widgetID": 3,
+      "height": 17,
+      "displayFormat": "countsAndList",
+      "titleText": "Monitors for UAT",
+      "board_id": 251888,
+      "title_size": 16,
+      "titleAlign": "left",
+      "title_align": "left",
+      "colorPreference": "background",
+      "hideZeroCounts": false,
+      "params": {
+        "sort": "status,asc",
+        "text": "title: Indirect Tax HTTPS FQDN",
+        "count": 50,
+        "start": 0
+      },
+      "new_widget": false,
+      "type": "manage_status",
+      "showTitle": true,
+      "title_text": "",
+      "titleSize": "13",
+      "edit": true,
+      "title": true,
+      "userEditedTitle": false,
+      "y": 24,
+      "x": 80,
+      "width": 48
+    }
+  ],
+  "disableCog": false,
+  "id": 251888,
+  "title_edited": false,
+  "isShared": false
+}

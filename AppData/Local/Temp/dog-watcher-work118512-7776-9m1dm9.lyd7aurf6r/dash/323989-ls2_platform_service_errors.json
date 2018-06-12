@@ -1,0 +1,71 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:news_service.Metrics.NET.Metrics_Errors.1m{*} by {env}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "News Service avg by env"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:user_service.Metrics.NET.Metrics_Errors.1m{*} by {env}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "User Service avg by env"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:product_service.Metrics.NET.Metrics_Errors.1m{*} by {env}",
+              "conditional_formats": [],
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Product Service avg by env"
+      }
+    ],
+    "description": "created by brian.schuweiler@thomsonreuters.com",
+    "title": "LS2 Platform Service Errors",
+    "created": "2017-07-18T17:13:14.589747+00:00",
+    "id": 323989,
+    "created_by": {
+      "disabled": false,
+      "handle": "brian.schuweiler@thomsonreuters.com",
+      "name": "Brian Schuweiler",
+      "is_admin": false,
+      "role": "",
+      "access_role": "st",
+      "verified": true,
+      "email": "brian.schuweiler@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/38aff58139908698cb3c24ff3d3ab5fa?s=48&d=retro"
+    },
+    "modified": "2017-07-18T17:26:28.897525+00:00"
+  },
+  "url": "/dash/323989/ls2-platform-service-errors",
+  "resource": "/api/v1/dash/323989"
+}

@@ -1,0 +1,90 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:account_service.All.Requests.95percentile{env:sat}",
+              "conditional_formats": [],
+              "type": "line"
+            },
+            {
+              "q": "avg:user_service.All.Requests.95percentile{env:sat}",
+              "type": "line"
+            },
+            {
+              "q": "avg:product_service.All.Requests.95percentile{env:sat}",
+              "type": "line"
+            }
+          ],
+          "autoscale": true,
+          "markers": [
+            {
+              "type": "error dashed",
+              "val": "1000",
+              "value": "y = 1000",
+              "label": true
+            }
+          ]
+        },
+        "title": "account_service.All.Requests.95percentile, user_service.All.Requests.95percen..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:account_service.Metrics.NET.Metrics_Errors.1m{env:sat}",
+              "conditional_formats": [],
+              "type": "line"
+            },
+            {
+              "q": "avg:product_service.Metrics.NET.Metrics_Errors.1m{env:sat}",
+              "type": "line"
+            },
+            {
+              "q": "avg:captcha_service.Metrics.NET.Metrics_Errors.1m{env:sat}",
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "account_service.Metrics.NET.Metrics_Errors.1m, product_service.Metrics.NET.Me..."
+      },
+      {
+        "definition": {
+          "viz": "heatmap",
+          "requests": [
+            {
+              "q": "avg:product_service.All.Requests.95percentile{env:sat} by {host}",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of product_service.All.Requests.95percentile over env:sat by host"
+      }
+    ],
+    "description": "created by bob.sturm@thomsonreuters.com",
+    "title": "Bob's Test Dashboard",
+    "created": "2017-07-18T17:49:44.250066+00:00",
+    "id": 324020,
+    "created_by": {
+      "disabled": false,
+      "handle": "bob.sturm@thomsonreuters.com",
+      "name": "Robert Sturm",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "bob.sturm@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/23fd4fb29b568c1569c425532e7d2000?s=48&d=retro"
+    },
+    "modified": "2017-07-18T18:00:35.085538+00:00"
+  },
+  "url": "/dash/324020/bobs-test-dashboard",
+  "resource": "/api/v1/dash/324020"
+}
