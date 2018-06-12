@@ -1,0 +1,230 @@
+{
+  "board_title": "Chaitali's ScreenBoard",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-03-13T15:51:45.256382+00:00",
+  "original_title": "Chaitali's ScreenBoard",
+  "modified": "2018-03-13T16:44:16.063071+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "tr:application-asset-insight-id:204820",
+      "prefix": "tr",
+      "name": "asset"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "chaitali.agrawal@thomsonreuters.com",
+    "name": "Chaitali Agrawal",
+    "is_admin": true,
+    "role": null,
+    "access_role": "adm",
+    "verified": true,
+    "email": "chaitali.agrawal@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/109b0621779856fa6be67ee4cc747e84?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 302659,
+      "x": 0,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ELB service status",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.elb.healthy_host_count{$asset}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": ">=",
+                "value": "1"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 4,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 302659,
+      "x": 16,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.elb.un_healthy_host_count{$asset}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "1"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "1"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "2"
+      },
+      "width": 15,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 4,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 302659,
+      "x": 31,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.elb.request_count_per_target{$asset}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "1"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 12,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 4,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 302659,
+      "title_size": 16,
+      "title": true,
+      "color": "#999",
+      "text": "Backend ELB Metrics",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 75,
+      "y": 16,
+      "x": 0,
+      "font_size": "auto",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 302659,
+      "title_size": 16,
+      "title": true,
+      "color": "#999",
+      "text": "ELB Metrics",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 58,
+      "y": 0,
+      "x": 0,
+      "font_size": "auto",
+      "type": "free_text",
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 302659,
+  "title_edited": false,
+  "isShared": false
+}

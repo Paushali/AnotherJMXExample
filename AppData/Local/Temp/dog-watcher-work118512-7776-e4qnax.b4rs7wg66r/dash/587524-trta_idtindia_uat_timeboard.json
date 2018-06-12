@@ -1,0 +1,297 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:apache.performance.busy_workers{name:poc_u_001_web_01}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Sum of apache.performance.busy_workers over name:poc_u_001_web_01"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:apache.net.request_per_s{name:poc_u_001_web_01}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Sum of apache.net.request_per_s over name:poc_u_001_web_01"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.disk.free{tr:environment-type:uat,device:/datafileintegrator}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Free Disk - /datafileintegrator"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:tomcat.threads.busy{tr:environment-type:uat,region:ap-south-1} by {service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Tomcat Busy Threads"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:aws.elb.latency.maximum{name:trta-oit-elb}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Max of aws.elb.latency.maximum over name:trta-oit-elb"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:aws.elb.request_count{name:trta-oit-elb}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Max of aws.elb.request_count over name:trta-oit-elb"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:aws.elb.httpcode_backend_4xx{name:trta-oit-elb}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Max of aws.elb.httpcode_backend_4xx over name:trta-oit-elb"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:aws.elb.httpcode_backend_5xx{name:trta-oit-elb}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Max of aws.elb.httpcode_backend_5xx over name:trta-oit-elb"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:trace.sqlserver.query.duration{env:idtindia-uat}, max:trace.sqlserver.query.duration{env:idtindia-uat}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of trace.sqlserver.query.duration over env:idtindia-uat"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:trace.sqlserver.query.hits{env:idtindia-uat}.as_count(), max:trace.sqlserver.query.hits{env:idtindia-uat}.as_count(), sum:trace.sqlserver.query.hits{env:idtindia-uat}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of trace.sqlserver.query.hits over env:idtindia-uat"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:trace.sqlserver.query.duration.by_service{env:idtindia-uat}, avg:trace.sqlserver.query.duration.by.service.90p{env:idtindia-uat}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of trace.sqlserver.query.duration.by_service over env:idtindia-uat"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:trace.sqlserver.query.duration.by.resource_service.50p{env:idtindia-uat}, avg:trace.sqlserver.query.duration.by.resource_service.90p{env:idtindia-uat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of trace.sqlserver.query.duration.by.resource_service.50p over env:idtind..."
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:network.http.response_time{check_type:http_fqdn,env:idtindia-uat} by {url}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of network.http.response_time over check_type:http_fqdn,env:idtindia-uat ..."
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "*",
+        "prefix": null,
+        "name": "var"
+      }
+    ],
+    "description": "created by rbijjula@thomsonreuters.com",
+    "title": "trta-idtindia-uat Timeboard",
+    "created": "2018-02-20T05:17:04.149602+00:00",
+    "id": 587524,
+    "created_by": {
+      "disabled": false,
+      "handle": "rbijjula@thomsonreuters.com",
+      "name": "Raghavendra Aditya Bijjula",
+      "is_admin": false,
+      "role": "Sr Systems Engineer",
+      "access_role": "st",
+      "verified": true,
+      "email": "rbijjula@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/4af24bca8a4923783bd6ac3fc96eb1f9?s=48&d=retro"
+    },
+    "modified": "2018-05-29T04:19:13.290644+00:00"
+  },
+  "url": "/dash/587524/trta-idtindia-uat-timeboard",
+  "resource": "/api/v1/dash/587524"
+}

@@ -1,0 +1,117 @@
+{
+  "board_title": "Karthikeyan's ScreenBoard 13 Mar 2018 14:24",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-03-13T19:24:34.999123+00:00",
+  "original_title": "Karthikeyan's ScreenBoard 13 Mar 2018 14:24",
+  "modified": "2018-03-14T20:23:12.747609+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "ac_id",
+      "name": "AWS_AC_ID"
+    },
+    {
+      "default": "*",
+      "prefix": "techopsenvironment",
+      "name": "Environment"
+    },
+    {
+      "default": "*",
+      "prefix": "availability-zone",
+      "name": "Region"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "karthikeyan.rajamani@thomsonreuters.com",
+    "name": "Karthikeyan Rajamani",
+    "is_admin": true,
+    "role": null,
+    "access_role": "adm",
+    "verified": true,
+    "email": "Karthikeyan.Rajamani@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/bae48acc0cdb1247103062bff0a91bca?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 302818,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 21,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.ec2.cpuutilization{$AWS_AC_ID,$Environment,$Region}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 29,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 4,
+      "x": 2,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 302818,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 21,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.healthy_host_count{$AWS_AC_ID,$Environment,$Region}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 29,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 4,
+      "x": 35,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 302818,
+  "title_edited": false,
+  "isShared": false
+}

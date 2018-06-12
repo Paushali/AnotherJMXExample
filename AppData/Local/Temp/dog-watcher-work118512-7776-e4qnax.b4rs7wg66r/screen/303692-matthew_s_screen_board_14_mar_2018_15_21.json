@@ -1,0 +1,18 @@
+{
+  "read_only": false,
+  "board_title": "Matthew's ScreenBoard 14 Mar 2018 15:21",
+  "created": "2018-03-14T20:21:40.372548+00:00",
+  "modified": "2018-03-14T20:21:40.372563+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "matt.malone@thomsonreuters.com",
+    "name": "Matthew Malone",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "Matt.Malone@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/aaf9e79284fb4431a125f6e5387953f3?s=48&d=retro"
+  },
+  "id": 303692
+}

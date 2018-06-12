@@ -1,0 +1,133 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.elasticache.network_bytes_in{tr:application-asset-insight-id:202990,tr:environment-type:pre-production,cacheclusterid:osr156mh7v6b5x6u-0001-001}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "aws.elasticache.network_bytes_in with cacheclusterid:osr156mh7v6b5x6u-0001-001"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.elasticache.network_bytes_in{tr:application-asset-insight-id:202990,tr:environment-type:pre-production,cacheclusterid:osr156mh7v6b5x6u-0001-002}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "aws.elasticache.network_bytes_in with cacheclusterid:osr156mh7v6b5x6u-0001-002"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.elasticache.network_bytes_in{tr:application-asset-insight-id:202990,tr:environment-type:pre-production,cacheclusterid:osr4tfwa8aqbt5g-0001-001}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "aws.elasticache.network_bytes_in with cacheclusterid:osr4tfwa8aqbt5g-0001-001"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.elasticache.network_bytes_in{tr:application-asset-insight-id:202990,tr:environment-type:pre-production,cacheclusterid:osr4tfwa8aqbt5g-0001-002}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "aws.elasticache.network_bytes_in with cacheclusterid:osr4tfwa8aqbt5g-0001-002"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.elasticache.cpuutilization{tr:application-asset-insight-id:202990,tr:environment-type:pre-production,cacheclusterid:osr156mh7v6b5x6u-0001-001}"
+            }
+          ],
+          "events": []
+        },
+        "title": "aws.elasticache.cpuutilization with cacheclusterid:osr156mh7v6b5x6u-0001-001"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.elasticache.cpuutilization{tr:application-asset-insight-id:202990,tr:environment-type:pre-production,cacheclusterid:osr156mh7v6b5x6u-0001-002}"
+            }
+          ],
+          "events": []
+        },
+        "title": "aws.elasticache.cpuutilization with cacheclusterid:osr156mh7v6b5x6u-0001-002"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.elasticache.cpuutilization{tr:application-asset-insight-id:202990,tr:environment-type:pre-production,cacheclusterid:osr4tfwa8aqbt5g-0001-001}"
+            }
+          ],
+          "events": []
+        },
+        "title": "aws.elasticache.cpuutilization with cacheclusterid:osr4tfwa8aqbt5g-0001-001"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.elasticache.cpuutilization{tr:application-asset-insight-id:202990,tr:environment-type:pre-production,cacheclusterid:osr4tfwa8aqbt5g-0001-002}"
+            }
+          ],
+          "events": []
+        },
+        "title": "aws.elasticache.cpuutilization with cacheclusterid:osr4tfwa8aqbt5g-0001-002"
+      }
+    ],
+    "description": "created by neil.chapman@thomsonreuters.com",
+    "title": "OSR: Redis (ElastiCache) in NonProd (QA & SAT) over the last week",
+    "created": "2017-10-04T19:51:21.728929+00:00",
+    "id": 373944,
+    "created_by": {
+      "disabled": false,
+      "handle": "neil.chapman@thomsonreuters.com",
+      "name": "Neil Chapman",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "neil.chapman@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/f2dfda050c7d54fcac656a073d5de506?s=48&d=retro"
+    },
+    "modified": "2017-10-06T05:26:31.929276+00:00"
+  },
+  "url": "/dash/373944/osr-redis-elasticache-in-nonprod-qa--sat-over-the-last-week",
+  "resource": "/api/v1/dash/373944"
+}

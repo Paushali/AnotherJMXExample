@@ -1,0 +1,926 @@
+{
+  "board_title": "Leadership Screenboard-SRE-V1.0",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-03-22T15:49:29.460662+00:00",
+  "original_title": "Leadership Screenboard-SRE-V1.0",
+  "modified": "2018-03-22T19:16:55.333818+00:00",
+  "disableEditing": false,
+  "height": 85,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "karthikeyan.rajamani@thomsonreuters.com",
+    "name": "Karthikeyan Rajamani",
+    "is_admin": true,
+    "role": null,
+    "access_role": "adm",
+    "verified": true,
+    "email": "Karthikeyan.Rajamani@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/bae48acc0cdb1247103062bff0a91bca?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 306282,
+      "x": 66,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Errors(4xx+5xx)",
+      "height": 10,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:f5.http_requests{service:www.onesourcetax.com,statuscode:5xx,window:1m}+sum:f5.http_requests{service:www.onesourcetax.com,window:1m,statuscode:4xx}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">=",
+                "value": "5"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">",
+                "value": "1"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "0"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 23,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 13,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Errors(4xx+5xx)",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:f5.http_requests{service:www.onesourcetax.com,statuscode:5xx,window:1m}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "sum:f5.http_requests{service:www.onesourcetax.com,window:1m,statuscode:4xx}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "val": 10,
+            "value": "y = 10",
+            "label": "10 errors"
+          }
+        ]
+      },
+      "width": 23,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 26,
+      "x": 66,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/errors.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "width": 23,
+      "y": 0,
+      "x": 66,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/Latency.JPG",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 17,
+      "width": 18,
+      "y": -4,
+      "x": -34,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/traffic.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "width": 30,
+      "y": 0,
+      "x": 35,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "x": 35,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Traffic",
+      "height": 10,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:iis.httpd_request_method.get{host:C708PAQCWTWEB}*60",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "3000"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "custom_unit": "rq/m",
+        "precision": "0"
+      },
+      "width": 30,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 13,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Traffic",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "anomalies(avg:iis.httpd_request_method.get{host:C708PAQCWTWEB}, 'adaptive', 2)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "val": 35,
+            "value": "y = 35",
+            "label": true
+          }
+        ]
+      },
+      "width": 31,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 26,
+      "x": 34,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/saturation.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "width": 28,
+      "y": 0,
+      "x": 90,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "x": 90,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Saturation(How full)",
+      "height": 10,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "top5(100-avg:system.cpu.idle{ipsproject:ls2,tr_environment:production,region:amer3} by {host})",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "40"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "40"
+              },
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "70"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "custom_unit": "%",
+        "precision": "1"
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 13,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Saturation(How full)",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "top5(100-avg:system.cpu.idle{ipsproject:ls2,tr_environment:production,region:amer3} by {host})",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "val": 40,
+            "value": "y = 40",
+            "label": "40% cpu utilization"
+          }
+        ]
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 26,
+      "x": 90,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/latency.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "width": 23,
+      "y": 0,
+      "x": 11,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "x": 11,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Latency",
+      "height": 10,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:f5.response_times{service:www.onesourcetax.com,percentile:95,window:1m}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "250"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": "ms",
+        "precision": "0"
+      },
+      "width": 23,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 13,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Latency",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:f5.response_times{service:www.onesourcetax.com,percentile:90,window:1m}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "type": "error dashed",
+            "val": "200",
+            "value": "y = 200",
+            "label": true
+          }
+        ]
+      },
+      "width": 22,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 26,
+      "x": 11,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Latency",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:f5.response_times{service:www.onesourcetax.com,percentile:90,window:1m}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "val": 200,
+            "value": "y = 200",
+            "label": true
+          }
+        ]
+      },
+      "width": 22,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 42,
+      "x": 11,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Traffic",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "anomalies(avg:iis.httpd_request_method.get{host:C708PAQCWTWEB}, 'adaptive', 2)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "val": 35,
+            "value": "y = 35",
+            "label": true
+          }
+        ]
+      },
+      "width": 31,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 42,
+      "x": 34,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Errors(4xx+5xx)",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:f5.http_requests{service:www.onesourcetax.com,statuscode:5xx,window:1m}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "sum:f5.http_requests{service:www.onesourcetax.com,window:1m,statuscode:4xx}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "val": 10,
+            "value": "y = 10",
+            "label": "10 errors"
+          }
+        ]
+      },
+      "width": 23,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 42,
+      "x": 66,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 308395,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/hourly2.jpg",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 5,
+      "width": 8,
+      "y": 26,
+      "x": 2,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 308395,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/weekly2.JPG",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 5,
+      "width": 8,
+      "y": 42,
+      "x": 2,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Latency",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:f5.response_times{service:www.onesourcetax.com,percentile:90,window:1m}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "val": 200,
+            "value": "y = 200",
+            "label": true
+          }
+        ]
+      },
+      "width": 22,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 58,
+      "x": 11,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Traffic",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:iis.httpd_request_method.get{host:C708PAQCWTWEB}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "val": 35,
+            "value": "y = 35",
+            "label": true
+          }
+        ]
+      },
+      "width": 31,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 58,
+      "x": 34,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Errors(4xx+5xx)",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:f5.http_requests{service:www.onesourcetax.com,statuscode:5xx,window:1m}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "sum:f5.http_requests{service:www.onesourcetax.com,window:1m,statuscode:4xx}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "val": 10,
+            "value": "y = 10",
+            "label": "10 errors"
+          }
+        ]
+      },
+      "width": 23,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 58,
+      "x": 66,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 308395,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/montly2.JPG",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 5,
+      "width": 8,
+      "y": 58,
+      "x": 2,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Saturation(How full)",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "top5(100-avg:system.cpu.idle{ipsproject:ls2,tr_environment:production,region:amer3} by {host})",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "val": 40,
+            "value": "y = 40",
+            "label": "40% cpu utilization"
+          }
+        ]
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 42,
+      "x": 90,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Saturation(How full)",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "top5(100-avg:system.cpu.idle{ipsproject:ls2,tr_environment:production,region:amer3} by {host})",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "val": 40,
+            "value": "y = 40",
+            "label": "40% cpu utilization"
+          }
+        ]
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 58,
+      "x": 90,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 308395,
+  "title_edited": false,
+  "isShared": false
+}

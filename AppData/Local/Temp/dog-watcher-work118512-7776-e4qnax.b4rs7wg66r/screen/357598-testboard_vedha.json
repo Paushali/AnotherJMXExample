@@ -1,0 +1,18 @@
+{
+  "read_only": false,
+  "board_title": "testboardVedha",
+  "created": "2018-06-12T18:48:49.811262+00:00",
+  "modified": "2018-06-12T18:48:49.811273+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "vedha.peri@thomsonreuters.com",
+    "name": "Vedha Peri",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "Vedha.Peri@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/3e6dc093f99c5fdfd14e440abace913c?s=48&d=retro"
+  },
+  "id": 357598
+}

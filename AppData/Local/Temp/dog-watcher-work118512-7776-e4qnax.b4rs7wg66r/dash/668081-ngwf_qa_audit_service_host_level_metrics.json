@@ -1,0 +1,372 @@
+{
+  "dash": {
+    "read_only": true,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.cpu.system{name:ngwf-qa-audit-service}, avg:system.cpu.user{name:ngwf-qa-audit-service}, avg:system.cpu.guest{name:ngwf-qa-audit-service}, avg:system.cpu.stolen{name:ngwf-qa-audit-service}, avg:system.cpu.iowait{name:ngwf-qa-audit-service}, avg:system.cpu.system{name:ngwf-qa-audit-service}+avg:system.cpu.user{name:ngwf-qa-audit-service}+avg:system.cpu.guest{name:ngwf-qa-audit-service}+avg:system.cpu.stolen{name:ngwf-qa-audit-service}+avg:system.cpu.iowait{name:ngwf-qa-audit-service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CPU usage (%)"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "q": "sum:system.mem.usable{name:ngwf-qa-audit-service}, sum:system.mem.used{name:ngwf-qa-audit-service}, sum:system.mem.usable{name:ngwf-qa-audit-service}-sum:system.mem.used{name:ngwf-qa-audit-service}",
+              "type": "line",
+              "metadata": {
+                "sum:system.mem.usable{name:ngwf-qa-audit-service}-sum:system.mem.used{name:ngwf-qa-audit-service}": {
+                  "alias": "Memory Free"
+                }
+              }
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory breakdown"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.ec2.cpuutilization{name:ngwf-qa-audit-service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "EC2: CPU usage"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.ec2.network_in{name:ngwf-qa-audit-service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "EC2: Inbound traffic"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.proc.queue_length{name:ngwf-qa-audit-service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Process Queue Length"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.net.bytes_rcvd{name:ngwf-qa-audit-service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "0-sum:system.net.bytes_sent{name:ngwf-qa-audit-service}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Network traffic (bytes per sec)"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.ec2.network_out{name:ngwf-qa-audit-service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "EC2: Outbound traffic"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.disk.used{name:ngwf-qa-audit-service} by {device}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Disk used (by device)"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.io.avg_q_sz{name:ngwf-qa-audit-service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Disk Queue Length"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.ec2.disk_write_bytes{name:ngwf-qa-audit-service}, avg:aws.ec2.disk_read_bytes{name:ngwf-qa-audit-service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "EC2 Disk IO"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.ec2.disk_read_ops{name:ngwf-qa-audit-service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "EC2: Read Disk Ops"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.ec2.disk_write_ops{name:ngwf-qa-audit-service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "EC2: Write Disk Ops"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.ebs.volume_idle_time{name:ngwf-qa-audit-service}, avg:aws.ebs.volume_total_write_time{name:ngwf-qa-audit-service}, avg:aws.ebs.volume_total_read_time{name:ngwf-qa-audit-service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "EBS: Average I/O time"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.ebs.volume_write_bytes{name:ngwf-qa-audit-service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:aws.ebs.volume_read_bytes{name:ngwf-qa-audit-service}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "EBS: Average I/O across all volumes"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.ebs.volume_read_ops{name:ngwf-qa-audit-service}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:aws.ebs.volume_write_ops{name:ngwf-qa-audit-service}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "EBS: Average Ops across all volumes"
+      }
+    ],
+    "description": "Top host-level metrics for name ngwf-qa-audit-service.",
+    "title": "NGWF QA Audit Service Host Level Metrics",
+    "created": "2018-03-12T20:30:19.574707+00:00",
+    "id": 668081,
+    "created_by": {
+      "disabled": false,
+      "handle": "siddhi.bhakta@thomsonreuters.com",
+      "name": "Siddhi Bhakta",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Siddhi.Bhakta@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/2cf5f40a0664aac7626ab0e1e8fb962d?s=48&d=retro"
+    },
+    "modified": "2018-03-12T20:41:23.393215+00:00"
+  },
+  "url": "/dash/668081/ngwf-qa-audit-service-host-level-metrics",
+  "resource": "/api/v1/dash/668081"
+}

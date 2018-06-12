@@ -1,0 +1,116 @@
+{
+  "board_title": "OTIR Tax API",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-05-15T14:46:03.333212+00:00",
+  "original_title": "OTIR Tax API",
+  "modified": "2018-05-15T14:53:08.352792+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "jacob.john@thomsonreuters.com",
+    "name": "Jacob John Kadambanattu",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "jacob.john@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/3393b408a67b6584fd808153e1d75700?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 339681,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Average Latency",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:OTIR_TaxAPI.LegacyService.request.timer.avg{role:service_web} by {path}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 2,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 339681,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "API Get Methods",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:OTIR_TaxAPI.LegacyService.payer_hits{*} by {host}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:OTIR_TaxAPI.LegacyService.Form_hits{*} by {host}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line"
+          },
+          {
+            "q": "avg:OTIR_TaxAPI.LegacyService.FormList_hits{*} by {host}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 2,
+      "x": 49,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 339681,
+  "title_edited": false,
+  "isShared": false
+}

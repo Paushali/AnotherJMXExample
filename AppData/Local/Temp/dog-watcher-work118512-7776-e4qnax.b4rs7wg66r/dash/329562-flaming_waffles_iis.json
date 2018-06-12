@@ -1,0 +1,160 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "sum:iis.net.bytes_rcvd{$scope}"
+            },
+            {
+              "q": "0 - sum:iis.net.bytes_sent{$scope}"
+            }
+          ]
+        },
+        "title": "IIS bytes in and out (per sec)"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "sum:iis.httpd_request_method.get{$scope},sum:iis.httpd_request_method.post{$scope},sum:iis.httpd_request_method.put{$scope},sum:iis.httpd_request_method.delete{$scope},sum:iis.httpd_request_method.head{$scope},sum:iis.httpd_request_method.options{$scope},sum:iis.httpd_request_method.trace{$scope}"
+            }
+          ]
+        },
+        "title": "IIS request methods (per sec)"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "sum:iis.net.num_connections{$scope}"
+            }
+          ]
+        },
+        "title": "IIS connections"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "sum:iis.net.files_sent{$scope}"
+            },
+            {
+              "q": "0 - sum:iis.net.files_rcvd{$scope}"
+            }
+          ]
+        },
+        "title": "IIS files sent and received (per sec)"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "sum:iis.users.anon{$scope}"
+            },
+            {
+              "q": "sum:iis.users.nonanon{$scope}"
+            }
+          ]
+        },
+        "title": "IIS users (per sec)"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "sum:iis.errors.not_found{$scope}"
+            }
+          ]
+        },
+        "title": "IIS not found errors (per sec)"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "system.load.1{$scope}"
+            },
+            {
+              "q": "system.load.5{$scope}"
+            },
+            {
+              "q": "system.load.15{$scope}"
+            }
+          ]
+        },
+        "title": "System load"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "system.cpu.idle{$scope}, system.cpu.system{$scope}, system.cpu.iowait{$scope}, system.cpu.user{$scope}, system.cpu.stolen{$scope}, system.cpu.guest{$scope}"
+            }
+          ]
+        },
+        "title": "CPU usage (%)"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "max:system.cpu.iowait{$scope}"
+            }
+          ]
+        },
+        "title": "I/O wait (%)"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "sum:system.mem.usable{$scope},sum:system.mem.total{$scope}-sum:system.mem.usable{$scope}"
+            }
+          ]
+        },
+        "title": "System memory"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "sum:system.net.bytes_rcvd{$scope}"
+            },
+            {
+              "q": "sum:system.net.bytes_sent{$scope}"
+            }
+          ]
+        },
+        "title": "Network traffic (kb/s)"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "*",
+        "prefix": null,
+        "name": "scope"
+      }
+    ],
+    "description": "An overview of IIS Metrics for Flaming Waffles",
+    "title": "Flaming Waffles - IIS",
+    "created": "2017-07-27T16:23:46.484172+00:00",
+    "id": 329562,
+    "created_by": {
+      "disabled": false,
+      "handle": "grace.gettert@thomsonreuters.com",
+      "name": "Grace Gettert",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "grace.gettert@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/0834a7d82ce02956841929e3bbe57b98?s=48&d=retro"
+    },
+    "modified": "2017-07-27T16:24:27.278519+00:00"
+  },
+  "url": "/dash/329562/flaming-waffles---iis",
+  "resource": "/api/v1/dash/329562"
+}

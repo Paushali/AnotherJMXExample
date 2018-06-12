@@ -1,0 +1,576 @@
+{
+  "board_title": "OTP - Spark - Overview (DEV)",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-06-05T13:17:06.964905+00:00",
+  "original_title": "OTP - Spark - Overview (DEV)",
+  "modified": "2018-06-05T13:41:29.741749+00:00",
+  "disableEditing": false,
+  "height": 107,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "dev",
+      "prefix": "environment",
+      "name": "environment"
+    },
+    {
+      "default": "otp_compute_engine",
+      "prefix": "app_name",
+      "name": "app_name"
+    },
+    {
+      "default": "otp-spark-standalone_compute-engine",
+      "prefix": "cluster_name",
+      "name": "cluster_name"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "oleksandr.petrenko@thomsonreuters.com",
+    "name": "Oleksandr Petrenko",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "Oleksandr.Petrenko@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/c2fbe16f0dbd6f795eb610f732000632?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "sizing": "fit",
+      "board_id": 77720,
+      "title_size": 16,
+      "title": true,
+      "url": "/static/images/saas_logos/bot/spark.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 11,
+      "width": 21,
+      "y": 2,
+      "x": 2,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 77720,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Jobs",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:spark.job.count{status:succeeded,$cluster_name}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "bars"
+          },
+          {
+            "q": "sum:spark.job.count{status:running,$cluster_name}",
+            "type": "bars"
+          },
+          {
+            "q": "avg:spark.job.count{status:failed,$cluster_name}",
+            "type": "bars"
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 15,
+      "x": 101,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 77720,
+      "x": 116,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Tasks Running",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:spark.job.num_tasks{status:running,$cluster_name}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "custom_unit": " ",
+        "precision": "0"
+      },
+      "width": 12,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 2,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 77720,
+      "x": 88,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Jobs Running",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:spark.job.count{status:running,$cluster_name}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "precision": "0"
+      },
+      "width": 12,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 2,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 77720,
+      "x": 74,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Executors",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:spark.executor.count{$cluster_name}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "precision": "0"
+      },
+      "width": 12,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 2,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 77720,
+      "x": 102,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Stages Running",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:spark.stage.count{status:active,$cluster_name}",
+            "aggregator": "last",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "precision": "0"
+      },
+      "width": 12,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 2,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 77720,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Job Tasks",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:spark.job.num_tasks{status:running,$cluster_name}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "sum:spark.job.num_completed_tasks{$cluster_name}",
+            "type": "line"
+          },
+          {
+            "q": "sum:spark.job.num_skipped_tasks{$cluster_name}",
+            "type": "line"
+          },
+          {
+            "q": "sum:spark.job.num_failed_tasks{$cluster_name}",
+            "type": "line"
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 32,
+      "x": 101,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 77720,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Job Stages",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:spark.job.num_active_stages{$cluster_name}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "sum:spark.job.num_completed_stages{$cluster_name}",
+            "type": "line"
+          },
+          {
+            "q": "sum:spark.job.num_skipped_stages{$cluster_name}",
+            "type": "line"
+          },
+          {
+            "q": "sum:spark.job.num_failed_stages{$cluster_name}",
+            "type": "line"
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 32,
+      "x": 52,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 77720,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Stage Input/Output Bytes",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:spark.stage.input_bytes{$cluster_name}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "sum:spark.stage.output_bytes{$cluster_name}",
+            "type": "line"
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 49,
+      "x": 101,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 77720,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Stage Input/Output Records",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:spark.stage.input_records{$cluster_name}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "sum:spark.stage.output_records{$cluster_name}",
+            "type": "line"
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 49,
+      "x": 52,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 77720,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Shuffle Read/Write Bytes",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:spark.stage.shuffle_read_bytes{$cluster_name}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "sum:spark.stage.shuffle_write_bytes{$cluster_name}",
+            "type": "line"
+          },
+          {
+            "q": "sum:spark.stage.shuffle_write_bytes{$cluster_name}",
+            "type": "line"
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 66,
+      "x": 101,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 77720,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Shuffle Read/Write Records",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:spark.stage.shuffle_read_records{$cluster_name}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "avg:spark.stage.shuffle_write_records{$cluster_name}",
+            "type": "line"
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 66,
+      "x": 52,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 77720,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "RDD Memory/Disk Usage",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:spark.rdd.memory_used{$cluster_name}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          },
+          {
+            "q": "sum:spark.rdd.disk_used{$cluster_name}",
+            "type": "line"
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 15,
+      "x": 52,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 111822,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Spark Application Events",
+      "height": 64,
+      "width": 48,
+      "global_timeframe_controls": false,
+      "query": "spark has status $cluster_name.value",
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 15,
+      "x": 2,
+      "type": "event_stream",
+      "event_size": "s",
+      "isShared": false
+    },
+    {
+      "board_id": 111822,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Spark Application Event Counts",
+      "height": 9,
+      "width": 47,
+      "global_timeframe_controls": false,
+      "query": "spark has status  $cluster_name.value",
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 2,
+      "x": 25,
+      "type": "event_timeline",
+      "isShared": false
+    }
+  ],
+  "shared": false,
+  "disableCog": false,
+  "id": 352545,
+  "title_edited": false,
+  "isShared": false
+}

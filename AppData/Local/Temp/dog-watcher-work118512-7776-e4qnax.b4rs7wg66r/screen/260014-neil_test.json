@@ -1,0 +1,104 @@
+{
+  "board_title": "Neil Test",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2017-12-18T12:38:06.948975+00:00",
+  "original_title": "Neil Test",
+  "modified": "2017-12-18T13:46:28.962459+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "neil.chapman@thomsonreuters.com",
+    "name": "Neil Chapman",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "neil.chapman@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/f2dfda050c7d54fcac656a073d5de506?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 260014,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 39,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.ec2.host_ok{tr:service-name:report-image-generation,tr:osr:environment:sat} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 103,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 29,
+      "x": 9,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 260014,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 20,
+      "tile_def": {
+        "style": {
+          "fillMax": null,
+          "palette": "green_to_orange",
+          "fillMin": null,
+          "paletteFlip": false
+        },
+        "group": null,
+        "notes": null,
+        "noMetricHosts": true,
+        "viz": "hostmap",
+        "scope": [
+          "tr:service-name:report-image-generation",
+          "tr:osr:environment:sat"
+        ],
+        "requests": [
+          {
+            "q": "avg:aws.ec2.host_ok{tr:service-name:report-image-generation,tr:osr:environment:sat} by {host}",
+            "type": "fill"
+          }
+        ],
+        "groupby": null,
+        "noGroupHosts": true
+      },
+      "width": 47,
+      "x": 64,
+      "y": 6,
+      "query": "avg:system.load.1{*} by {host}",
+      "legend_size": null,
+      "type": "hostmap",
+      "legend": null,
+      "add_timeframe": false
+    }
+  ],
+  "disableCog": false,
+  "id": 260014,
+  "title_edited": false,
+  "isShared": false
+}

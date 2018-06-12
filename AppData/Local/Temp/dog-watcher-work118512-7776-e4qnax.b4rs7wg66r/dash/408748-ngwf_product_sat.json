@@ -1,0 +1,452 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.sat.workflow_productservice.api.v1.products.CreateOrUpdateProduct_hits{sat}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CreateOrUpdateProduct - hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.sat.workflow_productservice.api.v1.products.CreateOrUpdateProduct_httpStatus_OK{sat}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CreateOrUpdateProduct httpStatus ok"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.sat.workflow_productservice.api.v1.products.CreateOrUpdateProduct.avg{sat}",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CreateOrUpdateProduct - avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.sat.workflow_productservice.api.v1.products.GetAllByLoggedInUserTenant_hits{sat}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetAllByLoggedInUserTenant - hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.sat.workflow_productservice.api.v1.products.GetAllByLoggedInUserTenant_httpStatus_OK{sat}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetAllByLoggedInUserTenant - httpstatus ok"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.sat.workflow_productservice.api.v1.products.GetAllByLoggedInUserTenant.avg{sat}",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "GetAllByLoggedInUserTenant - avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.sat.workflow_productservice.api.v1.products.DeleteTenantOrProduct.id.tenantCode_hits{sat}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "DeleteTenantOrProduct - hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.sat.workflow_productservice.api.v1.products.DeleteTenantOrProduct.id.tenantCode_httpStatus_OK{sat}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "DeleteTenantOrProduct - httpstatus ok"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.sat.workflow_productservice.api.v1.products.DeleteTenantOrProduct.id.tenantCode.avg{sat}",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "DeleteTenantOrProduct - avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.sat.workflow_productservice.api.status.v1.statuscheck_hits{sat}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:ngwf.sat.workflow_productservice.api.status.v1.resourcecheck_hits{sat}.as_count()",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "StatusCheck/ResourceCheck hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.sat.workflow_productservice.api.status.v1.statuscheck_httpStatus_OK{sat}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:ngwf.sat.workflow_productservice.api.status.v1.resourcecheck_httpStatus_OK{sat}.as_count()",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "StatusCheck/ResourceCheck httpStatus ok"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.sat.workflow_productservice.api.status.v1.statuscheck.avg{sat}",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:ngwf.sat.workflow_productservice.api.status.v1.resourcecheck.avg{sat}",
+              "style": {
+                "palette": "purple"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Statuscheck / ResourceCheck avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.sat.workflow_productservice.api.features.v1.feature_hits{sat}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "FeaturePermission - feature - hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.sat.workflow_productservice.api.features.v1.feature_httpStatus_OK{sat}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "FeaturePermission - feature - httpstatus ok"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "error",
+          "requests": [
+            {
+              "q": "avg:ngwf.sat.workflow_productservice.api.features.v1.feature.avg{sat}",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "FeaturePermission - feature - avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.sat.workflow_productservice.api.features.v1.query_hits{sat}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "FeaturePermission - query - hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.sat.workflow_productservice.api.features.v1.query_httpStatus_OK{sat}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "FeaturePermission - query - httpStatus ok"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.sat.workflow_productservice.api.features.v1.query.avg{sat}",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "FeaturePermission - query - avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.sat.workflow_productservice.api.features.v1.user_hits{sat}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "FeaturePermission - user - hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.sat.workflow_productservice.api.features.v1.user_httpStatus_OK{sat}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:ngwf.sat.workflow_productservice.api.features.v1.user_httpStatus_BadRequest{sat}.as_count()",
+              "style": {
+                "palette": "purple"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "FeaturePermission - user - httpStatus ok/bad"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.sat.workflow_productservice.api.features.v1.user.avg{sat}",
+              "aggregator": "avg",
+              "style": {
+                "palette": "dog_classic"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "FeaturePermission - user - avg"
+      }
+    ],
+    "description": "created by tuyen.luan@thomsonreuters.com (cloned)",
+    "title": "ngwf_product_SAT",
+    "created": "2017-11-28T22:31:40.693448+00:00",
+    "id": 408748,
+    "created_by": {
+      "disabled": false,
+      "handle": "tuyen.luan@thomsonreuters.com",
+      "name": "Tuyen Luan",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "tuyen.luan@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/f259523d4eab1e8e7d97ccd45a25906b?s=48&d=retro"
+    },
+    "modified": "2017-11-28T23:30:58.296037+00:00"
+  },
+  "url": "/dash/408748/ngwfproductsat",
+  "resource": "/api/v1/dash/408748"
+}
