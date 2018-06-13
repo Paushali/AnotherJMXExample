@@ -1,0 +1,72 @@
+{
+  "board_title": "richard.breading's ScreenBoard 28 Feb 2018 14:34",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-02-28T14:34:47.136308+00:00",
+  "original_title": "richard.breading's ScreenBoard 28 Feb 2018 14:34",
+  "modified": "2018-02-28T14:38:41.035804+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "richard.breading@thomsonreuters.com",
+    "name": "Richard Breading",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "richard.breading@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/765d1db21f3c67d4626da2eac47c3a75?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 294719,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 49,
+      "tile_def": {
+        "style": {
+          "fillMax": null,
+          "palette": "green_to_orange",
+          "fillMin": null,
+          "paletteFlip": false
+        },
+        "group": [
+          "tr:service-name"
+        ],
+        "notes": null,
+        "noMetricHosts": true,
+        "viz": "hostmap",
+        "scope": [
+          "tr:osr:environment:prod"
+        ],
+        "requests": [
+          {
+            "q": "avg:system.load.1{tr:osr:environment:prod} by {host}",
+            "type": "fill"
+          }
+        ],
+        "groupby": null,
+        "noGroupHosts": true
+      },
+      "width": 100,
+      "x": 12,
+      "y": 23,
+      "query": "avg:system.load.1{*} by {host}",
+      "legend_size": null,
+      "isShared": false,
+      "type": "hostmap",
+      "legend": null,
+      "add_timeframe": false
+    }
+  ],
+  "disableCog": false,
+  "id": 294719,
+  "title_edited": false,
+  "isShared": false
+}

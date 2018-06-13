@@ -1,0 +1,106 @@
+{
+  "board_title": "Cariad's test OSR int-prod dashboard",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-02-09T15:19:27.347591+00:00",
+  "original_title": "",
+  "modified": "2018-02-09T15:26:05.183446+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "cariad.eccleston@thomsonreuters.com",
+    "name": "Cariad Eccleston",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "cariad.eccleston@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/e6707d55ac2ff9518e2a922e52f1d54a?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 284508,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 20,
+      "tile_def": {
+        "style": {
+          "fillMax": null,
+          "palette": "green_to_orange",
+          "fillMin": null,
+          "paletteFlip": false
+        },
+        "group": [
+          "name"
+        ],
+        "notes": null,
+        "noMetricHosts": true,
+        "viz": "hostmap",
+        "scope": [
+          "tr:osr:environment:intprod"
+        ],
+        "requests": [
+          {
+            "q": "avg:system.cpu.pct{tr:osr:environment:intprod} by {host}",
+            "type": "fill"
+          }
+        ],
+        "groupby": null,
+        "noGroupHosts": true
+      },
+      "width": 64,
+      "x": 3,
+      "y": 2,
+      "query": "avg:system.load.1{*} by {host}",
+      "legend_size": null,
+      "isShared": false,
+      "type": "hostmap",
+      "legend": null,
+      "add_timeframe": false
+    },
+    {
+      "board_id": 284508,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.host_ok{tr:osr:environment:intprod}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 26,
+      "x": 5,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 284508,
+  "title_edited": false,
+  "isShared": false
+}

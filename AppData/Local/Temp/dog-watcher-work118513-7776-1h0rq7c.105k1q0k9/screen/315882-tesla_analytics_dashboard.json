@@ -1,0 +1,759 @@
+{
+  "board_title": "Tesla Analytics Dashboard",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-04-04T20:40:59.607770+00:00",
+  "original_title": "Tesla Analytics Dashboard",
+  "modified": "2018-05-17T19:42:39.276012+00:00",
+  "disableEditing": false,
+  "height": 64,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "techopsenvironment",
+      "name": "Environment"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "chris.spitzenberger@thomsonreuters.com",
+    "name": "Chris Spitzenberger",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "Chris.Spitzenberger@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/85557765068267f69d366bdfa07e7f73?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 315882,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU Utilization",
+      "height": 16,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.cpu.user{techopsservice:client,$Environment}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "85",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "70",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "70",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 23,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 6,
+      "x": 42,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 315882,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU Utilization",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.cpuutilization{techopsproject:tesla,techopsservice:client,$Environment}",
+            "aggregator": "avg",
+            "style": {
+              "width": "thick",
+              "palette": "cool",
+              "type": "dashed"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 6,
+      "x": 16,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 315882,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU Utilization",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.cpuutilization{techopsproject:tesla,$Environment,techopsservice:content}",
+            "aggregator": "avg",
+            "style": {
+              "width": "thick",
+              "palette": "cool",
+              "type": "dashed"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 25,
+      "x": 16,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 315882,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU Utilization",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.cpuutilization{techopsproject:tesla,techopsservice:office,$Environment}",
+            "aggregator": "avg",
+            "style": {
+              "width": "thick",
+              "palette": "cool",
+              "type": "dashed"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 44,
+      "x": 16,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 315882,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU Utilization",
+      "height": 16,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.cpu.user{techopsservice:content,$Environment}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "85",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "70",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "70",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 23,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 25,
+      "x": 42,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 315882,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU Utilization",
+      "height": 16,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.cpu.user{$Environment,techopsproject:tesla,techopsservice:office}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "85",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "70",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "70",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 23,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 44,
+      "x": 42,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 315882,
+      "group": "vhost:techops,host:i-055806341f4c2e3d4",
+      "title_size": 13,
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "Techops PROD Rabbit MQ Status",
+      "height": 6,
+      "width": 18,
+      "group_by": [],
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 0,
+      "x": 125,
+      "text_size": "auto",
+      "isShared": false,
+      "type": "check_status",
+      "check": "rabbitmq.aliveness",
+      "tags": [
+        "*"
+      ],
+      "grouping": "check"
+    },
+    {
+      "board_id": 315882,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Request Count",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.request_count{techopsproject:tesla,techopsservice:client,$Environment}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 6,
+      "x": 66,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 315882,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Request Count",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.request_count{techopsproject:tesla,techopsservice:content,$Environment}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 25,
+      "x": 66,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 315882,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Request Count",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.request_count{techopsproject:tesla,techopsservice:office,$Environment}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 44,
+      "x": 66,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 315882,
+      "title_size": 16,
+      "title": true,
+      "color": "#000",
+      "text": "Tesla Analytics Dashboard",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 35,
+      "y": 0,
+      "x": 66,
+      "font_size": "auto",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 315882,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Network In",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_in{techopsproject:tesla,techopsservice:client,$Environment}",
+            "aggregator": "avg",
+            "style": {
+              "width": "thick",
+              "palette": "cool",
+              "type": "dashed"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 6,
+      "x": 92,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 315882,
+      "title_size": 16,
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Client Service",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 15,
+      "y": 6,
+      "x": 0,
+      "font_size": "24",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 315882,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Network Out",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_out{techopsproject:tesla,techopsservice:client,$Environment}",
+            "aggregator": "avg",
+            "style": {
+              "width": "thick",
+              "palette": "cool",
+              "type": "dashed"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 6,
+      "x": 118,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 315882,
+      "title_size": 16,
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Content Service",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 5,
+      "width": 15,
+      "y": 25,
+      "x": 0,
+      "font_size": "24",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 315882,
+      "title_size": 16,
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "OnlyOffice Service",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 5,
+      "width": 15,
+      "y": 44,
+      "x": 0,
+      "font_size": "24",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 315882,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Network In",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_in{techopsproject:tesla,techopsservice:content,$Environment}",
+            "aggregator": "avg",
+            "style": {
+              "width": "thick",
+              "palette": "cool",
+              "type": "dashed"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 25,
+      "x": 92,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 315882,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Network In",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_in{techopsproject:tesla,techopsservice:office,$Environment}",
+            "aggregator": "avg",
+            "style": {
+              "width": "thick",
+              "palette": "cool",
+              "type": "dashed"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 44,
+      "x": 92,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 315882,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Network Out",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_out{techopsproject:tesla,techopsservice:content,$Environment}",
+            "aggregator": "avg",
+            "style": {
+              "width": "thick",
+              "palette": "cool",
+              "type": "dashed"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 25,
+      "x": 118,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 315882,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Network Out",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_out{techopsproject:tesla,techopsservice:office,$Environment}",
+            "aggregator": "avg",
+            "style": {
+              "width": "thick",
+              "palette": "cool",
+              "type": "dashed"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 44,
+      "x": 118,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 315882,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Unhealthy Host Count",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:aws.applicationelb.un_healthy_host_count{$Environment,techopsproject:tesla}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "2",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_red",
+                "value": "0",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": "<="
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": null,
+        "precision": "0"
+      },
+      "width": 16,
+      "time": {
+        "live_span": "15m"
+      },
+      "y": 0,
+      "x": 109,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 315882,
+  "title_edited": false,
+  "isShared": false
+}

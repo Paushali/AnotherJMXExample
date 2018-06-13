@@ -1,0 +1,82 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.cpuutilization{name:dep-dev-entity}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of aws.rds.cpuutilization over name:dep-dev-entity"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.database_connections{name:dep-dev-entity}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of aws.rds.database_connections over name:dep-dev-entity"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:aws.rds.freeable_memory{name:dep-dev-entity}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of aws.rds.freeable_memory over name:dep-dev-entity"
+      }
+    ],
+    "description": "created by sathya.venuraju@thomsonreuters.com",
+    "title": "DEP-Common Entities-Performance Test-DB",
+    "created": "2018-02-28T23:06:22.076643+00:00",
+    "id": 602258,
+    "created_by": {
+      "disabled": false,
+      "handle": "sathya.venuraju@thomsonreuters.com",
+      "name": "Sathyamurthy Venuraju",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "sathya.venuraju@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/971d5f8673f108bd4b7ba11c3ff960b6?s=48&d=retro"
+    },
+    "modified": "2018-02-28T23:23:52.203643+00:00"
+  },
+  "url": "/dash/602258/dep-common-entities-performance-test-db",
+  "resource": "/api/v1/dash/602258"
+}

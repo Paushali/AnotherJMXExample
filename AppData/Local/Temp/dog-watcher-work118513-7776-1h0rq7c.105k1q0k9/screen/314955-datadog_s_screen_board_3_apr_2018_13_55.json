@@ -1,0 +1,18 @@
+{
+  "read_only": false,
+  "board_title": "Datadog's ScreenBoard 3 Apr 2018 13:55",
+  "created": "2018-04-03T17:55:50.526082+00:00",
+  "modified": "2018-04-03T17:55:50.526089+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "support-trtaonesourcepr",
+    "name": "Datadog Support",
+    "is_admin": true,
+    "role": "Help is on the way",
+    "access_role": "adm",
+    "verified": true,
+    "email": "support-user-prod@datadoghq.com",
+    "icon": "https://secure.gravatar.com/avatar/e6952b5f29fe2d996cf4e63f40db9e71?s=48&d=retro"
+  },
+  "id": 314955
+}

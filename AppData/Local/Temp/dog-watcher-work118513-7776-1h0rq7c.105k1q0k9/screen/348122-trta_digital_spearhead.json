@@ -1,0 +1,79 @@
+{
+  "board_title": "TRTA- Digital Spearhead",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-05-29T19:15:35.944344+00:00",
+  "original_title": "Chaitali's Screenboard 29 May 2018 14:15",
+  "modified": "2018-05-29T19:33:02.879992+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "chaitali.agrawal@thomsonreuters.com",
+    "name": "Chaitali Agrawal",
+    "is_admin": true,
+    "role": null,
+    "access_role": "adm",
+    "verified": true,
+    "email": "chaitali.agrawal@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/109b0621779856fa6be67ee4cc747e84?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 348122,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "TRTA-DIGITAL",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:aws.ec2.cpuutilization{techopsmanaged:true,techopsproject:spear,techopsenvironment:dev,techopsservice:corp} by {name}, 10, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 4,
+      "x": 0,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 348122,
+      "x": 0,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 9,
+      "width": 47,
+      "global_timeframe_controls": false,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "2d"
+      },
+      "y": 22,
+      "query": "status:error ",
+      "type": "event_timeline",
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 348122,
+  "title_edited": true,
+  "isShared": false
+}

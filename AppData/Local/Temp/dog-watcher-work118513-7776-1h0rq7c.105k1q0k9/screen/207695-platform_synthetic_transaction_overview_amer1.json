@@ -1,0 +1,526 @@
+{
+  "board_title": "Platform Synthetic Transaction-Overview-AMER1",
+  "read_only": true,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2017-07-31T16:08:40.827283+00:00",
+  "original_title": "Platform Synthetic Transaction-Overview-AMER1",
+  "modified": "2017-08-28T12:43:39.447964+00:00",
+  "disableEditing": false,
+  "height": 89,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "job",
+      "name": "job"
+    },
+    {
+      "default": "env:amer1",
+      "prefix": "env",
+      "name": "scope"
+    },
+    {
+      "default": "module:lonestar2",
+      "prefix": "module",
+      "name": "module"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "abhinav.mukesh@thomsonreuters.com",
+    "name": "Abhinav Mukesh",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "abhinav.mukesh@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/0ea4ce5bea4cab6ace9832d2657dad19?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "sizing": "center",
+      "board_id": 51223,
+      "title_size": 16,
+      "title": true,
+      "url": "/static/images/screenboard/integrations/jenkins.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 18,
+      "width": 43,
+      "y": 0,
+      "x": 0,
+      "margin": ""
+    },
+    {
+      "board_id": 51223,
+      "x": 135,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Jenkins events",
+      "height": 48,
+      "width": 37,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 0,
+      "query": "sources:jenkins env:amer1 ",
+      "type": "event_stream",
+      "event_size": "s"
+    },
+    {
+      "board_id": 51223,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Average job durations",
+      "height": 25,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:jenkins.job.duration{$scope,$job} by {job}, 5, 'mean', 'desc')",
+            "conditional_formats": [],
+            "style": {
+              "palette": "purple"
+            }
+          }
+        ]
+      },
+      "width": 43,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 7,
+      "x": 90,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "metric": "",
+      "text_align": "left",
+      "query": "sum:jenkins.job.duration{$job}",
+      "board_id": 51223,
+      "autoscale": true,
+      "title": true,
+      "aggregator": "sum",
+      "title_align": "left",
+      "custom_unit": null,
+      "width": 21,
+      "wrapped": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "tags": [],
+      "aggr": "avg",
+      "precision": 2,
+      "title_text": "Past hour",
+      "padding": 8,
+      "calc_func": "raw",
+      "metric_type": "standard",
+      "title_size": 16,
+      "height": 9,
+      "legend": false,
+      "conditional_formats": [],
+      "is_valid_query": true,
+      "tile_def": {
+        "autoscale": true,
+        "text_align": "left",
+        "precision": 2,
+        "custom_unit": null,
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:jenkins.job.duration{$job,$scope}",
+            "aggregator": "sum",
+            "conditional_formats": []
+          }
+        ]
+      },
+      "res_calc_func": "raw",
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 44,
+      "x": 0
+    },
+    {
+      "board_id": 51223,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Successful vs failed jobs, past day",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "count_not_null(sum:jenkins.job.duration{$scope,$job,result:success} by {job}), count_not_null(sum:jenkins.job.duration{$scope,$job,result:failure} by {job})",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "bars",
+            "style": {
+              "palette": "green"
+            }
+          },
+          {
+            "q": "count_not_null(sum:jenkins.job.duration{$scope,$job,result:failure} by {job})",
+            "style": {
+              "palette": "red"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 43,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 20,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "metric": "",
+      "text_align": "left",
+      "query": "sum:jenkins.job.duration{$job}",
+      "board_id": 51223,
+      "autoscale": true,
+      "title": true,
+      "aggregator": "sum",
+      "title_align": "left",
+      "custom_unit": null,
+      "width": 21,
+      "wrapped": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "tags": [],
+      "aggr": "avg",
+      "precision": 2,
+      "title_text": "Past day",
+      "padding": 8,
+      "calc_func": "raw",
+      "metric_type": "standard",
+      "title_size": 16,
+      "height": 9,
+      "legend": false,
+      "conditional_formats": [],
+      "is_valid_query": true,
+      "tile_def": {
+        "autoscale": true,
+        "text_align": "left",
+        "precision": 2,
+        "custom_unit": null,
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:jenkins.job.duration{$job,$scope}",
+            "aggregator": "sum",
+            "conditional_formats": []
+          }
+        ]
+      },
+      "res_calc_func": "raw",
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 44,
+      "x": 22
+    },
+    {
+      "metric": "",
+      "text_align": "left",
+      "query": "sum:jenkins.job.duration{$job}",
+      "board_id": 51223,
+      "autoscale": true,
+      "title": true,
+      "aggregator": "sum",
+      "title_align": "left",
+      "custom_unit": null,
+      "width": 21,
+      "wrapped": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "tags": [],
+      "aggr": "avg",
+      "precision": 2,
+      "title_text": "Past week",
+      "padding": 8,
+      "calc_func": "raw",
+      "metric_type": "standard",
+      "title_size": 16,
+      "height": 9,
+      "legend": false,
+      "conditional_formats": [],
+      "is_valid_query": true,
+      "tile_def": {
+        "autoscale": true,
+        "text_align": "left",
+        "precision": 2,
+        "custom_unit": null,
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:jenkins.job.duration{$job,$scope}",
+            "aggregator": "sum",
+            "conditional_formats": []
+          }
+        ]
+      },
+      "res_calc_func": "raw",
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 56,
+      "x": 0
+    },
+    {
+      "metric": "",
+      "text_align": "left",
+      "query": "sum:jenkins.job.duration{$job}",
+      "board_id": 51223,
+      "autoscale": true,
+      "title": true,
+      "aggregator": "sum",
+      "title_align": "left",
+      "custom_unit": null,
+      "width": 21,
+      "wrapped": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "tags": [],
+      "aggr": "avg",
+      "precision": 2,
+      "title_text": "Past month",
+      "padding": 8,
+      "calc_func": "raw",
+      "metric_type": "standard",
+      "title_size": 16,
+      "height": 9,
+      "legend": false,
+      "conditional_formats": [],
+      "is_valid_query": true,
+      "tile_def": {
+        "autoscale": true,
+        "text_align": "left",
+        "precision": 2,
+        "custom_unit": null,
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:jenkins.job.duration{$job,$scope}",
+            "aggregator": "sum",
+            "conditional_formats": []
+          }
+        ]
+      },
+      "res_calc_func": "raw",
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 56,
+      "x": 22
+    },
+    {
+      "board_id": 51223,
+      "title_size": 16,
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "height": 5,
+      "bgcolor": "gray",
+      "html": "Compute time",
+      "y": 38,
+      "x": 0,
+      "font_size": "18",
+      "tick": true,
+      "tick_pos": "50%",
+      "width": 43,
+      "auto_refresh": false
+    },
+    {
+      "board_id": 93575,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Completed job runs",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:jenkins.job.completed{$job,$scope} by {job}.as_count(), 5, 'sum', 'desc')",
+            "conditional_formats": [],
+            "style": {
+              "palette": "dog_classic"
+            }
+          }
+        ]
+      },
+      "width": 43,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 35,
+      "x": 90,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 93575,
+      "title_size": 16,
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "height": 5,
+      "bgcolor": "gray",
+      "html": "Job status",
+      "y": 0,
+      "x": 45,
+      "font_size": "18",
+      "tick": true,
+      "tick_pos": "50%",
+      "width": 43,
+      "auto_refresh": false
+    },
+    {
+      "board_id": 93575,
+      "title_size": 16,
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "height": 5,
+      "bgcolor": "gray",
+      "html": "Job duration",
+      "y": 0,
+      "x": 90,
+      "font_size": "18",
+      "tick": true,
+      "tick_pos": "50%",
+      "width": 43,
+      "auto_refresh": false
+    },
+    {
+      "board_id": 93575,
+      "title_size": 13,
+      "tags": [
+        "$scope",
+        "$job"
+      ],
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "Passing and failing Jenkins jobs, past day",
+      "height": 11,
+      "width": 43,
+      "group_by": [
+        "job"
+      ],
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 7,
+      "x": 45,
+      "text_size": "auto",
+      "type": "check_status",
+      "check": "jenkins.job.status",
+      "group": null,
+      "grouping": "cluster"
+    },
+    {
+      "board_id": 93575,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Job duration trends",
+      "height": 23,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "robust_trend(avg:jenkins.job.duration{$scope,$job} by {job})",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line"
+          }
+        ],
+        "autoscale": true,
+        "yaxis": {
+          "min": 0
+        }
+      },
+      "width": 43,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 38,
+      "x": 45,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    },
+    {
+      "board_id": 51223,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Successful vs failed jobs, past 4 hours",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "count_not_null(sum:jenkins.job.duration{$scope,$job,result:success} by {job}), count_not_null(sum:jenkins.job.duration{$scope,$job,result:failure} by {job})",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "bars",
+            "style": {
+              "palette": "green"
+            }
+          },
+          {
+            "q": "count_not_null(sum:jenkins.job.duration{$scope,$job,result:failure} by {job})",
+            "style": {
+              "palette": "red"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 43,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 20,
+      "x": 45,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false
+    }
+  ],
+  "disableCog": false,
+  "id": 207695,
+  "title_edited": false,
+  "isShared": false
+}

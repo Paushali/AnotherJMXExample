@@ -1,0 +1,73 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:system.cpu.user{$reverseproxy}",
+              "aggregator": "avg",
+              "style": {
+                "width": "thin",
+                "palette": "cool",
+                "type": "dashed"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "markers": [
+            {
+              "type": "error dashed",
+              "val": "10",
+              "value": "y = 10"
+            }
+          ]
+        },
+        "title": "Sum of system.cpu.user over $reverseproxy"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.ec2.cpuutilization{ac_id:773778111642}"
+            }
+          ],
+          "events": []
+        },
+        "title": "aws.ec2.cpuutilization"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "name:platform-dev-haproxy-service",
+        "prefix": null,
+        "name": "reverseproxy"
+      }
+    ],
+    "description": "created by karthikeyan.rajamani@thomsonreuters.com",
+    "title": "Karthikeyan's TimeBoard 13 Mar 2018 11:50",
+    "created": "2018-03-13T16:51:03.583654+00:00",
+    "id": 669342,
+    "created_by": {
+      "disabled": false,
+      "handle": "karthikeyan.rajamani@thomsonreuters.com",
+      "name": "Karthikeyan Rajamani",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "Karthikeyan.Rajamani@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/bae48acc0cdb1247103062bff0a91bca?s=48&d=retro"
+    },
+    "modified": "2018-03-13T18:01:20.587533+00:00"
+  },
+  "url": "/dash/669342/karthikeyans-timeboard-13-mar-2018-1150",
+  "resource": "/api/v1/dash/669342"
+}

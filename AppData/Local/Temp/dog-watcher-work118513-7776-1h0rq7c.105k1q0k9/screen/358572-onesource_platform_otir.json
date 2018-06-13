@@ -1,0 +1,833 @@
+{
+  "board_title": "ONESOURCE Platform - OTIR",
+  "read_only": false,
+  "isIntegration": false,
+  "description": "This is a description",
+  "board_bgtype": "board_graph",
+  "created": "2018-06-13T20:05:25.058100+00:00",
+  "original_title": "ONESOURCE Platform - OTIR",
+  "modified": "2018-06-13T21:21:25.570486+00:00",
+  "disableEditing": false,
+  "height": 78,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "tr_environment-type",
+      "name": "env"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "ravi.kunapareddy@thomsonreuters.com",
+    "name": "Sita Venkata Ravi Kunapareddy",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "ravi.kunapareddy@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/2d9b8d5b1e6fc747b0d703f21ccdcd85?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "templated": true,
+  "widgets": [
+    {
+      "sizing": "zoom",
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/latency.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 10,
+      "width": 30,
+      "y": 9,
+      "x": 12,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/traffic.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 10,
+      "width": 30,
+      "y": 9,
+      "x": 45,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/errors.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 10,
+      "width": 30,
+      "y": 9,
+      "x": 78,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/saturation.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 10,
+      "width": 29,
+      "y": 9,
+      "x": 111,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "avg:OTIR_ClientWeb.page.load.time{tr_product:otir,role:client_web,tr_environment-type:production,$env}, 1000*avg:OTIR_ClientWeb.page.load.time{tr_product:otir,role:client_web,tr_environment-type:production,$env}",
+            "type": "line",
+            "metadata": {
+              "1000*avg:OTIR_ClientWeb.page.load.time{tr_product:otir,role:client_web,tr_environment-type:production}": {
+                "alias": "response (ms)"
+              }
+            }
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "max": "15000",
+            "label": "7s latency",
+            "type": "warning dashed",
+            "value": "7000 < y < 15000",
+            "min": "7000"
+          },
+          {
+            "label": "15s latency",
+            "type": "error dashed",
+            "value": "y > 15000",
+            "min": "15000"
+          }
+        ],
+        "yaxis": {
+          "includeZero": false,
+          "max": "1e6",
+          "scale": "log",
+          "min": "100"
+        }
+      },
+      "width": 32,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 21,
+      "x": 11,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:OTIR_ClientWeb.page.load.time{tr_product:otir,role:client_web,$env}, 1000*avg:OTIR_ClientWeb.page.load.time{tr_product:otir,role:client_web,$env}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "max": "15000",
+            "min": "7000",
+            "type": "warning dashed",
+            "value": "7000 < y < 15000",
+            "label": "7s latency"
+          },
+          {
+            "min": "15000",
+            "type": "error dashed",
+            "value": "y > 15000",
+            "label": "15s latency"
+          }
+        ],
+        "yaxis": {
+          "includeZero": false,
+          "scale": "log",
+          "min": "100",
+          "max": "1e6"
+        }
+      },
+      "width": 32,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 37,
+      "x": 11,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:OTIR_ClientWeb.page.load.time{tr_product:otir,role:client_web,$env}, 1000*avg:OTIR_ClientWeb.page.load.time{tr_product:otir,role:client_web,$env}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "min": 7000,
+            "max": 15000,
+            "value": "7000 < y < 15000",
+            "label": "3s latency",
+            "type": "warning dashed"
+          },
+          {
+            "dim": "y",
+            "min": 15000,
+            "max": null,
+            "value": "y > 15000",
+            "label": "10s latency",
+            "type": "error dashed"
+          }
+        ],
+        "yaxis": {
+          "includeZero": false,
+          "scale": "log",
+          "min": "100",
+          "max": "1e6"
+        }
+      },
+      "width": 32,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 53,
+      "x": 11,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "anomalies(sum:OTIR_ClientWeb.users.unique{role:client_web,tr_product:otir,$env}.as_count(), 'adaptive', 5)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 32,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 21,
+      "x": 44,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "anomalies(avg:OTIR_ClientWeb.users.unique{tr_product:otir,role:client_web,$env}.as_count(), 'adaptive', 5)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 32,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 37,
+      "x": 44,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:OTIR_ClientWeb.users.unique{role:client_web,tr_product:otir,$env}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 32,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 53,
+      "x": 44,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:OTIR_ClientWeb.otir.cw.exception{error:500,role:client_web,tr_product:otir,$env}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "max": null,
+            "min": 100,
+            "type": "error dashed",
+            "value": "y > 100",
+            "dim": "y"
+          },
+          {
+            "max": 100,
+            "min": 50,
+            "type": "warning dashed",
+            "value": "50 < y < 100",
+            "dim": "y"
+          }
+        ],
+        "yaxis": {
+          "max": "1000",
+          "scale": "log",
+          "includeZero": false,
+          "min": "1"
+        }
+      },
+      "width": 32,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 21,
+      "x": 77,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "type": "error dashed",
+            "value": "y > 100",
+            "min": "100"
+          },
+          {
+            "max": "100",
+            "type": "warning dashed",
+            "value": "50 < y < 100",
+            "min": "50"
+          }
+        ],
+        "yaxis": {
+          "max": "1000",
+          "scale": "log",
+          "min": "1",
+          "includeZero": false
+        }
+      },
+      "width": 32,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 37,
+      "x": 77,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "type": "error dashed",
+            "value": "y > 100",
+            "min": "100"
+          },
+          {
+            "max": "100",
+            "type": "warning dashed",
+            "value": "50 < y < 100",
+            "min": "50"
+          }
+        ],
+        "yaxis": {
+          "max": "1000",
+          "scale": "log",
+          "min": "1",
+          "includeZero": false
+        }
+      },
+      "width": 32,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 53,
+      "x": 77,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "top5_max(100-avg:system.cpu.idle{tr_product:otir,$env} by {host})",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "top5_max(100*(avg:system.mem.total{tr_product:otir,$env} by {host}-avg:system.mem.free{tr_product:otir,$env} by {host})/avg:system.mem.total{tr_product:otir,$env} by {host})",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "max": 100,
+            "dim": "y",
+            "type": "error dashed",
+            "value": "95 < y < 100",
+            "min": 95
+          },
+          {
+            "max": 95,
+            "dim": "y",
+            "type": "warning dashed",
+            "value": "85 < y < 95",
+            "min": 85
+          }
+        ],
+        "yaxis": {
+          "max": "100",
+          "min": "0"
+        }
+      },
+      "width": 31,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 21,
+      "x": 110,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "top5_max(100-avg:system.cpu.idle{tr_product:otir,$env} by {host})",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "top5_max(100*(avg:system.mem.total{tr_product:otir,$env} by {host}-avg:system.mem.free{tr_product:ott,$env} by {host})/avg:system.mem.total{tr_product:otir,$env} by {host})",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "max": 100,
+            "min": 95,
+            "type": "error dashed",
+            "value": "95 < y < 100",
+            "dim": "y"
+          },
+          {
+            "max": 95,
+            "min": 85,
+            "type": "warning dashed",
+            "value": "85 < y < 95",
+            "dim": "y"
+          }
+        ],
+        "yaxis": {
+          "max": "100",
+          "min": "0"
+        }
+      },
+      "width": 31,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 37,
+      "x": 110,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "top5_max(100-avg:system.cpu.idle{tr_product:ott,$env} by {host})",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "top5_max(100*(avg:system.mem.total{tr_product:otir,$env} by {host}-avg:system.mem.free{tr_product:otir,$env} by {host})/avg:system.mem.total{tr_product:otir,$env} by {host})",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "max": 100,
+            "min": 95,
+            "type": "error dashed",
+            "value": "95 < y < 100",
+            "dim": "y"
+          },
+          {
+            "max": 95,
+            "min": 85,
+            "type": "warning dashed",
+            "value": "85 < y < 95",
+            "dim": "y"
+          }
+        ],
+        "yaxis": {
+          "max": "100",
+          "min": "0"
+        }
+      },
+      "width": 31,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 53,
+      "x": 110,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 307883,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/last_hour.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 16,
+      "width": 7,
+      "y": 21,
+      "x": 2,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 307883,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/last_day.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 16,
+      "width": 7,
+      "y": 37,
+      "x": 2,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 307883,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/last_month.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 16,
+      "width": 7,
+      "y": 53,
+      "x": 2,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 307883,
+      "title_size": 16,
+      "title": true,
+      "url": "https://www.onesourcetax.com/amer1/home-login/bento/imgs/logo-onesource.png",
+      "margin": "small",
+      "title_align": "left",
+      "title_text": "",
+      "height": 6,
+      "width": 95,
+      "y": 1,
+      "x": 29,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 307883,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/latency_ls2.png",
+      "margin": "small",
+      "title_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 21,
+      "y": 70,
+      "x": 22,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 307883,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/traffic_ls2.png",
+      "margin": "small",
+      "title_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 21,
+      "y": 70,
+      "x": 55,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 307883,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/errors_ls2.png",
+      "margin": "small",
+      "title_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 21,
+      "y": 70,
+      "x": 88,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 307883,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/saturation_ls2.png",
+      "margin": "small",
+      "title_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 21,
+      "y": 70,
+      "x": 120,
+      "type": "image",
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 358572,
+  "title_edited": false,
+  "isShared": false
+}

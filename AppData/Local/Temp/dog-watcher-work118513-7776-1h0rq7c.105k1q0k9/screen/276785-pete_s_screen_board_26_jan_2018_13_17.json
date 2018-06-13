@@ -1,0 +1,255 @@
+{
+  "board_title": "Pete's ScreenBoard 26 Jan 2018 13:17",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-01-26T19:17:25.083858+00:00",
+  "original_title": "Pete's ScreenBoard 26 Jan 2018 13:17",
+  "modified": "2018-01-30T21:42:08.159048+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "pete.ketcham@thomsonreuters.com",
+    "name": "Peter Ketcham",
+    "is_admin": true,
+    "role": "Mgr",
+    "access_role": "adm",
+    "verified": true,
+    "email": "pete.ketcham@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/67c646c889c7d6dd43f2ae2bc8333999?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 276785,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Current Connections",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:iis.net.num_connections{otir,role:client_web}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "top(sum:iis.net.num_connections{ott}, 15, 'mean', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 8,
+      "x": 13,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 276785,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU Usage OTIR",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.cpu.system{otir} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 25,
+      "x": 13,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 276785,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "404",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:iis.errors.not_found{otir}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "sum:iis.errors.not_found{ott}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 41,
+      "x": 13,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 276785,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "OTIR CPU",
+      "height": 16,
+      "tile_def": {
+        "style": {
+          "fillMax": null,
+          "palette": "green_to_orange",
+          "fillMin": null,
+          "paletteFlip": true
+        },
+        "group": [
+          "role"
+        ],
+        "notes": null,
+        "noMetricHosts": true,
+        "viz": "hostmap",
+        "scope": [
+          "otir"
+        ],
+        "requests": [
+          {
+            "q": "avg:system.cpu.idle{otir} by {host}",
+            "type": "fill"
+          }
+        ],
+        "groupby": null,
+        "noGroupHosts": true
+      },
+      "width": 47,
+      "x": 63,
+      "y": 5,
+      "query": "avg:system.load.1{*} by {host}",
+      "legend_size": null,
+      "isShared": false,
+      "type": "hostmap",
+      "legend": null,
+      "add_timeframe": false
+    },
+    {
+      "board_id": 276785,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU Usage OTT",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.cpu.system{ott} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 25,
+      "x": 63,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 276785,
+      "title_size": 13,
+      "tags": [
+        "otir"
+      ],
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "Agent Up",
+      "height": 8,
+      "width": 15,
+      "group_by": [],
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 43,
+      "x": 78,
+      "text_size": "auto",
+      "isShared": false,
+      "type": "check_status",
+      "check": "iis.site_up",
+      "group": "site:otir_client_web,host:C410QVJOTRCW2",
+      "grouping": "cluster"
+    }
+  ],
+  "disableCog": false,
+  "id": 276785,
+  "title_edited": false,
+  "isShared": false
+}
