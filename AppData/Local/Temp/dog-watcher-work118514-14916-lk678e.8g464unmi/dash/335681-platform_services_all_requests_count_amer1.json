@@ -1,0 +1,210 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:product_service.All.Requests.count{env:amer1} by {host}.as_count()",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "product_service.All.Requests.count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:security_service.All.Requests.count{env:amer1} by {host}.as_count()",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "security_service.All.Requests.count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:account_service.All.Requests.count{env:amer1}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "account_service.All.Requests.count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:product_service.All.Requests.rate.1m{env:amer1} by {host}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Sum of product_service.All.Requests.rate.1m over env:amer1 by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:security_service.All.Requests.rate.1m{env:amer1} by {host}",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Sum of security_service.All.Requests.rate.1m over env:amer1 by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:captcha_service.All.Requests.count{env:amer1}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "captcha_service.All.Requests.count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:image_service.All.Requests.count{env:amer1}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "image_service.All.Requests.count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:user_service.All.Requests.rate.1m{env:amer1}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "user_service.All.Requests.count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:news_service.All.Requests.count{env:amer1}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "news_service.All.Requests.count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:rest_main_service.All.Requests.count{env:amer1}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "rest_main_service.All.Requests.count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:client_manager_service.All.Requests.count{env:amer1}.as_count()",
+              "type": "bars"
+            }
+          ],
+          "events": []
+        },
+        "title": "client_manager_service.All.Requests.count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:security_service.timer.response.DELETE.api.security.v1.sessions.end.endreason.count{env:amer1} by {host}.as_count()",
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of security_service.timer.response.DELETE.api.security.v1.sessions.end.en..."
+      }
+    ],
+    "description": "created by abhinav.mukesh@thomsonreuters.com",
+    "title": "Platform Services All.Requests.count-AMER1",
+    "created": "2017-08-05T14:20:21.273515+00:00",
+    "id": 335681,
+    "created_by": {
+      "disabled": false,
+      "handle": "abhinav.mukesh@thomsonreuters.com",
+      "name": "Abhinav Mukesh",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "abhinav.mukesh@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/0ea4ce5bea4cab6ace9832d2657dad19?s=48&d=retro"
+    },
+    "modified": "2018-02-27T13:48:44.150952+00:00"
+  },
+  "url": "/dash/335681/platform-services-allrequestscount-amer1",
+  "resource": "/api/v1/dash/335681"
+}

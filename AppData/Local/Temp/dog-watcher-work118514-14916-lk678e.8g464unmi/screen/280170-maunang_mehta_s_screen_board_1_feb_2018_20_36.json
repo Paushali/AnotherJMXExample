@@ -1,0 +1,118 @@
+{
+  "board_title": "maunang.mehta's ScreenBoard 1 Feb 2018 20:36",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-02-02T02:36:23.400757+00:00",
+  "original_title": "",
+  "modified": "2018-02-02T03:11:04.333224+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "maunang.mehta@thomsonreuters.com",
+    "name": "Maunang Mehta",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "maunang.mehta@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/e603f37ebdb7578f7f79348d69492153?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 280170,
+      "title_size": 16,
+      "title": true,
+      "color": "#000",
+      "text": "Rate",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 6,
+      "width": 10,
+      "y": 7,
+      "x": 0,
+      "font_size": "auto",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 280170,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "RATE: Request/Sec",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:dtxp.rate.requestpersecond{dtxptechops}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          },
+          {
+            "q": "max:dtxp.rate.webservice.requestpersecond{dtxptechops}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area"
+          },
+          {
+            "q": "max:dtxp.rate.webservice.totalmethodrequestspersecond{dtxptechops}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area"
+          },
+          {
+            "q": "max:dtxp.rate.webservice.isapiextensionrequestspersecond{dtxptechops}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area"
+          },
+          {
+            "q": "max:dtxp.rate.webservice.activerequests{dtxptechops}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 2,
+      "x": 12,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 280170,
+  "title_edited": false,
+  "isShared": false
+}

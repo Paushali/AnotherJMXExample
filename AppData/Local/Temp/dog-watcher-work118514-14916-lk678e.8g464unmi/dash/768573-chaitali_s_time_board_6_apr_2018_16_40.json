@@ -1,0 +1,53 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:f5.response_times_test{percentile:90,service:www.onesourcetax.com,window:1m}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.response_times_test{service:www.onesourcetax.com,window:1m,percentile:95}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "f5.response_times_test, f5.response_times_test"
+      }
+    ],
+    "description": "created by chaitali.agrawal@thomsonreuters.com",
+    "title": "Chaitali's TimeBoard 6 Apr 2018 16:40",
+    "created": "2018-04-06T21:40:30.068286+00:00",
+    "id": 768573,
+    "created_by": {
+      "disabled": false,
+      "handle": "chaitali.agrawal@thomsonreuters.com",
+      "name": "Chaitali Agrawal",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "chaitali.agrawal@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/109b0621779856fa6be67ee4cc747e84?s=48&d=retro"
+    },
+    "modified": "2018-04-06T21:41:22.848069+00:00"
+  },
+  "url": "/dash/768573/chaitalis-timeboard-6-apr-2018-1640",
+  "resource": "/api/v1/dash/768573"
+}

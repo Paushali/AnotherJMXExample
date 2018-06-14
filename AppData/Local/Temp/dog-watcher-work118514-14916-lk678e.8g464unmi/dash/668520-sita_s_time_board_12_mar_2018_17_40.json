@@ -1,0 +1,65 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ott.rate.webservice.activerequests{tr_product:ott} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of ott.rate.webservice.activerequests over tr_product:ott by host"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:ott.rate.webservice.requestpersecond{role:client_web} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of ott.rate.webservice.requestpersecond over role:client_web by host"
+      }
+    ],
+    "description": "created by ravi.kunapareddy@thomsonreuters.com",
+    "title": "Sita's TimeBoard 12 Mar 2018 17:40",
+    "created": "2018-03-12T22:40:25.654209+00:00",
+    "id": 668520,
+    "created_by": {
+      "disabled": false,
+      "handle": "ravi.kunapareddy@thomsonreuters.com",
+      "name": "Sita Venkata Ravi Kunapareddy",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "ravi.kunapareddy@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/2d9b8d5b1e6fc747b0d703f21ccdcd85?s=48&d=retro"
+    },
+    "modified": "2018-03-12T22:42:19.696874+00:00"
+  },
+  "url": "/dash/668520/sitas-timeboard-12-mar-2018-1740",
+  "resource": "/api/v1/dash/668520"
+}

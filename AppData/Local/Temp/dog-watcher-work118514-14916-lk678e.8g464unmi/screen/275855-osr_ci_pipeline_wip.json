@@ -1,0 +1,764 @@
+{
+  "board_title": "OSR CI Pipeline (WIP)",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-01-25T08:45:34.010030+00:00",
+  "original_title": "OSR CI Pipeline (WIP)",
+  "modified": "2018-05-16T14:24:43.225210+00:00",
+  "disableEditing": false,
+  "height": 123,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "tr.osr.build",
+      "name": "Service"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "stephen.fletcher@thomsonreuters.com",
+    "name": "Stephen Fletcher",
+    "is_admin": false,
+    "role": "Manager",
+    "access_role": "st",
+    "verified": true,
+    "email": "stephen.fletcher@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/67de4efa01fd807a6459f68caee2d089?s=48&d=retro"
+  },
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 275855,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "OSR Successful Build Times (minutes)",
+      "height": 25,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.buildtimes{host:trta.osr.dashboardbox,buildstatus:success,$Service} by {tr.osr.build}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 1,
+      "x": 2,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Average Successful Build Time (minutes)",
+      "height": 25,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:tr.osr.buildtimes{host:trta.osr.dashboardbox,buildstatus:success} by {tr.osr.build}, 50, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": 40,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": 20,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_green",
+                "value": 0,
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 1,
+      "x": 50,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Max",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:tr.osr.buildtimes{host:trta.osr.dashboardbox,buildstatus:success,$Service}",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "40",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "20",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "20",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 8,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 29,
+      "x": 41,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "title_size": 16,
+      "title": true,
+      "color": "#55b81c",
+      "text": "Success (mins):",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 22,
+      "y": 29,
+      "x": 2,
+      "font_size": "auto",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Min",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "min:tr.osr.buildtimes{host:trta.osr.dashboardbox,buildstatus:success,$Service}",
+            "aggregator": "min",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "40",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "20",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "20",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 8,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 29,
+      "x": 23,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Avg",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:tr.osr.buildtimes{host:trta.osr.dashboardbox,buildstatus:success,$Service}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "40",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "20",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "20",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 8,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 29,
+      "x": 32,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Max",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:tr.osr.buildtimes{host:trta.osr.dashboardbox,buildstatus:failure,$Service}",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "40",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "20",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "20",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 8,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 29,
+      "x": 89,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "title_size": 16,
+      "title": true,
+      "color": "#d00",
+      "text": "Fail (mins):",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 19,
+      "y": 29,
+      "x": 53,
+      "font_size": "auto",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Min",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "min:tr.osr.buildtimes{host:trta.osr.dashboardbox,buildstatus:failure,$Service}",
+            "aggregator": "min",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "40",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "20",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "20",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 8,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 29,
+      "x": 71,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Avg",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:tr.osr.buildtimes{host:trta.osr.dashboardbox,buildstatus:failure,$Service}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "40",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "20",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "20",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 8,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 29,
+      "x": 80,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "OSR Iso Deploy Times (minutes)",
+      "height": 25,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.isodeploytimes{host:trta.osr.dashboardbox,$Service} by {tr.osr.build}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 76,
+      "x": 2,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Average Deploy Time (minutes)",
+      "height": 25,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:tr.osr.isodeploytimes{host:trta.osr.dashboardbox} by {tr.osr.build}, 50, 'mean', 'desc') / 60",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": 1
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">",
+                "value": 0.5
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": ">",
+                "value": 0
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 37,
+      "x": 50,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "title_size": 16,
+      "title": true,
+      "color": "#55b81c",
+      "text": "Check-in to Isolation (minutes)",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 50,
+      "y": 67,
+      "x": 2,
+      "font_size": "auto",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Min",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "min:tr.osr.isodeploytimes{host:trta.osr.dashboardbox,$Service}",
+            "aggregator": "min",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "30"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "60"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "60"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 8,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 67,
+      "x": 43,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Avg",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:tr.osr.isodeploytimes{host:trta.osr.dashboardbox,$Service}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "60"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "30"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "30"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 8,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 67,
+      "x": 52,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "autoscale": true,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Max",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:tr.osr.isodeploytimes{host:trta.osr.dashboardbox,$Service}",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "60"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "30"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "30"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 8,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 67,
+      "x": 61,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Check-in to Isolation deploy (minutes)",
+      "height": 25,
+      "tile_def": {
+        "viz": "distribution",
+        "requests": [
+          {
+            "q": "avg:tr.osr.isodeploytimes{host:trta.osr.dashboardbox,$Service} by {tr.osr.build}/60",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 37,
+      "x": 2,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 275855,
+  "title_edited": false,
+  "isShared": false
+}

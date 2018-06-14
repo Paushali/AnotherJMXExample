@@ -1,0 +1,39 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:test.metricTRSRE{*}",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of test.metricTRSRE over *"
+      }
+    ],
+    "description": "created by karthikeyan.rajamani@thomsonreuters.com",
+    "title": "karthikeyan.rajamani's TimeBoard 16 Sep 2017 21:49",
+    "created": "2017-09-17T02:49:27.836424+00:00",
+    "id": 359536,
+    "created_by": {
+      "disabled": false,
+      "handle": "karthikeyan.rajamani@thomsonreuters.com",
+      "name": "Karthikeyan Rajamani",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "Karthikeyan.Rajamani@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/bae48acc0cdb1247103062bff0a91bca?s=48&d=retro"
+    },
+    "modified": "2017-09-17T02:49:46.310457+00:00"
+  },
+  "url": "/dash/359536/karthikeyanrajamanis-timeboard-16-sep-2017-2149",
+  "resource": "/api/v1/dash/359536"
+}

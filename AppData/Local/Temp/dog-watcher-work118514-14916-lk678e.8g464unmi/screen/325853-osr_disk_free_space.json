@@ -1,0 +1,118 @@
+{
+  "board_title": "OSR: Disk Free Space",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-04-23T11:57:34.859946+00:00",
+  "original_title": "OSR: Disk Free Space",
+  "modified": "2018-04-23T12:10:22.144779+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "application-asset-insight-id:202990",
+      "usageCount": 0,
+      "prefix": "tr",
+      "name": "assetid"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "stuart.smith@thomsonreuters.com",
+    "name": "Stuart Smith",
+    "is_admin": false,
+    "role": "",
+    "access_role": "st",
+    "verified": true,
+    "email": "stuart.smith@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/b3592e52ca41f60e2472d4905d280dc3?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "board_id": 325853,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "top(min:system.disk.free{$assetid} by {host}, 5, 'min', 'asc')",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 1,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 325853,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(min:system.disk.free{$assetid} by {env,host}, 10, 'min', 'asc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": 400000000,
+                "comparator": "<"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": 800000000,
+                "comparator": "<"
+              },
+              {
+                "palette": "white_on_green",
+                "value": 800000000,
+                "comparator": ">="
+              }
+            ]
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 17,
+      "x": 1,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 325853,
+  "title_edited": false,
+  "isShared": false
+}

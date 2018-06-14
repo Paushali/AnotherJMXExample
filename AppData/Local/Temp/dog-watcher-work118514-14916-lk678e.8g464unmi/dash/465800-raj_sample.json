@@ -1,0 +1,129 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:dtxp.mem.avaialble{host:EC2AMAZ-15Q81Q7}"
+            }
+          ],
+          "events": []
+        },
+        "title": "dtxp.mem.avaialble"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:dtxp.mem.pages{host:EC2AMAZ-15Q81Q7}"
+            }
+          ],
+          "events": []
+        },
+        "title": "dtxp.mem.pages"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:dtxp.errors.excepsthrownpersecond{host:EC2AMAZ-15Q81Q7}"
+            }
+          ],
+          "events": []
+        },
+        "title": "dtxp.errors.excepsthrownpersecond"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:dtxp.latency.processqueue.length{host:EC2AMAZ-15Q81Q7}"
+            }
+          ],
+          "events": []
+        },
+        "title": "dtxp.latency.processqueue.length"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:dtxp.process.handles.count{host:EC2AMAZ-15Q81Q7}"
+            }
+          ],
+          "events": []
+        },
+        "title": "dtxp.process.handles.count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:dtxp.process.threads.count{host:EC2AMAZ-15Q81Q7}"
+            }
+          ],
+          "events": []
+        },
+        "title": "dtxp.process.threads.count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:dtxp.system.proc.count{host:EC2AMAZ-15Q81Q7}"
+            }
+          ],
+          "events": []
+        },
+        "title": "dtxp.system.proc.count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:dtxp.system.users.count{host:EC2AMAZ-15Q81Q7}"
+            }
+          ],
+          "events": []
+        },
+        "title": "dtxp.system.users.count"
+      }
+    ],
+    "description": "created by raj.meka@thomsonreuters.com",
+    "title": "Raj Sample",
+    "created": "2018-01-11T20:43:58.505185+00:00",
+    "id": 465800,
+    "created_by": {
+      "disabled": false,
+      "handle": "raj.meka@thomsonreuters.com",
+      "name": "Rajashekar Meka",
+      "is_admin": false,
+      "role": "Devops Automation Engineer",
+      "access_role": "st",
+      "verified": true,
+      "email": "Raj.Meka@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/45a8fa12a9c7a82b67e01c0f1a5e3cf2?s=48&d=retro"
+    },
+    "modified": "2018-01-11T20:43:58.505222+00:00"
+  },
+  "url": "/dash/465800/raj-sample",
+  "resource": "/api/v1/dash/465800"
+}

@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by robert.podell@thomsonreuters.com",
+    "title": "Robert's TimeBoard 8 Mar 2018 14:36",
+    "created": "2018-03-08T20:36:03.158034+00:00",
+    "id": 640331,
+    "created_by": {
+      "disabled": false,
+      "handle": "robert.podell@thomsonreuters.com",
+      "name": "Robert Podell",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "robert.podell@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/b02d14e423585336f9ed2c4d513d51bd?s=48&d=retro"
+    },
+    "modified": "2018-03-08T20:36:03.158048+00:00"
+  },
+  "url": "/dash/640331/roberts-timeboard-8-mar-2018-1436",
+  "resource": "/api/v1/dash/640331"
+}

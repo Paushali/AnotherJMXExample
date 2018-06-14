@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by sunilkumar.thopireddy@tr.com",
+    "title": "PerformanceTesting",
+    "created": "2017-10-16T14:01:10.655849+00:00",
+    "id": 380015,
+    "created_by": {
+      "disabled": false,
+      "handle": "sunilkumar.thopireddy@tr.com",
+      "name": null,
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "SunilKumar.Thopireddy@tr.com",
+      "icon": "https://secure.gravatar.com/avatar/4b1fb1163806e9261d1afab38d96353b?s=48&d=retro"
+    },
+    "modified": "2017-10-16T14:01:10.655877+00:00"
+  },
+  "url": "/dash/380015/performancetesting",
+  "resource": "/api/v1/dash/380015"
+}
