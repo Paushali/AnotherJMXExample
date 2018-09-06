@@ -1,0 +1,45 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "top(avg:exception{host:U6063539-TPL-A,tr_environment-type:nagendra}, 10, 'mean', 'desc')",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OTT Errors Test"
+      }
+    ],
+    "description": "created by nagendrababu.bazaru@thomsonreuters.com",
+    "title": "OTT TEST",
+    "created": "2018-07-19T13:17:06.080251+00:00",
+    "id": 864835,
+    "created_by": {
+      "disabled": false,
+      "handle": "nagendrababu.bazaru@thomsonreuters.com",
+      "name": "Nagendra Babu Bazaru",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "nagendrababu.bazaru@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/207728334bf3025dbfe60ef218c22db6?s=48&d=retro"
+    },
+    "modified": "2018-07-19T13:44:38.749210+00:00"
+  },
+  "url": "/dash/864835/ott-test",
+  "resource": "/api/v1/dash/864835"
+}

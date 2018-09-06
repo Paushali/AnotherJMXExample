@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by stuart.smith@thomsonreuters.com",
+    "title": "Stu Test",
+    "created": "2018-07-16T11:24:08.918499+00:00",
+    "id": 861175,
+    "created_by": {
+      "disabled": false,
+      "handle": "stuart.smith@thomsonreuters.com",
+      "name": "Stuart Smith",
+      "is_admin": false,
+      "role": "",
+      "access_role": "st",
+      "verified": true,
+      "email": "stuart.smith@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/b3592e52ca41f60e2472d4905d280dc3?s=48&d=retro"
+    },
+    "modified": "2018-07-16T11:24:08.918512+00:00"
+  },
+  "url": "/dash/861175/stu-test",
+  "resource": "/api/v1/dash/861175"
+}

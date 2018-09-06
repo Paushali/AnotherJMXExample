@@ -1,0 +1,125 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:postgresql.doc_count{host:pg-prod01} by {tipo_entidade}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Documentos aguardando primeira etapa de processamento (Documento Novo)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:postgresql.mail_count{host:pg-prod01} by {tipo_entidade}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Emails na fila"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(avg:postgresql.table_size{host:pg-prod01} by {table}, 10, 'mean', 'desc')",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "postgresql.table_size"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(avg:postgresql.idx_count{host:pg-prod01} by {table,index}, 10, 'mean', 'desc')",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": [
+                {
+                  "palette": "white_on_green",
+                  "comparator": ">",
+                  "value": null
+                }
+              ]
+            }
+          ]
+        },
+        "title": "Index Scan"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:postgresql.table_size{host:pg-prod01,table:dfe_lob}"
+            }
+          ],
+          "events": []
+        },
+        "title": "postgresql.table_size with table:dfe_lob"
+      }
+    ],
+    "description": "created by geovana.desouza@thomsonreuters.com",
+    "title": "DFE DashBusiness",
+    "created": "2018-07-13T19:32:46.061091+00:00",
+    "id": 860257,
+    "created_by": {
+      "disabled": false,
+      "handle": "geovana.desouza@thomsonreuters.com",
+      "name": "Geovana De Souza",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Geovana.DeSouza@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/e84960dc7f18efdfdb3c9fb0b4e19130?s=48&d=retro"
+    },
+    "modified": "2018-08-10T13:34:32.309669+00:00"
+  },
+  "url": "/dash/860257/dfe-dashbusiness",
+  "resource": "/api/v1/dash/860257"
+}

@@ -1,0 +1,830 @@
+{
+  "board_title": "SRE - Vedha Board",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-06-12T18:48:49.811262+00:00",
+  "original_title": "testboardVedha",
+  "modified": "2018-06-14T19:15:58.370218+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "account",
+      "name": "AWSAccount"
+    },
+    {
+      "default": "*",
+      "prefix": "region",
+      "name": "Region"
+    },
+    {
+      "default": "*",
+      "prefix": "techopsenvironment",
+      "name": "Environment"
+    },
+    {
+      "default": "*",
+      "prefix": "techopsproject",
+      "name": "Application"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "vedha.peri@thomsonreuters.com",
+    "name": "Vedha Peri",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "Vedha.Peri@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/3e6dc093f99c5fdfd14e440abace913c?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "widgets": [
+    {
+      "board_id": 357598,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Average of EC2 Network Out",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "top(avg:aws.ec2.network_out{*} by {name}, 25, 'mean', 'desc')",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {},
+      "y": 2,
+      "x": 13,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 357598,
+      "title_size": 16,
+      "title": true,
+      "url": "https://signalfx.com/wp-content/uploads/EC2-logo-full.jpg",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 14,
+      "width": 12,
+      "y": 2,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 357598,
+      "x": 47,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "EC2 CPU Utilization",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.cpuutilization{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "10"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 19,
+      "time": {},
+      "y": 2,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 357598,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Network Packets in (max)",
+      "height": 12,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:aws.ec2.network_packets_in{*} by {host}, 10, 'max', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 39,
+      "time": {},
+      "y": 2,
+      "x": 67,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 357598,
+      "title_size": 16,
+      "title": true,
+      "url": "https://media.amazonwebservices.com/blog/2016/alb_routing_1.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 14,
+      "width": 12,
+      "y": 18,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 357598,
+      "title_size": 13,
+      "tags": [
+        "*"
+      ],
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "Agent Up",
+      "height": 7,
+      "width": 19,
+      "group_by": [],
+      "time": {},
+      "y": 9,
+      "x": 47,
+      "text_size": "auto",
+      "grouping": "check",
+      "type": "check_status",
+      "check": "aws.ec2.host_status",
+      "group": "host:i-0326e269ac78e8edb",
+      "isShared": false
+    },
+    {
+      "board_id": 357598,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ALB request count per account",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "top(avg:aws.applicationelb.request_count{$Region} by {account}.as_count(), 10, 'mean', 'desc')",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {},
+      "y": 18,
+      "x": 13,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 357598,
+      "title_size": 16,
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Application Load balancer",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 10,
+      "y": 21,
+      "x": 1,
+      "font_size": "auto",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 357598,
+      "title_size": 13,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "left",
+      "title_text": "ALB Maximum Latency per account",
+      "height": 12,
+      "tile_def": {
+        "viz": "change",
+        "requests": [
+          {
+            "extra_col": "",
+            "change_type": "absolute",
+            "order_dir": "desc",
+            "compare_to": "hour_before",
+            "q": "sum:aws.elb.latency.maximum{$AWSAccount,$Region,$Environment,$Application} by {name}",
+            "increase_good": true,
+            "order_by": "change"
+          }
+        ]
+      },
+      "width": 28,
+      "query": "sum:aws.elb.latency.maximum{*} by {name}, hour_before(sum:aws.elb.latency.maximum{*} by {name})",
+      "time": {},
+      "y": 18,
+      "x": 47,
+      "legend_size": "0",
+      "type": "change",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 357598,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "High Priority",
+      "height": 9,
+      "width": 32,
+      "global_timeframe_controls": true,
+      "query": "priority:high ",
+      "tags_execution": "and",
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 18,
+      "x": 76,
+      "type": "event_timeline",
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 357598,
+      "title_size": 16,
+      "title": true,
+      "url": "https://image.slidesharecdn.com/gettingstartedwithamazonwebservices-161012231014/95/getting-started-on-aws-74-638.jpg?cb=1476315079",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 14,
+      "width": 12,
+      "y": 34,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 357598,
+      "x": 14,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Health check percentage route53",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.route53.health_check_percentage_healthy{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": "<",
+                "value": "25"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": ">=",
+                "value": "65"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {},
+      "y": 34,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 357598,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Health check percentage by healthcheckid",
+      "height": 12,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.route53.health_check_percentage_healthy{$Application} by {region,healthcheckid}",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {},
+      "y": 34,
+      "x": 35,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 357598,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Health check status for nonprod",
+      "height": 12,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:aws.route53.health_check_status{account:nonprod} by {healthcheckid}, 10, 'mean', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 33,
+      "time": {},
+      "y": 34,
+      "x": 78,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 357598,
+      "x": 14,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Health check % nonprod",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.route53.health_check_status{account:nonprod}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "text_align": "center"
+      },
+      "width": 20,
+      "time": {},
+      "y": 41,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 357598,
+      "title_size": 16,
+      "title": true,
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-KbK4RjVt5jGIdWvKWj8qk48QGFP_z7AC1AqNsvkGPy6kROKZ",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "width": 12,
+      "y": 50,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 357598,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Queue messages:Prod",
+      "height": 11,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "top(avg:rabbitmq.queue.messages{account:prod}, 10, 'mean', 'desc')",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "grey",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 29,
+      "time": {},
+      "y": 50,
+      "x": 14,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 357598,
+      "x": 45,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Disk space free",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:rabbitmq.node.disk_free{account:prod}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": "<",
+                "value": "1"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": "<",
+                "value": "2"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": ">",
+                "value": "2"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 21,
+      "time": {},
+      "y": 50,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 357598,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Connections",
+      "height": 12,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:rabbitmq.connections{*} by {host}, 10, 'mean', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 37,
+      "time": {},
+      "y": 51,
+      "x": 68,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 357598,
+      "title_size": 16,
+      "title": true,
+      "url": "https://raw.githubusercontent.com/signalfx/integrations/release/aws-elasticache/img/integration_awselasticache.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 12,
+      "y": 66,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 357598,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ElasticCache hits per account",
+      "height": 10,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:aws.elasticache.cache_hits{*} by {account}.as_count(), 10, 'mean', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 28,
+      "time": {},
+      "y": 66,
+      "x": 14,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 357598,
+      "x": 43,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Hits",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.elasticache.cache_hits{*}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {},
+      "y": 66,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 357598,
+      "x": 43,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Misses",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.elasticache.cache_misses{*}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {},
+      "y": 72,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 357598,
+      "x": 61,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Client connections",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.elasticache.curr_connections{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 32,
+      "time": {},
+      "y": 66,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 357598,
+  "title_edited": false,
+  "isShared": false
+}

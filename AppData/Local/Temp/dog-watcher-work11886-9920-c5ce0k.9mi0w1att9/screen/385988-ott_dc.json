@@ -1,0 +1,293 @@
+{
+  "board_title": "OTT DC",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-07-17T17:49:37.735828+00:00",
+  "original_title": "OTT DC",
+  "modified": "2018-08-10T17:20:31.573141+00:00",
+  "disableEditing": false,
+  "height": 193,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "daniel.chris@thomsonreuters.com",
+    "name": "Daniel Chris",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "daniel.chris@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/f33e0554e4e89b9e25cc1bda79a7e07d?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "widgets": [
+    {
+      "board_id": 385988,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 19,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:requests.unique{role:service_web,tr_environment-type:quality_assurance,tr_product:ott} by {method}.as_Count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 88,
+      "time": {},
+      "y": 132,
+      "x": 4,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 385988,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 15,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(max:resource.load.time.max{host:C214NXSOTTCW1,role:client_web,tr_product:ott,tr_environment-type:quality_assurance} by {page}, 25, 'max', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 88,
+      "time": {},
+      "y": 36,
+      "x": 5,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 385988,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:users.unique{host:C214NXSOTTCW1,role:client_web,tr_product:ott,tr_environment-type:quality_assurance} by {user}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 88,
+      "time": {},
+      "y": 1,
+      "x": 5,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 385988,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:requests.unique{host:C012CJGOTTSW1,tr_product:ott,tr_environment-type:quality_assurance,role:service_web} by {method}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 88,
+      "time": {},
+      "y": 96,
+      "x": 4,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 385988,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "top(max:resource.load.time.max{host:C214NXSOTTCW1,role:client_web,tr_product:ott,tr_environment-type:quality_assurance} by {page}, 25, 'max', 'desc')",
+            "aggregator": "avg",
+            "style": {
+              "width": "thick",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 88,
+      "time": {},
+      "y": 17,
+      "x": 5,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 385988,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 15,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:resource.load.time.max{host:C012CJGOTTSW1,tr_product:ott,tr_environment-type:quality_assurance,role:service_web} by {method}, 10, 'max', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 88,
+      "time": {},
+      "y": 114,
+      "x": 4,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 385988,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:exception{host:C214NXSOTTCW1,role:client_web,tr_environment-type:quality_assurance,tr_product:ott} by {error}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 88,
+      "time": {},
+      "y": 80,
+      "x": 4,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 385988,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:exception{host:C214NXSOTTCW1,tr_environment-type:quality_assurance,tr_product:ott,role:client_web} by {error}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 88,
+      "time": {},
+      "y": 54,
+      "x": 5,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 385988,
+  "title_edited": false,
+  "isShared": false
+}

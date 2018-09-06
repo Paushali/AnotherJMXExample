@@ -1,0 +1,652 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.http_requests{statuscode:2xx,window:1m,service:otp.all}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.http_requests{statuscode:all,window:1m,service:otp.all}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OTP All Requests"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.http_requests{window:1m,service:otp.all,statuscode:4xx}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.http_requests{window:1m,service:otp.all,statuscode:5xx}",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OTP Errors"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.unique_sessions{window:1m,service:otp.all}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OTP All Sessions"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.response_times{percentile:90,window:1m,service:otp.all}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.response_times{percentile:95,window:1m,service:otp.all}",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OTP All P90 P95 - Response Time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.http_requests{statuscode:2xx,window:1m,service:oit.binder}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.http_requests{statuscode:all,window:1m,service:oit.binder}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OIT Binder All Requests"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.http_requests{window:1m,statuscode:4xx,service:oit.binder}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.http_requests{window:1m,statuscode:5xx,service:oit.binder}",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OIT Binder Errors"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.unique_sessions{window:1m,service:oit.binder}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OIT Binder All Sessions"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.response_times{percentile:90,window:1m,service:oit.binder}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.response_times{percentile:95,window:1m,service:oit.binder}",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OIT Binder All P90 P95 - Response Time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.http_requests{statuscode:2xx,window:1m,service:oit.legacy}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.http_requests{statuscode:all,window:1m,service:oit.legacy}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OIT Legacy All Requests"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.http_requests{window:1m,statuscode:4xx,service:oit.legacy}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.http_requests{window:1m,statuscode:5xx,service:oit.legacy}",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OIT Legacy Errors"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.unique_sessions{window:1m,service:oit.legacy}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OIT Legacy All Sessions"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.response_times{percentile:90,window:1m,service:oit.legacy}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.response_times{percentile:95,window:1m,service:oit.legacy}",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OIT Legacy All P90 P95 - Response Time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.http_requests{statuscode:2xx,window:1m,service:oit.otw}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.http_requests{statuscode:all,window:1m,service:oit.otw}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OTW All Requests"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.http_requests{window:1m,statuscode:4xx,service:oit.otw}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.http_requests{window:1m,statuscode:5xx,service:oit.otw}",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OTW Errors"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.unique_sessions{window:1m,service:oit.otw}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OTW All Sessions"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.response_times{percentile:90,window:1m,service:oit.otw}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.response_times{percentile:95,window:1m,service:oit.otw}",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OTW All P90 P95 - Response Time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.http_requests{statuscode:all,window:1m,service:ls2.home}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.http_requests{window:1m,statuscode:2xx,service:ls2.home}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "LS2 Home Traffic"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:f5.unique_sessions{service:ls2.home,window:1m}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "LS2 Home Sessions"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.unique_sessions{service:ls2.news,window:1m}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "LS2 User Sessions"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.response_times{service:ls2.home,percentile:90,window:1m}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.response_times{service:ls2.home,percentile:95,window:1m}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "LS2 Home P90 P95 Response Time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.http_requests{service:ls2.user,statuscode:2xx,window:1m}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.http_requests{service:ls2.user,statuscode:all,window:1m}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "LS2 User Requests"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:f5.http_requests{statuscode:2xx,window:1m,service:oxp.clientdata}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:f5.http_requests{statuscode:all,window:1m,service:oxp.clientdata}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "OXP All Requests"
+      },
+      {
+        "definition": {
+          "style": {
+            "fillMax": null,
+            "palette": "green_to_orange",
+            "fillMin": null,
+            "paletteFlip": false
+          },
+          "group": null,
+          "notes": null,
+          "noMetricHosts": true,
+          "viz": "hostmap",
+          "scope": null,
+          "requests": [
+            {
+              "q": "avg:system.load.1{*} by {host}",
+              "type": "fill"
+            }
+          ],
+          "noGroupHosts": true
+        },
+        "title": "Avg of system.load.1 over * by host"
+      }
+    ],
+    "description": "Maunang Mehta",
+    "title": "DTXP PROD - All Products F5 metrics",
+    "created": "2018-01-19T04:26:57.157139+00:00",
+    "id": 498212,
+    "created_by": {
+      "disabled": false,
+      "handle": "maunang.mehta@thomsonreuters.com",
+      "name": "Maunang Mehta",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "maunang.mehta@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/e603f37ebdb7578f7f79348d69492153?s=48&d=retro"
+    },
+    "modified": "2018-08-07T16:36:15.627356+00:00"
+  },
+  "url": "/dash/498212/dtxp-prod---all-products-f5-metrics",
+  "resource": "/api/v1/dash/498212"
+}

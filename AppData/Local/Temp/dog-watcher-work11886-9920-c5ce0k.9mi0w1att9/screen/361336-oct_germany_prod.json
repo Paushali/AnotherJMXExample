@@ -1,0 +1,938 @@
+{
+  "board_title": "OCT-Germany-PROD",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-06-18T10:24:18.397650+00:00",
+  "original_title": "Athena AWS Summary",
+  "modified": "2018-08-07T06:41:56.694799+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "tr:application-asset-insight-id:200190",
+      "prefix": "tr",
+      "name": "assetid"
+    },
+    {
+      "default": "tr:environment-type:production",
+      "prefix": null,
+      "name": "environment-type"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "radhika.kilaru@thomsonreuters.com",
+    "name": "Radhika Kilaru",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "radhika.kilaru@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/81a4611cde6d47cb841940eaa218c835?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 274602,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Top-Level ELB Latency",
+      "height": 8,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.elb.latency.p99{$assetid,tr:environment-type:production}, avg:aws.elb.latency.p95{$assetid,tr:environment-type:production}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 32,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 1,
+      "x": 32,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 274602,
+      "x": 12,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Least free RDS space",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "min:aws.rds.free_storage_space{$assetid,tr:environment-type:production}",
+            "aggregator": "min",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "32",
+                "comparator": "<"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "64",
+                "comparator": "<="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "64",
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 18,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 57,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 274602,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "RDS Read/Write IOPS",
+      "height": 8,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.rds.read_iops{$assetid,tr:environment-type:production}.as_count(), avg:aws.rds.write_iops{$assetid,tr:environment-type:production}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 84,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 57,
+      "x": 30,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 274602,
+      "x": 13,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ELB P95",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.elb.latency.p95{$assetid,tr:environment-type:production}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "0.2",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "0.1",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0.1",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 1,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 274602,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ELB Errors",
+      "height": 8,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.elb.httpcode_elb_5xx{$assetid,tr:environment-type:production}.as_count(), sum:aws.elb.httpcode_elb_4xx{$assetid,tr:environment-type:production}.as_count(), sum:aws.elb.httpcode_backend_4xx{$assetid,tr:environment-type:production}.as_count(), sum:aws.elb.httpcode_backend_5xx{$assetid,tr:environment-type:production}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 79,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 12,
+      "x": 32,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 274602,
+      "x": 13,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ELB Error Count",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.elb.httpcode_backend_5xx{$assetid,tr:environment-type:production}.as_count(), sum:aws.elb.httpcode_backend_4xx{$assetid,tr:environment-type:production}.as_count(), (sum:aws.elb.httpcode_elb_5xx{$assetid,tr:environment-type:production}.as_count()+sum:aws.elb.httpcode_elb_4xx{$assetid,tr:environment-type:production}.as_count())",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "0",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": "<="
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "2",
+        "custom_unit": null
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 12,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 274602,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ELB Requests/s",
+      "height": 8,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.elb.request_count{$assetid,tr:environment-type:production}.as_rate()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 27,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 1,
+      "x": 84,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 274602,
+      "x": 65,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ELB Requests/s",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.elb.request_count{$assetid,tr:environment-type:production}.as_rate()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "20"
+              },
+              {
+                "palette": "white_on_green",
+                "value": "10",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 1,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 274602,
+      "x": 13,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ELB+NLB Healthy",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.elb.healthy_host_count{$assetid,tr:environment-type:production}+sum:aws.networkelb.healthy_host_count{$assetid,tr:environment-type:production}",
+            "aggregator": "min",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 23,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 274602,
+      "x": 32,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ELB+NLB Unhealthy",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.elb.un_healthy_host_count{$assetid,tr:environment-type:production}, sum:aws.networkelb.un_healthy_host_count{$assetid,tr:environment-type:production}",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "0",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": "<="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 23,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 274602,
+      "x": 13,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Redis Cache Hits",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.elasticache.cache_hits{$assetid,tr:environment-type:production}.as_rate()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">="
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 34,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 274602,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Redis Cache Hits",
+      "height": 8,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.elasticache.cache_hits{$assetid,tr:environment-type:production}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 32,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 34,
+      "x": 32,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 274602,
+      "x": 65,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Redis Cache Misses",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.elasticache.cache_misses{$assetid,tr:environment-type:production}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "0",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": "<="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 34,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 274602,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Redis Cache Misses",
+      "height": 8,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.elasticache.cache_misses{$assetid,tr:environment-type:production}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 32,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 34,
+      "x": 84,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 274602,
+      "x": 65,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Redis Evictions",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.elasticache.evictions{$assetid,tr:environment-type:production}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "0",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": "<="
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 45,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 274602,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Redis Evictions",
+      "height": 8,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.elasticache.evictions{$assetid,tr:environment-type:production}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 32,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 45,
+      "x": 84,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 274602,
+      "title_size": 16,
+      "title": true,
+      "url": "https://app.datadoghq.com/static/images/saas_logos/bot/amazon_elb.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 10,
+      "width": 12,
+      "y": 1,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 274602,
+      "title_size": 16,
+      "title": true,
+      "url": "https://app.datadoghq.com/static/images/saas_logos/bot/amazon_elasticache.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 10,
+      "width": 12,
+      "y": 34,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 274602,
+      "title_size": 16,
+      "title": true,
+      "url": "https://app.datadoghq.com/static/images/saas_logos/bot/amazon_rds.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 10,
+      "width": 12,
+      "y": 57,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 274602,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Instance CPU",
+      "height": 8,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.cpu.user{$assetid,tr:environment-type:production} by {service}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 33,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 23,
+      "x": 51,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 274602,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "EC2 Count",
+      "height": 8,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.ec2.host_ok{$assetid,tr:environment-type:production}, sum:aws.elb.un_healthy_host_count{$assetid,tr:environment-type:production}, sum:aws.networkelb.un_healthy_host_count{$assetid,tr:environment-type:production}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 32,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 23,
+      "x": 84,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 274602,
+      "title_size": 16,
+      "title": true,
+      "url": "https://app.datadoghq.com/static/images/saas_logos/bot/amazon_ec2.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 10,
+      "width": 12,
+      "y": 23,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 274602,
+      "x": 13,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Terminated instances",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.autoscaling.group_terminating_instances{$assetid,tr:environment-type:production}",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "0"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<=",
+                "value": "0"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 45,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 361336,
+  "title_edited": true,
+  "isShared": false
+}

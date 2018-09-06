@@ -1,0 +1,18 @@
+{
+  "read_only": false,
+  "board_title": "ls2-api-strategy-synthetic-amer-tests-dashboard",
+  "created": "2018-08-21T19:08:38.288407+00:00",
+  "modified": "2018-08-21T19:08:38.288413+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "shailendra.singh@thomsonreuters.com",
+    "name": "Shailendra Singh",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "shailendra.singh@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/ea099c25d0af9315df089394855ef240?s=48&d=retro"
+  },
+  "id": 416315
+}

@@ -1,0 +1,67 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:aws.autoscaling.group_total_instances{tr:application-asset-insight-id:202990}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Total Instances"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:aws.autoscaling.group_terminating_instances{tr:application-asset-insight-id:202990}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Terminating Instances"
+      }
+    ],
+    "description": "created by m.wallace@thomsonreuters.com",
+    "title": "OSR ASG Summary",
+    "created": "2018-06-21T13:25:30.307053+00:00",
+    "id": 841188,
+    "created_by": {
+      "disabled": false,
+      "handle": "m.wallace@thomsonreuters.com",
+      "name": "Martin Wallace",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "m.wallace@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/6626bdd877abcb946b9a60511ca33cb5?s=48&d=retro"
+    },
+    "modified": "2018-06-21T14:13:36.549203+00:00"
+  },
+  "url": "/dash/841188/osr-asg-summary",
+  "resource": "/api/v1/dash/841188"
+}

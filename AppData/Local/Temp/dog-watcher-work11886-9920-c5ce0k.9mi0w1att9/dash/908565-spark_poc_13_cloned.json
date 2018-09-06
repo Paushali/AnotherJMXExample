@@ -1,0 +1,240 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "system.cpu.idle{host:spark-poc-13}, system.cpu.system{host:spark-poc-13}, system.cpu.iowait{host:spark-poc-13}, system.cpu.user{host:spark-poc-13}, system.cpu.stolen{host:spark-poc-13}, system.cpu.guest{host:spark-poc-13}"
+            }
+          ]
+        },
+        "title": "CPU usage (%)"
+      },
+      {
+        "definition": {
+          "size_by": "pct_mem",
+          "color_by": "user",
+          "q": "processes{host:spark-poc-13}",
+          "group_by": "family",
+          "viz": "treemap",
+          "requests": []
+        },
+        "title": "Processes memory usage"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "system.load.1{host:spark-poc-13}"
+            },
+            {
+              "q": "system.load.5{host:spark-poc-13}"
+            },
+            {
+              "q": "system.load.15{host:spark-poc-13}"
+            }
+          ]
+        },
+        "title": "Load Averages 1-5-15"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "sum:system.mem.usable{host:spark-poc-13}, sum:system.mem.total{host:spark-poc-13} - sum:system.mem.usable{host:spark-poc-13}"
+            }
+          ]
+        },
+        "title": "Memory breakdown"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "avg:system.swap.free{host:spark-poc-13}, avg:system.swap.used{host:spark-poc-13}"
+            }
+          ]
+        },
+        "title": "Available Swap"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "max:system.disk.in_use{host:spark-poc-13}by{device} * 100",
+              "stacked": false
+            }
+          ]
+        },
+        "title": "Disk usage by device (%)"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "max:system.io.await{host:spark-poc-13}by{device}"
+            }
+          ]
+        },
+        "title": "Disk latency (by device)"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "sum:system.net.bytes_rcvd{host:spark-poc-13}"
+            },
+            {
+              "q": "0 - sum:system.net.bytes_sent{host:spark-poc-13}"
+            }
+          ]
+        },
+        "title": "Network traffic (bytes per sec)"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "aws.ec2.cpuutilization{host:spark-poc-13}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "EC2: CPU usage"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "aws.ec2.network_in{host:spark-poc-13}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "EC2: Inbound traffic"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "aws.ec2.network_out{host:spark-poc-13}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "EC2: Outbound traffic"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "aws.ec2.disk_write_bytes{host:spark-poc-13},aws.ec2.disk_read_bytes{host:spark-poc-13}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "EC2 Disk IO"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "aws.ec2.disk_read_ops{host:spark-poc-13}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "EC2: Read Disk Ops"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "aws.ec2.disk_write_ops{host:spark-poc-13}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "EC2: Write Disk Ops"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "aws.ebs.volume_idle_time{host:spark-poc-13},aws.ebs.volume_total_write_time{host:spark-poc-13},aws.ebs.volume_total_read_time{host:spark-poc-13}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "EBS: Average I/O time"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "aws.ebs.volume_write_bytes{host:spark-poc-13}",
+              "type": "line"
+            },
+            {
+              "q": "aws.ebs.volume_read_bytes{host:spark-poc-13}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "EBS: Average I/O across all volumes"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "aws.ebs.volume_read_ops{host:spark-poc-13}",
+              "type": "line"
+            },
+            {
+              "q": "aws.ebs.volume_write_ops{host:spark-poc-13}",
+              "type": "line"
+            }
+          ]
+        },
+        "title": "EBS: Average Ops across all volumes"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "sum:docker.containers.running{host:spark-poc-13} by {docker_image}",
+              "type": "bars"
+            }
+          ],
+          "events": [
+            {
+              "q": "sources:docker host:spark-poc-13"
+            }
+          ]
+        },
+        "title": "Docker - Running Containers"
+      }
+    ],
+    "description": "Top host-level metrics for spark-poc-13. Clone this dashboard to add y (cloned)",
+    "title": "spark-poc-13 (cloned)",
+    "created": "2018-09-06T17:24:30.371424+00:00",
+    "id": 908565,
+    "created_by": {
+      "disabled": false,
+      "handle": "matthew.hudson@thomsonreuters.com",
+      "name": "Matthew Hudson",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Matthew.Hudson@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/4aed89c254555460b217fd994ca33997?s=48&d=retro"
+    },
+    "modified": "2018-09-06T17:24:52.968769+00:00"
+  },
+  "url": "/dash/908565/spark-poc-13-cloned",
+  "resource": "/api/v1/dash/908565"
+}

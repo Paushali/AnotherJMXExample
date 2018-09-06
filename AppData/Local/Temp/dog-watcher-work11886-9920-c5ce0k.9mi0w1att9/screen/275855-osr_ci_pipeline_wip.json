@@ -1,0 +1,750 @@
+{
+  "board_title": "OSR CI Pipeline (WIP)",
+  "read_only": false,
+  "isIntegration": false,
+  "showGlobalTimeOnboarding": true,
+  "board_bgtype": "board_graph",
+  "created": "2018-01-25T08:45:34.010030+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "stephen.fletcher@thomsonreuters.com",
+    "name": "Stephen Fletcher",
+    "is_admin": false,
+    "role": "Manager",
+    "access_role": "st",
+    "verified": true,
+    "email": "stephen.fletcher@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/67de4efa01fd807a6459f68caee2d089?s=48&d=retro"
+  },
+  "original_title": "OSR CI Pipeline (WIP)",
+  "modified": "2018-09-06T10:49:45.698306+00:00",
+  "disableEditing": false,
+  "height": 89,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "tr.osr.build",
+      "name": "Service"
+    }
+  ],
+  "originalHeight": 89,
+  "originalWidth": "100%",
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 275855,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "OSR Successful Build Times (minutes)",
+      "height": 25,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.buildtimes{host:trta.osr.dashboardbox,buildstatus:success,$Service} by {tr.osr.build}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 5,
+      "x": 2,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Average Successful Build Time (minutes)",
+      "height": 25,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:tr.osr.buildtimes{host:trta.osr.dashboardbox,buildstatus:success} by {tr.osr.build}, 50, 'mean', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": 40,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": 20,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_green",
+                "value": 0,
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 5,
+      "x": 50,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "x": 41,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Max",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:tr.osr.buildtimes{host:trta.osr.dashboardbox,buildstatus:success,$Service}",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "40",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "20",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "20",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 8,
+      "time": {},
+      "y": 33,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "font_size": "auto",
+      "title": true,
+      "color": "#55b81c",
+      "text": "Success:",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 22,
+      "x": 2,
+      "y": 33,
+      "title_size": 16,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "x": 23,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Min",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "min:tr.osr.buildtimes{host:trta.osr.dashboardbox,buildstatus:success,$Service}",
+            "aggregator": "min",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "40",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "20",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "20",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 8,
+      "time": {},
+      "y": 33,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "x": 32,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Avg",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:tr.osr.buildtimes{host:trta.osr.dashboardbox,buildstatus:success,$Service}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "40",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "20",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "20",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 8,
+      "time": {},
+      "y": 33,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "x": 89,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Max",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:tr.osr.buildtimes{host:trta.osr.dashboardbox,buildstatus:failure,$Service}",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "40",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "20",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "20",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 8,
+      "time": {},
+      "y": 33,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "font_size": "auto",
+      "title": true,
+      "color": "#d00",
+      "text": "Fail:",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 19,
+      "x": 53,
+      "y": 33,
+      "title_size": 16,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "x": 71,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Min",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "min:tr.osr.buildtimes{host:trta.osr.dashboardbox,buildstatus:failure,$Service}",
+            "aggregator": "min",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "40",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "20",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "20",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 8,
+      "time": {},
+      "y": 33,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "x": 80,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Avg",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:tr.osr.buildtimes{host:trta.osr.dashboardbox,buildstatus:failure,$Service}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "40",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "20",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "20",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 8,
+      "time": {},
+      "y": 33,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Average Deploy Times",
+      "height": 25,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:tr.osr.isodeploytimes{host:trta.osr.dashboardbox} by {tr.osr.build}, 50, 'mean', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": 1
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">",
+                "value": 0.5
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": ">",
+                "value": 0
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 49,
+      "x": 2,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "font_size": "auto",
+      "title": true,
+      "color": "#55b81c",
+      "text": "Check-in to Isolation",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 50,
+      "x": 2,
+      "y": 78,
+      "title_size": 16,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "x": 53,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Min",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "min:tr.osr.isodeploytimes{host:trta.osr.dashboardbox,$Service}",
+            "aggregator": "min",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "120"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "60"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "60"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 8,
+      "time": {},
+      "y": 77,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "x": 62,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Avg",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:tr.osr.isodeploytimes{host:trta.osr.dashboardbox,$Service}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "120"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "60"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "60"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 8,
+      "time": {},
+      "y": 77,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "x": 71,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Max",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "max:tr.osr.isodeploytimes{host:trta.osr.dashboardbox,$Service}",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "120"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "60"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "60"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 8,
+      "time": {},
+      "y": 77,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Worst Deploy Times",
+      "height": 25,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(max:tr.osr.isodeploytimes{host:trta.osr.dashboardbox} by {tr.osr.build}, 50, 'max', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "comparator": ">",
+                "value": null
+              }
+            ]
+          }
+        ]
+      },
+      "width": 47,
+      "time": {},
+      "y": 49,
+      "x": 50,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "font_size": "36",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Build and Unit Test Times",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 6,
+      "width": 37,
+      "x": 2,
+      "y": -2,
+      "title_size": 16,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 275855,
+      "font_size": "36",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Deploy to Isolation",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 6,
+      "width": 37,
+      "x": 2,
+      "y": 42,
+      "title_size": 16,
+      "type": "free_text",
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 275855,
+  "title_edited": false,
+  "isShared": false
+}

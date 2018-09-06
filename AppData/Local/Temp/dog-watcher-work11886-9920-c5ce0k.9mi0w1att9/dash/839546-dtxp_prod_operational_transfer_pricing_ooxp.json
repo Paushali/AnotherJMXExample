@@ -1,0 +1,232 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.cpu.idle{service:ooxp,app:directtax}, avg:system.cpu.system{service:ooxp,app:directtax}, avg:system.cpu.iowait{service:ooxp,app:directtax}, avg:system.cpu.user{service:ooxp,app:directtax}, avg:system.cpu.stolen{service:ooxp,app:directtax}, avg:system.cpu.guest{service:ooxp,app:directtax}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CPU usage (%)"
+      },
+      {
+        "definition": {
+          "size_by": "pct_mem",
+          "color_by": "user",
+          "q": "processes{host:c303mfntpeah}",
+          "group_by": "family",
+          "viz": "treemap",
+          "requests": []
+        },
+        "title": "Processes memory usage"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.load.1{service:ooxp,app:directtax}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:system.load.5{service:ooxp,app:directtax}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:system.load.15{app:directtax,service:ooxp}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Load Averages 1-5-15"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.mem.usable{service:ooxp,app:directtax}, sum:system.mem.total{service:ooxp,app:directtax}-sum:system.mem.usable{service:ooxp,app:directtax}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory breakdown"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.swap.free{service:ooxp,app:directtax} by {host}, avg:system.swap.used{app:directtax,service:ooxp} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Available Swap"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.disk.in_use{app:directtax,service:ooxp} by {host}*100",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Disk usage by host(%)"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.io.await{app:directtax,service:ooxp} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Disk latency (by device)"
+      },
+      {
+        "definition": {
+          "status": "done",
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.net.bytes_rcvd{app:directtax,service:ooxp}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "0-sum:system.net.bytes_sent{service:ooxp,app:directtax}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Network traffic (bytes per sec)"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(min:system.disk.free{service:ooxp,device:/dev/mapper/datavg-appserverlv,host:c009acntpeah} by {host}, 50, 'min', 'asc'), top(min:system.disk.free{service:ooxp,device:/dev/mapper/datavg-appserverlv,host:c073uustpeah} by {host}, 50, 'min', 'asc'), top(min:system.disk.free{service:ooxp,device:/dev/mapper/datavg-appserverlv,host:c079czwtpeah} by {host}, 50, 'min', 'asc'), top(min:system.disk.free{service:ooxp,device:/dev/mapper/datavg-appserverlv,host:c082wkm} by {host}, 50, 'min', 'asc'), top(min:system.disk.free{service:ooxp,device:/dev/mapper/datavg-appserverlv,host:c133pzvtpeah} by {host}, 50, 'min', 'asc'), top(min:system.disk.free{service:ooxp,device:/dev/mapper/datavg-appserverlv,host:c232meftpeah} by {host}, 50, 'min', 'asc'), top(min:system.disk.free{service:ooxp,device:/dev/mapper/datavg-appserverlv,host:c268ubetpeah} by {host}, 50, 'min', 'asc'), top(min:system.disk.free{service:ooxp,device:/dev/mapper/datavg-appserverlv,host:c303mfntpeah} by {host}, 50, 'min', 'asc'), top(min:system.disk.free{service:ooxp,device:/dev/mapper/datavg-appserverlv,host:c318kpktpeah} by {host}, 50, 'last', 'asc'), top(min:system.disk.free{service:ooxp,device:/dev/mapper/datavg-appserverlv,host:c559bsntpeah} by {host}, 50, 'min', 'asc'), top(min:system.disk.free{service:ooxp,device:/dev/mapper/datavg-appserverlv,host:c580uyktpeah} by {host}, 50, 'min', 'asc'), top(min:system.disk.free{service:ooxp,device:/dev/mapper/datavg-appserverlv,host:c628xee} by {host}, 50, 'min', 'asc'), top(min:system.disk.free{service:ooxp,device:/dev/mapper/datavg-appserverlv,host:c640bpstpeah} by {host}, 50, 'min', 'asc'), top(min:system.disk.free{service:ooxp,device:/dev/mapper/datavg-appserverlv,host:c645cfbtpeah} by {host}, 50, 'min', 'asc'), top(min:system.disk.free{service:ooxp,device:/dev/mapper/datavg-appserverlv,host:c646ytqtpeah} by {host}, 50, 'min', 'asc'), top(min:system.disk.free{service:ooxp,device:/dev/mapper/datavg-appserverlv,host:c803vrytpeah} by {host}, 50, 'min', 'asc'), top(min:system.disk.free{service:ooxp,device:/dev/mapper/datavg-appserverlv,host:c992amztpeah} by {host}, 50, 'min', 'asc'), top(min:system.disk.free{service:ooxp,device:/dev/mapper/datavg-appserverlv,host:c424waptpeah} by {host}, 50, 'min', 'asc')",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": [
+                {
+                  "palette": "white_on_red",
+                  "comparator": "<=",
+                  "value": "5"
+                }
+              ]
+            }
+          ]
+        },
+        "title": "Disk space available on /dev/mapper/datavg-appserverlv or /appserver in GB's"
+      }
+    ],
+    "description": "DTXP PROD - Transfer Pricing",
+    "title": "DTXP PROD - Operational Transfer Pricing (OOXP)",
+    "created": "2018-06-19T21:29:46.395474+00:00",
+    "id": 839546,
+    "created_by": {
+      "disabled": false,
+      "handle": "maunang.mehta@thomsonreuters.com",
+      "name": "Maunang Mehta",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "maunang.mehta@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/e603f37ebdb7578f7f79348d69492153?s=48&d=retro"
+    },
+    "modified": "2018-07-06T15:04:33.538563+00:00"
+  },
+  "url": "/dash/839546/dtxp-prod---operational-transfer-pricing-ooxp",
+  "resource": "/api/v1/dash/839546"
+}

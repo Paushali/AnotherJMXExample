@@ -1,0 +1,18 @@
+{
+  "read_only": false,
+  "board_title": "Jacob's Screenboard 2 Aug 2018 10:37",
+  "created": "2018-08-02T15:37:31.873032+00:00",
+  "modified": "2018-08-02T15:37:31.873038+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "jacob.john@thomsonreuters.com",
+    "name": "Jacob John Kadambanattu",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "jacob.john@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/3393b408a67b6584fd808153e1d75700?s=48&d=retro"
+  },
+  "id": 400590
+}

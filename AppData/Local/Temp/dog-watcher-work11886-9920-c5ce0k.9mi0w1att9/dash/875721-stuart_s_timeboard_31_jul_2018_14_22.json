@@ -1,0 +1,52 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.cpu.user{*}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "events": [
+            {
+              "q": "#sushant ",
+              "tags_execution": "and"
+            }
+          ]
+        },
+        "title": "Avg of system.cpu.user over *"
+      }
+    ],
+    "description": "created by stuart.smith@thomsonreuters.com",
+    "title": "Stuart's Timeboard 31 Jul 2018 14:22",
+    "created": "2018-07-31T14:22:08.639403+00:00",
+    "id": 875721,
+    "created_by": {
+      "disabled": false,
+      "handle": "stuart.smith@thomsonreuters.com",
+      "name": "Stuart Smith",
+      "is_admin": false,
+      "role": "",
+      "access_role": "st",
+      "verified": true,
+      "email": "stuart.smith@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/b3592e52ca41f60e2472d4905d280dc3?s=48&d=retro"
+    },
+    "modified": "2018-07-31T14:24:29.169779+00:00"
+  },
+  "url": "/dash/875721/stuarts-timeboard-31-jul-2018-1422",
+  "resource": "/api/v1/dash/875721"
+}

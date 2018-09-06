@@ -1,0 +1,1724 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:image_service.All.Requests.count{env:sat}.as_count(), sum:news_service.All.Requests.count{env:sat}.as_count(), sum:rest_main_service.All.Requests.count{env:sat}.as_count(), sum:user_service.All.Requests.count{env:sat}.as_count(), sum:client_manager_service.All.Requests.count{env:sat}.as_count(), sum:account_service.All.Requests.count{env:sat}.as_count(), sum:product_service.All.Requests.count{env:sat}.as_count(), sum:captcha_service.All.Requests.count{env:sat}.as_count(), sum:announcement_service.All.Requests.count{env:sat}.as_count(), sum:security_service.All.Requests.count{env:sat}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "All Services - Request Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:image_service.All.Requests.count{env:sat}.as_count(), sum:news_service.All.Requests.count{env:sat}.as_count(), sum:rest_main_service.All.Requests.count{env:sat}.as_count(), sum:user_service.All.Requests.count{env:sat}.as_count(), sum:client_manager_service.All.Requests.count{env:sat}.as_count(), sum:account_service.All.Requests.count{env:sat}.as_count(), sum:product_service.All.Requests.count{env:sat}.as_count(), sum:captcha_service.All.Requests.count{env:sat}.as_count(), sum:announcement_service.All.Requests.count{env:sat}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Rest Micro Services - Request Count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:image_service.All.Requests.rate.1m{env:sat}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:news_service.All.Requests.rate.1m{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:rest_main_service.All.Requests.rate.1m{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:user_service.All.Requests.rate.1m{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:client_manager_service.All.Requests.rate.1m{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:account_service.All.Requests.rate.1m{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:product_service.All.Requests.rate.1m{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:announcement_service.All.Requests.rate.1m{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:notification_service.All.Requests.rate.1m{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Rest Micro Services - Per Service Request Rate (1M)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:security_service.All.Requests.rate.1m{env:sat}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Security Service - Request Rate (1M)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "(100-avg:system.cpu.idle{host:C898GPDCWTWBS})",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "(100-avg:system.cpu.idle{host:c862njjcwtwbs})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(100-avg:system.cpu.idle{host:c199qmmcwtwbs})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(100-avg:system.cpu.idle{host:c134wutcwtwbs})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "max": "100",
+            "min": "0"
+          }
+        },
+        "title": "Rest Micro Services - CPU Usage - C898 & C862 & C199 & C134"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "(100-avg:system.cpu.idle{host:c305tchcwtweb})",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "(100-avg:system.cpu.idle{host:c421xjscwtweb})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(100-avg:system.cpu.idle{host:c140gphcwtweb})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "max": "100",
+            "min": "0"
+          }
+        },
+        "title": "Zuul & Login Service - CPU Usage - C305 & C421 & C140"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "(100-avg:system.cpu.idle{host:C837EAX})",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "(100-avg:system.cpu.idle{host:c515rubcwtsec})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(100-avg:system.cpu.idle{host:c960dqncwtsec})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "max": "100",
+            "min": "0"
+          }
+        },
+        "title": "Security Service - CPU Usage - C837 & C515 & C960"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "(100-avg:system.cpu.idle{host:C388JUHCWTWBS})",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "(100-avg:system.cpu.idle{host:C805PQZCWTWBS})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "max": "100",
+            "min": "0"
+          }
+        },
+        "title": "Product Service - Additional Servers - CPU Usage - C388 & C805"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "(100-avg:system.cpu.idle{host:c783pjccwtweb.ecomqc.tlrg.com})",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "(100-avg:system.cpu.idle{host:c863axncwtweb.ecomqc.tlrg.com})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "max": "100",
+            "min": "0"
+          }
+        },
+        "title": "Zuul Only & WebTemp Service - CPU Usage - C783 & C863"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "(100-avg:system.cpu.idle{host:C364NNKCWTAP3})",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "max": "100",
+            "min": "0"
+          }
+        },
+        "title": "DEM - CPU Usage - C364"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "(100-avg:system.cpu.idle{host:C688EKGCWTWEB})",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "max": "100",
+            "min": "0"
+          }
+        },
+        "title": "Concert - CPU Usage - C688"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "(100-avg:system.cpu.idle{host:c639gsucwtweb.ecomqc.tlrg.com})",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "max": "100",
+            "min": "0"
+          }
+        },
+        "title": "OSP Rest - CPU Usage - C639"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "(100-avg:system.cpu.idle{host:C590QMGCWTAP3})",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "max": "100",
+            "min": "0"
+          }
+        },
+        "title": "B3 & Session Manager - CPU Usage - C590"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:system.mem.usable{host:C898GPDCWTWBS}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:system.mem.usable{host:c862njjcwtwbs}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:system.mem.usable{host:c199qmmcwtwbs}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:system.mem.usable{host:c134wutcwtwbs}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Rest Micro Services - Usable Memory - C898 & C862 & C199 & C134"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:system.mem.usable{host:C388JUHCWTWBS}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:system.mem.usable{host:C805XDC}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Additional Product Service Servers - Usable Memory - C388 & C805"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "((sum:account_service.AccountServiceRepository.timer.db.gfr_sp_get_client_connections.75percentile{host:C388JUHCWTWBS}/sum:system.mem.total{host:C388JUHCWTWBS})*100)",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Additional Product Service Servers - Usable Memory - C388 & C805"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:system.mem.usable{host:C837EAX}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:system.mem.usable{host:c515rubcwtsec}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:system.mem.usable{host:c960dqncwtsec}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Security Service - Usable Memory - C837 & C515 & C960"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:system.mem.usable{host:c305tchcwtweb}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:system.mem.usable{host:c421xjscwtweb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:system.mem.usable{host:c140gphcwtweb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Login Service - Usable Memory - C305 & C421 & C140"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:system.proc.queue_length{host:C898GPDCWTWBS}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:system.proc.queue_length{host:c862njjcwtwbs}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:system.proc.queue_length{host:c199qmmcwtwbs}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:system.proc.queue_length{host:c134wutcwtwbs}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Rest Micro Services - Proc Queue Length - C898 & C862 & C199 & C134"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:system.proc.queue_length{host:C388JUHCWTWBS}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:system.proc.queue_length{host:C805XDC}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Additional Product Service Servers - Proc Queue Length - C388 & C805"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:system.proc.queue_length{host:C837EAX}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:system.proc.queue_length{host:c515rubcwtsec}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:system.proc.queue_length{host:c960dqncwtsec}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Security Service - Proc Queue Length - C837 & C515 & C960"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:system.proc.queue_length{host:c305tchcwtweb}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:system.proc.queue_length{host:c421xjscwtweb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:system.proc.queue_length{host:c140gphcwtweb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Login Service - Proc Queue Length - C305 & C421 & C140"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:system.disk.read_time_pct{host:C898GPDCWTWBS}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:system.disk.read_time_pct{host:c862njjcwtwbs}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:system.disk.read_time_pct{host:c199qmmcwtwbs}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:system.disk.read_time_pct{host:c134wutcwtwbs}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.disk.write_time_pct{host:C898GPDCWTWBS})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.disk.write_time_pct{host:c862njjcwtwbs})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.disk.write_time_pct{host:c199qmmcwtwbs})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.disk.write_time_pct{host:c134wutcwtwbs})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Rest Micro Services - Disk Read & Write % Time - C898 & C862 & C199 & C134"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:system.disk.read_time_pct{host:C388JUHCWTWBS}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:system.disk.write_time_pct{host:C805PQZCWTWBS}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.disk.write_time_pct{host:C388JUHCWTWBS})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.disk.write_time_pct{host:C805PQZCWTWBS})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Additional Product Servers - Disk Read & Write % Time - C388 & C805"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:system.disk.read_time_pct{host:C837EAX}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:system.disk.read_time_pct{host:c515rubcwtsec}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:system.disk.read_time_pct{host:c960dqncwtsec}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.disk.write_time_pct{host:C837EAX})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.disk.write_time_pct{host:c515rubcwtsec})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.disk.write_time_pct{host:c960dqncwtsec})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Security Service - Disk Read & Write % Time - C837 & C515 & C960"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:system.disk.read_time_pct{host:c305tchcwtweb}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:system.disk.read_time_pct{host:c421xjscwtweb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:system.disk.read_time_pct{host:c140gphcwtweb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.disk.write_time_pct{host:c305tchcwtweb})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.disk.write_time_pct{host:c421xjscwtweb})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.disk.write_time_pct{host:c140gphcwtweb})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Login Service - Disk Read & Write % Time - C305 & C421 & C140"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:system.net.bytes_sent{host:C898GPDCWTWBS}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:system.net.bytes_sent{host:c862njjcwtwbs}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:system.net.bytes_sent{host:c199qmmcwtwbs}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:system.net.bytes_sent{host:c134wutcwtwbs}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.net.bytes_rcvd{host:C898GPDCWTWBS})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.net.bytes_rcvd{host:c862njjcwtwbs})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.net.bytes_rcvd{host:c199qmmcwtwbs})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.net.bytes_rcvd{host:c134wutcwtwbs})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Rest Micro Services - Network Bytes Sent & Received - C898 & C862 & C199 & C134"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:system.net.bytes_sent{host:C388JUHCWTWBS}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:system.net.bytes_sent{host:C805PQZCWTWBS}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.net.bytes_rcvd{host:C388JUHCWTWBS})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.net.bytes_rcvd{host:C805PQZCWTWBS})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Additional Product Servers - Network Bytes Sent & Received - C388 & C805"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:system.net.bytes_sent{host:C837EAX}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:system.net.bytes_sent{host:c515rubcwtsec}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:system.net.bytes_sent{host:c960dqncwtsec}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.net.bytes_rcvd{host:C837EAX})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.net.bytes_rcvd{host:c515rubcwtsec})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.net.bytes_rcvd{host:c960dqncwtsec})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Security Service - Network Bytes Sent & Received - C837 & C515 & C960"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:system.net.bytes_sent{host:c305tchcwtweb}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:system.net.bytes_sent{host:c421xjscwtweb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "sum:system.net.bytes_sent{host:c140gphcwtweb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.net.bytes_rcvd{host:c305tchcwtweb})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.net.bytes_rcvd{host:c421xjscwtweb})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "(-sum:system.net.bytes_rcvd{host:c140gphcwtweb})",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Login Service - Network Bytes Sent & Received - C305 & C421 & C140"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:news_service.timer.response.GET.api.news.v1.feature.en_US.95percentile{env:sat}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:news_service.timer.response.GET.api.news.v1.headlines.en_US.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:news_service.timer.response.GET.api.news.v1.business.en_US.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:news_service.timer.response.GET.api.news.v1.trhighlights.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "News Service - 95th Percentile Response Times"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:rest_main_service.timer.response.POST.api.activitycards.v2.query.95percentile{env:sat}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:rest_main_service.timer.response.GET.api.accounts.v2.GetMultiClientsChildAccounts.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:rest_main_service.timer.response.GET.api.accounts.v2.GetMultiClientsChildAccounts.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:rest_main_service.timer.response.GET.api.profile.v1.user.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:rest_main_service.timer.response.GET.api.profile.v1.preference.prefsId.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:rest_main_service.timer.response.GET.api.demservice.v1.getdemsessionid.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Rest Main Service - 95th Percentile Response Times"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:user_service.timer.response.GET.api.user.v1.userdetails.95percentile{env:sat}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:user_service.timer.response.GET.api.user.v1.userid.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:user_service.timer.response.GET.api.user.v1.userid.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:user_service.timer.response.GET.api.user.v1.supportuser.tenantCode.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "User Service - 95th Percentile Response Times"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:product_service.timer.response.GET.api.products.v1.menu.95percentile{env:sat}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:product_service.timer.response.GET.api.products.v1.myproducts.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:product_service.timer.response.GET.api.products.v1.product.productId.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:product_service.timer.response.GET.api.products.v1.product.productId.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:product_service.timer.response.GET.api.products.v1.product.productId.subclients.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Product Service - 95th Percentile Response Times"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:image_service.timer.response.GET.api.images.v1.imageId.image.95percentile{env:sat}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:image_service.timer.response.GET.api.images.v1.randommetadata.suite.culture.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:image_service.timer.response.GET.api.images.v1.imageId.metadata.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:image_service.timer.response.GET.api.images.v1.imageId.modalwindow.width.height.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:image_service.timer.response.GET.api.images.v1.imageId.modalwindow.width.height.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Image Service - 95th Persentile Response Times"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:client_manager_service.timer.response.GET.api.client.v1.clients.95percentile{env:sat}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Client Manager Service - 95th Percentile Response Times"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:account_service.timer.response.GET.api.account.v1.supportaccess.95percentile{env:sat}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:account_service.timer.response.GET.api.status.v1.statusCheck.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:account_service.timer.response.GET.api.status.v1.resourceCheck.95percentile{env:sat}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Account Service - 95th Percentile Response Times"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:security_service.timer.response.POST.api.security.v1.sessions.fromusermodel.withdem.95percentile{env:sat}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Security Service - 95th Percentile Response Times"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:notification_service.SAT.NotificationRepository.db.AddNotification.95percentile{env:sat}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Security Service - 95th Percentile Response Times"
+      }
+    ],
+    "description": "created by chakradhar.tallapaneni@thomsonreuters.com",
+    "title": "LS2 SAT Usage Stats",
+    "created": "2017-10-19T17:32:06.540743+00:00",
+    "id": 382646,
+    "created_by": {
+      "disabled": false,
+      "handle": "chakradhar.tallapaneni@thomsonreuters.com",
+      "name": "Chakradhar Tallapaneni",
+      "is_admin": false,
+      "role": "",
+      "access_role": "st",
+      "verified": true,
+      "email": "Chakradhar.Tallapaneni@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/920255493dd61c3df5bd4ac66f269be5?s=48&d=retro"
+    },
+    "modified": "2018-07-03T16:38:31.395748+00:00"
+  },
+  "url": "/dash/382646/ls2-sat-usage-stats",
+  "resource": "/api/v1/dash/382646"
+}

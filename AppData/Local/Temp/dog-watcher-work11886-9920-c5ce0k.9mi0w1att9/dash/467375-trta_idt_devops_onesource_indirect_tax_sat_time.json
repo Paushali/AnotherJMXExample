@@ -1,0 +1,852 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "aggregator": "count",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": [],
+              "log_query": {
+                "index": "main",
+                "search": {
+                  "query": "platform:onesource AND app:indirect AND env:_sat AND idt_app:_apache"
+                },
+                "compute": {
+                  "facet": null,
+                  "interval": "60000",
+                  "aggregation": "count"
+                },
+                "groupBy": [
+                  {
+                    "facet": "@http.status_code",
+                    "sort": {
+                      "facet": null,
+                      "order": "desc",
+                      "aggregation": "count"
+                    },
+                    "limit": 25
+                  }
+                ]
+              }
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "sqrt"
+          }
+        },
+        "title": "[Access Log] Apache Response Codes Per Minute"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "aggregator": "count",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": [],
+              "log_query": {
+                "index": "main",
+                "search": {
+                  "query": "platform:onesource AND app:indirect AND env:_sat AND idt_app:_apache"
+                },
+                "compute": {
+                  "facet": null,
+                  "interval": "60000",
+                  "aggregation": "count"
+                },
+                "groupBy": [
+                  {
+                    "facet": "@http.method",
+                    "sort": {
+                      "facet": null,
+                      "order": "desc",
+                      "aggregation": "count"
+                    },
+                    "limit": 25
+                  }
+                ]
+              }
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "sqrt"
+          }
+        },
+        "title": "[Access Log] Apache Method Types Per Minute"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "aggregator": "count",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": [],
+              "log_query": {
+                "index": "main",
+                "search": {
+                  "query": "platform:onesource AND app:indirect AND env:_sat AND idt_app:_apache"
+                },
+                "compute": {
+                  "facet": "@network.bytes_written",
+                  "interval": "60000",
+                  "aggregation": "avg"
+                },
+                "groupBy": [
+                  {
+                    "facet": "@http.url",
+                    "sort": {
+                      "facet": "@network.bytes_written",
+                      "order": "desc",
+                      "aggregation": "avg"
+                    },
+                    "limit": 10
+                  }
+                ]
+              }
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "sqrt"
+          }
+        },
+        "title": "[Access Log] Top 10 URL: Apache Bytes Written Per Minute"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "aggregator": "count",
+              "style": {
+                "width": "thin",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": [],
+              "log_query": {
+                "index": "main",
+                "search": {
+                  "query": "platform:onesource AND app:indirect AND env:_sat AND idt_app:_apache"
+                },
+                "compute": {
+                  "facet": null,
+                  "interval": "60000",
+                  "aggregation": "count"
+                },
+                "groupBy": [
+                  {
+                    "facet": "@network.client.ip",
+                    "sort": {
+                      "facet": null,
+                      "order": "desc",
+                      "aggregation": "count"
+                    },
+                    "limit": 50
+                  }
+                ]
+              }
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "[Access Log] Client IP Connections Per Minute"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "ewma_5(per_second(sum:apache.response.code{platform:onesource,app:indirect,env:_sat,idt_app:_apache} by {response_code}.as_count()))",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "sqrt"
+          }
+        },
+        "title": "COUNT - Apache - Response Codes Per Second"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "ewma_5(per_second(sum:apache.conns_total{platform:onesource,app:indirect,env:_sat,idt_app:_apache} by {host}))",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "COUNT - Apache - Connections Per Second"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:apache.response.microseconds{env:_sat,app:indirect,platform:onesource,idt_app:_apache}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:apache.response.microseconds{env:_sat,app:indirect,platform:onesource,idt_app:_apache}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "dashed"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "sqrt"
+          }
+        },
+        "title": "AVG/MAX - Apache - Response Time [microseconds]"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "ewma_5(per_second(sum:apache.response.useragent{platform:onesource,app:indirect,env:_sat,idt_app:_apache} by {useragent}.as_count()))",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "sqrt"
+          }
+        },
+        "title": "COUNT - Apache - User Agent"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "ewma_3(per_second(sum:apache.response.endpoint{platform:onesource,app:indirect,env:_sat,idt_app:_apache} by {endpoint}.as_count()))",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "sqrt"
+          }
+        },
+        "title": "COUNT - Apache - Endpoints"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:apache.performance.busy_workers{platform:onesource,app:indirect,env:_sat,idt_app:_apache} by {service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "COUNT - Apache - Busy Workers"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:tomcat.servlet.request_count{platform:onesource,app:indirect,env:_sat} by {service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "COUNT - Tomcat Requests - By Service"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:system.mem.free{platform:onesource,app:indirect,env:_sat} by {service,node_number}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "max": "5000000000",
+            "scale": "sqrt"
+          }
+        },
+        "title": "Memory Free - By Service - By Node"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:system.load.norm.1{platform:onesource,app:indirect,env:_sat} by {service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "sqrt"
+          }
+        },
+        "title": "MAX - CPU Load - Normalized by CPU count - By Application"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:system.io.util{platform:onesource,app:indirect,env:_sat} by {service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "MAX - CPU Utilization - By Service"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:network.http.response_time{platform:onesource,app:indirect,env:_sat} by {service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "sqrt"
+          }
+        },
+        "title": "MAX - Response Time [Latency] - By Service"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:tomcat.threads.busy{platform:onesource,app:indirect,env:_sat} by {service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "COUNT - Tomcat Busy Threads - By Service"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:tomcat.servlet.error_count{platform:onesource,app:indirect,env:_sat} by {service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "COUNT - Tomcat Errors - By Service"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:system.disk.free{platform:onesource,app:indirect,env:_sat,device:/dev/mapper/rootvg-rootlv} by {host,service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false,
+            "scale": "log"
+          }
+        },
+        "title": "MAX - Free Disk - /root"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:system.disk.free{platform:onesource,app:indirect,env:_sat,device:/dev/mapper/datavg-applv} by {host,service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false,
+            "scale": "log"
+          }
+        },
+        "title": "MAX - Free Disk - /app"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:system.disk.free{device:/dev/mapper/rootvg-varlv,platform:onesource,app:indirect,env:_sat} by {host,service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:system.disk.free{device:/dev/mapper/rootvg-varlv,platform:onesource,app:indirect,env:_sat} by {host,service}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false,
+            "scale": "log"
+          }
+        },
+        "title": "MAX - Free Disk - /var"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:system.disk.free{platform:onesource,app:indirect,env:_sat,device:cisclnt-f0140:/cb0061_trta_indirecttaxdataqa_snap/datafileintegrator}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false,
+            "scale": "log"
+          }
+        },
+        "title": "MAX - Free Disk - /datafileintegrator [FTP]"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "max:system.disk.free{u_platform:onesource,u_app:indirect,u_env:_sat,device:clnt-corp-f0613:/vol/cb0296_trtaindirecttaxuatf_nosnap/logarchive}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:system.disk.free{u_platform:onesource,u_app:indirect,u_env:_sat,device:clnt-corp-f0462:/vol/cb0296_trtaindirecttax3ppdf_nosnap/logarchive}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "max:system.disk.free{u_platform:onesource,u_app:indirect,u_env:_sat,device:clnt-corp-f0658:/vol/cb0296_trtaindirecttax4ppdf_nosnap}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "MAX - Free Disk - /logarchive"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:network.tcp.response_time{u_platform:onesource,u_app:indirect,u_env:_sat} by {u_service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "pow"
+          }
+        },
+        "title": "TCP - Service Port - Response Time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:cch.rdb.duration{app:indirect,platform:onesource,env:_sat} by {external_company_id}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false,
+            "scale": "log"
+          }
+        },
+        "title": "AVG - Calc Call History Time - By Company"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "ewma_5(avg:cch.rdb.duration{app:indirect,platform:onesource,env:_sat})",
+              "aggregator": "avg",
+              "style": {
+                "width": "thick",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "ewma_5(max:cch.rdb.duration{app:indirect,platform:onesource,env:_sat})",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "dotted"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "AVG/MAX - Calc Call History Time - All Calculations"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "ewma_5(avg:cch.rdb.duration{app:indirect,platform:onesource,env:_sat,external_company_id:idt-healthcheck:})",
+              "aggregator": "avg",
+              "style": {
+                "width": "thick",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "ewma_5(max:cch.rdb.duration{app:indirect,platform:onesource,env:_sat,external_company_id:idt-healthcheck:})",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "dotted"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "AVG/MAX - Calc Call History Time - Healthcheck"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:cch.rdb.transaction{app:indirect,platform:onesource,env:_sat} by {external_company_id}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "sqrt"
+          }
+        },
+        "title": "COUNT - Calc Call History Transactions - By Company"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:cch.rdb.transaction{app:indirect,platform:onesource,env:_sat}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "scale": "sqrt"
+          }
+        },
+        "title": "COUNT - Calc Call History Transactions - All"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:cch.rdb.lines{app:indirect,platform:onesource,env:_sat} by {external_company_id}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "COUNT - Calc Call History Transaction Lines - By Company"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:cch.rdb.lines{app:indirect,platform:onesource,env:_sat}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "COUNT - Calc Call History Transaction Lines - All"
+      }
+    ],
+    "description": "created by tim.fagergren@thomsonreuters.com",
+    "title": "trta-idt-devops ONESOURCE Indirect Tax SAT Time",
+    "created": "2018-01-12T22:03:46.111210+00:00",
+    "id": 467375,
+    "created_by": {
+      "disabled": false,
+      "handle": "tim.fagergren@thomsonreuters.com",
+      "name": "Timothy Fagergren",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Tim.Fagergren@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/ef0829926735010b693117978dad8574?s=48&d=retro"
+    },
+    "modified": "2018-08-06T20:54:02.587434+00:00"
+  },
+  "url": "/dash/467375/trta-idt-devops-onesource-indirect-tax-sat-time",
+  "resource": "/api/v1/dash/467375"
+}

@@ -1,0 +1,65 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "style": {
+                "width": "thick",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "aggregator": "avg",
+              "conditional_formats": [],
+              "q": "max:tr.osr.authentication_duration.max{*}",
+              "type": "line",
+              "metadata": {
+                "max:tr.osr.authentication_duration.max{*}": {
+                  "alias": "authentication_duration"
+                }
+              }
+            },
+            {
+              "q": "max:tr.osr.http_in_request_duration.max{*}",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "line",
+              "metadata": {
+                "max:tr.osr.http_in_request_duration.max{*}": {
+                  "alias": "total_duration"
+                }
+              }
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Authentication Duration vs Total Request Time"
+      }
+    ],
+    "description": "created by cariad.eccleston@thomsonreuters.com",
+    "title": "Cariad's Test Dashboard",
+    "created": "2018-07-27T09:23:03.444076+00:00",
+    "id": 872694,
+    "created_by": {
+      "disabled": false,
+      "handle": "cariad.eccleston@thomsonreuters.com",
+      "name": "Cariad Eccleston",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "cariad.eccleston@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/e6707d55ac2ff9518e2a922e52f1d54a?s=48&d=retro"
+    },
+    "modified": "2018-07-27T13:29:10.874621+00:00"
+  },
+  "url": "/dash/872694/cariads-test-dashboard",
+  "resource": "/api/v1/dash/872694"
+}

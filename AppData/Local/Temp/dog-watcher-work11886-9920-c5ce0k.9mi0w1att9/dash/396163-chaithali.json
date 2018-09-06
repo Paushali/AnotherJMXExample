@@ -1,0 +1,39 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:test.metricTRSRE{*}",
+              "conditional_formats": [],
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of test.metricTRSRE over *"
+      }
+    ],
+    "description": "created by karthikeyan.rajamani@thomsonreuters.com",
+    "title": "chaithali",
+    "created": "2017-11-09T17:21:01.969249+00:00",
+    "id": 396163,
+    "created_by": {
+      "disabled": false,
+      "handle": "karthikeyan.rajamani@thomsonreuters.com",
+      "name": "Karthikeyan Rajamani",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "Karthikeyan.Rajamani@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/bae48acc0cdb1247103062bff0a91bca?s=48&d=retro"
+    },
+    "modified": "2017-11-09T17:21:28.888271+00:00"
+  },
+  "url": "/dash/396163/chaithali",
+  "resource": "/api/v1/dash/396163"
+}

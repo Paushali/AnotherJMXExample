@@ -1,0 +1,2480 @@
+{
+  "board_title": "tr.notify.runbook (App)",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-05-09T20:06:14.673826+00:00",
+  "original_title": "tr.notify.runbook (App)",
+  "modified": "2018-07-13T21:26:16.398428+00:00",
+  "disableEditing": false,
+  "height": 188,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "stack_name:tr-notify-app",
+      "prefix": "stack_name",
+      "name": "stack"
+    },
+    {
+      "default": "apiname:notifications_api-tr-notify-app",
+      "prefix": "apiname",
+      "name": "apiname"
+    },
+    {
+      "default": "*",
+      "prefix": "topicname",
+      "name": "snstopic"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "jean-philippe.fortin@thomsonreuters.com",
+    "name": "Jean-Philippe Fortin",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "jean-philippe.fortin@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/61b6675265a5c1fcbefc4d809b81d9cc?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 335672,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "API Gateway 5xx errors (1d)",
+      "height": 19,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "sum:aws.apigateway.5xxerror{$apiname}.as_count()",
+            "type": "bars",
+            "metadata": {
+              "sum:aws.apigateway.5xxerror{$apiname}.as_count()": {
+                "alias": "Errors"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 70,
+      "x": 17,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 335672,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "SES Activity",
+      "height": 25,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "dashed"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "sum:aws.ses.send.sum{*}",
+            "type": "line",
+            "metadata": {
+              "sum:aws.ses.send.sum{*}": {
+                "alias": "Send"
+              }
+            }
+          },
+          {
+            "q": "sum:aws.ses.delivery.sum{*}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "metadata": {
+              "sum:aws.ses.delivery.sum{*}": {
+                "alias": "Delivery"
+              }
+            }
+          },
+          {
+            "q": "sum:aws.ses.complaint.sum{*}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "metadata": {
+              "sum:aws.ses.complaint.sum{*}": {
+                "alias": "Complaints"
+              }
+            }
+          },
+          {
+            "q": "sum:aws.ses.bounce.sum{*}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "metadata": {
+              "sum:aws.ses.bounce.sum{*}": {
+                "alias": "Bounce"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 46,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 200,
+      "x": 17,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 335672,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "API Gateway 4xx errors (1d)",
+      "height": 19,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "sum:aws.apigateway.4xxerror{$apiname}.as_count()",
+            "type": "bars",
+            "metadata": {
+              "sum:aws.apigateway.4xxerror{$apiname}.as_count()": {
+                "alias": "Errors"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 70,
+      "x": 59,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 335672,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "SNS Activity",
+      "height": 25,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "thick",
+              "palette": "dog_classic",
+              "type": "dashed"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "sum:aws.sns.number_of_messages_published{$snstopic}.as_count()",
+            "type": "line",
+            "metadata": {
+              "sum:aws.sns.number_of_messages_published{$snstopic}.as_count()": {
+                "alias": "Published"
+              }
+            }
+          },
+          {
+            "q": "sum:aws.sns.number_of_notifications_delivered{$snstopic}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "metadata": {
+              "sum:aws.sns.number_of_notifications_delivered{$snstopic}.as_count()": {
+                "alias": "Delivered"
+              }
+            }
+          },
+          {
+            "q": "sum:aws.sns.number_of_notifications_failed{$snstopic}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "solid"
+            },
+            "type": "bars",
+            "metadata": {
+              "sum:aws.sns.number_of_notifications_failed{$snstopic}.as_count()": {
+                "alias": "Failed"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 46,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 200,
+      "x": 65,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 335672,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Errors by functions",
+      "height": 41,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "sum:aws.lambda.errors{$stack} by {name}.as_count()",
+            "type": "bars",
+            "metadata": {
+              "sum:aws.lambda.errors{$stack} by {name}.as_count()": {
+                "alias": "Errors"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 148,
+      "x": 17,
+      "legend_size": "8",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 335672,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "API Gateway hits (1d)",
+      "height": 19,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.apigateway.count{$apiname}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 70,
+      "x": 101,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 335672,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Lambda invocations",
+      "height": 24,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.lambda.invocations{$stack} by {name}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 165,
+      "x": 59,
+      "legend_size": "8",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 335672,
+      "x": 31,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "1 day",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.lambda.errors{$stack}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": "100",
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": "50",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "50",
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 13,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 120,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 335672,
+      "x": 17,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "5xx Errors (1d)",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.apigateway.5xxerror{$apiname}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 41,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 335672,
+      "x": 59,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "4xx Errors (1d)",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.apigateway.4xxerror{$apiname}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 41,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "font_size": "auto",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "API Gateway",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 15,
+      "x": 1,
+      "y": 36,
+      "title_size": 16,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "sizing": "center",
+      "board_id": 336241,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/tr-notify-nonproddev/awslogo/ApplicationServices_AmazonAPIGateway.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 10,
+      "width": 15,
+      "y": 41,
+      "x": 1,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "font_size": "auto",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Lambda",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 15,
+      "x": 1,
+      "y": 114,
+      "title_size": 16,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "sizing": "center",
+      "board_id": 336241,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/tr-notify-nonproddev/awslogo/Compute_AWSLambda.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 11,
+      "width": 15,
+      "y": 119,
+      "x": 1,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "height": 5,
+      "bgcolor": "blue",
+      "html": "##5xx Errors",
+      "x": 17,
+      "y": 35,
+      "title_size": 16,
+      "tick": true,
+      "type": "note",
+      "width": 41,
+      "auto_refresh": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "height": 5,
+      "bgcolor": "blue",
+      "html": "##4xx Errors ",
+      "x": 59,
+      "y": 35,
+      "title_size": 16,
+      "tick": true,
+      "type": "note",
+      "width": 41,
+      "auto_refresh": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "height": 5,
+      "bgcolor": "blue",
+      "html": "##Hits",
+      "x": 101,
+      "y": 35,
+      "title_size": 16,
+      "tick": true,
+      "type": "note",
+      "width": 41,
+      "auto_refresh": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "x": 38,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "5xx Errors (1w)",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.apigateway.5xxerror{$apiname}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 41,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "x": 80,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "4xx Errors (1w)",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.apigateway.4xxerror{$apiname}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 41,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "API Gateway 5xx errors (1w)",
+      "height": 19,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.apigateway.5xxerror{$apiname}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 92,
+      "x": 17,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "right",
+      "text_align": "center",
+      "title_text": "",
+      "height": 21,
+      "bgcolor": "blue",
+      "html": "##Day",
+      "x": 1,
+      "y": 70,
+      "title_size": 16,
+      "tick": true,
+      "type": "note",
+      "width": 15,
+      "auto_refresh": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "API Gateway 4xx errors (1w)",
+      "height": 19,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.apigateway.4xxerror{$apiname}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 92,
+      "x": 59,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "API Gateway hits (1w)",
+      "height": 19,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.apigateway.count{$apiname}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 92,
+      "x": 101,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "right",
+      "text_align": "center",
+      "title_text": "",
+      "height": 21,
+      "bgcolor": "blue",
+      "html": "##Week",
+      "x": 1,
+      "y": 92,
+      "title_size": 16,
+      "tick": true,
+      "type": "note",
+      "width": 15,
+      "auto_refresh": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "x": 101,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "API Gateway hits (1d)",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.apigateway.count{$apiname}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 41,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "x": 122,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "API Gateway hits (1w)",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.apigateway.count{$apiname}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 41,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "height": 5,
+      "bgcolor": "blue",
+      "html": "##Errors",
+      "x": 17,
+      "y": 114,
+      "title_size": 16,
+      "tick": true,
+      "type": "note",
+      "width": 41,
+      "auto_refresh": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "height": 5,
+      "bgcolor": "blue",
+      "html": "##Invocations",
+      "x": 59,
+      "y": 114,
+      "title_size": 16,
+      "tick": true,
+      "type": "note",
+      "width": 41,
+      "auto_refresh": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "x": 45,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "1 week",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.lambda.errors{$stack}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "250"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "100"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "100"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 13,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 120,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "x": 17,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "1 hour",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.lambda.errors{$stack}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "10"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "5"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "5"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 13,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 120,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "right",
+      "text_align": "center",
+      "title_text": "",
+      "height": 60,
+      "bgcolor": "blue",
+      "html": "Week",
+      "x": 1,
+      "y": 131,
+      "title_size": 16,
+      "tick": true,
+      "type": "note",
+      "width": 15,
+      "auto_refresh": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "x": 59,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "1 hour",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.lambda.invocations{$stack}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 13,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 120,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "x": 73,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "1 day",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.lambda.invocations{$stack}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 13,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 120,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "x": 87,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "1 week",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.lambda.invocations{$stack}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 13,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 120,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "font_size": "auto",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Operations",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 5,
+      "width": 15,
+      "x": 1,
+      "y": 1,
+      "title_size": 16,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "height": 5,
+      "bgcolor": "blue",
+      "html": "Errors",
+      "x": 17,
+      "y": 1,
+      "title_size": 16,
+      "tick": true,
+      "type": "note",
+      "width": 62,
+      "auto_refresh": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "right",
+      "text_align": "center",
+      "title_text": "",
+      "height": 8,
+      "bgcolor": "blue",
+      "html": "1 hour",
+      "x": 1,
+      "y": 7,
+      "title_size": 16,
+      "tick": true,
+      "type": "note",
+      "width": 15,
+      "auto_refresh": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "x": 59,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Lambda",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.lambda.errors{$stack}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 7,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "x": 17,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "5xx Errors",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.apigateway.5xxerror{$apiname}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 7,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "x": 38,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "4xx Errors",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.apigateway.4xxerror{$apiname}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 7,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "right",
+      "text_align": "center",
+      "title_text": "",
+      "height": 8,
+      "bgcolor": "blue",
+      "html": "1 day",
+      "x": 1,
+      "y": 16,
+      "title_size": 16,
+      "tick": true,
+      "type": "note",
+      "width": 15,
+      "auto_refresh": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "right",
+      "text_align": "center",
+      "title_text": "",
+      "height": 8,
+      "bgcolor": "blue",
+      "html": "1 week",
+      "x": 1,
+      "y": 25,
+      "title_size": 16,
+      "tick": true,
+      "type": "note",
+      "width": 15,
+      "auto_refresh": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "x": 17,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "5xx Errors",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.apigateway.5xxerror{$apiname}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 16,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "x": 17,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "5xx Errors",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.apigateway.5xxerror{$apiname}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 25,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "x": 38,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "4xx Errors",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.apigateway.4xxerror{$apiname}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 16,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "x": 38,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "4xx Errors",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.apigateway.4xxerror{$apiname}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 25,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "x": 59,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Lambda",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.lambda.errors{$stack}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 16,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "x": 59,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Lambda",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.lambda.errors{$stack}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 25,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "height": 5,
+      "bgcolor": "blue",
+      "html": "##Execution time",
+      "x": 101,
+      "y": 114,
+      "title_size": 16,
+      "tick": true,
+      "type": "note",
+      "width": 41,
+      "auto_refresh": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "x": 101,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "1 hour",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.lambda.duration.sum{$stack}",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 13,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 120,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "x": 115,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "1 day",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.lambda.duration{$stack}",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 13,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 120,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "x": 129,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "1 week",
+      "height": 8,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.lambda.duration{$stack}",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": null,
+                "comparator": "<"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 13,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 120,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Average execution time by function",
+      "height": 14,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:aws.lambda.duration{$stack} by {name}, 10, 'mean', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 41,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 131,
+      "x": 101,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Total execution time by function",
+      "height": 14,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:aws.lambda.duration{$stack} by {name}, 10, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 41,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 148,
+      "x": 101,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Execution duration",
+      "height": 24,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.lambda.duration{$stack} by {name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 165,
+      "x": 101,
+      "legend_size": "8",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Top invoked function",
+      "height": 14,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:aws.lambda.invocations{$stack} by {name}.as_count(), 5, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 41,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 131,
+      "x": 59,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Function invocations",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.lambda.invocations{$stack} by {name}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 148,
+      "x": 59,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Execution errors",
+      "height": 14,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:aws.lambda.errors{$stack} by {name}.as_count(), 10, 'sum', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 41,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 131,
+      "x": 17,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "font_size": "auto",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "Misc.",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 5,
+      "width": 15,
+      "x": 1,
+      "y": 194,
+      "title_size": 16,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "height": 5,
+      "bgcolor": "blue",
+      "html": "##Services",
+      "x": 17,
+      "y": 194,
+      "title_size": 16,
+      "tick": true,
+      "type": "note",
+      "width": 94,
+      "auto_refresh": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "right",
+      "text_align": "left",
+      "title_text": "",
+      "height": 27,
+      "bgcolor": "blue",
+      "html": "##Week",
+      "x": 1,
+      "y": 200,
+      "title_size": 16,
+      "tick": true,
+      "type": "note",
+      "width": 15,
+      "auto_refresh": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "right",
+      "text_align": "center",
+      "title_text": "",
+      "height": 17,
+      "bgcolor": "blue",
+      "html": "##Hour",
+      "x": 1,
+      "y": 52,
+      "title_size": 16,
+      "tick": true,
+      "type": "note",
+      "width": 15,
+      "auto_refresh": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.apigateway.5xxerror{$apiname}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {},
+      "y": 52,
+      "x": 17,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.apigateway.4xxerror{$apiname}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {},
+      "y": 52,
+      "x": 59,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336357,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.apigateway.count{$apiname}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {},
+      "y": 52,
+      "x": 101,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 336357,
+  "title_edited": false,
+  "isShared": false
+}

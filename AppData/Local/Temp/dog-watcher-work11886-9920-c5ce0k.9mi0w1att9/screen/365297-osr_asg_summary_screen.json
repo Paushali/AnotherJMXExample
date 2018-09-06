@@ -1,0 +1,390 @@
+{
+  "board_title": "OSR ASG Summary (screen)",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-06-22T11:36:07.448065+00:00",
+  "original_title": "OSR ASG Summary (screen)",
+  "modified": "2018-06-25T14:01:18.523208+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "service",
+      "name": "service"
+    },
+    {
+      "default": "*",
+      "prefix": "env",
+      "name": "env"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "m.wallace@thomsonreuters.com",
+    "name": "Martin Wallace",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "m.wallace@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/6626bdd877abcb946b9a60511ca33cb5?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "widgets": [
+    {
+      "board_id": 365297,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Terminating Instances",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.autoscaling.group_terminating_instances{tr:application-asset-insight-id:202990,$service,$env} by {service,env}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 75,
+      "time": {},
+      "y": 37,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 365297,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Total Instances by Service",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.autoscaling.group_total_instances{tr:application-asset-insight-id:202990,$service,$env} by {service,env}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 75,
+      "time": {},
+      "y": 19,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 365297,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 15,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:aws.autoscaling.group_terminating_instances{tr:application-asset-insight-id:202990,$service,$env} by {service,env}, 10, 'l2norm', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "comparator": ">",
+                "value": null
+              }
+            ]
+          }
+        ]
+      },
+      "width": 29,
+      "time": {},
+      "y": 37,
+      "x": 77,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 365297,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 15,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:aws.autoscaling.group_total_instances{tr:application-asset-insight-id:202990,$service,$env} by {service,env}, 10, 'l2norm', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 29,
+      "time": {},
+      "y": 19,
+      "x": 77,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 365297,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Total Instances (Area)",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.autoscaling.group_total_instances{tr:application-asset-insight-id:202990,$service,$env} by {service,env}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 56,
+      "time": {},
+      "y": 1,
+      "x": 20,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 365297,
+      "x": 1,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Current Instances",
+      "height": 15,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.autoscaling.group_total_instances{tr:application-asset-insight-id:202990,$service,$env}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 18,
+      "time": {},
+      "y": 1,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 365297,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Standby Instances",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.autoscaling.group_standby_instances{tr:application-asset-insight-id:202990,$service,$env} by {service,env}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 43,
+      "time": {},
+      "y": 55,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 365297,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Pending Instances",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.autoscaling.group_pending_instances{tr:application-asset-insight-id:202990,$service,$env} by {service}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 43,
+      "time": {},
+      "y": 55,
+      "x": 45,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 365297,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "In-Service Instances",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.autoscaling.group_in_service_instances{tr:application-asset-insight-id:202990,$service,$env} by {service,env}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 43,
+      "time": {},
+      "y": 55,
+      "x": 89,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 365297,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Total Instances (Sum)",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.autoscaling.group_total_instances{tr:application-asset-insight-id:202990,$service,$env}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 56,
+      "time": {},
+      "y": 1,
+      "x": 77,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 365297,
+  "title_edited": false,
+  "isShared": false
+}

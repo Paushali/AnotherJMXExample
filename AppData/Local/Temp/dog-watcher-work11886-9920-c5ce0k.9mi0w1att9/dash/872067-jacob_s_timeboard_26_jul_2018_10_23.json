@@ -1,0 +1,44 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:OTIR.TinMatchService.TINMatchWorker.AgentLocked{*}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of OTIR.TinMatchService.TINMatchWorker.AgentLocked over *"
+      }
+    ],
+    "description": "created by jacob.john@thomsonreuters.com",
+    "title": "Jacob's Timeboard 26 Jul 2018 10:23",
+    "created": "2018-07-26T15:23:33.703495+00:00",
+    "id": 872067,
+    "created_by": {
+      "disabled": false,
+      "handle": "jacob.john@thomsonreuters.com",
+      "name": "Jacob John Kadambanattu",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "jacob.john@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/3393b408a67b6584fd808153e1d75700?s=48&d=retro"
+    },
+    "modified": "2018-07-26T15:24:55.387835+00:00"
+  },
+  "url": "/dash/872067/jacobs-timeboard-26-jul-2018-1023",
+  "resource": "/api/v1/dash/872067"
+}

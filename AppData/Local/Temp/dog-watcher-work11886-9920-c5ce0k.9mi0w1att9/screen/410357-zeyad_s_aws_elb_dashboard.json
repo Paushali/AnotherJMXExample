@@ -1,0 +1,779 @@
+{
+  "board_title": "Zeyad's AWS ELB Dashboard",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-08-14T15:36:36.892297+00:00",
+  "original_title": "Zeyad's  Non-Prod AWS ELB Dashboard",
+  "modified": "2018-08-14T20:42:30.188334+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": null,
+      "name": "scope"
+    },
+    {
+      "default": "*",
+      "prefix": "name",
+      "name": "name"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "zeyad.emara@thomsonreuters.com",
+    "name": "Zeyad Emara",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "Zeyad.Emara@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/5d23855ccc3b9a9a3ae472a765f1e22d?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "templated": true,
+  "widgets": [
+    {
+      "metric": "aws.elb.request_count",
+      "text_align": "center",
+      "query": "sum:aws.elb.request_count{$scope}.as_rate()",
+      "text_size": "auto",
+      "title_size": 13,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "left",
+      "custom_unit": null,
+      "width": 23,
+      "legend_size": "0",
+      "type": "query_value",
+      "isShared": false,
+      "tags": [
+        "$scope"
+      ],
+      "aggr": "sum",
+      "precision": 1,
+      "title_text": "Requests per second (avg)",
+      "calc_func": "as_rate",
+      "metric_type": "count",
+      "autoscale": true,
+      "height": 10,
+      "legend": false,
+      "conditional_formats": [],
+      "is_valid_query": true,
+      "tile_def": {
+        "text_align": "left",
+        "autoscale": true,
+        "custom_unit": null,
+        "precision": 1,
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.elb.request_count{$scope}.as_rate()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "res_calc_func": "as_rate",
+      "time": {},
+      "y": 0,
+      "x": 89
+    },
+    {
+      "metric": "",
+      "text_align": "center",
+      "query": "avg:aws.elb.latency{$scope} * 1000",
+      "text_size": "auto",
+      "title_size": 13,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "left",
+      "custom_unit": "ms",
+      "width": 23,
+      "legend_size": "0",
+      "type": "query_value",
+      "isShared": false,
+      "tags": [],
+      "aggr": "avg",
+      "precision": 0,
+      "title_text": "Backend response latency (avg)",
+      "calc_func": "raw",
+      "metric_type": "standard",
+      "autoscale": false,
+      "height": 10,
+      "legend": false,
+      "conditional_formats": [
+        {
+          "palette": "white_on_red",
+          "comparator": ">",
+          "custom_bg_color": null,
+          "value": 500,
+          "invert": false,
+          "custom_fg_color": null
+        },
+        {
+          "palette": "white_on_yellow",
+          "comparator": ">",
+          "custom_bg_color": null,
+          "value": 400,
+          "invert": false,
+          "custom_fg_color": null
+        },
+        {
+          "palette": "white_on_green",
+          "comparator": "<=",
+          "custom_bg_color": null,
+          "value": 400,
+          "invert": false,
+          "custom_fg_color": null
+        }
+      ],
+      "is_valid_query": false,
+      "tile_def": {
+        "text_align": "left",
+        "autoscale": false,
+        "custom_unit": "ms",
+        "precision": 0,
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.elb.latency{$scope} * 1000",
+            "aggregator": "avg",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "custom_bg_color": null,
+                "value": 500,
+                "invert": false,
+                "custom_fg_color": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">",
+                "custom_bg_color": null,
+                "value": 400,
+                "invert": false,
+                "custom_fg_color": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<=",
+                "custom_bg_color": null,
+                "value": 400,
+                "invert": false,
+                "custom_fg_color": null
+              }
+            ]
+          }
+        ]
+      },
+      "res_calc_func": "raw",
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 0,
+      "x": 113
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Avg round-trip latency between each ELB and backend",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.elb.latency{$scope} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 47,
+      "x": 17,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Requests per second, by AZ",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.elb.request_count{$scope} by {availability-zone}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 30,
+      "x": 17,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "metric": "aws.elb.un_healthy_host_count",
+      "text_align": "center",
+      "query": "sum:aws.elb.un_healthy_host_count{$scope}",
+      "text_size": "auto",
+      "title_size": 13,
+      "title": true,
+      "aggregator": "max",
+      "title_align": "left",
+      "custom_unit": null,
+      "width": 23,
+      "legend_size": "0",
+      "type": "query_value",
+      "isShared": false,
+      "tags": [
+        "$scope"
+      ],
+      "aggr": "sum",
+      "precision": 0,
+      "title_text": "Unhealthy hosts count (max)",
+      "calc_func": "raw",
+      "metric_type": "standard",
+      "autoscale": true,
+      "height": 10,
+      "legend": false,
+      "conditional_formats": [
+        {
+          "palette": "white_on_red",
+          "comparator": ">",
+          "custom_bg_color": null,
+          "value": 0,
+          "invert": false,
+          "custom_fg_color": null
+        },
+        {
+          "palette": "white_on_green",
+          "comparator": "<=",
+          "custom_bg_color": null,
+          "value": 0,
+          "invert": false,
+          "custom_fg_color": null
+        }
+      ],
+      "is_valid_query": true,
+      "tile_def": {
+        "text_align": "left",
+        "autoscale": true,
+        "custom_unit": null,
+        "precision": 0,
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.elb.un_healthy_host_count{$scope}",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "custom_bg_color": null,
+                "value": 0,
+                "invert": false,
+                "custom_fg_color": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<=",
+                "custom_bg_color": null,
+                "value": 0,
+                "invert": false,
+                "custom_fg_color": null
+              }
+            ]
+          }
+        ]
+      },
+      "res_calc_func": "raw",
+      "time": {},
+      "y": 0,
+      "x": 65
+    },
+    {
+      "metric": "aws.elb.healthy_host_count",
+      "text_align": "center",
+      "query": "sum:aws.elb.healthy_host_count{$scope}",
+      "text_size": "auto",
+      "title_size": 13,
+      "title": true,
+      "aggregator": "min",
+      "title_align": "left",
+      "custom_unit": null,
+      "width": 23,
+      "legend_size": "0",
+      "type": "query_value",
+      "isShared": false,
+      "tags": [
+        "$scope"
+      ],
+      "aggr": "sum",
+      "precision": 0,
+      "title_text": "Healthy hosts count (min)",
+      "calc_func": "raw",
+      "metric_type": "standard",
+      "autoscale": true,
+      "height": 10,
+      "legend": false,
+      "conditional_formats": [
+        {
+          "palette": "green_on_white",
+          "comparator": ">",
+          "custom_bg_color": null,
+          "value": 0,
+          "invert": false,
+          "custom_fg_color": null
+        },
+        {
+          "palette": "red_on_white",
+          "comparator": "<=",
+          "custom_bg_color": null,
+          "value": 0,
+          "invert": false,
+          "custom_fg_color": null
+        }
+      ],
+      "is_valid_query": true,
+      "tile_def": {
+        "text_align": "left",
+        "autoscale": true,
+        "custom_unit": null,
+        "precision": 0,
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.elb.healthy_host_count{$scope}",
+            "aggregator": "min",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "green_on_white",
+                "comparator": ">",
+                "custom_bg_color": null,
+                "value": 0,
+                "invert": false,
+                "custom_fg_color": null
+              },
+              {
+                "palette": "red_on_white",
+                "comparator": "<=",
+                "custom_bg_color": null,
+                "value": 0,
+                "invert": false,
+                "custom_fg_color": null
+              }
+            ]
+          }
+        ]
+      },
+      "res_calc_func": "raw",
+      "time": {},
+      "y": 0,
+      "x": 41
+    },
+    {
+      "sizing": "center",
+      "board_id": 33142,
+      "title_size": 16,
+      "title": true,
+      "url": "/static/images/saas_logos/bot/amazon_elb.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 16,
+      "y": 0,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 33142,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Requests per second, by ELB",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.elb.request_count{$scope} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 14,
+      "x": 17,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 33142,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Max Surge queue length, by ELB",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:aws.elb.surge_queue_length{$scope} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "palette": "warm"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "markers": [
+          {
+            "dim": "y",
+            "type": "error dashed",
+            "value": "y = 1024",
+            "val": 1024,
+            "label": "ELB will start dropping requests above this line"
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 14,
+      "x": 113,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 33142,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ELB HTTP 4xx errors, by ELB",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.elb.httpcode_elb_4xx{$scope} by {host}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 14,
+      "x": 65,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 33142,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Backend HTTP Success Response Codes",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.elb.httpcode_backend_2xx{$scope}.as_count(), sum:aws.elb.httpcode_backend_3xx{$scope}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "green",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 63,
+      "x": 17,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 33142,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Backend 4xx error codes, by AZ",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.elb.httpcode_backend_4xx{$scope} by {availability-zone}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 47,
+      "x": 65,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 33142,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Backend 5xx error codes, by AZ",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.elb.httpcode_backend_5xx{$scope} by {availability-zone}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 63,
+      "x": 65,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 33142,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Spillover Count, by ELB",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.elb.spillover_count{$scope} by {host}.as_count()",
+            "style": {
+              "palette": "warm"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 30,
+      "x": 113,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 33142,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ELB HTTP 5xx errors, by ELB",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.elb.httpcode_elb_5xx{$scope} by {host}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 30,
+      "x": 65,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 61874,
+      "tick": false,
+      "font_size": "18",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "auto_refresh": false,
+      "bgcolor": "gray",
+      "html": "[ELB Metrics](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics/#elb-metrics)",
+      "x": 0,
+      "y": 14,
+      "title_size": 16,
+      "height": 31,
+      "type": "note",
+      "width": 16,
+      "isShared": false
+    },
+    {
+      "board_id": 61874,
+      "tick": false,
+      "font_size": "18",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "auto_refresh": false,
+      "bgcolor": "gray",
+      "html": "[Backend Metrics](https://www.datadoghq.com/blog/top-elb-health-and-performance-metrics/#backend-metrics)",
+      "x": 0,
+      "y": 47,
+      "title_size": 16,
+      "height": 31,
+      "type": "note",
+      "width": 16,
+      "isShared": false
+    },
+    {
+      "board_id": 61874,
+      "x": 17,
+      "group": null,
+      "tags": [
+        "service:elb"
+      ],
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "ELB service status",
+      "height": 12,
+      "width": 23,
+      "time": {},
+      "y": 0,
+      "title_size": 13,
+      "text_size": "auto",
+      "grouping": "cluster",
+      "type": "check_status",
+      "check": "aws.status",
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 410357,
+  "title_edited": true,
+  "isShared": false
+}

@@ -1,0 +1,126 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:aws.ec2.cpuutilization{host:i-0bbad6751ff4d6ce0}, avg:system.cpu.system{host:i-0bbad6751ff4d6ce0}, avg:system.cpu.iowait{host:i-0bbad6751ff4d6ce0}, avg:system.cpu.user{host:i-0bbad6751ff4d6ce0}, avg:system.cpu.stolen{host:i-0bbad6751ff4d6ce0}, avg:system.cpu.guest{host:i-0bbad6751ff4d6ce0}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CPU usage (%)"
+      },
+      {
+        "definition": {
+          "size_by": "pct_mem",
+          "color_by": "user",
+          "q": "processes{host:i-0bbad6751ff4d6ce0}",
+          "group_by": "family",
+          "viz": "treemap",
+          "requests": []
+        },
+        "title": "Processes memory usage"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "system.load.1{host:i-0bbad6751ff4d6ce0}"
+            },
+            {
+              "q": "system.load.5{host:i-0bbad6751ff4d6ce0}"
+            },
+            {
+              "q": "system.load.15{host:i-0bbad6751ff4d6ce0}"
+            }
+          ]
+        },
+        "title": "Load Averages 1-5-15"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "sum:system.mem.usable{host:i-0bbad6751ff4d6ce0}, sum:system.mem.total{host:i-0bbad6751ff4d6ce0} - sum:system.mem.usable{host:i-0bbad6751ff4d6ce0}"
+            }
+          ]
+        },
+        "title": "Memory breakdown"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "avg:system.swap.free{host:i-0bbad6751ff4d6ce0}, avg:system.swap.used{host:i-0bbad6751ff4d6ce0}"
+            }
+          ]
+        },
+        "title": "Available Swap"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "max:system.disk.in_use{host:i-0bbad6751ff4d6ce0}by{device} * 100",
+              "stacked": false
+            }
+          ]
+        },
+        "title": "Disk usage by device (%)"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "max:system.io.await{host:i-0bbad6751ff4d6ce0}by{device}"
+            }
+          ]
+        },
+        "title": "Disk latency (by device)"
+      },
+      {
+        "definition": {
+          "requests": [
+            {
+              "q": "sum:system.net.bytes_rcvd{host:i-0bbad6751ff4d6ce0}"
+            },
+            {
+              "q": "0 - sum:system.net.bytes_sent{host:i-0bbad6751ff4d6ce0}"
+            }
+          ]
+        },
+        "title": "Network traffic (bytes per sec)"
+      }
+    ],
+    "description": "Top host-level metrics for i-0bbad6751ff4d6ce0. Clone this dashboard t (cloned)",
+    "title": "i-0bbad6751ff4d6ce0 (cloned)",
+    "created": "2018-06-26T19:22:27.912515+00:00",
+    "id": 845515,
+    "created_by": {
+      "disabled": false,
+      "handle": "support-trtaonesourcepr",
+      "name": "Datadog Support",
+      "is_admin": true,
+      "role": "Help is on the way",
+      "access_role": "adm",
+      "verified": true,
+      "email": "support-user-prod@datadoghq.com",
+      "icon": "https://secure.gravatar.com/avatar/e6952b5f29fe2d996cf4e63f40db9e71?s=48&d=retro"
+    },
+    "modified": "2018-06-26T19:25:28.237545+00:00"
+  },
+  "url": "/dash/845515/i-0bbad6751ff4d6ce0-cloned",
+  "resource": "/api/v1/dash/845515"
+}

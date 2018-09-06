@@ -1,0 +1,116 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "diff(max:datahub.postgresql.table.query.call_count{$DB} by {table})",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Table/query call rate"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "diff(sum:datahub.postgresql.table.query.total_time{$DB} by {table})",
+              "aggregator": "sum",
+              "style": {
+                "width": "normal",
+                "palette": "purple",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Table/query wait time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:datahub.postgresql.query.total_time{$DB} by {queryid,type,table,where}.fill(null)",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "orange",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Query wait time"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "abs(diff(max:datahub.postgresql.query.active_time{$DB} by {db,type,table,where,state,wt}.fill(zero)))",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Active queries (run time)"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "datahub-dev-common",
+        "prefix": "dbinstanceidentifier",
+        "name": "DB"
+      }
+    ],
+    "description": "created by valeriy.yegorov@thomsonreuters.com",
+    "title": "Datahub-Table/Query Activity",
+    "created": "2018-07-26T20:21:16.031649+00:00",
+    "id": 872345,
+    "created_by": {
+      "disabled": false,
+      "handle": "valeriy.yegorov@thomsonreuters.com",
+      "name": "Valeriy Yegorov",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "valeriy.yegorov@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/4f5deb94fb92a5d2962fedfc0efd1550?s=48&d=retro"
+    },
+    "modified": "2018-08-08T20:02:37.836955+00:00"
+  },
+  "url": "/dash/872345/datahub-tablequery-activity",
+  "resource": "/api/v1/dash/872345"
+}

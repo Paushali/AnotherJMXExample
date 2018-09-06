@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by chaitali.agrawal@thomsonreuters.com",
+    "title": "Chaitali's Timeboard 30 Jul 2018 12:09",
+    "created": "2018-07-30T17:09:25.462962+00:00",
+    "id": 874824,
+    "created_by": {
+      "disabled": false,
+      "handle": "chaitali.agrawal@thomsonreuters.com",
+      "name": "Chaitali Agrawal",
+      "is_admin": true,
+      "role": null,
+      "access_role": "adm",
+      "verified": true,
+      "email": "chaitali.agrawal@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/109b0621779856fa6be67ee4cc747e84?s=48&d=retro"
+    },
+    "modified": "2018-07-30T17:09:25.462975+00:00"
+  },
+  "url": "/dash/874824/chaitalis-timeboard-30-jul-2018-1209",
+  "resource": "/api/v1/dash/874824"
+}

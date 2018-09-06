@@ -1,0 +1,1146 @@
+{
+  "board_title": "AthenaAWS Alerts DashBoard",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2017-10-09T03:47:35.003144+00:00",
+  "original_title": "AthenaAWS Alerts DashBoard",
+  "modified": "2018-06-20T03:41:02.598719+00:00",
+  "disableEditing": false,
+  "height": 160,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "tr:application-asset-insight-id:200190",
+      "prefix": "tr",
+      "name": "asset-id"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "mahesh.sikakolli@thomsonreuters.com",
+    "name": "Mahesh Sikakolli",
+    "is_admin": false,
+    "role": "",
+    "access_role": "st",
+    "verified": true,
+    "email": "mahesh.sikakolli@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/2f5722100bec9be333c6e3c3d46fb3e0?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "templated": true,
+  "widgets": [
+    {
+      "widgetID": 0,
+      "height": 11,
+      "displayFormat": "countsAndList",
+      "titleText": "QA_SvcChecks",
+      "board_id": 228395,
+      "title_size": 16,
+      "titleAlign": "left",
+      "title_align": "left",
+      "colorPreference": "background",
+      "hideZeroCounts": true,
+      "params": {
+        "sort": "status,asc",
+        "text": "AthenaQA_SvcChecks Failed Alerts",
+        "count": 50,
+        "start": 0
+      },
+      "new_widget": false,
+      "type": "manage_status",
+      "showTitle": true,
+      "isShared": false,
+      "title_text": "",
+      "titleSize": "16",
+      "edit": true,
+      "title": true,
+      "userEditedTitle": false,
+      "y": 0,
+      "x": 0,
+      "width": 11
+    },
+    {
+      "widgetID": 1,
+      "height": 11,
+      "displayFormat": "countsAndList",
+      "titleText": "UAT_SvcChecks",
+      "board_id": 228395,
+      "title_size": 16,
+      "titleAlign": "left",
+      "title_align": "left",
+      "colorPreference": "background",
+      "hideZeroCounts": true,
+      "params": {
+        "sort": "status,asc",
+        "text": "AthenaUAT_SvcChecks Failed Alerts",
+        "count": 50,
+        "start": 0
+      },
+      "new_widget": false,
+      "type": "manage_status",
+      "showTitle": true,
+      "isShared": false,
+      "title_text": "",
+      "titleSize": 16,
+      "edit": true,
+      "title": true,
+      "userEditedTitle": false,
+      "y": 0,
+      "x": 87,
+      "width": 11
+    },
+    {
+      "widgetID": 2,
+      "height": 11,
+      "displayFormat": "countsAndList",
+      "titleText": "QA_BMCService",
+      "board_id": 228395,
+      "title_size": 16,
+      "titleAlign": "left",
+      "title_align": "left",
+      "colorPreference": "background",
+      "hideZeroCounts": true,
+      "params": {
+        "sort": "status,asc",
+        "text": "AthenaQA_BMCService",
+        "count": 50,
+        "start": 0
+      },
+      "new_widget": false,
+      "type": "manage_status",
+      "showTitle": true,
+      "isShared": false,
+      "title_text": "",
+      "titleSize": 16,
+      "edit": true,
+      "title": true,
+      "userEditedTitle": false,
+      "y": 0,
+      "x": 11,
+      "width": 11
+    },
+    {
+      "widgetID": 3,
+      "height": 11,
+      "displayFormat": "countsAndList",
+      "titleText": "QA_WorkbookService",
+      "board_id": 228395,
+      "title_size": 16,
+      "titleAlign": "left",
+      "title_align": "left",
+      "colorPreference": "background",
+      "hideZeroCounts": true,
+      "params": {
+        "sort": "status,asc",
+        "text": "AthenaQA_WorkbookService",
+        "count": 50,
+        "start": 0
+      },
+      "new_widget": false,
+      "type": "manage_status",
+      "showTitle": true,
+      "isShared": false,
+      "title_text": "",
+      "titleSize": 16,
+      "edit": true,
+      "title": true,
+      "userEditedTitle": false,
+      "y": 0,
+      "x": 22,
+      "width": 16
+    },
+    {
+      "widgetID": 4,
+      "height": 11,
+      "displayFormat": "countsAndList",
+      "titleText": "QA_RSQueueProcessor",
+      "board_id": 228395,
+      "title_size": 16,
+      "titleAlign": "left",
+      "title_align": "left",
+      "colorPreference": "background",
+      "hideZeroCounts": true,
+      "params": {
+        "sort": "status,asc",
+        "text": "AthenaQA_RSQueueProcessor",
+        "count": 50,
+        "start": 0
+      },
+      "new_widget": false,
+      "type": "manage_status",
+      "showTitle": true,
+      "isShared": false,
+      "title_text": "",
+      "titleSize": 16,
+      "edit": true,
+      "title": true,
+      "userEditedTitle": false,
+      "y": 0,
+      "x": 38,
+      "width": 16
+    },
+    {
+      "widgetID": 5,
+      "height": 11,
+      "displayFormat": "countsAndList",
+      "titleText": "UAT_WorkbookService",
+      "board_id": 228395,
+      "title_size": 16,
+      "titleAlign": "left",
+      "title_align": "left",
+      "colorPreference": "background",
+      "hideZeroCounts": true,
+      "params": {
+        "sort": "status,asc",
+        "text": "AthenaUAT_WorkbookService",
+        "count": 50,
+        "start": 0
+      },
+      "new_widget": false,
+      "type": "manage_status",
+      "showTitle": true,
+      "isShared": false,
+      "title_text": "",
+      "titleSize": 16,
+      "edit": true,
+      "title": true,
+      "userEditedTitle": false,
+      "y": 0,
+      "x": 98,
+      "width": 16
+    },
+    {
+      "widgetID": 7,
+      "height": 11,
+      "displayFormat": "countsAndList",
+      "titleText": "UAT_BMCService",
+      "board_id": 228395,
+      "title_size": 16,
+      "titleAlign": "left",
+      "title_align": "left",
+      "colorPreference": "background",
+      "hideZeroCounts": true,
+      "params": {
+        "sort": "status,asc",
+        "text": "AthenaUAT_BMCService",
+        "count": 50,
+        "start": 0
+      },
+      "new_widget": false,
+      "type": "manage_status",
+      "showTitle": true,
+      "isShared": false,
+      "title_text": "",
+      "titleSize": 16,
+      "edit": true,
+      "title": true,
+      "userEditedTitle": false,
+      "y": 0,
+      "x": 114,
+      "width": 12
+    },
+    {
+      "widgetID": 8,
+      "height": 11,
+      "displayFormat": "countsAndList",
+      "titleText": "UAT_RSQueueProcessor",
+      "board_id": 228395,
+      "title_size": 16,
+      "titleAlign": "left",
+      "title_align": "left",
+      "colorPreference": "background",
+      "hideZeroCounts": true,
+      "params": {
+        "sort": "status,asc",
+        "text": "AthenaUAT_RSQueueProcessor",
+        "count": 50,
+        "start": 0
+      },
+      "new_widget": false,
+      "type": "manage_status",
+      "showTitle": true,
+      "isShared": false,
+      "title_text": "",
+      "titleSize": 16,
+      "edit": true,
+      "title": true,
+      "userEditedTitle": false,
+      "y": 0,
+      "x": 126,
+      "width": 17
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "url": "https://app.datadoghq.com/static/images/saas_logos/bot/amazon_ec2.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 11,
+      "width": 12,
+      "y": 11,
+      "x": 131,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA_Instance_CPU",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.cpu.user{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-qa,$asset-id} by {host,name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 37,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 11,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA_Instance_Memory Free",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.mem.free{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-qa,$asset-id} by {host,name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 40,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 11,
+      "x": 37,
+      "legend_size": "2",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA_Instance_Memory Used",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.mem.used{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-qa,$asset-id} by {host,name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 40,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 26,
+      "x": 37,
+      "legend_size": "2",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA_Instance_Network_In.Max",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_in.maximum{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-qa,$asset-id} by {host,name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 38,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 11,
+      "x": 77,
+      "legend_size": "2",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA_Instance_Network_Out.Max",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_out.maximum{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-qa,$asset-id} by {host,name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 38,
+      "time": {},
+      "y": 26,
+      "x": 77,
+      "legend_size": "2",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA_Instances_Network_Packets.In",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_packets_in{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-qa,$asset-id} by {host,name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 38,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 41,
+      "x": 77,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA_Instances_Network_Packets.Out",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_packets_out{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-qa,$asset-id} by {host,name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 38,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 56,
+      "x": 77,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA_CPU_Utilization.max",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.cpuutilization.maximum{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-qa,$asset-id} by {host,name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 37,
+      "time": {},
+      "y": 26,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA_Infrastructure",
+      "height": 16,
+      "tile_def": {
+        "nodeType": "host",
+        "style": {
+          "fillMax": null,
+          "palette": "green_to_orange",
+          "fillMin": null,
+          "paletteFlip": false
+        },
+        "group": [
+          "name",
+          "environment"
+        ],
+        "notes": null,
+        "noMetricHosts": true,
+        "viz": "hostmap",
+        "scope": [
+          "tr:application-asset-insight-id:200190",
+          "deploymentmanager-instanceid:athena-qa"
+        ],
+        "requests": [
+          {
+            "q": "avg:aws.ec2.host_ok{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-qa,$asset-id} by {host}",
+            "type": "fill"
+          }
+        ],
+        "groupby": null,
+        "noGroupHosts": true
+      },
+      "width": 28,
+      "query": "avg:system.load.1{*} by {host}",
+      "y": 23,
+      "x": 115,
+      "legend_size": null,
+      "type": "hostmap",
+      "legend": null,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "UAT_Instance_CPU",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "top(avg:system.cpu.user{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-uat,$asset-id} by {host,name}, 10, 'mean', 'desc')",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 37,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 41,
+      "x": 0,
+      "legend_size": "2",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "UAT_CPU_Utilization.max",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.cpuutilization{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-uat,$asset-id} by {name,host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 37,
+      "time": {},
+      "y": 56,
+      "x": 0,
+      "legend_size": "2",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "UAT_Instance_Memory Free",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.mem.free{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-uat,$asset-id} by {host,name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 40,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 41,
+      "x": 37,
+      "legend_size": "2",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "UAT_Instance_Memory Used",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.mem.used{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-uat,$asset-id} by {host,name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 40,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 56,
+      "x": 37,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "UAT_Infrastructure",
+      "height": 16,
+      "tile_def": {
+        "style": {
+          "fillMax": null,
+          "palette": "green_to_orange",
+          "fillMin": null,
+          "paletteFlip": false
+        },
+        "group": [
+          "name",
+          "environment"
+        ],
+        "notes": null,
+        "noMetricHosts": true,
+        "viz": "hostmap",
+        "scope": [
+          "tr:application-asset-insight-id:200190",
+          "deploymentmanager-instanceid:athena-uat"
+        ],
+        "requests": [
+          {
+            "q": "avg:aws.ec2.host_ok{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-uat,$asset-id} by {host}",
+            "type": "fill"
+          }
+        ],
+        "groupby": null,
+        "noGroupHosts": true
+      },
+      "width": 28,
+      "query": "avg:system.load.1{*} by {host}",
+      "y": 41,
+      "x": 115,
+      "legend_size": null,
+      "type": "hostmap",
+      "legend": null,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "UAT_Instance_Network_In.Max",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_in.maximum{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-uat,$asset-id} by {host,name}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 38,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 71,
+      "x": 77,
+      "legend_size": "2",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "UAT_Instance_Network_Out.Max",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_out{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-uat,$asset-id} by {host,name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 38,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 86,
+      "x": 77,
+      "legend_size": "2",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "UAT_Instances_Network_Packets.In",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_packets_in{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-uat,$asset-id} by {host,name}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 38,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 101,
+      "x": 77,
+      "legend_size": "2",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "UAT_Instances_Network_Packets.Out",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_packets_out{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-uat,$asset-id} by {name,host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 38,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 116,
+      "x": 77,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA_ELB_Request_Counts",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.elb.request_count{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-qa,$asset-id} by {name,host}.as_rate()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 38,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 71,
+      "x": 12,
+      "legend_size": "2",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "url": "https://app.datadoghq.com/static/images/saas_logos/bot/amazon_elb.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 12,
+      "y": 71,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "UAT_ELB_Request_Counts",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.elb.request_count{tr:application-asset-insight-id:200190,deploymentmanager-instanceid:athena-uat,$asset-id} by {host,name}.as_rate()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 38,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 86,
+      "x": 12,
+      "legend_size": "2",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA_RDS_Latency",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.rds.read_latency{tr:application-asset-insight-id:200190,tr:athena:environment:qa,$asset-id} by {domainprefix,name,region}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 114,
+      "x": 0,
+      "legend_size": "2",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "url": "https://app.datadoghq.com/static/images/saas_logos/bot/amazon_rds.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 12,
+      "y": 102,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA_RDS_Read_IOPS",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.rds.read_iops{tr:application-asset-insight-id:200190,tr:athena:environment:qa,$asset-id} by {domainprefix,name,region}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:aws.rds.write_iops{tr:application-asset-insight-id:200190,tr:athena:environment:qa,$asset-id} by {domainprefix,name,region}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 144,
+      "x": 0,
+      "legend_size": "2",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 228395,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA_RDS_Read_Latency",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.rds.read_latency{tr:application-asset-insight-id:200190,tr:athena:environment:qa,$asset-id} by {host,domainprefix,region}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 129,
+      "x": 0,
+      "legend_size": "2",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 228395,
+  "title_edited": false,
+  "isShared": false
+}

@@ -1,0 +1,1875 @@
+{
+  "board_title": "SRE Cloud Board (cloned) -vedha(cloned)",
+  "read_only": true,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-06-18T14:02:27.180425+00:00",
+  "original_title": "SRE Cloud Board",
+  "modified": "2018-06-18T15:09:54.860618+00:00",
+  "disableEditing": false,
+  "height": 77,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "account",
+      "name": "AWS_Account"
+    },
+    {
+      "default": "*",
+      "prefix": "region",
+      "name": "Region"
+    },
+    {
+      "default": "*",
+      "prefix": "techopsenvironment",
+      "name": "Enviroment"
+    },
+    {
+      "default": "*",
+      "prefix": "techopsproject",
+      "name": "Application"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "vedha.peri@thomsonreuters.com",
+    "name": "Vedha Peri",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "Vedha.Peri@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/3e6dc093f99c5fdfd14e440abace913c?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 297339,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Status Check Failed Instance/Instances",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.status_check_failed_instance{$AWS_Account,$Region,$Enviroment,$Application}",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "1"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 6,
+      "x": 42,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Status Check Failing?",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.status_check_failed{$AWS_Account,$Region,$Enviroment,$Application}",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "1"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 0,
+      "x": 42,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Message Publish Rate - RabbitMQ",
+      "height": 10,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:rabbitmq.queue.messages.publish.rate{$AWS_Account,$Region,$Enviroment,$Application}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 19,
+      "x": 13,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU Utilization(Max)",
+      "height": 16,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(max:aws.ec2.cpuutilization.maximum{$AWS_Account,$Region,$Enviroment,$Application} by {name}, 20, 'mean', 'desc')",
+            "style": {
+              "palette": "orange"
+            },
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 30,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 0,
+      "x": 59,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 297339,
+      "title_size": 16,
+      "title": true,
+      "url": "http://www.myiconfinder.com/uploads/iconsets/256-256-cf2ed3956a3a1484f83ed20d7e987f21.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "width": 12,
+      "y": 32,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 297339,
+      "title_size": 16,
+      "title": true,
+      "url": "https://app.datadoghq.com/static/images/saas_logos/bot/amazon_ec2.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 18,
+      "width": 12,
+      "y": 0,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 297339,
+      "title_size": 16,
+      "title": true,
+      "url": "https://squadex.com/wp-content/uploads/2018/01/amazon-elasticsearch-service@2x.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 12,
+      "y": 46,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "x": 29,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Latency Read Operation",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.es.read_latency{$AWS_Account,$Region,$Enviroment,$Application}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0.5",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": ">",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 47,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "x": 29,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Throughput for Read operations",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.es.read_throughput{$AWS_Account,$Region,$Enviroment,$Application}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 53,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "x": 46,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Write latency",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.es.write_latency{$AWS_Account,$Region,$Enviroment,$Application}",
+            "aggregator": "min",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 53,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 297339,
+      "title_size": 16,
+      "title": true,
+      "url": "https://d1q6f0aelx0por.cloudfront.net/product-logos/d50b96ee-666d-43ce-8d91-d0cbb6f93ffb-rabbitmq.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 12,
+      "y": 19,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ELB-healthyhost",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.elb.healthy_host_count{$AWS_Account,$Region,$Enviroment,$Application}",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 32,
+      "x": 42,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ELB Unhealthy Status Count",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.elb.un_healthy_host_count.maximum{$AWS_Account,$Region,$Enviroment,$Application}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">="
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0",
+        "custom_unit": "coun"
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 38,
+      "x": 42,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Network In",
+      "height": 16,
+      "tile_def": {
+        "style": {
+          "fillMax": null,
+          "palette": "green_to_orange",
+          "fillMin": null,
+          "paletteFlip": false
+        },
+        "group": [
+          "name"
+        ],
+        "notes": null,
+        "noMetricHosts": false,
+        "viz": "hostmap",
+        "scope": [
+          "$AWS_Account",
+          "$Region",
+          "$Enviroment",
+          "$Application"
+        ],
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_in.maximum{$AWS_Account,$Region,$Enviroment,$Application} by {host}",
+            "type": "fill"
+          }
+        ],
+        "groupby": null,
+        "noGroupHosts": false
+      },
+      "width": 28,
+      "query": "avg:system.load.1{*} by {host}",
+      "y": 0,
+      "x": 13,
+      "legend_size": null,
+      "add_timeframe": false,
+      "type": "hostmap",
+      "legend": null,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Disk Read-WriteOPS",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.disk_read_ops{$AWS_Account,$Region,$Enviroment,$Application}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:aws.ec2.disk_write_ops{$AWS_Account,$Region,$Enviroment,$Application}",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 24,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 0,
+      "x": 118,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Request Count",
+      "height": 11,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "top(sum:aws.elb.request_count{$AWS_Account,$Region,$Enviroment,$Application}.as_count(), 10, 'mean', 'desc')",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 27,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 32,
+      "x": 90,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ELB 4XX",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.elb.httpcode_elb_4xx{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 32,
+      "x": 59,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ELB 5XX",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.elb.httpcode_elb_5xx{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 38,
+      "x": 59,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ALB 4XX",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.httpcode_elb_4xx{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">="
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 19,
+      "x": 42,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ALB 5XX",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.httpcode_elb_5xx{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "",
+                "comparator": "<="
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 25,
+      "x": 42,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System Status Check Failed",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.status_check_failed_system{$AWS_Account,$Region,$Enviroment,$Application}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": "<="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 12,
+      "x": 42,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "HTTP 4XX",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.httpcode_target_4xx{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">="
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0",
+        "custom_unit": "cnt"
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 19,
+      "x": 59,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "HTTP 5XX",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.httpcode_target_5xx{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">="
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": "cnt",
+        "precision": "0"
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 25,
+      "x": 59,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 297339,
+      "title_size": 16,
+      "title": true,
+      "url": "https://app.datadoghq.com/static/images/saas_logos/bot/amazon_route53.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "width": 12,
+      "y": 59,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "HTTP 4XX",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.elb.httpcode_target_4xx{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">="
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0",
+        "custom_unit": "cnt"
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 32,
+      "x": 73,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "HTTP 5XX",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.elb.httpcode_target_5xx{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 38,
+      "x": 73,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ALB Request Count",
+      "height": 10,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.request_count{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 27,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 19,
+      "x": 90,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU Utilization",
+      "height": 11,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:aws.elasticache.cpuutilization{$AWS_Account,$Region,$Enviroment,$Application} by {name}, 10, 'mean', 'desc')",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 28,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 59,
+      "x": 13,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Current Connections",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.elasticache.curr_connections{$AWS_Account,$Region,$Enviroment,$Application}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 59,
+      "x": 42,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Current Items",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.elasticache.curr_items{$AWS_Account,$Region,$Enviroment,$Application}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 65,
+      "x": 42,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Swap Usage",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.elasticache.swap_usage{$AWS_Account,$Region,$Enviroment,$Application}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 59,
+      "x": 59,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Freeable Memory",
+      "height": 5,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.elasticache.freeable_memory{$AWS_Account,$Region,$Enviroment,$Application}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 65,
+      "x": 59,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "autoscale": true,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Searchable documents",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.es.searchable_documents{$AWS_Account,$Region,$Enviroment,$Application}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "value": null,
+                "comparator": ">"
+              },
+              {
+                "palette": "white_on_yellow",
+                "value": null,
+                "comparator": ">="
+              },
+              {
+                "palette": "white_on_green",
+                "value": "0",
+                "comparator": ">="
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 47,
+      "x": 46,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Network In- Network Out Bytes",
+      "height": 11,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.elasticache.network_bytes_in{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:aws.elasticache.network_bytes_out{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 44,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 59,
+      "x": 73,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Event Stream",
+      "height": 51,
+      "overrideGlobalTime": true,
+      "width": 46,
+      "global_timeframe_controls": true,
+      "query": "tags:techopsenvironment:$Enviroment.value,techopsproject:$Application.value ",
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 19,
+      "x": 118,
+      "type": "event_stream",
+      "event_size": "l",
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Rule Evaluation",
+      "height": 10,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.rule_evaluations{$AWS_Account,$Region,$Enviroment,$Application}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 19,
+      "x": 73,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Network_out",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.network_out{$AWS_Account,$Region,$Enviroment,$Application}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 27,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 0,
+      "x": 90,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 297339,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Disk Write Bytes",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.ec2.disk_read_bytes{$AWS_Account,$Region,$Enviroment,$Application}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "purple",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:aws.ec2.disk_write_bytes{$AWS_Account,$Region,$Enviroment,$Application}",
+            "style": {
+              "width": "normal",
+              "palette": "purple",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 21,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 0,
+      "x": 143,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 361470,
+      "x": 12,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "No.of Nodes",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.es.nodes{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {},
+      "y": 47,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 361470,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU utilization",
+      "height": 9,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.es.cpuutilization{*} by {techops}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 26,
+      "time": {},
+      "y": 47,
+      "x": 61,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 361470,
+      "x": 88,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Free storage space",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.es.free_storage_space{$AWS_Account,$Enviroment,$Region,$Application}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": "<=",
+                "value": "2"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": "<=",
+                "value": "4"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": ">",
+                "value": "4"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 17,
+      "time": {},
+      "y": 47,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 361470,
+      "x": 88,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Free storage(max)",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.es.free_storage_space.maximum{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 17,
+      "time": {},
+      "y": 53,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 361470,
+      "x": 106,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Free storage(min)",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.es.free_storage_space.minimum{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 12,
+      "time": {},
+      "y": 53,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 361470,
+  "title_edited": false,
+  "isShared": false
+}

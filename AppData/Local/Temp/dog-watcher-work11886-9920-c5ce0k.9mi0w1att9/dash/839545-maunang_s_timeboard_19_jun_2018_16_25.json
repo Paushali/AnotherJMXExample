@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by maunang.mehta@thomsonreuters.com",
+    "title": "Maunang's Timeboard 19 Jun 2018 16:25",
+    "created": "2018-06-19T21:25:52.193779+00:00",
+    "id": 839545,
+    "created_by": {
+      "disabled": false,
+      "handle": "maunang.mehta@thomsonreuters.com",
+      "name": "Maunang Mehta",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "maunang.mehta@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/e603f37ebdb7578f7f79348d69492153?s=48&d=retro"
+    },
+    "modified": "2018-06-19T21:25:52.193791+00:00"
+  },
+  "url": "/dash/839545/maunangs-timeboard-19-jun-2018-1625",
+  "resource": "/api/v1/dash/839545"
+}

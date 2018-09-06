@@ -1,0 +1,761 @@
+{
+  "board_title": "tr.notify.runbook (Db)",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-07-12T14:58:53.673145+00:00",
+  "original_title": "tr.notify.runbook (DynamoDb)",
+  "modified": "2018-07-12T17:46:23.116497+00:00",
+  "disableEditing": false,
+  "height": 118,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "stack_name:tr-notify-db",
+      "prefix": "stack_name",
+      "name": "dbstack"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "rick.moudy@thomsonreuters.com",
+    "name": "Rick Moudy",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "Rick.Moudy@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/89a247734d5e7bcd43c6a00b8f2ef5ab?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "templated": true,
+  "widgets": [
+    {
+      "sizing": "center",
+      "board_id": 336241,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/tr-notify-nonproddev/awslogo/Database_AmazonDynamoDB.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 8,
+      "width": 15,
+      "y": 8,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "x": 16,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Avg Latency (1h)",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.dynamodb.successful_request_latency{$dbstack} by {tablename}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 8,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "x": 37,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Avg Latency (1d)",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.dynamodb.successful_request_latency{$dbstack} by {tablename}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 8,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "x": 58,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Avg Latency (1w)",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.dynamodb.successful_request_latency{$dbstack} by {application,tablename}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 8,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "x": 16,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Throttled Request (1h)",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.dynamodb.throttled_requests{$dbstack} by {tablename}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 92,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "x": 37,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Throttled Request (1d)",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.dynamodb.throttled_requests{$dbstack} by {tablename}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 23,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 92,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "x": 61,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Throttled Request (1w)",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.dynamodb.throttled_requests{$dbstack} by {tablename}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 23,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 92,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "right",
+      "text_align": "center",
+      "title_text": "",
+      "height": 54,
+      "bgcolor": "blue",
+      "html": "##Capacity",
+      "x": 0,
+      "y": 17,
+      "title_size": 16,
+      "tick": true,
+      "type": "note",
+      "width": 15,
+      "auto_refresh": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "height": 5,
+      "bgcolor": "blue",
+      "html": "Latency",
+      "x": 16,
+      "y": 2,
+      "title_size": 16,
+      "tick": true,
+      "type": "note",
+      "width": 62,
+      "auto_refresh": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Consumed read by table",
+      "height": 17,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:aws.dynamodb.consumed_read_capacity_units{$dbstack} by {tablename}, 10, 'sum', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 44,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 72,
+      "x": 16,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Read Provisioned vs consumed",
+      "height": 24,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.dynamodb.consumed_read_capacity_units{$dbstack} by {tablename}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "dotted"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "sum:aws.dynamodb.provisioned_read_capacity_units{$dbstack} by {tablename}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 89,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 45,
+      "x": 16,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Consumed write by table",
+      "height": 17,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:aws.dynamodb.consumed_write_capacity_units{$dbstack} by {tablename}, 10, 'sum', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 44,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 72,
+      "x": 61,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Write Provisioned vs consumed",
+      "height": 25,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.dynamodb.consumed_write_capacity_units{$dbstack} by {tablename}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "dotted"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "sum:aws.dynamodb.provisioned_write_capacity_units{$dbstack} by {tablename}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 89,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 17,
+      "x": 16,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "font_size": "auto",
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "DynamoDb",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 5,
+      "width": 15,
+      "x": 0,
+      "y": 2,
+      "title_size": 16,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Throttling (Past Day)",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.dynamodb.throttled_requests{$dbstack}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 44,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 101,
+      "x": 16,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Throttling (Past Week)",
+      "height": 15,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.dynamodb.throttled_requests{$dbstack}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 44,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 101,
+      "x": 61,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Write throttle events (count)",
+      "height": 17,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:aws.dynamodb.write_throttle_events{$dbstack} by {tablename}.as_count(), 10, 'mean', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 44,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 119,
+      "x": 16,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "right",
+      "text_align": "center",
+      "title_text": "",
+      "height": 46,
+      "bgcolor": "blue",
+      "html": "##Throttling",
+      "x": 0,
+      "y": 92,
+      "title_size": 16,
+      "tick": true,
+      "type": "note",
+      "width": 15,
+      "auto_refresh": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Write throttle events (count)",
+      "height": 17,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:aws.dynamodb.write_throttle_events{$dbstack} by {tablename}.as_count(), 10, 'mean', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 44,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 119,
+      "x": 61,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 336241,
+      "font_size": "14",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "right",
+      "text_align": "center",
+      "title_text": "",
+      "height": 20,
+      "bgcolor": "blue",
+      "html": "",
+      "x": 0,
+      "y": 71,
+      "title_size": 16,
+      "tick": false,
+      "type": "note",
+      "width": 15,
+      "auto_refresh": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 382048,
+  "title_edited": true,
+  "isShared": false
+}

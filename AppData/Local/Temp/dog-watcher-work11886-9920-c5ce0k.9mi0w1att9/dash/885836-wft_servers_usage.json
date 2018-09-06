@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by satishkumar.maddala@thomsonreuters.com",
+    "title": "WFT Servers usage",
+    "created": "2018-08-12T04:34:18.321880+00:00",
+    "id": 885836,
+    "created_by": {
+      "disabled": false,
+      "handle": "satishkumar.maddala@thomsonreuters.com",
+      "name": "Satish Maddala",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "satishkumar.maddala@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/30fc10e7618f96488fa3059b565b9e00?s=48&d=retro"
+    },
+    "modified": "2018-08-12T04:34:18.321898+00:00"
+  },
+  "url": "/dash/885836/wft-servers-usage",
+  "resource": "/api/v1/dash/885836"
+}

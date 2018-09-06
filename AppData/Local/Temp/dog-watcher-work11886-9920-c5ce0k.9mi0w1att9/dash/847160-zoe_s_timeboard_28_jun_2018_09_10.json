@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by zoe.jobson@thomsonreuters.com",
+    "title": "Zoe's Timeboard 28 Jun 2018 09:10",
+    "created": "2018-06-28T08:10:59.405186+00:00",
+    "id": 847160,
+    "created_by": {
+      "disabled": false,
+      "handle": "zoe.jobson@thomsonreuters.com",
+      "name": "Zoe Jobson",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "zoe.jobson@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/401c57dc4031210f35c1374cf79bc154?s=48&d=retro"
+    },
+    "modified": "2018-06-28T08:10:59.405202+00:00"
+  },
+  "url": "/dash/847160/zoes-timeboard-28-jun-2018-0910",
+  "resource": "/api/v1/dash/847160"
+}

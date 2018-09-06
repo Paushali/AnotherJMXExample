@@ -1,0 +1,169 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(avg:OTIR.TinMatchService.TinMatchService.request.timer.avg{*} by {path}, 10, 'mean', 'desc')",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "TIN Match API Latency"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(sum:OTIR.TinMatchService.TINMatchWorker.AgentLocked{*} by {host,tr_environment-type}, 10, 'mean', 'desc')",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "orange",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Agent Locked Status"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:OTIR.TinMatchService.TinMatchService_V1.0.Results_hits{*}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Results API Hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:OTIR.TinMatchService.batchqueuesize{*}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Batch Queue Size"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:OTIR.TinMatchService.TinMatchService_V1.0.Operations_hits{*}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Operations API Hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:OTIR.TinMatchService.retryqueuesize{*}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Retry Queue Size"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:OTIR.TinMatchService.TinMatchService_V1.0.Validations_hits{*}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Validations API Hits"
+      }
+    ],
+    "description": "created by jacob.john@thomsonreuters.com",
+    "title": "eTIN Service & Worker Process",
+    "created": "2018-07-26T15:26:23.727870+00:00",
+    "id": 872068,
+    "created_by": {
+      "disabled": false,
+      "handle": "jacob.john@thomsonreuters.com",
+      "name": "Jacob John Kadambanattu",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "jacob.john@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/3393b408a67b6584fd808153e1d75700?s=48&d=retro"
+    },
+    "modified": "2018-08-24T15:00:32.913274+00:00"
+  },
+  "url": "/dash/872068/etin-service--worker-process",
+  "resource": "/api/v1/dash/872068"
+}

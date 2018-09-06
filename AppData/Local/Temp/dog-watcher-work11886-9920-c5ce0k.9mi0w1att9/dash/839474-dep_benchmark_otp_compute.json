@@ -1,0 +1,146 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:FlinkProvisionJob.FlinkBenchmark.FlinkProvisionAverageRecordTime{*}.fill(null)",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:FlinkProvisionJob.DEPFlinkBenchmark.ProcessingTime{*}.fill(null)/avg:FlinkProvisionJob.DEPFlinkBenchmark.RecordCount{*}.fill(null)",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Average milliseconds per record"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:FlinkProvisionJob.DEPFlinkBenchmark.RecordCount{*}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Total Records"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "100*(avg:system.mem.used{$cluster_name}/(avg:system.mem.used{$cluster_name}+avg:system.mem.free{$cluster_name}))",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory Used %"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.load.1{$cluster_name} by {host}.fill(linear)",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "System load of cluster"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:FlinkProvisionJob.DEPFlinkBenchmark.ProcessingTime{*}.fill(null)",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Total Time"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "dep-otp-benchmark",
+        "prefix": "project_name",
+        "name": "cluster_name"
+      }
+    ],
+    "description": "created by nazar.halokha@thomsonreuters.com (cloned)",
+    "title": "DEP Benchmark OTP Compute",
+    "created": "2018-06-19T20:10:11.948444+00:00",
+    "id": 839474,
+    "created_by": {
+      "disabled": false,
+      "handle": "joshua.deng@thomsonreuters.com",
+      "name": "Joshua Deng",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "joshua.deng@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/5187480aba84c9f14c2ab6f3a268b934?s=48&d=retro"
+    },
+    "modified": "2018-06-22T20:55:59.439632+00:00"
+  },
+  "url": "/dash/839474/dep-benchmark-otp-compute",
+  "resource": "/api/v1/dash/839474"
+}

@@ -1,0 +1,161 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:network.http.response_time{host:i-06413fb7969563c8d} by {app}",
+              "aggregator": "avg",
+              "style": {
+                "width": "thin",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "FQDN HTTP Response Time [Avg] [APP]"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(avg:network.http.response_time{host:i-06413fb7969563c8d} by {app}, 20, 'mean', 'desc')",
+              "style": {
+                "palette": "cool"
+              },
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Top 20 Avg Response Times [APP]"
+      },
+      {
+        "definition": {
+          "viz": "toplist",
+          "status": "done",
+          "requests": [
+            {
+              "q": "top(avg:network.http.response_time{host:i-06413fb7969563c8d} by {url}, 100, 'mean', 'desc')",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Top 20 Avg Response Times [URL]"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:network.http.response_time{host:i-06413fb7969563c8d} by {url}",
+              "aggregator": "avg",
+              "style": {
+                "width": "thin",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "FQDN HTTP Response Time [Individual]"
+      },
+      {
+        "definition": {
+          "viz": "change",
+          "status": "done",
+          "requests": [
+            {
+              "extra_col": "present",
+              "change_type": "absolute",
+              "order_dir": "desc",
+              "compare_to": "day_before",
+              "q": "avg:network.http.response_time{host:i-06413fb7969563c8d} by {app}",
+              "increase_good": false,
+              "order_by": "change"
+            }
+          ]
+        },
+        "title": "Avg Change Response Time [App]"
+      },
+      {
+        "definition": {
+          "viz": "change",
+          "status": "done",
+          "requests": [
+            {
+              "extra_col": "present",
+              "change_type": "relative",
+              "order_dir": "desc",
+              "compare_to": "day_before",
+              "q": "avg:network.http.response_time{host:i-06413fb7969563c8d} by {url}",
+              "increase_good": false,
+              "order_by": "change"
+            }
+          ]
+        },
+        "title": "Avg Change Response Time [URL]"
+      },
+      {
+        "definition": {
+          "viz": "query_value",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:network.http.response_time{host:i-06413fb7969563c8d}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "precision": "3"
+        },
+        "title": "Average HTTP Response Time for all FQDN"
+      }
+    ],
+    "description": "created by tim.fagergren@thomsonreuters.com",
+    "title": "trta-idt-devops PROD Timeboard",
+    "created": "2017-12-12T18:35:39.520430+00:00",
+    "id": 419421,
+    "created_by": {
+      "disabled": false,
+      "handle": "tim.fagergren@thomsonreuters.com",
+      "name": "Timothy Fagergren",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Tim.Fagergren@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/ef0829926735010b693117978dad8574?s=48&d=retro"
+    },
+    "modified": "2018-07-17T18:42:43.306869+00:00"
+  },
+  "url": "/dash/419421/trta-idt-devops-prod-timeboard",
+  "resource": "/api/v1/dash/419421"
+}

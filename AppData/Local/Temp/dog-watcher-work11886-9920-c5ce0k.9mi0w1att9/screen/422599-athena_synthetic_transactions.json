@@ -1,0 +1,1313 @@
+{
+  "board_title": "Athena-SyntheticTransactions",
+  "read_only": false,
+  "isIntegration": false,
+  "showGlobalTimeOnboarding": true,
+  "board_bgtype": "board_graph",
+  "created": "2018-08-29T06:13:59.867666+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "rajesh.pallapothu@thomsonreuters.com",
+    "name": "Rajesh Pallapothu",
+    "is_admin": false,
+    "role": "",
+    "access_role": "st",
+    "verified": true,
+    "email": "Rajesh.pallapothu@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/7d823f2b88ee86a28f03a554c4cadb59?s=48&d=retro"
+  },
+  "original_title": "Athena-SyntheticTransactions-TestResults",
+  "modified": "2018-09-06T10:42:10.342201+00:00",
+  "disableEditing": false,
+  "height": 152,
+  "width": "100%",
+  "template_variables": [],
+  "originalHeight": 152,
+  "originalWidth": "100%",
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 245555,
+      "tick": false,
+      "font_size": "36",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "auto_refresh": false,
+      "bgcolor": "blue",
+      "html": "Athena Synthetic Transactions",
+      "x": 10,
+      "y": 0,
+      "title_size": 16,
+      "height": 7,
+      "type": "note",
+      "width": 120,
+      "isShared": false
+    },
+    {
+      "board_id": 245555,
+      "x": 12,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Maximum",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{product:oct,environment:emea}",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": "min"
+      },
+      "width": 14,
+      "time": {},
+      "y": 25,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 245555,
+      "x": 26,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Average",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:emea,product:oct}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": "min"
+      },
+      "width": 14,
+      "time": {},
+      "y": 25,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 306036,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Synthetic Transactions OCT EMEA (Success vs Failure)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:emea,product:oct,result:pass}",
+            "aggregator": "avg",
+            "style": {
+              "width": "thick",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:emea,product:oct,result:fail}",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 56,
+      "time": {},
+      "y": 36,
+      "x": 12,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "x": 12,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Synthetic Transactions Status (Success=1, Fail=0)",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.ExecutionStatus{environment:emea,product:oct}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "comparator": ">",
+                "value": "0"
+              },
+              {
+                "palette": "white_on_red",
+                "comparator": "<=",
+                "value": "0"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 56,
+      "time": {},
+      "y": 14,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "tick": false,
+      "font_size": "36",
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "auto_refresh": false,
+      "bgcolor": "blue",
+      "html": "OCT EMEA",
+      "x": 10,
+      "y": 7,
+      "title_size": 16,
+      "height": 7,
+      "tick_pos": "50%",
+      "width": 60,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "tick": false,
+      "font_size": "36",
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "auto_refresh": false,
+      "bgcolor": "blue",
+      "html": "OCT APAC",
+      "x": 70,
+      "y": 7,
+      "title_size": 16,
+      "height": 7,
+      "tick_pos": "50%",
+      "width": 60,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "tick": false,
+      "font_size": "36",
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "auto_refresh": false,
+      "bgcolor": "blue",
+      "html": "OITC EMEA",
+      "x": 10,
+      "y": 54,
+      "title_size": 16,
+      "height": 7,
+      "tick_pos": "50%",
+      "width": 60,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "tick": false,
+      "font_size": "36",
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "auto_refresh": false,
+      "bgcolor": "blue",
+      "html": "OITC APAC",
+      "x": 70,
+      "y": 54,
+      "title_size": 16,
+      "height": 7,
+      "tick_pos": "50%",
+      "width": 60,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "x": 72,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Synthetic Transactions Status (Success=1, Fail=0)",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.ExecutionStatus{product:oct,environment:apac}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "comparator": ">",
+                "value": "0"
+              },
+              {
+                "palette": "white_on_red",
+                "comparator": "<=",
+                "value": "0"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 56,
+      "time": {},
+      "y": 14,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "x": 40,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Minimum",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{product:oct,environment:emea}",
+            "aggregator": "min",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "2",
+        "custom_unit": "min"
+      },
+      "width": 14,
+      "time": {},
+      "y": 25,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "x": 72,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Maximum",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:apac,product:oct}",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": "min"
+      },
+      "width": 14,
+      "time": {},
+      "y": 25,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "x": 86,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Average",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:apac,product:oct}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": "min"
+      },
+      "width": 14,
+      "time": {},
+      "y": 25,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "x": 100,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Minimum",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:apac,product:oct}",
+            "aggregator": "min",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": "min"
+      },
+      "width": 14,
+      "time": {},
+      "y": 25,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Synthetic Transactions OCT APAC (Success vs Failure)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:apac,product:oct,result:pass}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:apac,product:oct,result:fail}",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 56,
+      "time": {},
+      "y": 36,
+      "x": 72,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "x": 12,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Synthetic Transactions Status (Success=1, Fail=0)",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.ExecutionStatus{product:oitc,environment:emea}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "comparator": ">",
+                "value": "0"
+              },
+              {
+                "palette": "white_on_red",
+                "comparator": "<=",
+                "value": "0"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 56,
+      "time": {},
+      "y": 61,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "x": 72,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Synthetic Transactions Status (Success=1, Fail=0)",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.ExecutionStatus{product:oitc,environment:apac}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "comparator": ">",
+                "value": "0"
+              },
+              {
+                "palette": "white_on_red",
+                "comparator": "<=",
+                "value": "0"
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "precision": "0"
+      },
+      "width": 56,
+      "time": {},
+      "y": 61,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "x": 12,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Maximum",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{product:oitc,environment:emea}",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": "min"
+      },
+      "width": 14,
+      "time": {},
+      "y": 72,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "x": 26,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Average",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{product:oitc,environment:emea}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": "min"
+      },
+      "width": 14,
+      "time": {},
+      "y": 72,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "x": 40,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Minimum",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:emea,product:oitc}",
+            "aggregator": "min",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": "min"
+      },
+      "width": 14,
+      "time": {},
+      "y": 72,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Synthetic Transactions OITC EMEA (Success vs Failure)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:emea,product:oitc,result:pass}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:emea,product:oitc,result:fail}",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 56,
+      "time": {},
+      "y": 83,
+      "x": 12,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "x": 72,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Maximum",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:apac,product:oitc}",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": "min"
+      },
+      "width": 14,
+      "time": {},
+      "y": 72,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "x": 86,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Average",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:apac,product:oitc}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": "min"
+      },
+      "width": 14,
+      "time": {},
+      "y": 72,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "x": 100,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Minimum",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:apac,product:oitc}",
+            "aggregator": "min",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": "min"
+      },
+      "width": 14,
+      "time": {},
+      "y": 72,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Synthetic Transactions OITC APAC (Success vs Failure)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:apac,product:oitc,result:pass}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{product:oitc,result:fail,environment:apac}",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 56,
+      "time": {},
+      "y": 83,
+      "x": 72,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "x": 114,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Last",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:apac,product:oct}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": "min"
+      },
+      "width": 14,
+      "time": {},
+      "y": 25,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "x": 54,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Last",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:emea,product:oct}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": "min"
+      },
+      "width": 14,
+      "time": {},
+      "y": 25,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "x": 54,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Last",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:emea,product:oitc}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": "min"
+      },
+      "width": 14,
+      "time": {},
+      "y": 72,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 422599,
+      "x": 114,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Last",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:apac,product:oitc}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": false,
+        "custom_unit": "min"
+      },
+      "width": 14,
+      "time": {},
+      "y": 72,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 422599,
+  "title_edited": true,
+  "isShared": false
+}

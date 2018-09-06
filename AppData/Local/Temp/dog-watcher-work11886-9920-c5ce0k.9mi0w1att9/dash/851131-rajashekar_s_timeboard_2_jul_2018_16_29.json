@@ -1,0 +1,50 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "toplist",
+          "requests": [
+            {
+              "q": "top(avg:system.disk.used{service:ooxp,device:/dev/mapper/datavg-appserverlv} by {host}, 10, 'mean', 'desc')",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": [
+                {
+                  "palette": "white_on_green",
+                  "comparator": "<=",
+                  "value": "25"
+                }
+              ]
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of system.disk.used over service:ooxp,device:/dev/mapper/datavg-appserver..."
+      }
+    ],
+    "description": "created by raj.meka@thomsonreuters.com",
+    "title": "Rajashekar's Timeboard 2 Jul 2018 16:29",
+    "created": "2018-07-02T21:29:30.631425+00:00",
+    "id": 851131,
+    "created_by": {
+      "disabled": false,
+      "handle": "raj.meka@thomsonreuters.com",
+      "name": "Rajashekar Meka",
+      "is_admin": false,
+      "role": "Devops Automation Engineer",
+      "access_role": "st",
+      "verified": true,
+      "email": "Raj.Meka@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/45a8fa12a9c7a82b67e01c0f1a5e3cf2?s=48&d=retro"
+    },
+    "modified": "2018-07-02T21:35:13.025542+00:00"
+  },
+  "url": "/dash/851131/rajashekars-timeboard-2-jul-2018-1629",
+  "resource": "/api/v1/dash/851131"
+}

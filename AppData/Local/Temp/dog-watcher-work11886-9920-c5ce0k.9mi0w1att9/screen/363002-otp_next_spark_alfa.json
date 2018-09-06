@@ -1,0 +1,510 @@
+{
+  "board_title": "OTP-NEXT-SPARK-ALFA",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-06-20T07:06:45.146283+00:00",
+  "original_title": "Volodymyr's Screenboard 14 Jun 2018 18:40",
+  "modified": "2018-06-21T12:18:08.611793+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "volodymyr.antonichuk@thomsonreuters.com",
+    "name": "Volodymyr Antonichuk",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "volodymyr.antonichuk@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/159fe34512335c4d4154517a391915c1?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "widgets": [
+    {
+      "board_id": 359231,
+      "title_size": 13,
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "Agent Up",
+      "height": 6,
+      "width": 13,
+      "tags": [
+        "*"
+      ],
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 5,
+      "x": 14,
+      "text_size": "auto",
+      "grouping": "check",
+      "type": "check_status",
+      "check": "datadog.agent.up",
+      "group": "host:alfa-master",
+      "isShared": false
+    },
+    {
+      "board_id": 359231,
+      "title_size": 13,
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "Agent Up",
+      "height": 6,
+      "width": 13,
+      "tags": [
+        "*"
+      ],
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 12,
+      "x": 14,
+      "text_size": "auto",
+      "grouping": "check",
+      "type": "check_status",
+      "check": "datadog.agent.up",
+      "group": "host:alfa-worker1",
+      "isShared": false
+    },
+    {
+      "board_id": 359231,
+      "title_size": 13,
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "Agent Up",
+      "height": 6,
+      "width": 13,
+      "tags": [
+        "*"
+      ],
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 19,
+      "x": 14,
+      "text_size": "auto",
+      "grouping": "check",
+      "type": "check_status",
+      "check": "datadog.agent.up",
+      "group": "host:alfa-worker2",
+      "isShared": false
+    },
+    {
+      "board_id": 359231,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Free memory on Spark Instances",
+      "height": 18,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.mem.free{host:alfa-master}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:system.mem.free{host:alfa-worker1}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          },
+          {
+            "q": "avg:system.mem.free{host:alfa-worker2}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 46,
+      "time": {},
+      "y": 5,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 359231,
+      "title_size": 16,
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "alfa-master",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 6,
+      "width": 11,
+      "y": 5,
+      "x": 1,
+      "font_size": "auto",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 359231,
+      "title_size": 16,
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "alfa-worker1",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 6,
+      "width": 11,
+      "y": 12,
+      "x": 1,
+      "font_size": "auto",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 359231,
+      "title_size": 16,
+      "title": true,
+      "color": "#4d4d4d",
+      "text": "alfa-worker2",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 6,
+      "width": 11,
+      "y": 19,
+      "x": 1,
+      "font_size": "auto",
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 359231,
+      "x": 29,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU load spark-master",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.load.1{host:alfa-master}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 12,
+      "time": {},
+      "y": 5,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 359231,
+      "x": 29,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU load spark-worker-1",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.load.1{host:alfa-worker1}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 12,
+      "time": {},
+      "y": 12,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 359231,
+      "x": 29,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU load spark-worker-2",
+      "height": 4,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.load.1{host:alfa-worker2}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 12,
+      "time": {},
+      "y": 19,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 359231,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Free Disk Space on Spark Instances",
+      "height": 18,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.disk.free{host:alfa-master}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:system.disk.free{host:alfa-worker1}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          },
+          {
+            "q": "avg:system.disk.free{host:alfa-worker2}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 46,
+      "time": {},
+      "y": 5,
+      "x": 90,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 359231,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU load on spark",
+      "height": 17,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.cpu.user{host:alfa-master}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:system.cpu.user{host:alfa-worker1}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          },
+          {
+            "q": "avg:system.cpu.user{host:alfa-worker2}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 93,
+      "time": {},
+      "y": 26,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 359231,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Spark instances uptime",
+      "height": 18,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.uptime{host:alfa-master}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:system.uptime{host:alfa-worker1}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars"
+          },
+          {
+            "q": "avg:system.uptime{host:alfa-worker2}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 93,
+      "time": {
+        "live_span": "3mo"
+      },
+      "y": 46,
+      "x": 43,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 363002,
+  "title_edited": false,
+  "isShared": false
+}

@@ -1,0 +1,361 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:system.mem.used{app:directtax,env:dc,service:grs,servertype:app} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "MEMORY used - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "error",
+          "requests": [
+            {
+              "q": "max:dtxp.mem.pages{app:directtax,env:dc,service:grs,servertype:app} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "MEMORY faults in file system cache - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "error",
+          "requests": [
+            {
+              "q": "max:dtxp.mem.avaialble{app:directtax,env:dc,service:grs,servertype:app} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "MEMORY available in MBytes - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "error",
+          "requests": [
+            {
+              "q": "max:dtxp.system.uptime{app:directtax,env:dc,service:grs,servertype:app} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "SYSTEM uptime - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "error",
+          "requests": [
+            {
+              "q": "max:dtxp.system.cpu.user.pct{app:directtax,env:dc,service:grs,servertype:app} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "SYSTEM cpu percentage - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "error",
+          "requests": [
+            {
+              "q": "max:dtxp.system.proc.context_switches{app:directtax,env:dc,service:grs,servertype:app} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:dtxp.system.cpu.idle.pct{app:directtax} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "max:dtxp.system.cpu.interrupt.pct{app:directtax,env:dc} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CPU context switch and Interrupt - Latency"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "error",
+          "requests": [
+            {
+              "q": "avg:dtxp.system.disk.avgsecperread{app:directtax,env:dc,service:grs,servertype:app} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:dtxp.system.disk.avgsecperwrite{app:directtax,env:dc,service:grs,servertype:app} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "DISK avg seconds per read/write - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "error",
+          "requests": [
+            {
+              "q": "avg:dtxp.system.disk.avgqueuelength{app:directtax,env:dc,service:grs,servertype:app} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "DISK - Latency"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "error",
+          "requests": [
+            {
+              "q": "max:dtxp.system.network.bytes_rcvd{app:directtax,env:dc,service:grs,servertype:app} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:dtxp.system.network.bytes_sent{app:directtax,env:dc,service:grs,servertype:app} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "orange",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "NETWORK - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "error",
+          "requests": [
+            {
+              "q": "max:dtxp.latency.processqueue.length{app:directtax,env:dc,service:grs,servertype:app} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "PROCESS queue length - Latency"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "error",
+          "requests": [
+            {
+              "q": "avg:dtxp.process.handles.count{app:directtax,env:dc,service:grs} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ROLE Handles Count - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "error",
+          "requests": [
+            {
+              "q": "avg:dtxp.process.threads.count{app:directtax,env:dc,service:grs} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ROLE Thread Count - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "error",
+          "requests": [
+            {
+              "q": "avg:dtxp.process.mem.privatebytes{app:directtax,env:dc,service:grs} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ROLE private bytes allocated - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "error",
+          "requests": [
+            {
+              "q": "avg:dtxp.process.mem.virtualbytes{app:directtax,env:dc,service:grs} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "ROLE virtual bytes allocated - Utilization"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "*",
+        "prefix": null,
+        "name": "CPU"
+      }
+    ],
+    "description": "created by maunang.mehta@thomsonreuters.com (cloned) (cloned)",
+    "title": "DTXP PROD - GoSystem, App Servers",
+    "created": "2018-02-22T16:46:52.203477+00:00",
+    "id": 591048,
+    "created_by": {
+      "disabled": false,
+      "handle": "maunang.mehta@thomsonreuters.com",
+      "name": "Maunang Mehta",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "maunang.mehta@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/e603f37ebdb7578f7f79348d69492153?s=48&d=retro"
+    },
+    "modified": "2018-09-06T19:59:45.363439+00:00"
+  },
+  "url": "/dash/591048/dtxp-prod---gosystem-app-servers",
+  "resource": "/api/v1/dash/591048"
+}

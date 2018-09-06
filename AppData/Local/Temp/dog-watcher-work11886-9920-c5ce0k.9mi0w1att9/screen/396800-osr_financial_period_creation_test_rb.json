@@ -1,0 +1,225 @@
+{
+  "board_title": "OSR Financial Period Creation (Test) RB",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-07-30T11:05:19.151189+00:00",
+  "original_title": "OSR Financial Period Creation (Test)",
+  "modified": "2018-07-30T11:42:08.766230+00:00",
+  "disableEditing": false,
+  "height": 64,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "richard.breading@thomsonreuters.com",
+    "name": "Richard Breading",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "richard.breading@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/765d1db21f3c67d4626da2eac47c3a75?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "widgets": [
+    {
+      "board_id": 390956,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "AMERS (seconds)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.fpcreatetimes{host:trta.osr.dashboardbox,tr.osr.test:barossa-prod-headlessentitytests,tr.osr.test.templatename:australia} by {tr.osr.test.templatename}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 108,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 33,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 390956,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "APAC (seconds)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.fpcreatetimes{host:trta.osr.dashboardbox,tr.osr.test:barossa-prod-apac-headlessentitytests,tr.osr.test.templatename:australia} by {tr.osr.test.templatename}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 108,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 49,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 390956,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "SAT (seconds)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.fpcreatetimes{host:trta.osr.dashboardbox,tr.osr.test:barossa-sat-headlessentitytests} by {tr.osr.test.templatename}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "2d"
+      },
+      "y": 17,
+      "x": 49,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 390956,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA (seconds)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.fpcreatetimes{host:trta.osr.dashboardbox,tr.osr.test:barossa-qa-headlessentitytests} by {tr.osr.test.templatename}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "2d"
+      },
+      "y": 17,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 390956,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Demo (seconds)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.fpcreatetimes{host:trta.osr.dashboardbox,tr.osr.test:barossa-demo-headlessentitytests} by {tr.osr.test.templatename}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "2d"
+      },
+      "y": 1,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 390956,
+      "x": 49,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "tags_execution": "and",
+      "height": 9,
+      "width": 47,
+      "global_timeframe_controls": true,
+      "title_text": "Data polled",
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 3,
+      "query": "Build poll time ",
+      "type": "event_timeline",
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 396800,
+  "title_edited": false,
+  "isShared": false
+}

@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by jacob.john@thomsonreuters.com",
+    "title": "Jacob's Timeboard 1 Aug 2018 13:08",
+    "created": "2018-08-01T18:08:18.257099+00:00",
+    "id": 877087,
+    "created_by": {
+      "disabled": false,
+      "handle": "jacob.john@thomsonreuters.com",
+      "name": "Jacob John Kadambanattu",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "jacob.john@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/3393b408a67b6584fd808153e1d75700?s=48&d=retro"
+    },
+    "modified": "2018-08-01T18:08:18.257117+00:00"
+  },
+  "url": "/dash/877087/jacobs-timeboard-1-aug-2018-1308",
+  "resource": "/api/v1/dash/877087"
+}

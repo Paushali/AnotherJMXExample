@@ -1,0 +1,115 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:crrmonitor.ReplicationSpeed{*}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "purple",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:crrmonitor.ReplicationSpeed{*}",
+              "style": {
+                "width": "normal",
+                "palette": "orange",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CRRMonitor Replication Speed: Average vs Max"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:crrmonitor.FailedReplications{*}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "purple",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:crrmonitor.FailedReplications{*}",
+              "style": {
+                "width": "normal",
+                "palette": "orange",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CRRMonitor Failed Replications: Average vs Max"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:crrmonitor.ReplicationObjects{*}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "purple",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:crrmonitor.ReplicationObjects{*}",
+              "style": {
+                "width": "normal",
+                "palette": "orange",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CRRMonitor Replication Objects: Average vs Max"
+      }
+    ],
+    "description": "created by zeyad.emara@thomsonreuters.com",
+    "title": "Zeyad's CRR Monitor Dashboard",
+    "created": "2018-07-30T16:02:44.375006+00:00",
+    "id": 874767,
+    "created_by": {
+      "disabled": false,
+      "handle": "zeyad.emara@thomsonreuters.com",
+      "name": "Zeyad Emara",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Zeyad.Emara@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/5d23855ccc3b9a9a3ae472a765f1e22d?s=48&d=retro"
+    },
+    "modified": "2018-07-31T13:36:04.401851+00:00"
+  },
+  "url": "/dash/874767/zeyads-crr-monitor-dashboard",
+  "resource": "/api/v1/dash/874767"
+}

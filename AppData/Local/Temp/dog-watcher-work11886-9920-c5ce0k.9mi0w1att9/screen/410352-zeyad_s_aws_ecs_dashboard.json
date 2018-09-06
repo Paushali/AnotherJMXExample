@@ -1,0 +1,1067 @@
+{
+  "board_title": "Zeyad's AWS ECS Dashboard",
+  "read_only": false,
+  "guid": 689,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-08-14T15:35:49.867817+00:00",
+  "canonical_units": {
+    "errors": [
+      {
+        "scale_factor": 1,
+        "plural": "errors",
+        "id": 44,
+        "short_name": "errs",
+        "name": "error"
+      }
+    ],
+    "network": [
+      {
+        "scale_factor": 1,
+        "plural": "packets",
+        "id": 26,
+        "short_name": "pkts",
+        "name": "packet"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "segments",
+        "id": 27,
+        "short_name": "segs",
+        "name": "segment"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "responses",
+        "id": 28,
+        "short_name": "rsps",
+        "name": "response"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "messages",
+        "id": 29,
+        "short_name": "msgs",
+        "name": "message"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "payloads",
+        "id": 30,
+        "short_name": null,
+        "name": "payload"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "requests",
+        "id": 19,
+        "short_name": "reqs",
+        "name": "request"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "connections",
+        "id": 18,
+        "short_name": "conns",
+        "name": "connection"
+      }
+    ],
+    "money": [
+      {
+        "scale_factor": 1,
+        "plural": "cents",
+        "id": 43,
+        "short_name": "¢",
+        "name": "cent"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "dollars",
+        "id": 42,
+        "short_name": "$",
+        "name": "dollar"
+      }
+    ],
+    "cache": [
+      {
+        "scale_factor": 1,
+        "plural": "evictions",
+        "id": 41,
+        "short_name": null,
+        "name": "eviction"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "misses",
+        "id": 40,
+        "short_name": null,
+        "name": "miss"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "hits",
+        "id": 39,
+        "short_name": "hits",
+        "name": "hit"
+      }
+    ],
+    "db": [
+      {
+        "scale_factor": 1,
+        "plural": "transactions",
+        "id": 36,
+        "short_name": "txs",
+        "name": "transaction"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "tables",
+        "id": 33,
+        "short_name": null,
+        "name": "table"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "indices",
+        "id": 34,
+        "short_name": "idxs",
+        "name": "index"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "locks",
+        "id": 35,
+        "short_name": null,
+        "name": "lock"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "queries",
+        "id": 37,
+        "short_name": null,
+        "name": "query"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "rows",
+        "id": 38,
+        "short_name": "row",
+        "name": "row"
+      }
+    ],
+    "system": [
+      {
+        "scale_factor": 1,
+        "plural": "cores",
+        "id": 31,
+        "short_name": null,
+        "name": "core"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "hosts",
+        "id": 45,
+        "short_name": null,
+        "name": "host"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "nodes",
+        "id": 46,
+        "short_name": null,
+        "name": "node"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "threads",
+        "id": 32,
+        "short_name": null,
+        "name": "thread"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "processes",
+        "id": 20,
+        "short_name": "procs",
+        "name": "process"
+      }
+    ],
+    "bytes": [
+      {
+        "scale_factor": 0.125,
+        "plural": "bits",
+        "id": 1,
+        "short_name": "b",
+        "name": "bit"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "bytes",
+        "id": 2,
+        "short_name": "B",
+        "name": "byte"
+      },
+      {
+        "scale_factor": 1024,
+        "plural": "kibibytes",
+        "id": 3,
+        "short_name": "KiB",
+        "name": "kibibyte"
+      },
+      {
+        "scale_factor": 1048576,
+        "plural": "mebibytes",
+        "id": 4,
+        "short_name": "MiB",
+        "name": "mebibyte"
+      },
+      {
+        "scale_factor": 1073741824,
+        "plural": "gibibytes",
+        "id": 5,
+        "short_name": "GiB",
+        "name": "gibibyte"
+      },
+      {
+        "scale_factor": 1099511627776,
+        "plural": "tebibytes",
+        "id": 6,
+        "short_name": "TiB",
+        "name": "tebibyte"
+      },
+      {
+        "scale_factor": 1125899906842620,
+        "plural": "pebibytes",
+        "id": 7,
+        "short_name": "PiB",
+        "name": "pebibyte"
+      },
+      {
+        "scale_factor": 1152921504606850000,
+        "plural": "exbibytes",
+        "id": 8,
+        "short_name": "EiB",
+        "name": "exbibyte"
+      }
+    ],
+    "time": [
+      {
+        "scale_factor": 0.000001,
+        "plural": "microseconds",
+        "id": 9,
+        "short_name": "us",
+        "name": "microsecond"
+      },
+      {
+        "scale_factor": 0.001,
+        "plural": "milliseconds",
+        "id": 10,
+        "short_name": "ms",
+        "name": "millisecond"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "seconds",
+        "id": 11,
+        "short_name": "s",
+        "name": "second"
+      },
+      {
+        "scale_factor": 60,
+        "plural": "minutes",
+        "id": 12,
+        "short_name": "mins",
+        "name": "minute"
+      },
+      {
+        "scale_factor": 3600,
+        "plural": "hours",
+        "id": 13,
+        "short_name": "hrs",
+        "name": "hour"
+      },
+      {
+        "scale_factor": 86400,
+        "plural": "days",
+        "id": 14,
+        "short_name": "days",
+        "name": "day"
+      },
+      {
+        "scale_factor": 604800,
+        "plural": "weeks",
+        "id": 15,
+        "short_name": "wks",
+        "name": "week"
+      }
+    ],
+    "memory": [
+      {
+        "scale_factor": 1,
+        "plural": "buffers",
+        "id": 22,
+        "short_name": "buffs",
+        "name": "buffer"
+      }
+    ],
+    "percentage": [
+      {
+        "scale_factor": 1,
+        "plural": "percent",
+        "id": 17,
+        "short_name": "%",
+        "name": "percent"
+      },
+      {
+        "scale_factor": 100,
+        "plural": "fractions",
+        "id": 16,
+        "short_name": null,
+        "name": "fraction"
+      }
+    ],
+    "disk": [
+      {
+        "scale_factor": 1,
+        "plural": "sectors",
+        "id": 24,
+        "short_name": null,
+        "name": "sector"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "blocks",
+        "id": 25,
+        "short_name": "blks",
+        "name": "block"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "files",
+        "id": 21,
+        "short_name": "files",
+        "name": "file"
+      },
+      {
+        "scale_factor": 1,
+        "plural": "inodes",
+        "id": 23,
+        "short_name": null,
+        "name": "inode"
+      }
+    ]
+  },
+  "original_title": "Zeyad's AWS ECS Dashboard",
+  "modified": "2018-08-16T18:10:18.872783+00:00",
+  "disableEditing": false,
+  "height": 85,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": null,
+      "name": "scope"
+    },
+    {
+      "default": "*",
+      "prefix": "ecs_cluster",
+      "name": "ecs_cluster"
+    },
+    {
+      "default": "*",
+      "prefix": "task_name",
+      "name": "ecs_task"
+    },
+    {
+      "default": "*",
+      "prefix": "container_name",
+      "name": "container_name"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "zeyad.emara@thomsonreuters.com",
+    "name": "Zeyad Emara",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "Zeyad.Emara@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/5d23855ccc3b9a9a3ae472a765f1e22d?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "templated": true,
+  "widgets": [
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Running containers by image",
+      "height": 29,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:docker.containers.running{$scope,$ecs_cluster} by {docker_image}.fill(0)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {},
+      "y": 17,
+      "x": 13,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Most RAM-intensive containers",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:docker.mem.rss{$scope,$ecs_cluster,$ecs_task} by {container_name}, 10, 'max', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "green",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 42,
+      "time": {},
+      "y": 66,
+      "x": 113,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Most CPU-intensive containers",
+      "height": 13,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:docker.cpu.user{$scope,$ecs_cluster} by {container_name}, 10, 'max', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 42,
+      "time": {},
+      "y": 66,
+      "x": 13,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Memory by container",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:docker.mem.rss{$scope,$ecs_cluster,$ecs_task} by {container_name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {},
+      "y": 50,
+      "x": 113,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "metric": "docker.containers.running",
+      "text_align": "center",
+      "query": "sum:docker.containers.running{$scope,$ecs_cluster,$ecs_task}",
+      "text_size": "auto",
+      "title_size": 16,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "center",
+      "custom_unit": null,
+      "width": 17,
+      "wrapped": true,
+      "type": "query_value",
+      "isShared": false,
+      "tags": [
+        "$scope",
+        "$ecs_cluster",
+        "$ecs_task"
+      ],
+      "aggr": "sum",
+      "precision": 0,
+      "title_text": "Running containers",
+      "padding": 8,
+      "calc_func": "raw",
+      "metric_type": "standard",
+      "autoscale": true,
+      "height": 5,
+      "conditional_formats": [],
+      "is_valid_query": true,
+      "tile_def": {
+        "autoscale": true,
+        "text_align": "center",
+        "precision": 0,
+        "custom_unit": null,
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:docker.containers.running{$scope,$ecs_cluster,$ecs_task}",
+            "aggregator": "avg",
+            "conditional_formats": []
+          }
+        ]
+      },
+      "res_calc_func": "raw",
+      "time": {
+        "live_span": "5m"
+      },
+      "y": 0,
+      "x": 81
+    },
+    {
+      "metric": "docker.containers.stopped",
+      "text_align": "center",
+      "query": "sum:docker.containers.stopped{$scope,$ecs_cluster,$ecs_task}",
+      "text_size": "auto",
+      "title_size": 16,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "center",
+      "custom_unit": null,
+      "width": 17,
+      "wrapped": true,
+      "type": "query_value",
+      "isShared": false,
+      "tags": [
+        "$scope",
+        "$ecs_cluster",
+        "$ecs_task"
+      ],
+      "aggr": "sum",
+      "precision": 0,
+      "title_text": "Stopped containers",
+      "padding": 8,
+      "calc_func": "raw",
+      "metric_type": "standard",
+      "autoscale": true,
+      "height": 5,
+      "conditional_formats": [],
+      "is_valid_query": true,
+      "tile_def": {
+        "autoscale": true,
+        "text_align": "center",
+        "precision": 0,
+        "custom_unit": null,
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:docker.containers.stopped{$scope,$ecs_cluster,$ecs_task}",
+            "aggregator": "avg",
+            "conditional_formats": []
+          }
+        ]
+      },
+      "res_calc_func": "raw",
+      "time": {
+        "live_span": "5m"
+      },
+      "y": 8,
+      "x": 81
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU by container",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:docker.cpu.user{$scope,$ecs_cluster,$ecs_task} by {container_name}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {},
+      "y": 50,
+      "x": 13,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU user by image",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:docker.cpu.user{$scope,$ecs_cluster,$ecs_task} by {docker_image}.fill(0)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {},
+      "y": 50,
+      "x": 56,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "RSS memory by image",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:docker.mem.rss{$scope,$ecs_cluster,$ecs_task} by {docker_image}.fill(0)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {},
+      "y": 50,
+      "x": 156,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "tags_execution": "and",
+      "height": 46,
+      "width": 48,
+      "global_timeframe_controls": true,
+      "query": "sources:docker tags:container_name:$container_name.value ",
+      "title_text": "Docker events",
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 0,
+      "x": 150,
+      "type": "event_stream",
+      "event_size": "s",
+      "isShared": false
+    },
+    {
+      "metric": "",
+      "text_align": "center",
+      "query": "100 * (sum:docker.containers.running{$scope, $ecs_cluster, $ecs_task}.rollup(avg,300)) / (sum:docker.containers.running{$scope, $ecs_cluster, $ecs_task}.rollup(avg,300) + sum:docker.containers.stopped{$scope, $ecs_cluster, $ecs_task}.rollup(avg,300))",
+      "text_size": "auto",
+      "title_size": 16,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "center",
+      "custom_unit": "%",
+      "width": 17,
+      "wrapped": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "isShared": false,
+      "tags": [],
+      "aggr": "avg",
+      "precision": 0,
+      "title_text": "All containers",
+      "padding": 8,
+      "calc_func": "raw",
+      "metric_type": "standard",
+      "autoscale": false,
+      "height": 13,
+      "legend": false,
+      "conditional_formats": [
+        {
+          "palette": "white_on_green",
+          "comparator": ">=",
+          "invert": false,
+          "value": 80,
+          "custom_bg_color": null,
+          "custom_fg_color": null
+        },
+        {
+          "palette": "white_on_yellow",
+          "comparator": ">=",
+          "invert": false,
+          "value": 50,
+          "custom_bg_color": null,
+          "custom_fg_color": null
+        },
+        {
+          "palette": "white_on_red",
+          "comparator": ">=",
+          "invert": false,
+          "value": 0,
+          "custom_bg_color": null,
+          "custom_fg_color": null
+        }
+      ],
+      "is_valid_query": false,
+      "tile_def": {
+        "autoscale": false,
+        "text_align": "center",
+        "precision": 0,
+        "custom_unit": "%",
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "100*(sum:docker.containers.running{$scope,$ecs_cluster,$ecs_task}.rollup(avg,300))/(sum:docker.containers.running{$scope,$ecs_cluster,$ecs_task}.rollup(avg,300)+sum:docker.containers.stopped{$scope,$ecs_cluster,$ecs_task}.rollup(avg,300))",
+            "aggregator": "avg",
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "comparator": ">=",
+                "invert": false,
+                "value": 80,
+                "custom_bg_color": null,
+                "custom_fg_color": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "invert": false,
+                "value": 50,
+                "custom_bg_color": null,
+                "custom_fg_color": null
+              },
+              {
+                "palette": "white_on_red",
+                "comparator": ">=",
+                "invert": false,
+                "value": 0,
+                "custom_bg_color": null,
+                "custom_fg_color": null
+              }
+            ]
+          }
+        ]
+      },
+      "res_calc_func": "raw",
+      "time": {
+        "live_span": "5m"
+      },
+      "y": 0,
+      "x": 63
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU system by image",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:docker.cpu.system{$scope,$ecs_cluster,$ecs_task} by {docker_image}.fill(0)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {},
+      "y": 66,
+      "x": 56,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "tick": true,
+      "font_size": "18",
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "right",
+      "text_align": "center",
+      "title_text": "",
+      "auto_refresh": false,
+      "bgcolor": "gray",
+      "html": "[CPU Core Load](https://www.datadoghq.com/blog/how-to-monitor-docker-resource-metrics/#toc2)",
+      "x": 0,
+      "y": 50,
+      "title_size": 16,
+      "height": 31,
+      "tick_pos": "50%",
+      "width": 12,
+      "isShared": false
+    },
+    {
+      "tick": true,
+      "font_size": "18",
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "right",
+      "text_align": "center",
+      "title_text": "",
+      "auto_refresh": false,
+      "bgcolor": "gray",
+      "html": "Containers",
+      "x": 0,
+      "y": 17,
+      "title_size": 16,
+      "height": 31,
+      "tick_pos": "50%",
+      "width": 12,
+      "isShared": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Cache memory by image",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:docker.mem.cache{$scope,$ecs_cluster,$ecs_task} by {docker_image}.fill(0)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 42,
+      "time": {},
+      "y": 66,
+      "x": 156,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "center",
+      "board_id": 28676,
+      "title_size": 16,
+      "title": true,
+      "url": "/static/images/saas_logos/bot/amazon_ecs.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 15,
+      "width": 16,
+      "y": 0,
+      "x": 0,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "board_id": 28676,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Containers running by host",
+      "height": 29,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:docker.containers.running{$ecs_cluster} by {host}, 10, 'mean', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "purple",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 42,
+      "time": {},
+      "y": 17,
+      "x": 56,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 28676,
+      "title_size": 16,
+      "title": true,
+      "url": "/static/images/screenboard/integrations/docker-logo-792x269.png",
+      "margin": "",
+      "title_align": "left",
+      "title_text": "",
+      "height": 15,
+      "width": 26,
+      "y": 0,
+      "x": 35,
+      "type": "image",
+      "isShared": false
+    },
+    {
+      "tick": true,
+      "font_size": "18",
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "right",
+      "text_align": "center",
+      "title_text": "",
+      "auto_refresh": false,
+      "bgcolor": "gray",
+      "html": "[Memory](https://www.datadoghq.com/blog/how-to-monitor-docker-resource-metrics/#toc3)",
+      "x": 100,
+      "y": 50,
+      "title_size": 16,
+      "height": 31,
+      "tick_pos": "50%",
+      "width": 12,
+      "isShared": false
+    },
+    {
+      "board_id": 52821,
+      "x": 18,
+      "group": null,
+      "tags": [
+        "service:ecs"
+      ],
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "ECS service status",
+      "height": 15,
+      "width": 15,
+      "time": {},
+      "y": 0,
+      "title_size": 13,
+      "text_size": "auto",
+      "isShared": false,
+      "type": "check_status",
+      "check": "aws.status",
+      "grouping": "cluster"
+    },
+    {
+      "board_id": 135040,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "tags_execution": "and",
+      "height": 46,
+      "width": 48,
+      "global_timeframe_controls": true,
+      "query": "sources:ecs tags:cluster:$ecs_cluster.value ",
+      "title_text": "ECS Events",
+      "time": {},
+      "y": 0,
+      "x": 100,
+      "type": "event_stream",
+      "event_size": "s",
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 410352,
+  "title_edited": false,
+  "isShared": false
+}

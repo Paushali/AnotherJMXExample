@@ -1,0 +1,825 @@
+{
+  "board_title": "OTIR Metrics",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-05-02T18:37:03.518296+00:00",
+  "original_title": "OTIR Metrics",
+  "modified": "2018-08-24T20:16:59.175516+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "tr_product:otir",
+      "prefix": "tr_product",
+      "name": "product"
+    },
+    {
+      "default": "tr_environment-type:production",
+      "prefix": "tr_environment-type",
+      "name": "environment"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "kranthi.palem@thomsonreuters.com",
+    "name": "Kranthi Palem",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "kranthi.palem@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/89325f114f8485a56e2fdf1e8b0e30c9?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 331911,
+      "x": 0,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "ECREALTIME not Picked up",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:OTIR_MonitorsAPI.monitor.metric0{host:c827pvzotrcw5}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "10"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<=",
+                "value": "5"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">",
+                "value": "5"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "text_align": "center",
+        "precision": "0"
+      },
+      "width": 19,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 1,
+      "title_size": 13,
+      "legend_size": "2",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331911,
+      "x": 20,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ESTATEMENTS not Picked up",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:OTIR_MonitorsAPI.monitor.metric1{host:c827pvzotrcw5}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "10"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "5"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "5"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 1,
+      "title_size": 13,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331911,
+      "x": 20,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "BPs Not Checked in",
+      "height": 10,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:OTIR_MonitorsAPI.monitor.metric6{host:c827pvzotrcw5}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "2"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "1"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<=",
+                "value": "0"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 18,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 14,
+      "title_size": 13,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331911,
+      "x": 41,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Jobs not Picked Up",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:OTIR_MonitorsAPI.monitor.metric2{host:c827pvzotrcw5}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "10"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "5"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "5"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 17,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 1,
+      "title_size": 13,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331911,
+      "x": 59,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Scheduled Jobs Overdue",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:OTIR_MonitorsAPI.monitor.metric3{host:c827pvzotrcw5}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "10"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "5"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "5"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 18,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 1,
+      "title_size": 13,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331911,
+      "x": 78,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Batch Controller Jobs Waiting",
+      "height": 9,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:OTIR_MonitorsAPI.monitor.metric4{host:c827pvzotrcw5}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "25"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "20"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "19"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 20,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 1,
+      "title_size": 13,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331911,
+      "x": 0,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "A2A Stage1 Jobs",
+      "height": 10,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:OTIR_MonitorsAPI.monitor.metric5{host:c827pvzotrcw5}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "10"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "5"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "5"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 18,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 14,
+      "title_size": 13,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331911,
+      "x": 40,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Jobs Resubmitted",
+      "height": 10,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:OTIR_MonitorsAPI.monitor.metric7{host:c827pvzotrcw5}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "10"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "5"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "5"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 18,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 14,
+      "title_size": 13,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331911,
+      "x": 50,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "VPS OTIR Conduent Pending Mail",
+      "height": 10,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:OTIR_MonitorsAPI.monitor.metric14{host:c827pvzotrcw5}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "30"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "25"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "24"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 22,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 28,
+      "title_size": 13,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331911,
+      "x": 53,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "VPS OTT Conduent Pending Mail",
+      "height": 10,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:OTIR_MonitorsAPI.monitor.metric13{host:c827pvzotrcw5}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "10"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "5"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "5"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 22,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 43,
+      "title_size": 13,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331911,
+      "x": 24,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "VPS OTIR Conduent Pending Print",
+      "height": 10,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:OTIR_MonitorsAPI.monitor.metric12{host:c827pvzotrcw5}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "10"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "5"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "5"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 23,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 28,
+      "title_size": 13,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331911,
+      "x": 25,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "VPS OTT Conduent Pending Print",
+      "height": 10,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:OTIR_MonitorsAPI.monitor.metric11{host:c827pvzotrcw5}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "10"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "5"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "5"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 23,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 43,
+      "title_size": 13,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331911,
+      "x": 0,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "VPS OTIR Pending Transmission",
+      "height": 10,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:OTIR_MonitorsAPI.monitor.metric10{host:c827pvzotrcw5}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "25"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "15"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "15"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 22,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 28,
+      "title_size": 13,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331911,
+      "x": 61,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "BPs With Missing HASPs",
+      "height": 10,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:OTIR_MonitorsAPI.monitor.metric8{host:c827pvzotrcw5}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "2"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "1"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<=",
+                "value": "0"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 18,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 14,
+      "title_size": 13,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331911,
+      "x": 0,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "VPS OTT Pending Transmission",
+      "height": 10,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:OTIR_MonitorsAPI.monitor.metric9{host:c827pvzotrcw5}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "10"
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": "5"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": "5"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 22,
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 43,
+      "title_size": 13,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 331911,
+  "title_edited": false,
+  "isShared": false
+}

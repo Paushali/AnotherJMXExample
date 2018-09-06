@@ -1,0 +1,699 @@
+{
+  "board_title": "Zeyad's AWS ALB Dashboard",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-08-14T15:35:07.397827+00:00",
+  "original_title": "Zeyad's AWS ALB Dashboard",
+  "modified": "2018-08-14T17:15:58.603335+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": null,
+      "name": "scope"
+    },
+    {
+      "default": "*",
+      "prefix": "host",
+      "name": "host"
+    },
+    {
+      "default": "*",
+      "prefix": "name",
+      "name": "name"
+    },
+    {
+      "default": "*",
+      "prefix": "targetgroup",
+      "name": "targetgroup"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "zeyad.emara@thomsonreuters.com",
+    "name": "Zeyad Emara",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "Zeyad.Emara@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/5d23855ccc3b9a9a3ae472a765f1e22d?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "templated": true,
+  "widgets": [
+    {
+      "metric": "aws.elb.request_count",
+      "custom_unit": null,
+      "query": "sum:aws.elb.request_count{$scope}.as_rate()",
+      "text_size": "auto",
+      "title_size": 13,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "left",
+      "text_align": "center",
+      "width": 23,
+      "legend_size": "0",
+      "type": "query_value",
+      "isShared": false,
+      "tags": [
+        "$scope"
+      ],
+      "time": {},
+      "precision": 1,
+      "title_text": "Requests per second (avg)",
+      "calc_func": "as_rate",
+      "metric_type": "count",
+      "autoscale": true,
+      "height": 10,
+      "legend": false,
+      "conditional_formats": [],
+      "is_valid_query": true,
+      "tile_def": {
+        "text_align": "left",
+        "autoscale": true,
+        "custom_unit": null,
+        "precision": 1,
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.request_count{$scope,$host,$name,$targetgroup}.as_rate()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "res_calc_func": "as_rate",
+      "aggr": "sum",
+      "y": 0,
+      "x": 65
+    },
+    {
+      "metric": "",
+      "custom_unit": "ms",
+      "query": "avg:aws.elb.latency{$scope} * 1000",
+      "text_size": "auto",
+      "title_size": 13,
+      "title": true,
+      "aggregator": "avg",
+      "title_align": "left",
+      "text_align": "center",
+      "width": 23,
+      "legend_size": "0",
+      "type": "query_value",
+      "isShared": false,
+      "tags": [],
+      "time": {},
+      "precision": 0,
+      "title_text": "Response time  (avg)",
+      "calc_func": "raw",
+      "metric_type": "standard",
+      "autoscale": false,
+      "height": 10,
+      "legend": false,
+      "conditional_formats": [
+        {
+          "palette": "white_on_red",
+          "comparator": ">",
+          "custom_bg_color": null,
+          "value": 500,
+          "invert": false,
+          "custom_fg_color": null
+        },
+        {
+          "palette": "white_on_yellow",
+          "comparator": ">",
+          "custom_bg_color": null,
+          "value": 400,
+          "invert": false,
+          "custom_fg_color": null
+        },
+        {
+          "palette": "white_on_green",
+          "comparator": "<=",
+          "custom_bg_color": null,
+          "value": 400,
+          "invert": false,
+          "custom_fg_color": null
+        }
+      ],
+      "is_valid_query": false,
+      "tile_def": {
+        "text_align": "left",
+        "autoscale": false,
+        "custom_unit": "ms",
+        "precision": "0",
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.target_response_time.average{$scope,$host,$name,$targetgroup}*1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "custom_bg_color": null,
+                "value": 500,
+                "invert": false,
+                "custom_fg_color": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">",
+                "custom_bg_color": null,
+                "value": 400,
+                "invert": false,
+                "custom_fg_color": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<=",
+                "custom_bg_color": null,
+                "value": 400,
+                "invert": false,
+                "custom_fg_color": null
+              }
+            ]
+          }
+        ]
+      },
+      "res_calc_func": "raw",
+      "aggr": "avg",
+      "y": 0,
+      "x": 89
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "HTTP 3xx Responses",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.httpcode_target_3xx{$scope,$host,$name,$targetgroup} by {host}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 30,
+      "x": 17,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "metric": "aws.elb.un_healthy_host_count",
+      "custom_unit": null,
+      "query": "sum:aws.elb.un_healthy_host_count{$scope}",
+      "text_size": "auto",
+      "title_size": 13,
+      "title": true,
+      "aggregator": "max",
+      "title_align": "left",
+      "text_align": "center",
+      "width": 23,
+      "legend_size": "0",
+      "type": "query_value",
+      "isShared": false,
+      "tags": [
+        "$scope"
+      ],
+      "time": {},
+      "precision": 0,
+      "title_text": "Unhealthy hosts count (max)",
+      "calc_func": "raw",
+      "metric_type": "standard",
+      "autoscale": true,
+      "height": 10,
+      "legend": false,
+      "conditional_formats": [
+        {
+          "palette": "white_on_red",
+          "comparator": ">",
+          "custom_bg_color": null,
+          "value": 0,
+          "invert": false,
+          "custom_fg_color": null
+        },
+        {
+          "palette": "white_on_green",
+          "comparator": "<=",
+          "custom_bg_color": null,
+          "value": 0,
+          "invert": false,
+          "custom_fg_color": null
+        }
+      ],
+      "is_valid_query": true,
+      "tile_def": {
+        "text_align": "left",
+        "autoscale": true,
+        "custom_unit": null,
+        "precision": 0,
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.un_healthy_host_count{$scope,$host,$name,$targetgroup}",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "custom_bg_color": null,
+                "value": 0,
+                "invert": false,
+                "custom_fg_color": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<=",
+                "custom_bg_color": null,
+                "value": 0,
+                "invert": false,
+                "custom_fg_color": null
+              }
+            ]
+          }
+        ]
+      },
+      "res_calc_func": "raw",
+      "aggr": "sum",
+      "y": 0,
+      "x": 41
+    },
+    {
+      "metric": "aws.elb.healthy_host_count",
+      "custom_unit": null,
+      "query": "sum:aws.elb.healthy_host_count{$scope}",
+      "text_size": "auto",
+      "title_size": 13,
+      "title": true,
+      "aggregator": "min",
+      "title_align": "left",
+      "text_align": "center",
+      "width": 23,
+      "legend_size": "0",
+      "type": "query_value",
+      "isShared": false,
+      "tags": [
+        "$scope"
+      ],
+      "time": {},
+      "precision": 0,
+      "title_text": "Healthy hosts count (min)",
+      "calc_func": "raw",
+      "metric_type": "standard",
+      "autoscale": true,
+      "height": 10,
+      "legend": false,
+      "conditional_formats": [
+        {
+          "palette": "green_on_white",
+          "comparator": ">",
+          "custom_bg_color": null,
+          "value": 0,
+          "invert": false,
+          "custom_fg_color": null
+        },
+        {
+          "palette": "red_on_white",
+          "comparator": "<=",
+          "custom_bg_color": null,
+          "value": 0,
+          "invert": false,
+          "custom_fg_color": null
+        }
+      ],
+      "is_valid_query": true,
+      "tile_def": {
+        "text_align": "left",
+        "autoscale": true,
+        "custom_unit": null,
+        "precision": 0,
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.healthy_host_count{$scope,$host,$name,$targetgroup}",
+            "aggregator": "min",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "green_on_white",
+                "comparator": ">",
+                "custom_bg_color": null,
+                "value": 0,
+                "invert": false,
+                "custom_fg_color": null
+              },
+              {
+                "palette": "red_on_white",
+                "comparator": "<=",
+                "custom_bg_color": null,
+                "value": 0,
+                "invert": false,
+                "custom_fg_color": null
+              }
+            ]
+          }
+        ]
+      },
+      "res_calc_func": "raw",
+      "aggr": "sum",
+      "y": 0,
+      "x": 17
+    },
+    {
+      "sizing": "center",
+      "board_id": 33142,
+      "title_size": 16,
+      "title": true,
+      "url": "/static/images/saas_logos/bot/amazon_alb.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 12,
+      "width": 16,
+      "y": 0,
+      "x": 0,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "board_id": 33142,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "HTTP 2xx Responses",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.httpcode_target_2xx{$scope,$host,$name,$targetgroup} by {host}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 14,
+      "x": 17,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 33142,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "HTTP 4xx Responses",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.httpcode_target_4xx{$scope,$host,$name,$targetgroup} by {host}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 14,
+      "x": 65,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 33142,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "HTTP 5xx Responses",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.httpcode_target_5xx{$scope,$host,$name,$targetgroup} by {host}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 30,
+      "x": 65,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Response Time",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.applicationelb.target_response_time.average{$scope,$host,$name,$targetgroup}*1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 63,
+      "x": 17,
+      "legend_size": "4",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 33142,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Active Connections",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.active_connection_count{$scope,$host,$name,$targetgroup} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 47,
+      "x": 17,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 33142,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "New Connections",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.new_connection_count{$scope,$host,$name,$targetgroup} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 47,
+      "x": 65,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 33142,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Processed Bytes",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.applicationelb.processed_bytes{$scope,$host,$name,$targetgroup} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 63,
+      "x": 65,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 193582,
+      "tick": true,
+      "font_size": "18",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "right",
+      "text_align": "center",
+      "title_text": "",
+      "auto_refresh": false,
+      "bgcolor": "gray",
+      "html": "HTTP Responses",
+      "x": 0,
+      "y": 14,
+      "title_size": 16,
+      "height": 31,
+      "type": "note",
+      "width": 16,
+      "isShared": false
+    },
+    {
+      "board_id": 193582,
+      "tick": true,
+      "font_size": "18",
+      "title": true,
+      "refresh_every": 30000,
+      "tick_pos": "50%",
+      "title_align": "left",
+      "tick_edge": "right",
+      "text_align": "center",
+      "title_text": "",
+      "auto_refresh": false,
+      "bgcolor": "gray",
+      "html": "Connections and Latencies",
+      "x": 0,
+      "y": 47,
+      "title_size": 16,
+      "height": 31,
+      "type": "note",
+      "width": 16,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 410349,
+  "title_edited": false,
+  "isShared": false
+}

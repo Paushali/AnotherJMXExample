@@ -1,0 +1,246 @@
+{
+  "board_title": "eTIN Service - OTIR",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-07-26T14:11:08.145631+00:00",
+  "original_title": "eTIN Service - OTIR",
+  "modified": "2018-07-26T15:23:06.126066+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "jacob.john@thomsonreuters.com",
+    "name": "Jacob John Kadambanattu",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "jacob.john@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/3393b408a67b6584fd808153e1d75700?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "widgets": [
+    {
+      "board_id": 394152,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Avg Batch Queue Size by Host",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:OTIR.TinMatchService.batchqueuesize{tr_product:otir,role:tinmatchapi} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {},
+      "y": 3,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 394152,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Avg Batch Retry Queue Size",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:OTIR.TinMatchService.retryqueuesize{tr_product:otir,role:tinmatchapi} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 41,
+      "time": {},
+      "y": 21,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 394152,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Validations API Hits",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:OTIR.TinMatchService.TinMatchService_V1.0.Validations_hits{tr_product:otir} by {host}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 3,
+      "x": 45,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 394152,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Operations API Hits",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:OTIR.TinMatchService.TinMatchService_V1.0.Operations_hits{tr_product:otir} by {host}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 20,
+      "x": 45,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 394152,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Results API Hits",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:OTIR.TinMatchService.TinMatchService_V1.0.Results_hits{tr_product:otir} by {host}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 36,
+      "x": 44,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 394152,
+      "x": 1,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "tags_execution": "and",
+      "height": 18,
+      "width": 38,
+      "global_timeframe_controls": true,
+      "title_text": "",
+      "time": {},
+      "y": 38,
+      "query": "TINMatchWorker.AgentLocked ",
+      "type": "event_stream",
+      "event_size": "s",
+      "isShared": false
+    },
+    {
+      "board_id": 394152,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:OTIR.TinMatchService.TINMatchWorker.AgentLocked{*} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 39,
+      "time": {},
+      "y": 60,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 394152,
+  "title_edited": false,
+  "isShared": false
+}

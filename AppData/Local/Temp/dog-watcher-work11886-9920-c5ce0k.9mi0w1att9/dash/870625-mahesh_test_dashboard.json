@@ -1,0 +1,74 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:f5.response_times{env:prod}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of f5.response_times over env:prod"
+      },
+      {
+        "definition": {
+          "viz": "distribution",
+          "requests": [
+            {
+              "aggregator": "cardinality",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": [],
+              "log_query": {
+                "index": "main",
+                "search": {
+                  "query": ""
+                },
+                "compute": {
+                  "facet": "@http.url",
+                  "aggregation": "cardinality"
+                },
+                "groupBy": []
+              }
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Cardinality of @http.url"
+      }
+    ],
+    "description": "created by mahesh.sikakolli@thomsonreuters.com",
+    "title": "Mahesh test Dashboard",
+    "created": "2018-07-25T10:08:31.851978+00:00",
+    "id": 870625,
+    "created_by": {
+      "disabled": false,
+      "handle": "mahesh.sikakolli@thomsonreuters.com",
+      "name": "Mahesh Sikakolli",
+      "is_admin": false,
+      "role": "",
+      "access_role": "st",
+      "verified": true,
+      "email": "mahesh.sikakolli@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/2f5722100bec9be333c6e3c3d46fb3e0?s=48&d=retro"
+    },
+    "modified": "2018-07-25T10:45:52.970231+00:00"
+  },
+  "url": "/dash/870625/mahesh-test-dashboard",
+  "resource": "/api/v1/dash/870625"
+}

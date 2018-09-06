@@ -1,0 +1,574 @@
+{
+  "board_title": "Athena SRE EMEA (ITC)",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-08-28T14:37:37.193182+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "siddhi.bhakta@thomsonreuters.com",
+    "name": "Siddhi Bhakta",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "Siddhi.Bhakta@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/2cf5f40a0664aac7626ab0e1e8fb962d?s=48&d=retro"
+  },
+  "original_title": "Athena SRE EMEA (ITC)",
+  "modified": "2018-08-31T06:53:14.955060+00:00",
+  "originalHeight": 80,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "disableEditing": false,
+  "originalWidth": "100%",
+  "widgets": [
+    {
+      "board_id": 422027,
+      "title_size": 13,
+      "title": true,
+      "title_align": "center",
+      "title_text": "ITC Core Requests",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:f5.http_requests_emea{statuscode:2xx,service:itc.core,window:1m}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:f5.http_requests_emea{service:itc.core,window:1m,statuscode:all}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 34,
+      "time": {},
+      "y": 5,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 422027,
+      "title_size": 13,
+      "title": true,
+      "title_align": "center",
+      "title_text": "ITC Core Sessions",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:f5.unique_sessions_emea{service:itc.core,window:1m}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 35,
+      "time": {},
+      "y": 5,
+      "x": 37,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 422027,
+      "title_size": 13,
+      "title": true,
+      "title_align": "center",
+      "title_text": "ITC Core P90 P95",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:f5.response_times_emea{service:itc.core,window:1m,percentile:90}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:f5.response_times_emea{service:itc.core,window:1m,percentile:95}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 36,
+      "time": {},
+      "y": 5,
+      "x": 74,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 422027,
+      "title_size": 13,
+      "title": true,
+      "title_align": "center",
+      "title_text": "ITC Workbook Requests",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:f5.http_requests_emea{statuscode:2xx,window:1m,service:itc.workbook}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:f5.http_requests_emea{window:1m,statuscode:all,service:itc.workbook}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 34,
+      "time": {},
+      "y": 22,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 422027,
+      "title_size": 13,
+      "title": true,
+      "title_align": "center",
+      "title_text": "ITC Workbook Sessions",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:f5.unique_sessions_emea{window:1m,service:itc.workbook}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 35,
+      "time": {},
+      "y": 22,
+      "x": 37,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 422027,
+      "title_size": 13,
+      "title": true,
+      "title_align": "center",
+      "title_text": "ITC Workbook P90 P95",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:f5.response_times_emea{window:1m,percentile:90,service:itc.workbook}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:f5.response_times_emea{window:1m,percentile:95,service:itc.workbook}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 36,
+      "time": {},
+      "y": 22,
+      "x": 74,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 422027,
+      "x": 32,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Max Duration",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:emea,product:oitc}",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "2"
+      },
+      "width": 11,
+      "time": {},
+      "y": 40,
+      "title_size": 13,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 422027,
+      "tick": false,
+      "font_size": "24",
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "left",
+      "text_align": "center",
+      "title_text": "",
+      "auto_refresh": false,
+      "bgcolor": "blue",
+      "html": "Synthetic Trasactions",
+      "x": 1,
+      "y": 40,
+      "title_size": 16,
+      "height": 15,
+      "tick_pos": "50%",
+      "width": 14,
+      "isShared": false
+    },
+    {
+      "board_id": 422027,
+      "x": 44,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Min Duration",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:emea,product:oitc}",
+            "aggregator": "min",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "2"
+      },
+      "width": 11,
+      "time": {},
+      "y": 40,
+      "title_size": 13,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 422027,
+      "x": 56,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Average Duration",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:emea,product:oitc}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "2"
+      },
+      "width": 11,
+      "time": {},
+      "y": 40,
+      "title_size": 13,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 422027,
+      "x": 68,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Last Duration",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.Duration{environment:emea,product:oitc}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "2"
+      },
+      "width": 11,
+      "time": {},
+      "y": 40,
+      "title_size": 13,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 422027,
+      "x": 16,
+      "autoscale": true,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Status (Success=1, Fail=0)",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.ExecutionStatus{environment:emea,product:oitc}",
+            "aggregator": "last",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_green",
+                "comparator": ">",
+                "value": "0"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 15,
+      "time": {},
+      "y": 40,
+      "title_size": 13,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 422027,
+      "title_size": 13,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Success vs Failure",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:Athena.SyntheticPDUs.ExecutionStatus{environment:emea,result:pass}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:Athena.SyntheticPDUs.ExecutionStatus{environment:emea,result:fail}",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 31,
+      "time": {},
+      "y": 40,
+      "x": 80,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 422027,
+  "title_edited": false,
+  "isShared": false
+}

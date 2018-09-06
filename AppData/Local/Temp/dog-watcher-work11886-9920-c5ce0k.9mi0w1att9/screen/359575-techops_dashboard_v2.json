@@ -1,0 +1,134 @@
+{
+  "board_title": "Techops Dashboard V2",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-06-14T21:22:21.305685+00:00",
+  "original_title": "Techops Dashboard V2",
+  "modified": "2018-06-14T21:29:47.907399+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "environment",
+      "name": "Environment"
+    },
+    {
+      "default": "*",
+      "prefix": "account",
+      "name": "Account"
+    },
+    {
+      "default": "*",
+      "prefix": "region",
+      "name": "region"
+    },
+    {
+      "default": "*",
+      "prefix": "application",
+      "name": "Application"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "vedha.peri@thomsonreuters.com",
+    "name": "Vedha Peri",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "Vedha.Peri@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/3e6dc093f99c5fdfd14e440abace913c?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "widgets": [
+    {
+      "board_id": 359575,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:nginx.net.request_per_s{$region} by {name}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "area",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 2,
+      "x": 12,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 359575,
+      "x": 61,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:nginx.net.connections{*} by {aws}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 2,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 359575,
+  "title_edited": false,
+  "isShared": false
+}

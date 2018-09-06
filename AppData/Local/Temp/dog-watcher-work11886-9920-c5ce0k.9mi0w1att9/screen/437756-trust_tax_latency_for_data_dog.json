@@ -1,0 +1,119 @@
+{
+  "board_title": "Trust Tax - Latency For DataDog",
+  "read_only": false,
+  "isIntegration": false,
+  "showGlobalTimeOnboarding": true,
+  "board_bgtype": "board_graph",
+  "created": "2018-09-06T13:03:09.774021+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "daniel.chris@thomsonreuters.com",
+    "name": "Daniel Chris",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "daniel.chris@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/f33e0554e4e89b9e25cc1bda79a7e07d?s=48&d=retro"
+  },
+  "original_title": "Trust Tax - Latency For DataDog",
+  "modified": "2018-09-06T15:03:28.654608+00:00",
+  "disableEditing": false,
+  "height": 97,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "tr_environment-type:sat",
+      "prefix": "tr_environment-type",
+      "name": "environment"
+    }
+  ],
+  "originalHeight": 97,
+  "originalWidth": "100%",
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 407780,
+      "font_size": "36",
+      "title": true,
+      "color": "#ff7d33",
+      "text": "ONESOURCE Trust Tax ",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 35,
+      "x": 57,
+      "y": 0,
+      "title_size": 16,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 407780,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Latency - Outproc",
+      "height": 72,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(max:resource.load.time.max{$environment,role:client_web,tr_product:ott,host:C929AGFOTTCW1} by {page}, 100, 'last', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 38,
+      "time": {},
+      "y": 5,
+      "x": 12,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 407780,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Latency InProc",
+      "height": 72,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(max:resource.load.time.max{$environment,role:client_web,tr_product:ott,host:C376RCCOTTCW2} by {page}, 100, 'last', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 38,
+      "time": {},
+      "y": 5,
+      "x": 55,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": true,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 437756,
+  "title_edited": false,
+  "isShared": false
+}

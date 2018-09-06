@@ -1,0 +1,411 @@
+{
+  "board_title": "Trust Tax - Latency & Traffic , Errors",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-08-10T17:33:35.922622+00:00",
+  "original_title": "Trust Tax - Latency & Traffic",
+  "modified": "2018-08-24T05:18:49.061187+00:00",
+  "disableEditing": false,
+  "height": 97,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "tr_environment-type:sat",
+      "prefix": "tr_environment-type",
+      "name": "environment"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "daniel.chris@thomsonreuters.com",
+    "name": "Daniel Chris",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "daniel.chris@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/f33e0554e4e89b9e25cc1bda79a7e07d?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 407780,
+      "font_size": "36",
+      "title": true,
+      "color": "#ff7d33",
+      "text": "ONESOURCE Trust Tax ",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 35,
+      "x": 57,
+      "y": 0,
+      "title_size": 16,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 407780,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Latency by resource (CW)",
+      "height": 23,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(max:resource.load.time.max{$environment,role:client_web,tr_product:ott} by {page}, 100, 'max', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 28,
+      "time": {},
+      "y": 4,
+      "x": 1,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 407780,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Latency by resource (SW)",
+      "height": 23,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:resource.load.time.max{$environment,tr_product:ott,role:service_web} by {method}, 100, 'max', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 28,
+      "time": {},
+      "y": 30,
+      "x": 1,
+      "legend_size": "8",
+      "type": "toplist",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 407780,
+      "title_size": 13,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Latency by host (CW)",
+      "height": 23,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:resource.load.time.max{$environment,tr_product:ott,role:client_web} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 46,
+      "time": {},
+      "y": 4,
+      "x": 30,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 407780,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Latency by host SW",
+      "height": 23,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "max:resource.load.time.max{$environment,tr_product:ott,role:service_web} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 46,
+      "time": {},
+      "y": 30,
+      "x": 30,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 407780,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Traffic by host (CW)",
+      "height": 23,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:requests.unique{$environment,role:client_web,tr_product:ott} by {host}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 46,
+      "time": {},
+      "y": 4,
+      "x": 105,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 407780,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Traffic by host (SW)",
+      "height": 23,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:requests.unique{$environment,tr_product:ott,role:service_web} by {host}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 46,
+      "time": {},
+      "y": 30,
+      "x": 105,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 407780,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Traffic by resource (CW)",
+      "height": 23,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:requests.unique{$environment,role:client_web,tr_product:ott} by {page}, 100, 'max', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 27,
+      "time": {},
+      "y": 4,
+      "x": 77,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 407780,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Traffic by resource (SW)",
+      "height": 23,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(sum:requests.unique{$environment,tr_product:ott,role:service_web} by {method}.as_count(), 100, 'max', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 27,
+      "time": {},
+      "y": 30,
+      "x": 77,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 407780,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Event: Sucessful user login",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:users.unique{$environment,tr_product:ott,role:client_web} by {user}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 108,
+      "time": {},
+      "y": 56,
+      "x": 24,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 407780,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Exceptions by errors code (CW)",
+      "height": 22,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:exception{$environment,role:client_web,tr_product:ott} by {error}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 75,
+      "time": {},
+      "y": 72,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 407780,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Exceptions by errors code (SW)",
+      "height": 22,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:exception{$environment,tr_product:ott,role:client_web} by {error}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 74,
+      "time": {},
+      "y": 72,
+      "x": 77,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 407780,
+  "title_edited": true,
+  "isShared": false
+}

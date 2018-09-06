@@ -1,0 +1,65 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": [],
+              "log_query": {
+                "index": "main",
+                "search": {
+                  "query": ""
+                },
+                "compute": {
+                  "facet": null,
+                  "aggregation": "count"
+                },
+                "groupBy": []
+              }
+            },
+            {
+              "q": "avg:system.load.1{*}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": ", system.load.1"
+      }
+    ],
+    "description": "created by sarada.saraswathula@thomsonreuters.com",
+    "title": "Venkata's Timeboard 10 Aug 2018 09:54",
+    "created": "2018-08-10T14:54:45.957579+00:00",
+    "id": 885071,
+    "created_by": {
+      "disabled": false,
+      "handle": "sarada.saraswathula@thomsonreuters.com",
+      "name": "Venkata Saraswathula",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Sarada.Saraswathula@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/1d0440541b8a8858d8eb0a92c527087e?s=48&d=retro"
+    },
+    "modified": "2018-08-14T16:22:21.414451+00:00"
+  },
+  "url": "/dash/885071/venkatas-timeboard-10-aug-2018-0954",
+  "resource": "/api/v1/dash/885071"
+}

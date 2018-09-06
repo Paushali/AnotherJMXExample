@@ -1,0 +1,74 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.cpu.idle{host:c053dkhcwtweb}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of system.cpu.idle over host:c053dkhcwtweb"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "avg:system.cpu.idle{host:c053dkhcwtweb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:system.cpu.idle{host:c281wtacwtweb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "system.cpu.idle, system.cpu.idle"
+      }
+    ],
+    "description": "created by rajgopal.naramsetty@thomsonreuters.com",
+    "title": "LS1.0 Dashboard",
+    "created": "2018-04-04T05:44:16.398409+00:00",
+    "id": 759586,
+    "created_by": {
+      "disabled": false,
+      "handle": "rajgopal.naramsetty@thomsonreuters.com",
+      "name": "Raj Gopal Naramsetty",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "rajgopal.naramsetty@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/c9c16c6df67f6d67e5ec9a89ca894196?s=48&d=retro"
+    },
+    "modified": "2018-09-04T20:21:56.380328+00:00"
+  },
+  "url": "/dash/759586/ls10-dashboard",
+  "resource": "/api/v1/dash/759586"
+}

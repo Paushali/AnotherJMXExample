@@ -1,0 +1,132 @@
+{
+  "board_title": "Sushant's Screenboard 31 Jul 2018 15:07",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-07-31T15:07:26.962977+00:00",
+  "original_title": "",
+  "modified": "2018-07-31T15:26:06.028765+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "sushantkumar1@thomsonreuters.com",
+    "name": "Sushant Kumar",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "sushantkumar1@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/25b1d7a5a9c4beff9da1a691cebafc90?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "widgets": [
+    {
+      "board_id": 398217,
+      "x": 1,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Number of Deploys Started Count",
+      "height": 14,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:deploy_start{host:U6046848-TPL-A}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "custom_unit": ""
+      },
+      "width": 25,
+      "time": {},
+      "y": 1,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 398217,
+      "x": 29,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Deploy Success Count",
+      "height": 14,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:deploy_success{host:U6046848-TPL-A}.as_count()",
+            "aggregator": "sum",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 26,
+      "time": {},
+      "y": 1,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 398217,
+  "title_edited": false,
+  "isShared": false
+}

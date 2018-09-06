@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by rajesh.pallapothu@thomsonreuters.com",
+    "title": "TestTemplates",
+    "created": "2018-08-26T14:47:18.299911+00:00",
+    "id": 898218,
+    "created_by": {
+      "disabled": false,
+      "handle": "rajesh.pallapothu@thomsonreuters.com",
+      "name": "Rajesh Pallapothu",
+      "is_admin": false,
+      "role": "",
+      "access_role": "st",
+      "verified": true,
+      "email": "Rajesh.pallapothu@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/7d823f2b88ee86a28f03a554c4cadb59?s=48&d=retro"
+    },
+    "modified": "2018-08-26T14:47:18.299924+00:00"
+  },
+  "url": "/dash/898218/testtemplates",
+  "resource": "/api/v1/dash/898218"
+}

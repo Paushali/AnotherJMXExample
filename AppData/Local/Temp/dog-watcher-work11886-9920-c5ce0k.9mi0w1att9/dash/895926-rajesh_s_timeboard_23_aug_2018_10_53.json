@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by rajesh.pallapothu@thomsonreuters.com",
+    "title": "Rajesh's Timeboard 23 Aug 2018 10:53",
+    "created": "2018-08-23T05:23:32.101045+00:00",
+    "id": 895926,
+    "created_by": {
+      "disabled": false,
+      "handle": "rajesh.pallapothu@thomsonreuters.com",
+      "name": "Rajesh Pallapothu",
+      "is_admin": false,
+      "role": "",
+      "access_role": "st",
+      "verified": true,
+      "email": "Rajesh.pallapothu@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/7d823f2b88ee86a28f03a554c4cadb59?s=48&d=retro"
+    },
+    "modified": "2018-08-23T05:23:32.101061+00:00"
+  },
+  "url": "/dash/895926/rajeshs-timeboard-23-aug-2018-1053",
+  "resource": "/api/v1/dash/895926"
+}

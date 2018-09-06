@@ -1,0 +1,891 @@
+{
+  "board_title": "OSR Report run timings in QA",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-07-03T13:36:29.673557+00:00",
+  "original_title": "Zoes investigation",
+  "modified": "2018-07-06T08:22:16.526324+00:00",
+  "disableEditing": false,
+  "height": 125,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "stephen.fletcher@thomsonreuters.com",
+    "name": "Stephen Fletcher",
+    "is_admin": false,
+    "role": "Manager",
+    "access_role": "st",
+    "verified": true,
+    "email": "stephen.fletcher@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/67de4efa01fd807a6459f68caee2d089?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "templated": false,
+  "widgets": [
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Prod - France (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.scenario:load_template_fr_run_reports,tr.osr.test:barossa-prod-headlessentitytests,tr.osr.test.feature:big_four} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 87,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Prod - Germany (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.scenario:load_template_ge_run_reports,tr.osr.test:barossa-prod-headlessentitytests,tr.osr.test.feature:big_four} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 87,
+      "x": 27,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Prod - Hong Kong (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.scenario:load_template_hk_run_reports,tr.osr.test:barossa-prod-headlessentitytests,tr.osr.test.feature:big_four} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 87,
+      "x": 53,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "APAC - France (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.scenario:load_template_fr_run_reports,tr.osr.test:barossa-prod-apac-headlessentitytests,tr.osr.test.feature:big_four} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 106,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "APAC - Germany (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test:barossa-prod-apac-headlessentitytests,tr.osr.test.scenario:load_template_ge_run_reports,tr.osr.test.feature:big_four} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 106,
+      "x": 27,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "APAC - Hong Kong (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.scenario:load_template_hk_run_reports,tr.osr.test:barossa-prod-apac-headlessentitytests,tr.osr.test.feature:big_four} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 106,
+      "x": 53,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "tags_execution": "and",
+      "height": 9,
+      "width": 103,
+      "global_timeframe_controls": true,
+      "query": "Build poll time ",
+      "title_text": "Data polled",
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 1,
+      "x": 1,
+      "type": "event_timeline",
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA - France (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.scenario:load_template_fr_run_reports,tr.osr.test.feature:big_four,tr.osr.test:barossa-qa-headlessentitytests} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 49,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA - Germany (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.scenario:load_template_ge_run_reports,tr.osr.test.feature:big_four,tr.osr.test:barossa-qa-headlessentitytests} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 49,
+      "x": 27,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA - Hong Kong (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.scenario:load_template_hk_run_reports,tr.osr.test.feature:big_four,tr.osr.test:barossa-qa-headlessentitytests} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 49,
+      "x": 53,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA - Singapore (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.feature:big_four,tr.osr.test.scenario:load_template_sing_run_reports,tr.osr.test:barossa-qa-headlessentitytests} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 49,
+      "x": 79,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Prod - Singapore (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.feature:big_four,tr.osr.test.scenario:load_template_sing_run_reports,tr.osr.test:barossa-prod-headlessentitytests} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 87,
+      "x": 79,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "APAC - Singapore (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.feature:big_four,tr.osr.test.scenario:load_template_sing_run_reports,tr.osr.test:barossa-prod-apac-headlessentitytests} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 106,
+      "x": 79,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "SAT - France (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.scenario:load_template_fr_run_reports,tr.osr.test.feature:big_four,tr.osr.test:barossa-sat-headlessentitytests} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 68,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "SAT - Germany (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.scenario:load_template_ge_run_reports,tr.osr.test.feature:big_four,tr.osr.test:barossa-sat-headlessentitytests} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 68,
+      "x": 27,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "SAT - Hong Kong (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.scenario:load_template_hk_run_reports,tr.osr.test.feature:big_four,tr.osr.test:barossa-sat-headlessentitytests} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 68,
+      "x": 53,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "SAT - Singapore (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.feature:big_four,tr.osr.test.scenario:load_template_sing_run_reports,tr.osr.test:barossa-sat-headlessentitytests} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 68,
+      "x": 79,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA - France (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.scenario:load_template_fr_run_reports,tr.osr.test.feature:big_four,tr.osr.test:barossa-qa-headlessentitytests} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 30,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA - Germany (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.scenario:load_template_ge_run_reports,tr.osr.test.feature:big_four,tr.osr.test:barossa-qa-headlessentitytests} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 30,
+      "x": 27,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA - Hong Kong (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.scenario:load_template_hk_run_reports,tr.osr.test.feature:big_four,tr.osr.test:barossa-qa-headlessentitytests} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 30,
+      "x": 53,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA - Singapore (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.feature:big_four,tr.osr.test.scenario:load_template_sing_run_reports,tr.osr.test:barossa-qa-headlessentitytests} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 30,
+      "x": 79,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA - France (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.scenario:load_template_fr_run_reports,tr.osr.test.feature:big_four,tr.osr.test:barossa-qa-headlessentitytests} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 11,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA - Germany (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.scenario:load_template_ge_run_reports,tr.osr.test.feature:big_four,tr.osr.test:barossa-qa-headlessentitytests} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 11,
+      "x": 27,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA - Hong Kong (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.scenario:load_template_hk_run_reports,tr.osr.test.feature:big_four,tr.osr.test:barossa-qa-headlessentitytests} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 11,
+      "x": 53,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 331514,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA - Singapore (seconds)",
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.reportruntimes{host:trta.osr.dashboardbox,tr.osr.test.feature:big_four,tr.osr.test.scenario:load_template_sing_run_reports,tr.osr.test:barossa-qa-headlessentitytests} by {tr.osr.test.reportname}/1000",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 25,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 11,
+      "x": 79,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 374706,
+  "title_edited": false,
+  "isShared": false
+}

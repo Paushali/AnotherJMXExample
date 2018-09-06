@@ -1,0 +1,922 @@
+{
+  "board_title": "Onesource Indirect tax APAC Efiler",
+  "read_only": false,
+  "isIntegration": false,
+  "description": "This is a description",
+  "board_bgtype": "board_graph",
+  "created": "2018-07-30T09:34:40.213775+00:00",
+  "original_title": "Onesource Indirect tax APAC Efiler",
+  "modified": "2018-07-30T10:10:44.437672+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "sridhar.duggimpudi@thomsonreuters.com",
+    "name": "Sridhar Duggimpudi",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "sridhar.duggimpudi@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/2fb2b1576a4be2c2c34e288d5aa9e039?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "widgets": [
+    {
+      "sizing": "zoom",
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/latency.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 10,
+      "width": 32,
+      "y": 9,
+      "x": 12,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/traffic.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 10,
+      "width": 30,
+      "y": 9,
+      "x": 45,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/errors.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 10,
+      "width": 30,
+      "y": 9,
+      "x": 78,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "zoom",
+      "board_id": 306282,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/saturation.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 10,
+      "width": 29,
+      "y": 9,
+      "x": 111,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "avg:f5.response_times_apac{service:efiler.service}",
+            "type": "line",
+            "metadata": {
+              "avg:f5.response_times_apac{service:efiler.service}": {
+                "alias": "response (ms)"
+              }
+            }
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "min": 3000,
+            "max": 10000,
+            "value": "3000 < y < 10000",
+            "label": "3s latency",
+            "type": "warning dashed"
+          },
+          {
+            "dim": "y",
+            "min": 10000,
+            "max": null,
+            "value": "y > 10000",
+            "label": "10s latency",
+            "type": "error dashed"
+          }
+        ],
+        "yaxis": {
+          "includeZero": false,
+          "max": "1e5",
+          "scale": "log",
+          "min": "10"
+        }
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 21,
+      "x": 11,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "avg:f5.response_times_apac{service:efiler.service}",
+            "type": "line",
+            "metadata": {
+              "avg:f5.response_times_apac{service:efiler.service}": {
+                "alias": "response (ms)"
+              }
+            }
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "min": 3000,
+            "max": 10000,
+            "value": "3000 < y < 10000",
+            "label": "3s latency",
+            "type": "warning dashed"
+          },
+          {
+            "dim": "y",
+            "min": 10000,
+            "max": null,
+            "value": "y > 10000",
+            "label": "10s latency",
+            "type": "error dashed"
+          }
+        ],
+        "yaxis": {
+          "includeZero": false,
+          "max": "1e5",
+          "scale": "log",
+          "min": "10"
+        }
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 37,
+      "x": 11,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "avg:f5.response_times_apac{service:efiler.service}",
+            "type": "line",
+            "metadata": {
+              "avg:f5.response_times_apac{service:efiler.service}": {
+                "alias": "response (ms)"
+              }
+            }
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "dim": "y",
+            "min": 3000,
+            "max": 10000,
+            "value": "3000 < y < 10000",
+            "label": "3s latency",
+            "type": "warning dashed"
+          },
+          {
+            "dim": "y",
+            "min": 10000,
+            "max": null,
+            "value": "y > 10000",
+            "label": "10s latency",
+            "type": "error dashed"
+          }
+        ],
+        "yaxis": {
+          "includeZero": false,
+          "max": "1e5",
+          "scale": "log",
+          "min": "10"
+        }
+      },
+      "width": 33,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 53,
+      "x": 11,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "anomalies(avg:f5.http_requests_apac{statuscode:all,window:1m,service:efiler.service}, 'adaptive', 5)",
+            "type": "line",
+            "metadata": {
+              "anomalies(avg:f5.http_requests_apac{statuscode:all,window:1m,service:efiler.service}, 'adaptive', 5)": {
+                "alias": "requests / s"
+              }
+            }
+          },
+          {
+            "q": "anomalies(avg:f5.http_requests_apac{window:1m,statuscode:2xx}, 'adaptive', 5)",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "metadata": {
+              "anomalies(avg:f5.http_requests_apac{window:1m,statuscode:2xx}, 'adaptive', 5)": {
+                "alias": "requests / s"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 31,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 21,
+      "x": 45,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "anomalies(avg:f5.http_requests_apac{statuscode:all,window:1m,service:efiler.service}, 'adaptive', 5)",
+            "type": "line",
+            "metadata": {
+              "anomalies(avg:f5.http_requests_apac{statuscode:all,window:1m,service:efiler.service}, 'adaptive', 5)": {
+                "alias": "requests / s"
+              }
+            }
+          },
+          {
+            "q": "anomalies(avg:f5.http_requests_apac{window:1m,service:efiler.service,statuscode:2xx}, 'adaptive', 5)",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "metadata": {
+              "anomalies(avg:f5.http_requests_apac{window:1m,service:efiler.service,statuscode:2xx}, 'adaptive', 5)": {
+                "alias": "requests / s"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 31,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 37,
+      "x": 45,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "avg:f5.http_requests_apac{statuscode:all,window:1m,service:efiler.service}",
+            "type": "line",
+            "metadata": {
+              "avg:f5.http_requests_apac{statuscode:all,window:1m,service:efiler.service}": {
+                "alias": "requests / s"
+              }
+            }
+          },
+          {
+            "q": "avg:f5.http_requests_apac{window:1m,service:efiler.service,statuscode:2xx}",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "metadata": {
+              "avg:f5.http_requests_apac{window:1m,service:efiler.service,statuscode:2xx}": {
+                "alias": "requests / s"
+              }
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 31,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 53,
+      "x": 45,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "avg:f5.http_requests_apac{statuscode:5xx,window:1m,service:itc.core}/avg:f5.http_requests_apac{statuscode:all,window:1m,service:oct.core}*100",
+            "type": "line",
+            "metadata": {
+              "avg:f5.http_requests_apac{statuscode:5xx,window:1m,service:itc.core}/avg:f5.http_requests_apac{statuscode:all,window:1m,service:oct.core}*100": {
+                "alias": "% 5xx"
+              }
+            }
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "max": null,
+            "dim": "y",
+            "type": "error dashed",
+            "value": "y > 1",
+            "min": 1
+          },
+          {
+            "max": 1,
+            "min": 0.1,
+            "type": "warning dashed",
+            "value": ".1 < y < 1",
+            "dim": "y"
+          }
+        ],
+        "yaxis": {
+          "includeZero": false,
+          "max": "100",
+          "scale": "log",
+          "min": ".001"
+        }
+      },
+      "width": 32,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 21,
+      "x": 77,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "avg:f5.http_requests_apac{statuscode:5xx,window:1m,service:oct.core}/avg:f5.http_requests_apac{statuscode:all,window:1m,service:oct.core}*100",
+            "type": "line",
+            "metadata": {
+              "avg:f5.http_requests_apac{statuscode:5xx,window:1m,service:oct.core}/avg:f5.http_requests_apac{statuscode:all,window:1m,service:oct.core}*100": {
+                "alias": "% 5xx"
+              }
+            }
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "max": null,
+            "dim": "y",
+            "type": "error dashed",
+            "value": "y > 1",
+            "min": 1
+          },
+          {
+            "max": 1,
+            "min": 0.1,
+            "type": "warning dashed",
+            "value": ".1 < y < 1",
+            "dim": "y"
+          }
+        ],
+        "yaxis": {
+          "includeZero": false,
+          "max": "100",
+          "scale": "log",
+          "min": ".001"
+        }
+      },
+      "width": 32,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 37,
+      "x": 77,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "q": "avg:f5.http_requests_apac{statuscode:5xx,window:1m,service:oct.core}/avg:f5.http_requests_apac{statuscode:all,window:1m,service:oct.core}*100",
+            "type": "line",
+            "metadata": {
+              "avg:f5.http_requests_apac{statuscode:5xx,window:1m,service:oct.core}/avg:f5.http_requests_apac{statuscode:all,window:1m,service:oct.core}*100": {
+                "alias": "% 5xx"
+              }
+            }
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "max": null,
+            "dim": "y",
+            "type": "error dashed",
+            "value": "y > 1",
+            "min": 1
+          },
+          {
+            "max": 1,
+            "min": 0.1,
+            "type": "warning dashed",
+            "value": ".1 < y < 1",
+            "dim": "y"
+          }
+        ],
+        "yaxis": {
+          "includeZero": false,
+          "max": "100",
+          "scale": "log",
+          "min": ".001"
+        }
+      },
+      "width": 32,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 53,
+      "x": 77,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "top5_max(100-avg:athena.system.cpu.idle.pct{env:prod,app:oct,region:emea} by {host})",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "top5_max(100*(avg:athena.system.memory.total{env:prod,app:oct,region:emea} by {host}-avg:athena.system.memory.total{env:prod,app:oct,region:emea} by {host})/avg:athena.system.memory.total{env:prod,app:oct,region:emea} by {host})",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "max": 100,
+            "min": 95,
+            "type": "error dashed",
+            "value": "95 < y < 100",
+            "dim": "y"
+          },
+          {
+            "max": 95,
+            "min": 85,
+            "type": "warning dashed",
+            "value": "85 < y < 95",
+            "dim": "y"
+          }
+        ],
+        "yaxis": {
+          "max": "100",
+          "min": "0"
+        }
+      },
+      "width": 31,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 21,
+      "x": 110,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "top5_max(100-avg:athena.system.cpu.idle.pct{env:prod,app:oct,region:emea} by {host})",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "top5_max(100*(avg:athena.system.memory.total{env:prod,app:oct,region:emea} by {host}-avg:system.mem.free{env:prod,region:emea,app:oct} by {host})/avg:athena.system.memory.total{env:prod,app:oct,region:emea} by {host})",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "max": 100,
+            "min": 95,
+            "type": "error dashed",
+            "value": "95 < y < 100",
+            "dim": "y"
+          },
+          {
+            "max": 95,
+            "min": 85,
+            "type": "warning dashed",
+            "value": "85 < y < 95",
+            "dim": "y"
+          }
+        ],
+        "yaxis": {
+          "max": "100",
+          "min": "0"
+        }
+      },
+      "width": 31,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 37,
+      "x": 110,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 306282,
+      "title": false,
+      "height": 16,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "top5_max(100-avg:athena.system.cpu.pct{env:prod,app:oct,region:emea} by {host})",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "top5_max(100*(avg:athena.system.memory.total{env:prod,app:oct,region:emea} by {host}-avg:system.mem.free{env:prod,app:oct,region:emea} by {host})/avg:athena.system.memory.total{env:prod,app:oct,region:emea} by {host})",
+            "style": {
+              "width": "normal",
+              "palette": "cool",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true,
+        "markers": [
+          {
+            "max": 100,
+            "min": 95,
+            "type": "error dashed",
+            "value": "95 < y < 100",
+            "dim": "y"
+          },
+          {
+            "max": 95,
+            "min": 85,
+            "type": "warning dashed",
+            "value": "85 < y < 95",
+            "dim": "y"
+          }
+        ],
+        "yaxis": {
+          "max": "100",
+          "min": "0"
+        }
+      },
+      "width": 31,
+      "time": {
+        "live_span": "1mo"
+      },
+      "y": 53,
+      "x": 110,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 307883,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/last_hour.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 16,
+      "width": 7,
+      "y": 21,
+      "x": 2,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 307883,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/last_day.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 16,
+      "width": 7,
+      "y": 37,
+      "x": 2,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 307883,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/last_month.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 16,
+      "width": 7,
+      "y": 53,
+      "x": 2,
+      "margin": "",
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 307883,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/traffic_ls2.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 21,
+      "y": 70,
+      "x": 55,
+      "margin": "small",
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 307883,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/errors_ls2.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 21,
+      "y": 70,
+      "x": 88,
+      "margin": "small",
+      "isShared": false
+    },
+    {
+      "sizing": "fit",
+      "board_id": 307883,
+      "title_size": 16,
+      "title": true,
+      "url": "https://s3.amazonaws.com/sre-datadog-images/Golden+signals/saturation_ls2.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 4,
+      "width": 21,
+      "y": 70,
+      "x": 120,
+      "margin": "small",
+      "isShared": false
+    },
+    {
+      "board_id": 381566,
+      "font_size": "24",
+      "title": true,
+      "color": "#ff7d33",
+      "text": "Efiler Service",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 3,
+      "width": 16,
+      "x": 28,
+      "y": 71,
+      "title_size": 16,
+      "type": "free_text",
+      "isShared": false
+    },
+    {
+      "board_id": 381566,
+      "font_size": "56",
+      "title": true,
+      "color": "#ff7d33",
+      "text": "ONESOURCE CORPORATETAX",
+      "title_align": "left",
+      "text_align": "left",
+      "title_text": "",
+      "height": 5,
+      "width": 81,
+      "x": 36,
+      "y": 2,
+      "title_size": 16,
+      "type": "free_text",
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 396644,
+  "title_edited": false,
+  "isShared": false
+}

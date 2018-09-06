@@ -1,0 +1,90 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "query_value",
+          "requests": [
+            {
+              "q": "sum:OTIR_MonitorsAPI.monitor.metric0{host:c827pvzotrcw5}",
+              "aggregator": "last",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "precision": "0"
+        },
+        "title": "ECREALTIME not Picked up"
+      },
+      {
+        "definition": {
+          "viz": "query_value",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:OTIR_MonitorsAPI.monitor.metric1{host:c827pvzotrcw5}",
+              "aggregator": "last",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "precision": "0"
+        },
+        "title": "ESTATEMENTS not Picked up"
+      },
+      {
+        "definition": {
+          "viz": "query_value",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:OTIR_MonitorsAPI.monitor.metric2{host:c827pvzotrcw5}",
+              "aggregator": "last",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "precision": "0"
+        },
+        "title": "Jobs not Picked Up"
+      }
+    ],
+    "description": "created by jacob.john@thomsonreuters.com",
+    "title": "OTIR Metrics - Alerts",
+    "created": "2018-07-30T19:34:00.824220+00:00",
+    "id": 874980,
+    "created_by": {
+      "disabled": false,
+      "handle": "jacob.john@thomsonreuters.com",
+      "name": "Jacob John Kadambanattu",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "jacob.john@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/3393b408a67b6584fd808153e1d75700?s=48&d=retro"
+    },
+    "modified": "2018-07-30T19:38:24.885344+00:00"
+  },
+  "url": "/dash/874980/otir-metrics---alerts",
+  "resource": "/api/v1/dash/874980"
+}

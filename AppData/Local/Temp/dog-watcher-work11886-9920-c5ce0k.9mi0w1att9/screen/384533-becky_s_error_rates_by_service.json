@@ -1,0 +1,30 @@
+{
+  "board_title": "Becky's Error rates by service",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-07-16T11:00:31.193924+00:00",
+  "original_title": "Becky's Screenboard 16 Jul 2018 12:00",
+  "modified": "2018-07-16T11:00:55.270100+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "becky.mullens@thomsonreuters.com",
+    "name": "Becky Mullens",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "becky.mullens@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/7837a0beeda8c32bba582cb80f469b1c?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "widgets": [],
+  "disableCog": false,
+  "id": 384533,
+  "title_edited": true,
+  "isShared": false
+}

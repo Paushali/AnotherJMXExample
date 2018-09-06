@@ -1,0 +1,18 @@
+{
+  "read_only": false,
+  "board_title": "Benjamin's Screenboard 9 Aug 2018 14:19",
+  "created": "2018-08-09T18:19:52.407039+00:00",
+  "modified": "2018-08-09T18:19:52.407046+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "ben.clark@thomsonreuters.com",
+    "name": "Benjamin Clark",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "ben.clark@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/30a9545d0b96c729eb1a0f589faefed6?s=48&d=retro"
+  },
+  "id": 406818
+}

@@ -1,0 +1,51 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "style": {
+            "fillMax": null,
+            "palette": "green_to_orange",
+            "fillMin": null,
+            "paletteFlip": false
+          },
+          "group": null,
+          "notes": null,
+          "noMetricHosts": true,
+          "viz": "hostmap",
+          "scope": [
+            "tr_product:otir",
+            "tr_environment-type:production"
+          ],
+          "requests": [
+            {
+              "q": "max:system.cpu.pct{tr_product:otir,tr_environment-type:production} by {host}",
+              "type": "fill"
+            }
+          ],
+          "noGroupHosts": true
+        },
+        "title": "Trust Dev Ops - OTIR Host Map and CPU"
+      }
+    ],
+    "description": "created by prasanna.chetty@thomsonreuters.com",
+    "title": "Trust Dev Ops Dashboard",
+    "created": "2018-08-03T16:57:47.173562+00:00",
+    "id": 879285,
+    "created_by": {
+      "disabled": false,
+      "handle": "prasanna.chetty@thomsonreuters.com",
+      "name": "Prasanna Chetty",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "prasanna.chetty@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/e61d21f6ab9f1c1d476864edd0919720?s=48&d=retro"
+    },
+    "modified": "2018-08-03T18:13:22.562463+00:00"
+  },
+  "url": "/dash/879285/trust-dev-ops-dashboard",
+  "resource": "/api/v1/dash/879285"
+}

@@ -1,0 +1,353 @@
+{
+  "board_title": "NGWF DEV WorkPapers",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-07-03T07:35:57.327677+00:00",
+  "original_title": "NGWF DEV WorkPapers",
+  "modified": "2018-07-06T08:12:25.998739+00:00",
+  "disableEditing": false,
+  "height": 82,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "ajaykumar.halevoorprakash@thomsonreuters.com",
+    "name": "Ajay kumar Halevoor Prakash",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "Ajaykumar.HalevoorPrakash@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/5e336ce9dfe387c3cc7d49aa334b3481?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "widgets": [
+    {
+      "board_id": 374361,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "statuscheck and Resourcecheck Hits",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:ngwf.dev.workflow_auditservice.workflow_workpapers.api.status.v1.statuscheck_hits{*}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          },
+          {
+            "q": "sum:ngwf.dev.workflow_auditservice.workflow_workpapers.api.status.v1.resourcecheck_hits{*}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "purple",
+              "type": "solid"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 46,
+      "time": {},
+      "y": 2,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 374361,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Statuscheck and Resourcecheck status OK",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:ngwf.dev.workflow_auditservice.workflow_workpapers.api.status.v1.statuscheck_httpStatus_200{*}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          },
+          {
+            "q": "sum:ngwf.dev.workflow_auditservice.workflow_workpapers.api.status.v1.resourcecheck_httpStatus_200{*}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "purple",
+              "type": "solid"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 43,
+      "time": {},
+      "y": 2,
+      "x": 47,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 374361,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Statuscheck and Resourcecheck Avg",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:ngwf.dev.workflow_auditservice.workflow_workpapers.api.status.v1.statuscheck.avg{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:ngwf.dev.workflow_auditservice.workflow_workpapers.api.status.v1.resourcecheck.avg{*}",
+            "style": {
+              "width": "normal",
+              "palette": "purple",
+              "type": "solid"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 46,
+      "time": {},
+      "y": 2,
+      "x": 91,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 374361,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Workpaper manager Hits",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:ngwf.dev.workflow_auditservice.workflow_workpapers.api.v1.workpapermanager.1_hits{*}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 46,
+      "time": {},
+      "y": 19,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 374361,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Workpaper manager status_OK",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:ngwf.dev.workflow_auditservice.workflow_workpapers.api.v1.workpapermanager.1_httpStatus_200{*}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 43,
+      "time": {},
+      "y": 19,
+      "x": 47,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 374361,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Workpapers manager Avg",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:ngwf.dev.workflow_auditservice.workflow_workpapers.api.v1.workpapermanager.1.avg{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 46,
+      "time": {},
+      "y": 19,
+      "x": 91,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 374361,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Workpapers manager category hits",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:ngwf.dev.workflow_auditservice.workflow_workpapers.api.v1.workpapermanager.1.categories_hits{*}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 46,
+      "time": {},
+      "y": 38,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 374361,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Workpaper manager category staus_OK",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:ngwf.dev.workflow_auditservice.workflow_workpapers.api.v1.workpapermanager.1.categories_httpStatus_200{*}.as_count()",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 43,
+      "time": {},
+      "y": 38,
+      "x": 47,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    },
+    {
+      "board_id": 374361,
+      "title_size": 13,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Workpaper manager category Avg",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:ngwf.dev.workflow_auditservice.workflow_workpapers.api.v1.workpapermanager.1.categories.avg{*}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 46,
+      "time": {},
+      "y": 38,
+      "x": 91,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 374361,
+  "title_edited": false,
+  "isShared": false
+}

@@ -1,0 +1,52 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "style": {
+            "fillMax": null,
+            "palette": "green_to_orange",
+            "fillMin": null,
+            "paletteFlip": false
+          },
+          "group": [
+            "env"
+          ],
+          "notes": null,
+          "noMetricHosts": true,
+          "viz": "hostmap",
+          "scope": [
+            "service:osu"
+          ],
+          "requests": [
+            {
+              "q": "avg:system.cpu.pct{service:osu} by {host}",
+              "type": "fill"
+            }
+          ],
+          "noGroupHosts": true
+        },
+        "title": "Avg of system.cpu.pct over service:osu by host"
+      }
+    ],
+    "description": "created by eric.storlid@thomsonreuters.com",
+    "title": "Eric's Timeboard 25 Jun 2018 13:27",
+    "created": "2018-06-25T20:27:43.149648+00:00",
+    "id": 844541,
+    "created_by": {
+      "disabled": false,
+      "handle": "eric.storlid@thomsonreuters.com",
+      "name": "Eric Storlid",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "eric.storlid@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/74a4357d163d34dd1a87f66583587f3f?s=48&d=retro"
+    },
+    "modified": "2018-06-25T20:29:04.802375+00:00"
+  },
+  "url": "/dash/844541/erics-timeboard-25-jun-2018-1327",
+  "resource": "/api/v1/dash/844541"
+}

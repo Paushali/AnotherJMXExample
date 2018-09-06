@@ -1,0 +1,127 @@
+{
+  "board_title": "trta-idt-devops PROD Screenboard",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2017-12-12T18:33:52.903437+00:00",
+  "original_title": "trta-idt-devops PROD Screenboard",
+  "modified": "2018-08-02T22:41:42.454145+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "tim.fagergren@thomsonreuters.com",
+    "name": "Timothy Fagergren",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "Tim.Fagergren@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/ef0829926735010b693117978dad8574?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 251888,
+      "x": 80,
+      "title_size": 13,
+      "title": true,
+      "title_align": "center",
+      "isShared": false,
+      "text_align": "center",
+      "title_text": "FQDN Up",
+      "height": 24,
+      "width": 48,
+      "group_by": [],
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 0,
+      "group": null,
+      "text_size": "auto",
+      "react_header": true,
+      "type": "check_status",
+      "check": "http.can_connect",
+      "tags": [
+        "host:i-06413fb7969563c8d"
+      ],
+      "grouping": "cluster"
+    },
+    {
+      "board_id": 251888,
+      "x": 0,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "tags_execution": "and",
+      "height": 9,
+      "width": 80,
+      "global_timeframe_controls": true,
+      "title_text": "Error Events",
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 0,
+      "query": "hosts:i-06413fb7969563c8d status:error ",
+      "type": "event_timeline",
+      "isShared": false
+    },
+    {
+      "board_id": 251888,
+      "x": 0,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "tags_execution": "and",
+      "height": 55,
+      "width": 80,
+      "global_timeframe_controls": true,
+      "title_text": "Events from DataDog FQDN Host",
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 11,
+      "query": "hosts:i-06413fb7969563c8d ",
+      "type": "event_stream",
+      "event_size": "s",
+      "isShared": false
+    },
+    {
+      "widgetID": 3,
+      "height": 44,
+      "displayFormat": "countsAndList",
+      "titleText": "Monitors for PROD/UAT",
+      "board_id": 251888,
+      "title_size": 16,
+      "titleAlign": "left",
+      "title_align": "left",
+      "colorPreference": "background",
+      "hideZeroCounts": false,
+      "params": {
+        "sort": "status,asc",
+        "text": "title: Indirect Tax HTTPS FQDN",
+        "count": 50,
+        "start": 0
+      },
+      "type": "manage_status",
+      "showTitle": true,
+      "isShared": false,
+      "title_text": "",
+      "titleSize": "13",
+      "edit": true,
+      "title": true,
+      "userEditedTitle": false,
+      "y": 24,
+      "x": 80,
+      "react_header": true,
+      "width": 47
+    }
+  ],
+  "disableCog": false,
+  "id": 257467,
+  "title_edited": false,
+  "isShared": false
+}

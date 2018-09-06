@@ -1,0 +1,258 @@
+{
+  "board_title": "SF Test - AWS RDS",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-07-18T14:42:34.565722+00:00",
+  "original_title": "SF Test - AWS RDS",
+  "modified": "2018-07-18T15:24:25.170577+00:00",
+  "disableEditing": false,
+  "height": 72,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "region",
+      "name": "region"
+    },
+    {
+      "default": "*",
+      "prefix": "availability-zone",
+      "name": "zone"
+    },
+    {
+      "default": "*",
+      "prefix": "dbinstanceidentifier",
+      "name": "dbinstanceidentifier"
+    },
+    {
+      "default": "*",
+      "prefix": null,
+      "name": "scope"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "stephen.fletcher@thomsonreuters.com",
+    "name": "Stephen Fletcher",
+    "is_admin": false,
+    "role": "Manager",
+    "access_role": "st",
+    "verified": true,
+    "email": "stephen.fletcher@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/67de4efa01fd807a6459f68caee2d089?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "templated": true,
+  "widgets": [
+    {
+      "title_size": 16,
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "right",
+      "text_align": "center",
+      "title_text": "",
+      "auto_refresh": false,
+      "height": 20,
+      "bgcolor": "gray",
+      "html": "\nQuery throughput ",
+      "x": 0,
+      "y": 1,
+      "font_size": "18",
+      "tick": true,
+      "tick_pos": "50%",
+      "width": 12,
+      "isShared": false
+    },
+    {
+      "board_id": 35387,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Network in",
+      "height": 18,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.rds.network_receive_throughput{$region,$zone,$dbinstanceidentifier,$scope} by {dbinstanceidentifier}.as_rate()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "purple",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 39,
+      "time": {
+        "live_span": "2d"
+      },
+      "y": 43,
+      "x": 13,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 35387,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Network out",
+      "height": 18,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.rds.network_transmit_throughput{$region,$zone,$dbinstanceidentifier,$scope} by {dbinstanceidentifier}.as_rate()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "green",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 39,
+      "time": {
+        "live_span": "2d"
+      },
+      "y": 43,
+      "x": 53,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 35387,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU",
+      "height": 18,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:aws.rds.cpuutilization{$region,$zone,$dbinstanceidentifier,$scope,engine:postgres} by {dbinstanceidentifier}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 39,
+      "time": {},
+      "y": 22,
+      "x": 13,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "title_size": 16,
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "right",
+      "text_align": "center",
+      "title_text": "",
+      "auto_refresh": false,
+      "height": 41,
+      "bgcolor": "gray",
+      "html": "AWS resource metrics",
+      "x": 0,
+      "y": 22,
+      "font_size": "18",
+      "tick": true,
+      "tick_pos": "50%",
+      "width": 12,
+      "isShared": false
+    },
+    {
+      "board_id": 53665,
+      "x": 60,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "RDS service status",
+      "height": 12,
+      "width": 24,
+      "grouping": "cluster",
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 16,
+      "group": null,
+      "text_size": "auto",
+      "react_header": true,
+      "type": "check_status",
+      "check": "aws.status",
+      "tags": [
+        "service:rds"
+      ],
+      "isShared": false
+    },
+    {
+      "board_id": 291088,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Rows updated / deleted / inserted",
+      "height": 18,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:postgresql.rows_updated{$region,$zone,$dbinstanceidentifier,$scope}, sum:postgresql.rows_deleted{$region,$zone,$dbinstanceidentifier,$scope}, sum:postgresql.rows_inserted{$region,$zone,$dbinstanceidentifier,$scope}",
+            "aggregator": "avg",
+            "conditional_formats": [],
+            "type": "line",
+            "style": {
+              "width": "normal",
+              "palette": "purple",
+              "type": "solid"
+            }
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 39,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 1,
+      "x": 13,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 386982,
+  "title_edited": false,
+  "isShared": false
+}

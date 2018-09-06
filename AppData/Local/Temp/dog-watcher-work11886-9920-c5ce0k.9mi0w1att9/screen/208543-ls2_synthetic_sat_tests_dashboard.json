@@ -1,0 +1,1579 @@
+{
+  "board_title": "LS2 Synthetic SAT Tests Dashboard",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2017-08-02T20:01:00.045237+00:00",
+  "original_title": "LS2 Synthetic AMER Tests Dashboard",
+  "modified": "2017-11-16T14:59:06.520504+00:00",
+  "disableEditing": false,
+  "height": 193,
+  "width": "100%",
+  "template_variables": [],
+  "created_by": {
+    "disabled": false,
+    "handle": "khajamoinuddin.mohammed@thomsonreuters.com",
+    "name": "Khaja Moinuddin Mohammed",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "KhajaMoinuddin.Mohammed@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/3d43cc4dee20fb211bd17e407b09de2b?s=48&d=retro"
+  },
+  "widgets": [
+    {
+      "sizing": "center",
+      "board_id": 207653,
+      "title_size": 16,
+      "title": true,
+      "url": "https://app.datadoghq.com/static/images/screenboard/integrations/jenkins.png",
+      "type": "image",
+      "title_align": "left",
+      "title_text": "",
+      "height": 16,
+      "width": 90,
+      "y": 0,
+      "x": 0,
+      "margin": ""
+    },
+    {
+      "board_id": 207653,
+      "x": 51,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Synthetic SAT Login",
+      "height": 48,
+      "width": 39,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 25,
+      "query": "Synthetic*SAT* Login ",
+      "type": "event_stream",
+      "event_size": "s"
+    },
+    {
+      "board_id": 207653,
+      "title_size": 13,
+      "tags": [
+        "*"
+      ],
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "Agent Up",
+      "height": 9,
+      "width": 10,
+      "group_by": [],
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 25,
+      "x": 0,
+      "text_size": "auto",
+      "type": "check_status",
+      "check": "jenkins.job.status",
+      "group": "completed:jenkins.job.completed,duration:jenkins.job.duration,env:sat,events:jenkins.events,job:trta.ls2.synthetic.ui.sat.testauto.login,module:lonestar2,satus:jenkins.job.status,host:w7-x64-ie10-002",
+      "grouping": "check"
+    },
+    {
+      "board_id": 207653,
+      "title_size": 16,
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "height": 7,
+      "bgcolor": "gray",
+      "html": "Synthetic-Test-SAT-Login",
+      "y": 16,
+      "x": 0,
+      "font_size": "36",
+      "tick": true,
+      "tick_pos": "50%",
+      "width": 90,
+      "auto_refresh": false
+    },
+    {
+      "board_id": 207653,
+      "x": 10,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Maximum",
+      "height": 7,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.login}",
+            "aggregator": "max",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 15,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 25,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 25,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Minimum",
+      "height": 7,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.login}",
+            "aggregator": "min",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 15,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 25,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 40,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Average",
+      "height": 7,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.login}",
+            "aggregator": "avg",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 11,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 25,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 0,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Maximum",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.login}",
+            "aggregator": "max",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 49,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 17,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Minimum",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.login}",
+            "aggregator": "avg",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 49,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 34,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Average",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.login}",
+            "aggregator": "avg",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 49,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 0,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Maximum",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.login}",
+            "aggregator": "max",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 62,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 17,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Maximum",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.login}",
+            "aggregator": "min",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "2"
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 62,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 34,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Average",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.login}",
+            "aggregator": "avg",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "2"
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 62,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 51,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Synthetic SAT IncomeTax",
+      "height": 48,
+      "width": 40,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 84,
+      "query": "Synthetic*SAT*Tax ",
+      "type": "event_stream",
+      "event_size": "s"
+    },
+    {
+      "board_id": 207653,
+      "title_size": 13,
+      "tags": [
+        "*"
+      ],
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "Agent Up",
+      "height": 8,
+      "width": 8,
+      "group_by": [
+        "job",
+        "satus"
+      ],
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 84,
+      "x": 0,
+      "text_size": "auto",
+      "type": "check_status",
+      "check": "jenkins.job.status",
+      "group": "job:trta.ls2.synthetic.ui.sat.testauto.incometax,satus:jenkins.job.status",
+      "grouping": "check"
+    },
+    {
+      "board_id": 207653,
+      "title_size": 16,
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "height": 7,
+      "bgcolor": "gray",
+      "html": "Synthetic-Test-SAT-IncomeTax",
+      "y": 75,
+      "x": 0,
+      "font_size": "36",
+      "tick": true,
+      "tick_pos": "50%",
+      "width": 90,
+      "auto_refresh": false
+    },
+    {
+      "board_id": 207653,
+      "x": 8,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Maximum",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.incometax}",
+            "aggregator": "max",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 16,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 84,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 24,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Minimum",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.incometax}",
+            "aggregator": "min",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 84,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 38,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Average",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.incometax}",
+            "aggregator": "avg",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 13,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 84,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 0,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Maximum",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.incometax}",
+            "aggregator": "max",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 108,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 17,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Minimum",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.incometax}",
+            "aggregator": "avg",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 108,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 34,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Average",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.incometax}",
+            "aggregator": "avg",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 108,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 0,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Maximum",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.incometax}",
+            "aggregator": "max",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 121,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 17,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Maximum",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.incometax}",
+            "aggregator": "min",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "2"
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 121,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 34,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Average",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.incometax}",
+            "aggregator": "avg",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "2"
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 121,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 51,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Synthetic SAT SwitchUser",
+      "height": 48,
+      "width": 40,
+      "tags_execution": "and",
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 143,
+      "query": "*Synthetic*SAT*SwitchUser* ",
+      "type": "event_stream",
+      "event_size": "s"
+    },
+    {
+      "board_id": 207653,
+      "title_size": 13,
+      "tags": [
+        "*"
+      ],
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "Agent Up",
+      "height": 8,
+      "width": 10,
+      "group_by": [
+        "job",
+        "satus"
+      ],
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 143,
+      "x": 0,
+      "text_size": "auto",
+      "type": "check_status",
+      "check": "jenkins.job.status",
+      "group": "job:trta.ls2.synthetic.ui.sat.testauto.switchuser,satus:jenkins.job.status",
+      "grouping": "check"
+    },
+    {
+      "board_id": 207653,
+      "title_size": 16,
+      "title": true,
+      "refresh_every": 30000,
+      "type": "note",
+      "title_align": "left",
+      "tick_edge": "bottom",
+      "text_align": "center",
+      "title_text": "",
+      "height": 7,
+      "bgcolor": "gray",
+      "html": "Synthetic-Test-SAT-SwitchUser",
+      "y": 134,
+      "x": 0,
+      "font_size": "36",
+      "tick": true,
+      "tick_pos": "50%",
+      "width": 90,
+      "auto_refresh": false
+    },
+    {
+      "board_id": 207653,
+      "x": 10,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Maximum",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.switchuser}",
+            "aggregator": "max",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 13,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 143,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 23,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Minimum",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.switchuser}",
+            "aggregator": "min",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 143,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 37,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Average",
+      "height": 6,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.switchuser}",
+            "aggregator": "avg",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 143,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 0,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Maximum",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.switchuser}",
+            "aggregator": "max",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 167,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 17,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Minimum",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.switchuser}",
+            "aggregator": "avg",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": ""
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": ""
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 167,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 34,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Average",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.switchuser}",
+            "aggregator": "avg",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 167,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 0,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Maximum",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.switchuser}",
+            "aggregator": "max",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 180,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 17,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Maximum",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.switchuser}",
+            "aggregator": "min",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "2"
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 180,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "x": 34,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Average",
+      "height": 11,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.switchuser}",
+            "aggregator": "avg",
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": null
+              },
+              {
+                "palette": "white_on_yellow",
+                "comparator": ">=",
+                "value": null
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "2"
+      },
+      "width": 17,
+      "time": {
+        "live_span": "1w"
+      },
+      "y": 180,
+      "autoscale": true,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false
+    },
+    {
+      "board_id": 207653,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Past 4 Hours Synthetic SAT IncomeTax Successful vs Failed Jobs",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.incometax,result:failure}",
+            "aggregator": "avg",
+            "style": {
+              "palette": "warm"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.incometax,result:success}",
+            "style": {
+              "palette": "dog_classic"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 51,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 92,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true
+    },
+    {
+      "board_id": 207653,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Past 4 Hours Synthetic SAT Login Successful vs Failed Jobs",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{result:failure}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "warm",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:jenkins.job.duration{result:success}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 51,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 34,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true
+    },
+    {
+      "board_id": 207653,
+      "title_size": 16,
+      "title": true,
+      "title_align": "center",
+      "title_text": "Past 4 Hours Synthetic SAT SwitchUser Successful vs Failed Jobs",
+      "height": 14,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.switchuser,result:failure}",
+            "aggregator": "avg",
+            "style": {
+              "palette": "warm"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:jenkins.job.duration{job:trta.ls2.synthetic.ui.sat.testauto.switchuser,result:success}",
+            "type": "bars"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 51,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 151,
+      "x": 0,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": true
+    }
+  ],
+  "disableCog": false,
+  "id": 208543,
+  "title_edited": false,
+  "isShared": false
+}

@@ -1,0 +1,221 @@
+{
+  "board_title": "OSR Financial Period Creation (Test)",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-07-23T13:57:05.927612+00:00",
+  "original_title": "OSR Financial Period Creation (Test)",
+  "modified": "2018-07-31T14:12:04.893600+00:00",
+  "disableEditing": false,
+  "height": 64,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": "tr.osr.test.templatename",
+      "name": "templateName"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "stephen.fletcher@thomsonreuters.com",
+    "name": "Stephen Fletcher",
+    "is_admin": false,
+    "role": "Manager",
+    "access_role": "st",
+    "verified": true,
+    "email": "stephen.fletcher@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/67de4efa01fd807a6459f68caee2d089?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "widgets": [
+    {
+      "board_id": 390956,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "AMERS (seconds)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.fpcreatetimes{host:trta.osr.dashboardbox,tr.osr.test:barossa-prod-headlessentitytests,$templateName} by {tr.osr.test.templatename}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 33,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 390956,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "APAC (seconds)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.fpcreatetimes{host:trta.osr.dashboardbox,tr.osr.test:barossa-prod-apac-headlessentitytests,$templateName} by {tr.osr.test.templatename}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 33,
+      "x": 49,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 390956,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "SAT (seconds)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.fpcreatetimes{host:trta.osr.dashboardbox,tr.osr.test:barossa-sat-headlessentitytests,$templateName} by {tr.osr.test.templatename}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 17,
+      "x": 49,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 390956,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "QA (seconds)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.fpcreatetimes{host:trta.osr.dashboardbox,tr.osr.test:barossa-qa-headlessentitytests,$templateName} by {tr.osr.test.templatename}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 17,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 390956,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Demo (seconds)",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:tr.osr.fpcreatetimes{host:trta.osr.dashboardbox,tr.osr.test:barossa-demo-headlessentitytests,$templateName} by {tr.osr.test.templatename}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {},
+      "y": 1,
+      "x": 1,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 390956,
+      "x": 49,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "tags_execution": "and",
+      "height": 9,
+      "width": 47,
+      "global_timeframe_controls": true,
+      "title_text": "Data polled",
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 3,
+      "query": "Build poll time ",
+      "type": "event_timeline",
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 390956,
+  "title_edited": false,
+  "isShared": false
+}

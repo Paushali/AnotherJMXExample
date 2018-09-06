@@ -1,0 +1,311 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.qa.workflow_definitionservice.api.status.v1.statuscheck_hits{qa} by {host}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:ngwf.qa.workflow_definitionservice.api.status.v1.resourcecheck_hits{qa} by {host}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "statuscheck & resourceCheck hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.qa.workflow_definitionservice.api.status.v1.statuscheck_httpStatus_OK{qa} by {host}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "sum:ngwf.qa.workflow_definitionservice.api.status.v1.resourcecheck_httpStatus_OK{qa} by {host}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "statuscheck & resourceCheck httpStatusOK"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.qa.workflow_definitionservice.api.status.v1.statuscheck.avg{qa} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:ngwf.qa.workflow_definitionservice.api.status.v1.resourcecheck.avg{qa} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "statuscheck and resourceCheck avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.dev.workflow_definitionservice.api.v1.definition.GetDefinitionsBySsoProductId.ssoProductId_hits{name:ngwf-dev-def-service} by {host}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "getDefinitionBySSoProductID hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.dev.workflow_definitionservice.api.v1.definition.GetDefinitionsBySsoProductId.ssoProductId_httpStatus_OK{name:ngwf-dev-def-service} by {host}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "getDefinitionBySSoProductID httpStatusOK"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.dev.workflow_definitionservice.api.v1.definition.GetDefinitionsBySsoProductId.ssoProductId.avg{name:ngwf-dev-def-service} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "getDefinitionBySSoProductID avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "sum:ngwf.dev.workflow_definitionservice.api.v1.definition.GetDefinitionByDefinitionId.definitionId_hits{*} by {host}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "getDefinitionByDefinitionID - hits"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.dev.workflow_definitionservice.api.v1.definition.GetDefinitionByDefinitionId.definitionId_httpStatus_OK{name:ngwf-dev-def-service} by {host}.as_count()",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:ngwf.qa.workflow_definitionservice.api.v1.definition.GetDefinitionByDefinitionId.definitionId_httpStatus_BadRequest{*} by {host}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "getDefinitionByDefinitionID - httpstatus ok/bad"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:ngwf.dev.workflow_definitionservice.api.v1.definition.GetDefinitionByDefinitionId.definitionId.avg{name:ngwf-dev-def-service} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "getDefinitionByDefinitionID - avg"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "q": "sum:ngwf.qa.workflow_definitionservice.api.v1.definition.DeleteWorkflowDefinition.id_hits{qa} by {host}.as_count()",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Delete def - hits"
+      },
+      {
+        "definition": {
+          "viz": "query_value",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{name:ngwf-dev-def-service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "System Memory Utilization"
+      },
+      {
+        "definition": {
+          "viz": "query_value",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.cpu.user{name:ngwf-dev-def-service}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": null,
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CPU Utilization By User Processes"
+      }
+    ],
+    "description": "",
+    "title": "ngwf_dev_definition",
+    "created": "2018-03-06T19:33:35.989553+00:00",
+    "id": 636399,
+    "created_by": {
+      "disabled": false,
+      "handle": "siddhi.bhakta@thomsonreuters.com",
+      "name": "Siddhi Bhakta",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Siddhi.Bhakta@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/2cf5f40a0664aac7626ab0e1e8fb962d?s=48&d=retro"
+    },
+    "modified": "2018-03-09T03:04:25.352992+00:00"
+  },
+  "url": "/dash/636399/ngwfdevdefinition",
+  "resource": "/api/v1/dash/636399"
+}

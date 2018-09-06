@@ -1,0 +1,168 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "requests": [
+            {
+              "aggregator": "count",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "bars",
+              "conditional_formats": [],
+              "log_query": {
+                "index": "main",
+                "search": {
+                  "query": "\"/emea1/home-product/\" AND (404 OR 400 OR 401)"
+                },
+                "compute": {
+                  "facet": null,
+                  "aggregation": "count"
+                },
+                "groupBy": []
+              }
+            }
+          ]
+        },
+        "title": "Log count over \"\"/emea1/home-product/\" AND (404 OR 400 OR 401)\""
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "error",
+          "requests": [
+            {
+              "aggregator": "sum",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": [],
+              "log_query": {
+                "index": "main",
+                "search": {
+                  "query": "\"/amer1/ooxp-domain\" AND (404 OR 400 OR 401)"
+                },
+                "compute": {
+                  "facet": null,
+                  "aggregation": "count"
+                },
+                "groupBy": []
+              }
+            },
+            {
+              "aggregator": "count",
+              "style": {
+                "width": "normal",
+                "palette": "cool",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": [],
+              "log_query": {
+                "index": "main",
+                "search": {
+                  "query": "\"/amer1/ooxp-domain\" AND (200 OR 201 OR 204)"
+                },
+                "compute": {
+                  "facet": null,
+                  "aggregation": "count"
+                },
+                "groupBy": []
+              }
+            },
+            {
+              "aggregator": "count",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": [],
+              "log_query": {
+                "index": "main",
+                "search": {
+                  "query": "\"/amer1/ooxp-domain\" AND (500 OR 503 OR 501)"
+                },
+                "compute": {
+                  "facet": null,
+                  "aggregation": "count"
+                },
+                "groupBy": []
+              }
+            }
+          ],
+          "autoscale": true
+        },
+        "title": ", , "
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "aggregator": "count",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": [],
+              "log_query": {
+                "index": "main",
+                "search": {
+                  "query": "\"/amer1/ooxp-domain\""
+                },
+                "compute": {
+                  "facet": "@http.incoming.duration",
+                  "aggregation": "pc90"
+                },
+                "groupBy": [
+                  {
+                    "facet": "service",
+                    "sort": {
+                      "facet": "@http.incoming.duration",
+                      "order": "desc",
+                      "aggregation": "pc90"
+                    },
+                    "limit": 10
+                  }
+                ]
+              }
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Pc90 of @http.incoming.duration by service over \"\"/amer1/ooxp-domain\"\""
+      }
+    ],
+    "description": "created by support-trtaonesourcepr",
+    "title": "Datadog Support Ticket #162053",
+    "created": "2018-08-13T19:21:06.729988+00:00",
+    "id": 886858,
+    "created_by": {
+      "disabled": false,
+      "handle": "support-trtaonesourcepr",
+      "name": "Datadog Support",
+      "is_admin": true,
+      "role": "Help is on the way",
+      "access_role": "adm",
+      "verified": true,
+      "email": "support-user-prod@datadoghq.com",
+      "icon": "https://secure.gravatar.com/avatar/e6952b5f29fe2d996cf4e63f40db9e71?s=48&d=retro"
+    },
+    "modified": "2018-08-15T18:01:12.678430+00:00"
+  },
+  "url": "/dash/886858/datadog-support-ticket-162053",
+  "resource": "/api/v1/dash/886858"
+}

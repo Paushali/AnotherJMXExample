@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by venkatakrishnarao.k@thomsonreuters.com",
+    "title": "Venkatakrishnarao's Timeboard 14 Aug 2018 12:20",
+    "created": "2018-08-14T06:50:25.347539+00:00",
+    "id": 887201,
+    "created_by": {
+      "disabled": false,
+      "handle": "venkatakrishnarao.k@thomsonreuters.com",
+      "name": "Venkatakrishnarao K",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Venkatakrishnarao.K@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/f2ce73d2374d2272348718c11cb3506f?s=48&d=retro"
+    },
+    "modified": "2018-08-14T06:50:25.347553+00:00"
+  },
+  "url": "/dash/887201/venkatakrishnaraos-timeboard-14-aug-2018-1220",
+  "resource": "/api/v1/dash/887201"
+}

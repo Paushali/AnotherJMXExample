@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by support-trtaonesourcepr",
+    "title": "Datadog's Timeboard 26 Jun 2018 14:49",
+    "created": "2018-06-26T18:49:50.017512+00:00",
+    "id": 845493,
+    "created_by": {
+      "disabled": false,
+      "handle": "support-trtaonesourcepr",
+      "name": "Datadog Support",
+      "is_admin": true,
+      "role": "Help is on the way",
+      "access_role": "adm",
+      "verified": true,
+      "email": "support-user-prod@datadoghq.com",
+      "icon": "https://secure.gravatar.com/avatar/e6952b5f29fe2d996cf4e63f40db9e71?s=48&d=retro"
+    },
+    "modified": "2018-06-26T18:49:50.017529+00:00"
+  },
+  "url": "/dash/845493/datadogs-timeboard-26-jun-2018-1449",
+  "resource": "/api/v1/dash/845493"
+}

@@ -1,0 +1,334 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:system.mem.used{$HostName,app:oct,env:prod,region:emea} by {service,host,node_number}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Memory-Utilization(Used Memory)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:athena.process.mem.privatebytes{$HostName,app:oct,env:prod,region:emea} by {host,dnsname}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "MEMORY - Utilization (Physical private bytes)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:athena.process.mem.virtualbytes{$HostName,app:oct,env:prod,region:emea} by {host,dnsname}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false
+          }
+        },
+        "title": "MEMORY - Utilization (Virtual private bytes)"
+      },
+      {
+        "definition": {
+          "style": {
+            "fillMax": null,
+            "palette": "YlOrRd",
+            "fillMin": null,
+            "paletteFlip": false
+          },
+          "group": null,
+          "notes": null,
+          "noMetricHosts": true,
+          "viz": "hostmap",
+          "scope": [
+            "app:oct",
+            "env:prod",
+            "region:emea"
+          ],
+          "requests": [
+            {
+              "q": "avg:system.load.1{app:oct,env:prod,region:emea} by {host}",
+              "type": "fill"
+            }
+          ],
+          "noGroupHosts": true
+        },
+        "title": "All hosts"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:athena.system.network.bytes_rcvd{app:oct,env:prod,region:emea} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "max:athena.system.network.bytes_sent{app:oct,env:prod,region:emea} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "orange",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "NETWORK - Utilization (Sent\\ Received)"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:athena.system.cpu.pct{app:oct,region:emea,env:prod} by {host,dnsname}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "SYSTEM CPU Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:athena.system.disk.free_mbytes{$Application,$HostName,app:oct} by {host,dnsname}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:athena.system.disk.avgsecperwrite{env:qa,$Application,$HostName,app:oct} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:athena.system.disk.avgqueuelength{env:qa,$Application,$HostName,app:oct} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "DISK - Utilization"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:athena.process.handles.count{app:oct,env:prod,region:emea} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "PROCESS Handles"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "max:athena.process.threads.count{app:oct,region:emea,env:prod} by {host,dnsname}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "warm",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "PROCESS Thread count"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:athena.system.proc.context_switches{app:oct,env:prod,region:emea} by {host}, avg:athena.system.cpu.interrupt.pct{app:oct,env:prod,region:emea} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "CPU context switch and Interrupt - Latency"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:athena.system.uptime{app:oct,env:prod,region:emea} by {host}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:athena.system.uptime{app:oct,env:prod,region:emea} by {host}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "area"
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "System Uptime"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{app:oct,env:prod,region:emea} by {host,dnsname}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true
+        },
+        "title": "Avg of system.mem.used over app:oct,env:prod,region:emea by host,dnsname"
+      }
+    ],
+    "template_variables": [
+      {
+        "default": "oitc",
+        "prefix": "app",
+        "name": "Application"
+      },
+      {
+        "default": "*",
+        "prefix": "dnsname",
+        "name": "HostName"
+      }
+    ],
+    "description": " (cloned)",
+    "title": "Athena EMEA OCT Dashboard",
+    "created": "2018-07-23T07:19:55.742383+00:00",
+    "id": 867977,
+    "created_by": {
+      "disabled": false,
+      "handle": "sridhar.duggimpudi@thomsonreuters.com",
+      "name": "Sridhar Duggimpudi",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "sridhar.duggimpudi@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/2fb2b1576a4be2c2c34e288d5aa9e039?s=48&d=retro"
+    },
+    "modified": "2018-07-24T05:51:32.941031+00:00"
+  },
+  "url": "/dash/867977/athena-emea-oct-dashboard",
+  "resource": "/api/v1/dash/867977"
+}

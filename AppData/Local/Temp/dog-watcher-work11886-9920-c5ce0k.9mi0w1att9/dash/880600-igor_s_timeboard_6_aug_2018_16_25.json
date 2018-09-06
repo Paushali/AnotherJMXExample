@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "read_only": false,
+    "graphs": [],
+    "description": "created by igor.dziuba@thomsonreuters.com",
+    "title": "Igor's Timeboard 6 Aug 2018 16:25",
+    "created": "2018-08-06T13:25:56.018675+00:00",
+    "id": 880600,
+    "created_by": {
+      "disabled": false,
+      "handle": "igor.dziuba@thomsonreuters.com",
+      "name": "Igor Dziuba",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "Igor.Dziuba@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/55327206a5ecbf7e68cb2f1dd19f2812?s=48&d=retro"
+    },
+    "modified": "2018-08-06T13:25:56.018689+00:00"
+  },
+  "url": "/dash/880600/igors-timeboard-6-aug-2018-1625",
+  "resource": "/api/v1/dash/880600"
+}

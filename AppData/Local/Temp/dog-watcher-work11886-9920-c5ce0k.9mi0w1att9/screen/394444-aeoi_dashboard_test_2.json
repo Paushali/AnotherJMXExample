@@ -1,0 +1,316 @@
+{
+  "board_title": "AEOI Dashboard -Test2",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-07-26T19:13:43.900516+00:00",
+  "original_title": "AEOI Dashboard -Test2",
+  "modified": "2018-07-31T20:41:16.218121+00:00",
+  "disableEditing": false,
+  "height": 80,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "aeoi_host:uc246190",
+      "prefix": "aeoi_host",
+      "name": "amit"
+    },
+    {
+      "default": "aeoi_host:uc231559",
+      "prefix": "aeoi_host",
+      "name": "puru"
+    },
+    {
+      "default": "aeoi_host:uc247695",
+      "prefix": "aeoi_host",
+      "name": "sirisha"
+    },
+    {
+      "default": "aeoi_host:uc223757",
+      "prefix": "aeoi_host",
+      "name": "Varsha"
+    },
+    {
+      "default": "aeoi_host:uc246323",
+      "prefix": "aeoi_host",
+      "name": "Stephanie"
+    }
+  ],
+  "created_by": {
+    "disabled": false,
+    "handle": "amit.nepal@thomsonreuters.com",
+    "name": "Amit Nepal",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "amit.nepal@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/1d5f78aa3bd60c7ff5ef52cacb107f7e?s=48&d=retro"
+  },
+  "showGlobalTimeOnboarding": true,
+  "templated": true,
+  "widgets": [
+    {
+      "board_id": 394444,
+      "x": 1,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Amit",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.uptime{$amit}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_yellow",
+                "comparator": "<",
+                "value": "10000"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": ">=",
+                "value": "15000"
+              },
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "100000"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 13,
+      "time": {},
+      "y": 1,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 394444,
+      "x": 15,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Puru",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.uptime{$puru}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_yellow",
+                "comparator": "<",
+                "value": "10000"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": ">=",
+                "value": "15000"
+              },
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "100000"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 14,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 1,
+      "title_size": 20,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 394444,
+      "x": 30,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Sirisha",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.uptime{$sirisha}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_yellow",
+                "comparator": "<",
+                "value": "10000"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": ">=",
+                "value": "15000"
+              },
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "20000"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 13,
+      "time": {},
+      "y": 1,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 394444,
+      "x": 44,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Varsha",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.uptime{$Varsha}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_yellow",
+                "comparator": "<",
+                "value": "10000"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": ">=",
+                "value": "15000"
+              },
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "20000"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "custom_unit": null,
+        "precision": "0"
+      },
+      "width": 13,
+      "time": {},
+      "y": 1,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 394444,
+      "x": 58,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Stephanie",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "avg:system.uptime{$Stephanie}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_yellow",
+                "comparator": "<",
+                "value": "10000"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": ">=",
+                "value": "15000"
+              },
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "20000"
+              }
+            ]
+          }
+        ],
+        "autoscale": true,
+        "precision": "0"
+      },
+      "width": 14,
+      "time": {},
+      "y": 1,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    }
+  ],
+  "disableCog": false,
+  "id": 394444,
+  "title_edited": false,
+  "isShared": false
+}

@@ -1,0 +1,602 @@
+{
+  "board_title": "Audit Queue",
+  "read_only": false,
+  "isIntegration": false,
+  "board_bgtype": "board_graph",
+  "created": "2018-09-05T21:59:09.203482+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "mohsin.khan@thomsonreuters.com",
+    "name": "Mohsin Khan",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "Mohsin.Khan@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/213516279c89d29a448a07b6aa2780c0?s=48&d=retro"
+  },
+  "original_title": "Audit Queue",
+  "modified": "2018-09-05T23:25:29.891553+00:00",
+  "originalHeight": 102,
+  "height": 102,
+  "width": "100%",
+  "template_variables": [
+    {
+      "default": "env:sand",
+      "prefix": "env",
+      "name": "environment"
+    },
+    {
+      "default": "tr:application-asset-insight-id:200206",
+      "prefix": "tr",
+      "name": "assetid"
+    },
+    {
+      "default": "*",
+      "prefix": "aws-region",
+      "name": "awsregion"
+    },
+    {
+      "default": "queuename:200206-idt-det-sand-use1-auditqueue",
+      "prefix": "queuename",
+      "name": "auditqueue"
+    },
+    {
+      "default": "queuename:200206-idt-det-sand-use1-auditdeadletterqueue",
+      "prefix": "queuename",
+      "name": "auditdlq"
+    },
+    {
+      "default": "bucketname:200206-idt-det-sand-use1-auditbucket",
+      "prefix": "bucketname",
+      "name": "auditbucket"
+    },
+    {
+      "default": "autoscaling_group:idt-sand-consumer-asg-mmc50puq4j8j-asg-16zqm3alrryih",
+      "prefix": "autoscaling_group",
+      "name": "autoscalinggroup"
+    },
+    {
+      "default": "aws_autoscaling_groupname:idt-sand-consumer-asg-mmc50puq4j8j-asg-16zqm3alrryih",
+      "prefix": "aws_autoscaling_groupname",
+      "name": "awsautoscalinggroupname"
+    },
+    {
+      "default": "topicname:200206-idt-det-sand-use1-audittopic",
+      "prefix": "topicname",
+      "name": "topicname"
+    }
+  ],
+  "disableCog": false,
+  "disableEditing": false,
+  "originalWidth": "100%",
+  "widgets": [
+    {
+      "board_id": 437133,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "CPU Instance - graph",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.cpu.user{$awsautoscalinggroupname} by {host}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 2,
+      "x": 5,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 437133,
+      "x": 53,
+      "autoscale": true,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Terminated instances - count",
+      "height": 13,
+      "tile_def": {
+        "viz": "query_value",
+        "requests": [
+          {
+            "q": "sum:aws.autoscaling.group_terminating_instances{$environment,$assetid,$awsregion} by {autoscaling_group}.rollup(max, 60)",
+            "aggregator": "max",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": [
+              {
+                "palette": "white_on_red",
+                "comparator": ">",
+                "value": "0"
+              },
+              {
+                "palette": "white_on_green",
+                "comparator": "<=",
+                "value": "0"
+              }
+            ]
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 2,
+      "title_size": 16,
+      "legend_size": "0",
+      "type": "query_value",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 437133,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Terminated instances - graph",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.autoscaling.group_terminating_instances{$environment,$awsregion,$assetid} by {autoscaling_group}.rollup(max, 60)",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "4h"
+      },
+      "y": 18,
+      "x": 53,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 437133,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Approx age of oldest message",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.sqs.approximate_age_of_oldest_message{$auditqueue}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 18,
+      "x": 5,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 437133,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Audit Queue Data - Messages - Recieved/Visible/NotVisible",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.sqs.number_of_messages_received{$auditqueue}.as_count()",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "sum:aws.sqs.approximate_number_of_messages_visible{$auditqueue}",
+            "style": {
+              "width": "normal",
+              "palette": "grey",
+              "type": "solid"
+            },
+            "type": "line"
+          },
+          {
+            "q": "sum:aws.sqs.approximate_number_of_messages_not_visible{$auditqueue}",
+            "style": {
+              "width": "normal",
+              "palette": "orange",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 35,
+      "x": 5,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 437133,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Number of Message in DLQ",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.sqs.approximate_number_of_messages_visible{$auditdlq}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "bars",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 18,
+      "x": 53,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 437133,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "Number of Object in S3 Bucket",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "sum:aws.s3.number_of_objects{$auditbucket}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1d"
+      },
+      "y": 35,
+      "x": 53,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 437133,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "System mem usage",
+      "height": 13,
+      "tile_def": {
+        "viz": "timeseries",
+        "requests": [
+          {
+            "q": "avg:system.mem.used{$awsautoscalinggroupname}",
+            "aggregator": "avg",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line",
+            "conditional_formats": []
+          },
+          {
+            "q": "avg:system.mem.free{$awsautoscalinggroupname}",
+            "style": {
+              "width": "normal",
+              "palette": "purple",
+              "type": "solid"
+            },
+            "type": "line"
+          },
+          {
+            "q": "avg:system.mem.total{aws_autoscaling_groupname:idt-qa-cmportal-asg-5tcadofd92qk-asg-1jjpfpmtb6nox}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          },
+          {
+            "q": "avg:system.mem.avail{$awsautoscalinggroupname}",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": "line"
+          }
+        ],
+        "autoscale": true
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 53,
+      "x": 5,
+      "legend_size": "0",
+      "type": "timeseries",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 437133,
+      "x": 53,
+      "title_size": 16,
+      "tags": [
+        "service:sns",
+        "$awsregion"
+      ],
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "SQS Agent",
+      "height": 8,
+      "width": 8,
+      "group_by": [
+        "$awsregion"
+      ],
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 52,
+      "group": null,
+      "text_size": "auto",
+      "isShared": false,
+      "type": "check_status",
+      "check": "aws.status",
+      "grouping": "cluster"
+    },
+    {
+      "board_id": 437133,
+      "x": 62,
+      "title_size": 16,
+      "tags": [
+        "service:sns",
+        "$awsregion"
+      ],
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "SNS",
+      "height": 8,
+      "width": 8,
+      "group_by": [
+        "$awsregion"
+      ],
+      "time": {
+        "live_span": "30m"
+      },
+      "y": 52,
+      "group": null,
+      "text_size": "auto",
+      "isShared": false,
+      "type": "check_status",
+      "check": "aws.status",
+      "grouping": "cluster"
+    },
+    {
+      "board_id": 437133,
+      "x": 53,
+      "title_size": 16,
+      "tags": [
+        "name:idt-sand-consumer-service"
+      ],
+      "title": true,
+      "title_align": "center",
+      "text_align": "center",
+      "title_text": "Service -  agent up",
+      "height": 8,
+      "width": 17,
+      "group_by": [],
+      "time": {
+        "live_span": "10m"
+      },
+      "y": 61,
+      "group": null,
+      "text_size": "auto",
+      "isShared": false,
+      "type": "check_status",
+      "check": "datadog.agent.up",
+      "grouping": "cluster"
+    },
+    {
+      "board_id": 437133,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "sns message published",
+      "height": 12,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:aws.sns.number_of_messages_published{$topicname}.as_count(), 10, 'mean', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 71,
+      "x": 5,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 437133,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "sqs message sent over",
+      "height": 12,
+      "tile_def": {
+        "viz": "toplist",
+        "requests": [
+          {
+            "q": "top(avg:aws.sqs.number_of_messages_sent{$auditqueue}.as_count(), 10, 'mean', 'desc')",
+            "style": {
+              "width": "normal",
+              "palette": "dog_classic",
+              "type": "solid"
+            },
+            "type": null,
+            "conditional_formats": []
+          }
+        ]
+      },
+      "width": 47,
+      "time": {
+        "live_span": "1h"
+      },
+      "y": 71,
+      "x": 54,
+      "legend_size": "0",
+      "type": "toplist",
+      "legend": false,
+      "isShared": false
+    },
+    {
+      "board_id": 437133,
+      "title_size": 16,
+      "title": true,
+      "title_align": "left",
+      "title_text": "ASG group Host",
+      "height": 16,
+      "tile_def": {
+        "style": {
+          "fillMax": null,
+          "palette": "green_to_orange",
+          "fillMin": null,
+          "paletteFlip": false
+        },
+        "group": null,
+        "notes": null,
+        "noMetricHosts": true,
+        "viz": "hostmap",
+        "scope": [
+          "$awsautoscalinggroupname"
+        ],
+        "requests": [
+          {
+            "q": "avg:system.load.1{$awsautoscalinggroupname} by {host}",
+            "type": "fill"
+          }
+        ],
+        "groupby": null,
+        "noGroupHosts": true
+      },
+      "width": 28,
+      "x": 72,
+      "y": 52,
+      "query": "avg:system.load.1{*} by {host}",
+      "legend_size": null,
+      "type": "hostmap",
+      "legend": null,
+      "isShared": false
+    }
+  ],
+  "guid": 1474,
+  "id": 437133,
+  "title_edited": false,
+  "isShared": false
+}

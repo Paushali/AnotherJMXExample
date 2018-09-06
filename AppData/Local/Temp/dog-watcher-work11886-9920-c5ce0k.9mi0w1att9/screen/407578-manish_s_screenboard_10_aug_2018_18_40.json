@@ -1,0 +1,26 @@
+{
+  "read_only": false,
+  "board_title": "Manish's Screenboard 10 Aug 2018 18:40",
+  "created": "2018-08-10T13:10:11.579668+00:00",
+  "modified": "2018-08-10T13:10:11.579679+00:00",
+  "created_by": {
+    "disabled": false,
+    "handle": "manishkumar.choudhary@thomsonreuters.com",
+    "name": "Manish Kumar Choudhary",
+    "is_admin": false,
+    "role": null,
+    "access_role": "st",
+    "verified": true,
+    "email": "manishkumar.choudhary@thomsonreuters.com",
+    "icon": "https://secure.gravatar.com/avatar/f7e2d0605d3bee9c19df0bbebcd94328?s=48&d=retro"
+  },
+  "template_variables": [
+    {
+      "default": "*",
+      "prefix": null,
+      "name": "var"
+    }
+  ],
+  "templated": true,
+  "id": 407578
+}

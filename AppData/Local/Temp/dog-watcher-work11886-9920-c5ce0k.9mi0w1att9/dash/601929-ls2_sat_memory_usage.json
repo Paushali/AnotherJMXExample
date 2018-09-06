@@ -1,0 +1,322 @@
+{
+  "dash": {
+    "read_only": true,
+    "graphs": [
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{host:c305tchcwtweb}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:system.mem.used{host:c421xjscwtweb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:system.mem.used{host:c140gphcwtweb}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false
+          }
+        },
+        "title": "Zuul and Login - Memory used"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{host:c783pjccwtweb.ecomqc.tlrg.com}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:system.mem.used{host:c863axncwtweb.ecomqc.tlrg.com}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false
+          }
+        },
+        "title": "Zuul only and WebTemp - Memory used"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{host:C688EKGCWTWEB}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false
+          }
+        },
+        "title": "Concert - Memory used"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{host:C364NNKCWTAP3}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false
+          }
+        },
+        "title": "DEM - Memory used"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{host:C898GPDCWTWBS}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:system.mem.used{host:c862njjcwtwbs}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:system.mem.used{host:c199qmmcwtwbs}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:system.mem.used{host:c134wutcwtwbs}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false
+          }
+        },
+        "title": "Rest Micro Services - Memory used"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{host:C837EAX}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:system.mem.used{host:c515rubcwtsec}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            },
+            {
+              "q": "avg:system.mem.used{host:c960dqncwtsec}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false
+          }
+        },
+        "title": "Security Service - Memory used"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{host:C388JUHCWTWBS}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            },
+            {
+              "q": "avg:system.mem.used{host:C805PQZCWTWBS}",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line"
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false
+          }
+        },
+        "title": "Product Service Additional Servers - Memory used"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{host:c639gsucwtweb.ecomqc.tlrg.com}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false
+          }
+        },
+        "title": "OSP Rest - Memory used"
+      },
+      {
+        "definition": {
+          "viz": "timeseries",
+          "status": "done",
+          "requests": [
+            {
+              "q": "avg:system.mem.used{host:C590QMGCWTAP3}",
+              "aggregator": "avg",
+              "style": {
+                "width": "normal",
+                "palette": "dog_classic",
+                "type": "solid"
+              },
+              "type": "line",
+              "conditional_formats": []
+            }
+          ],
+          "autoscale": true,
+          "yaxis": {
+            "includeZero": false
+          }
+        },
+        "title": "B3 and Session Manager - Memory used"
+      }
+    ],
+    "description": " (cloned)",
+    "title": "LS2 SAT Memory Usage",
+    "created": "2018-02-28T17:31:41.001107+00:00",
+    "id": 601929,
+    "created_by": {
+      "disabled": false,
+      "handle": "shailendra.singh@thomsonreuters.com",
+      "name": "Shailendra Singh",
+      "is_admin": false,
+      "role": null,
+      "access_role": "st",
+      "verified": true,
+      "email": "shailendra.singh@thomsonreuters.com",
+      "icon": "https://secure.gravatar.com/avatar/ea099c25d0af9315df089394855ef240?s=48&d=retro"
+    },
+    "modified": "2018-08-21T20:39:09.315668+00:00"
+  },
+  "url": "/dash/601929/ls2-sat-memory-usage",
+  "resource": "/api/v1/dash/601929"
+}
